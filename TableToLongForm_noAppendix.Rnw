@@ -1,0 +1,1318 @@
+\documentclass[a4paper]{article}
+\addtolength{\oddsidemargin}{-.4in}
+\addtolength{\evensidemargin}{-.4in}
+\addtolength{\textwidth}{.8in}
+\addtolength{\voffset}{-.8in}
+\addtolength{\textheight}{1.2in}
+\usepackage{noweb}
+\noweboptions{english}
+\newcommand{\blankpage}{\begin{quote}\end{quote}}
+\newcommand{\itemverb}[1]{\item[\texttt{#1}]}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage[multiple]{footmisc}
+\begin{document}
+\renewcommand\abstractname{\large Abstract}
+%-----------------------------------------------------------------------
+% \begin{titlepage}
+  \title{\textbf{A Literate Program for\\
+      Converting Tables to\\
+      LongForm Dataframes}}
+  \author{\textit{Jimmy Oh}\\
+    [12pt] Department of Statistics \\ University of Auckland}
+\date{}
+\maketitle
+\codemargin=24pt
+\begin{abstract}\normalsize
+  TableToLongForm automatically converts hierarchical Tables intended
+  for a human reader into a simple LongForm Dataframe that is machine
+  readable. It does this by recognising positional queues present in
+  the hierarchical Table (which would normally be interpreted visually
+  by the human brain) to decompose, then reconstruct the data into a
+  LongForm Dataframe. This document provides a gallery of all
+  recognised patterns and structures, with accompanying toy examples,
+  before finally going into depth on the workings of the code itself.
+\end{abstract}
+\tableofcontents
+
+\subsection*{On Literate Programs}
+\label{sec:literate.program}
+This software is presented as a \emph{literate program} written in the
+\emph{noweb} format (\citealt{noweb}). It serves as both the
+documentation and container of the literate program. The \verb|noweb|
+file can be used to produce both the \emph{literate document} and the
+executable code.
+
+The literate document is separated into \emph{documentation chunks}
+and named \emph{code chunks}. Each \emph{code chunk} can contain code
+directly, or contain references to other \emph{code chunks} which act
+as placeholders for the contents of the respective \emph{code
+  chunk}. The name of each \emph{code chunk} should serve as a short
+description of the code it contains. Thus each \emph{code chunk}
+provides an overview of its purpose by either directly containing
+code, or by containing the names of other \emph{code chunks}. The
+reader is then free to delve deeper into the respective \emph{code
+  chunks} if desired.
+\newpage
+
+\section{Introduction}
+\label{sec:introduction}
+\subsection{Motivation}
+\label{sec:motivation}
+In recent times there has been a movement toward \emph{Open Data},
+particularly for government data\footnote{``In many countries across
+  the world, discussions, policies and developments are actively
+  emerging around open access to government data.''
+  \cite{JoCI}}\footnote{``Over 100 OGD [Open Government Data]
+  initiatives are active across the globe, ranging from community-led
+  OGD projects in urban India, to a World Bank sponsored OGD programme
+  in Kenya, government-led developments in Brazil, civil-society
+  initiated work in Russia, and a World Wide Web Foundation supported
+  programme in Ghana.'' \cite{JoCI929}}, yet there is still a
+prevalence of data releases being for direct human consumption, rather
+than for machine consumption. One symptom of this is the release of
+data in tabular form that relies on the human ability to identify
+patterns and discern structure, in order to decipher the data
+(henceforth referred to as a Table). Such tables are difficult to read
+and analyse with the computer, signficantly limiting potential
+applications of this `open' data.
+
+LongForm is a simple alternative method of releasing the data that,
+due to its simplicity, is both easy to implement and is machine
+readable, greatly enhancing potential applications of the data. It is
+easy to go from a simple format such as a LongForm Dataframe to any
+number of other forms of presentation, including hierarchical Tables
+more suitable for direct human consumption. However the converse is
+rarely true. This is where TableToLongForm comes in, providing a way
+to automatically convert hierarchical Tables to a simple LongForm
+Dataframe, thus enabling much greater utilisation of the data.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{./TestCase/StatsNZLabourForce.pdf}
+  \caption{An example of a hierarchical Table. The data is Labour
+    Force Status Survey data from Infoshare, \cite{Infoshare} and in
+    total spans 240 columns, making it suitable for neither man nor
+    machine. However it is relatively tame in terms of how unsuitable
+    for machines Tables can get and so could, with some manual labour,
+    be read by a machine.}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{./TestCase/StatsNZLabourForceconverted.pdf}
+  \caption{An example of a LongForm Dataframe. This is the Labour
+    Force Status Survey data after automatic conversion with
+    TableToLongForm. Most, if not all statistical software (including
+    spreadsheet software like Excel) can read, manipulate and run
+    analyses on this without any problems.}
+\end{figure}
+
+\subsection{The Plan of Attack}
+\label{sec:plan}
+Unless the Table is horrible beyond mortal imagination, it should have
+some kind of pattern, such that a human will be able to discern the
+structure and hence understand the data it represents. This code
+attempts to algorithmically search for such patterns, discern the
+structure, then reconstruct the data into a LongForm Dataframe. Refer
+to Section \ref{sec:known.patterns} for a full gallery of currently
+recognised patterns.
+
+The task can be seen to consist of three phases:
+\begin{itemize}
+\item Phase One is Identification (Section \ref{sec:identification}),
+  which involves identifying the rows and columns where the labels and
+  the data can be found.
+\item Phase Two is Discerning the Parentage (Section
+  \ref{sec:parentage}), which involves identifying the hierarchical
+  structure of the data, based on the row and column labels.
+\item Phase Three is Reconstruction (Section
+  \ref{sec:reconstruction}), where we use what we've found in the
+  first two phases to reconstruct the data into a LongForm Dataframe.
+\end{itemize}
+
+\subsection{Recognised Patterns}
+\label{sec:known.patterns}
+Here we list, with toy examples, all the recognised patterns and
+structures. TableToLongForm should be able to process any combination
+of these patterns to automatically convert many different types of
+tables. The last example is a \emph{complete} example that contains
+most of the recognised patterns in a single horrible table.
+
+\subsubsection{By Empty Below}
+\label{sec:kp.byemptybelow}
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyBelow.pdf}\\
+The most simple type of parentage, here the \emph{parent} and
+\emph{children} are in different columns and we can see which of the
+children belong to which parent through the use of empty space below
+each parent.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyBelowconverted.pdf}
+
+\subsubsection{By Empty Below Transposed}
+\label{sec:kp.byemptybelowT}
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyBelowT.pdf}\\
+We note that parentage patterns recognised for row labels can often be
+applied to the transpose of column labels. This is how TableToLongForm
+deciphers most column labels, with some exceptions.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyBelowTconverted.pdf}
+
+\subsubsection{By Empty Right 1}
+\label{sec:kp.byemptyright1}
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight1.pdf}\\
+In this situation we have children in the same column as their
+parent. We can still recognise these as children if the children have
+children (\emph{Child-Child}) in a different column, while the parent
+does not (and hence is Empty Right).
+
+Note the values pertaining to the Parent (if any) are discarded. This
+is because they are assumed to simply represent the sum of their
+children's values. It is planned for a sum-check to be implemented
+later to make this more robust.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight1converted.pdf}
+
+\subsubsection{By Empty Right 2}
+\label{sec:kp.byemptyright2}
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight2.pdf}\\
+Here we have both Empty Below and Empty Right. Either algorithm can
+handle this situation, but simply due to the ordering of the
+algorithms such situations are handled as Empty Right.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight2converted.pdf}
+
+\subsubsection{By Empty Right 3}
+\label{sec:kp.byemptyright3}
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight3.pdf}\\
+The ``parent-child in the same column'' situation can be extended
+further. Here we have parents (\emph{Super-Parent}) who have children
+(\emph{Parent}), who each further have children (\emph{Child}), all in
+the same column. Such situations can still be recognised if the
+lowest-level children in the column (\emph{Child}) have children in a
+different column (\emph{Child-Child}), while its direct parents
+(\emph{Parent}) each have children in the same column (\emph{Child})
+but not in a different column (is Empty Right), and the top-most
+parents (\emph{Super-Parents}) also have no children in a different
+column (is also Empty Right).
+
+The algorithm cannot currently handle super-super-parents.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight3converted.pdf}
+
+\subsubsection{Multi-row Column Label}
+\label{sec:kp.MultiRowColumnLabel}
+\includegraphics[width=\textwidth]{./TestCase/ToyExMultiRowColumnLabel.pdf}\\
+Often column labels are physically split over multiple rows rather
+than making use of line breaks in the same cell. In such occurences,
+any row not identified as a parent are collapsed into a single row of
+labels. It is eventually planned for pattern recognition to be used
+here to make this collapsing smarter.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExMultiRowColumnLabelconverted.pdf}
+
+\subsubsection{Misaligned Column Label}
+\label{sec:kp.MisalignedColumnLabel}
+\includegraphics[width=\textwidth]{./TestCase/ToyExMisalignedColumnLabel.pdf}\\
+Often column parents are physically centred over their children
+(N.B. where a spreadsheet's cell-merge feature is used to do the
+centering, the actual value is usually stored in the top-left cell and
+hence causes no problems). TableToLongForm makes use of pattern
+recognition to identify repeating patterns in the labels of the
+children, to help discern the correct parent for the children.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExMisalignedColumnLabelconverted.pdf}
+
+\subsubsection{Find Single Table}
+\label{sec:kp.FindSingleTable}
+\includegraphics[width=\textwidth]{./TestCase/ToyExFindSingleTable.pdf}\\
+A table is often found amongst miscellaneous information we do not
+want. TableToLongForm is intended to have several algorithms to
+identify not only a single table, but multiple tables on the same
+`page'. Currently however, it can only identify a single table per
+`page' by searching for a block (rectangular region) of numbers,
+which is assumed to be our table of data.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExFindSingleTableconverted.pdf}
+
+\subsubsection{Complete Example}
+\label{sec:kp.Complete}
+\includegraphics[width=\textwidth]{./TestCase/ToyExComplete.pdf}\\
+A complete example containing a combination of many of the patterns
+listed above.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExCompleteconverted.pdf}
+
+\section{Code Overview}
+\label{sec:code.overview}
+TableToLongForm is structured as follows.
+<<TableToLongForm.R>>=
+<<document header>>
+<<Front End>>
+<<Identification>>
+<<Discern Parentage>>
+<<Reconstruction>>
+<<Back End>>
+@
+
+We place a document header at the top of the extracted code to
+encourage people to read the literate description rather than
+attempting to study the code alone.
+<<document header>>=
+##----------------------------------------------------------------------
+## The code in this .R file is machine generated from the literate
+##  program, TableToLongForm.Rnw
+## Documentation can be found in the literate description for this
+##  program, TableToLongForm.pdf
+##----------------------------------------------------------------------
+@
+
+\subsection{Front End}
+\label{sec:front.end}
+The main function \verb|TableToLongForm| is defined here. For most
+users this is the only function they will call. However, the majority
+of the supporting functions are not hidden and therefore can easily be
+viewed and/or modified by users.
+<<Front End>>=
+TableToLongForm =
+  function(datamat, IdentResult = NULL,
+           fulloutput = FALSE, diag = FALSE, diagname = NULL){
+    if(diag){
+      if(is.null(diagname)) diagname = deparse(substitute(datamat))
+      assign("TCRunout", file(paste0(diagname, ".TCRunout"),
+                              "w"), envir = .GlobalEnv)
+      on.exit({
+        close(TCRunout)
+        rm("TCRunout", envir = .GlobalEnv)
+      })
+    }
+    
+    fullout = ReconsMain(datamat, IdentResult)
+    if(fulloutput) fullout else fullout$datafr
+  }
+@
+
+\subsection{Back End}
+\label{sec:back.end}
+Various code, mainly to help produce diagnostic output, can be ignored
+by most users.
+
+\paragraph{print.plist}
+A print method for class \verb|plist|, which are nested lists with a
+numeric vector at the lowest level; \verb|print.default| is rather
+inefficient in displaying such nested lists.
+
+\paragraph{TCRsink}
+Sinks the output to \verb|TCRunout| for diagnostic output. Requires
+the existence of \verb|TCRunout| which is created by the main function
+\verb|TableToLongForm| when \verb|diag = TRUE|.
+
+Spaces may be introduced by \verb|match.call|, thus any spaces in the
+args of \emph{variables to sink} (that is, the arguments supplied via
+\verb|...|) are removed without warning.
+
+<<Back End>>=
+print.plist = function(plist){
+  plistC = function(plist){
+    pLoc = attr(plist, "Loc")
+    if(is.list(plist)){
+      namevec = names(plist)
+      if(!is.null(pLoc))
+        namevec = paste0(names(plist),
+          " (", pLoc[,"rows"], ", ", pLoc[,"cols"], ")")
+      namelist = as.list(namevec)
+      for(i in 1:length(namelist))
+        namelist[[i]] =
+          c(paste("+", namelist[[i]]),
+            paste("-", plistC(plist[[i]])))
+      do.call(c, namelist)
+    } else{
+      if(!is.null(names(plist))){
+        namevec = names(plist)
+        if(!is.null(pLoc))
+          namevec = paste0(names(plist),
+            " (", plist, ", ", pLoc[,"cols"], ")")
+        paste("+", namevec)
+      } else paste(plist, collapse = " ")
+    }
+    }
+  cat(plistC(plist), sep = "\n")
+}
+
+attrLoc =
+  function(plist, rows = NULL, cols = NULL){
+    attr(plist, "Loc") = cbind(rows, cols)
+    class(plist) = "plist"
+    plist
+  }
+
+TCRsink =
+  function(ID, ...)
+  if(exists("TCRunout", envir = .GlobalEnv)){
+    varlist = list(...)
+    names(varlist) = gsub(" ", "", as.character(match.call()[-(1:2)]))
+    sink(TCRunout)
+    for(i in 1:length(varlist)){
+      cat("###TCR", ID, names(varlist)[i], "\n")
+      print(varlist[[i]])
+    }
+    sink()
+  }
+@ %def attrLoc TCRsink
+
+
+\section{Identification}
+\label{sec:identification}
+We separate the Identification functions into two groups.
+\begin{description}
+\item[Ident Main] contains the main function that is called by the
+  \emph{Front End} function.
+\item[Ident Low Level] contains supporting functions called by the
+  \emph{Ident Main} function.
+\end{description}
+<<Identification>>=
+<<Ident Main>>
+<<Ident Low Level>>
+@ 
+
+\subsection{Identification - Main Function}
+\label{sec:IdentMain}
+The purpose of the \verb|IdentMain| function is to identify where in
+the file the data is found and where the accompanying labels are,
+while ignoring any extraneous information we do not want. It should
+also identify the presence of multiple tables in the same file.
+
+It is intended for this procedure to involve a number of
+Identification algorithms that are used for a high degree of
+reliability and flexibility, but at this stage there is only a single
+algorithm.
+
+The algorithms used are:
+\begin{itemize}
+\item Ident by Most Common Boundary.
+\end{itemize}
+
+Algorithms planned for the near future are:
+\begin{itemize}
+\item Ident by Runs.
+\end{itemize}
+
+The output of \verb|IdentMain| will be a list containing two elements,
+\verb|rows| and \verb|cols|, each of which is a list containing these
+two elements:
+\begin{description}
+\item[label] - a vector of the rows or columns where the labels are
+  found.
+\item[data] - a vector of the rows or columns where the data are
+  found.
+\end{description}
+
+<<Ident Main>>=
+IdentMain =
+  function(datamat){
+    <<Ident by Most Common Boundary>>
+    <<Group Column Labels>>
+    TCRsink("IM", rowslist, colslist)
+    list(rows = rowslist, cols = colslist)
+  }
+@ %def IdentMain
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> rowslist
+$label
+[1] 1 2 3 4
+
+$data
+ [1]  5  6  7  8  9 10 11 12 13 14
+
+\end{verbatim}
+\begin{verbatim}
+> colslist
+$label
+[1] 1 2
+
+$data
+$data[1]
+[1] 4 5 6 7
+
+$data[2]
+[1]  8  9 10 11
+
+
+\end{verbatim}
+
+\subsubsection{Ident By Most Common Boundary}
+The \verb|IdentMostCommonBoundary| Low Level function is used to find
+the most common start and end rows and columns (the boundary) to
+search for a block (rectangular region) of numbers, which is assumed
+to be our table of data.
+<<Ident by Most Common Boundary>>=
+<<Get Non empty rows and cols>>
+<<Call Ident MostCommonBoundary>>
+<<Construct rowslist and colslist>>
+@ 
+
+<<Get Non empty rows and cols>>=
+rowNonempty = (1:nrow(datamat))[IdentNonEmpty(datamat, 1)]
+colNonempty = (1:ncol(datamat))[IdentNonEmpty(datamat, 2)]
+@ 
+
+<<Call Ident MostCommonBoundary>>=
+rowData = IdentMostCommonBoundary(datamat, 2)
+colData = IdentMostCommonBoundary(datamat, 1)
+## Temporary fix for first col being all numbers (e.g. years)
+if(colData[1] == 1) colData[1] = 2
+TCRsink("CIMCB", rowData, colData)
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> rowData
+[1]  5 14
+\end{verbatim}
+\begin{verbatim}
+> colData
+[1]  4 11
+\end{verbatim}
+
+We construct the interim \verb|rowslist| taking every non-empty row
+before the most common start of the numbers block (\verb|rowData[1]|)
+and assigning these to the \verb|label| region. The numbers block
+(which is bounded by \verb|rowData[1]| and \verb|rowData[2]|) is
+assigned to the \verb|data| region. The interim \verb|colslist| is
+constructed in the same manner.
+<<Construct rowslist and colslist>>=
+rowslist = list(label = rowNonempty[rowNonempty < rowData[1]],
+                data = rowNonempty[(rowNonempty >= rowData[1]) &
+                                   (rowNonempty <= rowData[2])])
+colslist = list(label = colNonempty[colNonempty < colData[1]],
+                data = colNonempty[(colNonempty >= colData[1]) &
+                                   (colNonempty <= colData[2])])
+TCRsink("CRAC", rowslist, colslist)
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> rowslist
+$label
+[1] 1 2 3 4
+
+$data
+ [1]  5  6  7  8  9 10 11 12 13 14
+
+\end{verbatim}
+\begin{verbatim}
+> colslist
+$label
+[1] 1 2
+
+$data
+[1]  4  5  6  7  8  9 10 11
+
+\end{verbatim}
+
+\subsubsection{Group Column Labels}
+We look for a repeating pattern in the column labels to handle cases
+of Misaligned Column Label (see Section
+\ref{sec:kp.MisalignedColumnLabel}).
+<<Group Column Labels>>=
+<<Generate Pattern vector>>
+<<Take Largest Pattern>>
+<<Group by Pattern>>
+@
+
+We loop through each row of the labels region and check for a pattern
+in either the contents of the cells (if they are all non-empty), or a
+pattern in which cells are empty (if any cells are empty), and store
+the results in \verb|Patvec| (Pattern Vector).
+<<Generate Pattern vector>>=
+curcol = colslist$data
+Patvec = NULL
+for(currow in rowslist$label){
+  curlabel = datamat[currow, curcol]
+  if(any(is.na(curlabel))){
+    if(!all(is.na(curlabel)))
+      Patvec = c(Patvec, IdentPattern(is.na(curlabel)))
+  } else Patvec = c(Patvec, IdentPattern(curlabel))
+}
+TCRsink("GPV", Patvec)
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> Patvec
+[1] 4 1 4
+\end{verbatim}
+
+Where multiple patterns are found, we assume the shorter patterns are
+patterns of families that are children to the parents of the largest
+pattern. Thus we always take the largest pattern found.
+
+Some problems with this and next chunk, refer to \verb|BUG-ID 2|.
+<<Take Largest Pattern>>=
+Patvec = max(Patvec)
+@ 
+
+If a pattern is found (\verb|NA| = No patterns found), we group the
+columns into separate elements in a list and update the
+\verb|colslist|. For easy handling later, irrespective of whether a
+pattern is found, \verb|colslist$data| is a list.
+<<Group by Pattern>>=
+if(!is.na(Patvec)){
+  megacolnum = length(curcol)/Patvec
+  megacollist = list()
+  for(i in 1:megacolnum)
+    megacollist =
+      c(megacollist, list(curcol[1:Patvec + Patvec * (i - 1)]))
+  colslist$data = megacollist
+} else colslist$data = list(curcol)
+@ 
+
+\subsection{Identification - Low Level Functions}
+\label{sec:IdentLowLevel}
+Here we discuss the low level functions that are called by the main
+Identification function. Each chunk corresponds to a separate low
+level function.
+<<Ident Low Level>>=
+<<Ident Non Empty>>
+<<Ident Pattern>>
+<<Ident Most Common Boundary>>
+@ 
+
+\subsubsection{IdentNonEmpty}
+Given a matrix (\verb|datamat|) and a margin (1 for rows, 2 for
+columns), return a vector giving the indices of non-empty rows or
+columns. Can specify a different empty identifying function (default
+\verb|is.na|). Procedure:
+\begin{enumerate}
+\item Compute \verb|isnonempty|, a logical vector about whether the
+  rows or cols are not empty.
+\item Use \verb|which| on \verb|isnonempty| to get indices.
+\end{enumerate}
+<<Ident Non Empty>>=
+IdentNonEmpty =
+  function(datamat, margin, emptyident = is.na){
+    isnonempty = apply(datamat, margin, function(x) !all(emptyident(x)))
+    which(isnonempty)
+  }
+@ %def IdentNonEmpty
+
+\subsubsection{IdentPattern}
+Attempt to discern a repeating pattern in \verb|vec|, which can be a
+vector of any type (which is coerced to \verb|character|). The
+returned value, \verb|res| is either \verb|NA| if no pattern is
+found. Or it is the grouping number for the repeating pattern, e.g.
+\begin{itemize}
+\item \verb|vec| = 1 1 1 1, then \verb|res| = 1
+\item \verb|vec| = 3 4 3 4, then \verb|res| = 2
+\item \verb|vec| = 1 2 3 1, then \verb|res| = \verb|NA|
+\end{itemize}
+\verb|IdentPattern| does this fairly efficiently by use of regular
+expressions. It combines the first \verb|i| elements of \verb|vec| and
+collapses this into a single string. A \verb|grep| is then called on
+the entire \verb|vec| that has been collapsed into a single string,
+checking to see if the entire string can be matched to some repeat of
+the aforementioned collapsed string of the first \verb|i| elements.
+
+For the moment it is possible for this to fail (and can even be
+intentionally gamed by providing something like
+\verb|vec = c(12, 1, 2)|, which will return a pattern of 1, when it
+should return \verb|NA|), so it should be changed to be more reliable
+(though less efficient).
+<<Ident Pattern>>=
+IdentPattern =
+  function(vec){
+    len = length(vec)
+    res = NA
+    for(i in 1:floor(len/2)){
+      curseg = paste("^(", paste(vec[1:i], collapse = ""),
+        ")+$", sep = "")
+      if(nchar(curseg) > 2559){
+        warning("Label lengths too long for regular expressions to ",
+                "work. IdentPattern has been aborted. A pattern may ",
+                "exist but it cannot be found with the current ",
+                "algorithm.")
+        break
+      } else if(length(grep(curseg, paste(vec, collapse = ""))) > 0){
+        res = i
+        break
+      }
+    }
+    res
+  }
+@ %def IdentPattern
+
+\subsubsection{Ident Most Common Boundary}
+Search for the most common first and last rows/cols to identify a
+block (rectangular region) of numbers. Procedure:
+\begin{enumerate}
+\item Suppose \verb|margin = 2|, then loop through each column and
+  search for cells containing numbers.
+\item Compute the first row with a number for each column
+  (\verb|nstarts|), and do the same for the last row (\verb|nends|).
+\item Return the most common first and last rows.
+\end{enumerate}
+
+<<Ident Most Common Boundary>>=
+IdentMostCommonBoundary =
+  function(datamat, margin){
+    isnumber = suppressWarnings(apply(datamat, margin,
+      function(x) which(!is.na(as.numeric(x)))))
+    nstarts = table(sapply(isnumber,
+      function(x) if(length(x) > 0) min(x) else NA))
+    nends = table(sapply(isnumber,
+      function(x) if(length(x) > 0) max(x) else NA))
+    as.numeric(names(c(which.max(nstarts), which.max(rev(nends)))))
+  }
+@ %def IdentMostCommonBoundary
+
+\section{Discern Parentage}
+\label{sec:parentage}
+We separate the Parentage functions into three groups.
+\begin{description}
+\item[Pare Front] is a simple `front-end' function that makes the
+  appropriate first call to \verb|PareMain|, and is the function
+  called by the \emph{Front End} function.
+\item[Pare Col] A specialised front-end to \verb|PareFront| that
+  handles various fringe cases for Discering Parentage for Column
+  Labels, before eventually calling \verb|PareFront|.
+\item[Pare Main] contains the main function that recursively call
+  itself until the all parentage is discerned.
+\item[Pare Low Level] contains supporting functions called by the
+  \emph{Pare Main} function.
+\end{description}
+
+See the section on the main function (Section \ref{sec:PareMain}) for
+details on the purpose of the \emph{Discern Parentage} stage.
+<<Discern Parentage>>=
+<<Pare Front>>
+<<Pare Col>>
+<<Pare Main>>
+<<Pare Low Level>>
+@ 
+
+\subsubsection{plist}
+\label{sec:plist.explain}
+explanation.
+
+\subsection{Parentage - Front End Function}
+\label{sec:PareFront}
+This front end function takes the \verb|datamat| and constructs an
+initialising \verb|plist| (Parentage List), which is used to make the
+first call to the main function.
+<<Pare Front>>=
+PareFront =
+  function(datamat)
+  PareMain(datamat = datamat, plist =
+           list(rows = 1:nrow(datamat), cols = 1:ncol(datamat)))
+@ %def PareFront
+
+\subsubsection{Pare Col}
+\label{sec:PareCol}
+The Parentage functions were initially designed to work with Row
+Labels only, however we can also use them to discern the parentage of
+Col Labels once we handle a few differences. We define a front-end to
+the front-end function called \verb|PareCol| to do this.
+<<Pare Col>>=
+PareCol =
+  function(datamat, datacols, labelrows){
+    <<Case Misaligned Col Parent>>
+    datacols = unlist(datacols)
+    <<Collapse Fullrow Labels>>
+  <<Call Pare Front>>
+}
+@ %def PareCol
+
+Unlike with Row Labels where the parents are reliably in the top-left
+corner of their family, Col Label parents are sometimes
+`misaligned'. In some cases this arises as Col Label parents might be
+centred over their family. Other times, it happens for no apparent
+logical reason.
+
+Regardless of the cause, we need to correct for this. During the
+Identification phase, we Grouped the Column Labels based on repeating
+patterns. We use these groupings to identify the families, and if the
+parent is not found where it should be, we simply shift it over to the
+right place.
+<<Case Misaligned Col Parent>>=
+for(j in 1:length(datacols)){
+  curfamily = datamat[labelrows, datacols[[j]], drop = FALSE]
+  firstcolempty = is.na(curfamily[,1])
+  if(any(firstcolempty))
+    for(i in which(firstcolempty)){
+      notempty = !is.na(curfamily[i,])
+      if(sum(notempty) == 1){
+        curfamily[i, 1] = curfamily[i, notempty]
+        curfamily[i, notempty] = NA
+      }
+    }
+  datamat[labelrows, datacols[[j]]] = curfamily
+}
+@ 
+
+It is also quite common for Col Labels that are too wide to be
+physically split over multiple rows to manage the width of the
+labels. For now, we simply assume that any rows that are not full (and
+hence not parents) should all really be a single row of children, and
+collapse these.
+<<Collapse Fullrow Labels>>=
+notfullrows = apply(datamat[labelrows, datacols, drop = FALSE], 1,
+  function(x) any(is.na(x)))
+if(any(diff(notfullrows) > 1))
+  warning("full rows followed by not full rows!")
+pastestring = ""
+pasterows = which(!notfullrows)
+for(i in 1:length(pasterows))
+  pastestring[i] = paste("datamat[labelrows[", pasterows[i],
+               "], datacols]", sep = "")
+collapsedlabels = eval(parse(text = paste("paste(",
+                               paste(pastestring, collapse = ", "),
+                               ")", sep = "")))
+@ 
+
+Once the above is handled, we can simply transpose our Col Labels and
+call \verb|PareFront| on it.
+<<Call Pare Front>>=
+labeldatamat = rbind(datamat[labelrows[notfullrows], datacols],
+  collapsedlabels)
+PareFront(t(labeldatamat))
+@ 
+
+\subsection{Parentage - Main Function}
+\label{sec:PareMain}
+The purpose of the \verb|PareMain| function is to identify (or
+\emph{Discern}, to better differentiate this stage from the
+\emph{Identification} stage) hierarchical relationships (the
+\emph{Parentage}) in the data.
+
+It first makes various checks for fringe cases, then calls various
+detection algorithms (\verb|Pare Low Levels|) to discern the
+parentage.
+<<Pare Main>>=
+PareMain =
+  function(datamat, plist){
+    <<If only one column>>
+    <<If first column empty>>
+    <<If only one row>>
+    <<If first cell empty>>
+    <<Otherwise call Pare Low Levels>>
+    class(res) = "plist"
+    res
+  }
+@ %def PareMain
+
+If only one column is found then this means we are in the right-most
+column (or there was only one column to begin with), and hence the
+currently examined cells cannot be parents. We return the rows of
+these children as a vector, with names that correspond to their
+labels.
+<<If only one column>>=
+if(length(plist$cols) == 1){
+  res = structure(plist$rows, .Names = datamat[plist$rows, plist$cols])
+  res = attrLoc(res, cols = plist$col)
+  TCRsink("IOOC", plist, res)
+}
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> plist
+$rows
+[1] 3 4
+
+$cols
+[1] 2
+
+\end{verbatim}
+\begin{verbatim}
+> res
++ Row Child-Child1 (3, 2)
++ Row Child-Child2 (4, 2)
+\end{verbatim}
+
+If the first column is found to be empty, then we will shift to the
+next column (which we know exists because we passed the check for only
+one column).
+<<If first column empty>>=
+else if(all(is.na(datamat[plist$rows, plist$cols[1]]))){
+  plist$cols = plist$cols[-1]
+  res = PareMain(datamat, plist)
+}
+@ 
+
+If only one row is found then our row is a parent to itself (we know
+there are children in the row as we passed the check for only one
+column). We return the row as a numeric vector, nested in a list using
+correct parentage and names of the parentage within the row.
+<<If only one row>>=
+else if(length(plist$rows) == 1){
+  res = structure(plist$rows,
+    .Names = datamat[plist$rows, plist$cols[length(plist$cols)]])
+  res = attrLoc(res, cols = plist$cols[length(plist$cols)])
+  for(i in (length(plist$cols) - 1):1){
+    res = list(res)
+    names(res) = datamat[plist$rows, plist$cols[i]]
+    res = attrLoc(res, rows = plist$rows, cols = plist$cols[i])
+  }
+  TCRsink("IOOR", plist, res)
+}
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> res
+Never occurs
+\end{verbatim}
+
+If the first cell is empty, after all previous checks, then this is an
+unrecognised format and we return a warning message.
+<<If first cell empty>>=
+else if(is.na(datamat[plist$rows[1], plist$cols[1]])){
+  warning("cell[1, 1] is empty")
+  print(plist)
+  res = NA
+}
+@ 
+
+If we have passed all the checks, we can then call the Low Level
+\verb|Pare| functions. We first call \verb|ByEmptyRight| to check for
+\emph{empty right} situations. If none are found, it returns
+\verb|NA|, in which case we try \verb|ByEmptyBelow| instead.
+
+We then loop through each element of the returned list and call the
+main function, as per the recursive nature of the function.
+<<Otherwise call Pare Low Levels>>=
+else{
+  res = PareByEmptyRight(datamat, plist)
+  if(any(is.na(res)))
+    res = PareByEmptyBelow(datamat, plist)
+  for(i in 1:length(res))
+    res[[i]] = PareMain(datamat, res[[i]])
+  res
+}
+@ 
+
+\subsection{Parentage - Low Level Functions}
+\label{sec:PareLowLevel}
+The Low Level Parentage functions are called by the Main Parentage
+function. In particular, \verb|ByEmptyRight| is always called
+first. Then \verb|ByEmptyBelow| is called on the results of the above.
+<<Pare Low Level>>=
+<<Pare By Empty Right>>
+<<Pare By Empty Below>>
+@ 
+
+\subsubsection{Pare By Empty Right}
+We check to see if we have an \emph{empty right} situation. If we do
+not, we return \verb|NA|.
+<<Pare By Empty Right>>=
+PareByEmptyRight =
+  function(datamat, plist)
+  with(plist,
+       if(all(is.na(datamat[rows[1], cols[-1]]))){
+         <<Check for Other Empty Rights>>
+         <<Case Single Empty Right>>
+         <<Case Multiple Empty Rights>>
+         res
+       } else NA)
+@ %def PareByEmptyRight
+
+\begin{table}[!h]
+\begin{minipage}{0.4\linewidth}
+  \begin{tabular}{| r | l | l |}
+    \hline
+     1 & \textbf{\textit{New Zealand}} &        \\
+     2 & \textbf{Auckland}             &        \\
+     3 & Accounting                    & Male   \\
+     4 &                               & Female \\
+     5 & Economics                     & Male   \\
+     6 &                               & Female \\
+     7 & Statistics                    & Male   \\
+     8 &                               & Female \\
+     9 & \textbf{Wellington}           &        \\
+    10 & Economics                     & Male   \\
+    11 &                               & Female \\
+    12 & Statistics                    & Male   \\
+    13 &                               & Female \\
+    14 & \textbf{\textit{Australia}}   &        \\
+    15 & \textbf{Sydney}               &        \\
+    16 & Accounting                    & Male   \\
+    17 &                               & Female \\
+    18 & Economics                     & Male   \\
+    19 &                               & Female \\
+    \hline
+  \end{tabular}
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+  Consider the toy example on the left.
+  
+  In this case we do not have a simple \verb|ByEmptyRight| structure.
+  We have \emph{super-parents} in the form of countries (New Zealand
+  and Australia), and also \emph{parents} in the form of cities
+  (Auckland, Wellington and Sydney). To handle situations such as
+  this, we must \textbf{Check for Other Empty Rights}.
+  
+  If only a \textbf{Single Empty Right} is found, the situation is
+  simple and we simply pass on the children of the single parent for
+  the next iteration of \verb|PareMain|.
+  
+  However, if \textbf{Multiple Empty Rights} are found, we must
+  identify the super-parents, and pass on the \emph{children} of these
+  super-parents (which would, in turn, contain parents and their
+  children) as a list, to be handled in the next iteration of
+  \verb|PareMain|. In this example, we would have a list of length
+  2. The first element of the list would contain the \verb|plist| with
+  \verb|rows| 2 to 13 (corresponding to the children of the New
+  Zealand super-parent). The second element would have \verb|rows| 15
+  to 19.
+\end{minipage}
+\end{table}
+
+<<Check for Other Empty Rights>>=
+emptyrights = apply(datamat[rows, cols[-1], drop = FALSE], 1,
+  function(x) all(is.na(x)))
+rowemptyright = rows[emptyrights]
+@ 
+
+In the case of only a single empty right, we know there is only a
+single parent, which is the first line. Thus we take everything except
+the first line (which will be the rows of the children of this parent)
+and pass this through with correct naming.
+<<Case Single Empty Right>>=
+if(length(rowemptyright) == 1){
+  res = list(list(rows = rows[-1], cols = cols))
+  names(res) = datamat[rows[1], cols[1]]
+  res = attrLoc(res, rows = rows[1], cols = cols[1])
+  TCRsink("CSER", res)
+}
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> res
+Never occurs
+\end{verbatim}
+
+In the case of multiple empty rights, we first call \verb|diff| to
+compute the gap in rows between the empty rights. If the value of
+\verb|rowdiff[i]| is 1, this means there is no gap between the
+i\textsuperscript{th} \verb|rowemptyright| and the (i + 1)
+\verb|rowemptyright|. This happens with \emph{super-parents} as
+described in the example above. In this case, we gather these
+super-parents and ignore all other \verb|rowemptyright| (the parents
+inside the super-parents will be handled at the next iteration of
+\verb|PareMain|). Note, we assume there are never any
+super-super-parents (i.e. we can only handle a maximum of 2-levels of
+parentage in the same column).
+
+Whether or not super-parents were identified, we compute the rows for
+the children of each parent (or super-parent) identified by
+\verb|rowemptyright| and pass this through as a list, with correct
+naming.
+<<Case Multiple Empty Rights>>=
+else{
+  rowdiff = diff(rowemptyright)
+  if(any(rowdiff == 1))
+    rowemptyright = rowemptyright[c(rowdiff == 1, FALSE)]
+  
+  rowstart = pmin(rowemptyright + 1, max(rows))
+  rowend = c(pmax(rowemptyright[-1] - 1, min(rows)), max(rows))
+  
+  res = list()
+  for(i in 1:length(rowstart))
+    res[i] = list(list(rows = rowstart[i]:rowend[i], cols = cols))
+  names(res) = datamat[rowemptyright, cols[1]]
+  res = attrLoc(res, rows = rowemptyright, cols = cols[1])
+  TCRsink("CMER", res)
+}
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> res
++ Row Super-Parent (1, 1)
+- + rows
+- - 2 3 4 5 6 7 8 9 10
+- + cols
+- - 1 2
+\end{verbatim}
+
+\subsubsection{Pare By Empty Below}
+We check which cells are empty below (there should be at least 1 based
+on previous checks). Based on this, we compute the rows for the
+children of each parent and pass this through as a list, with correct
+naming.
+<<Pare By Empty Below>>=
+PareByEmptyBelow =
+  function(datamat, plist)
+  with(plist, {
+    emptybelow = is.na(datamat[rows, cols[1]])
+    rowstart = rows[!emptybelow]
+    rowend = c(rowstart[-1] - 1, max(rows))
+    res = list()
+    for(i in 1:length(rowstart))
+      res[i] = list(list(rows = rowstart[i]:rowend[i], cols = cols[-1]))
+    names(res) = datamat[rowstart, cols[1]]
+    res = attrLoc(res, rows = rowstart, cols = cols[1])
+    TCRsink("PBEB", res)
+    res
+  })
+@ %def PareByEmptyBelow
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> res
++ Row Child1 (3, 1)
+- + rows
+- - 3 4
+- + cols
+- - 2
++ Row Child2 (5, 1)
+- + rows
+- - 5 6
+- + cols
+- - 2
+\end{verbatim}
+
+\section{Reconstruction}
+\label{sec:reconstruction}
+We separate the Reconstruction functions into two groups.
+\begin{description}
+\item[Recons Main] contains the main function that is called by the
+  \emph{Front End} function.
+\item[Recons Low Level] contains supporting functions called by the
+  \emph{Recons Main} function.
+\end{description}
+<<Reconstruction>>=
+<<Recons Main>>
+<<Recons Low Level>>
+@
+
+\subsection{Reconstruction - Main Function}
+\label{sec:ReconsMain}
+The \verb|ReconsMain| function is, in a manner of speaking, the true
+\verb|TableToLongForm| function, as it makes the calls to
+\verb|IdentMain| and \verb|PareFront|, in conjunction with its own
+\verb|Recons Low Level| functions, to carry out the conversion.
+<<Recons Main>>=
+ReconsMain =
+  function(datamat, IdentResult){
+    <<Call Ident Main>>
+    <<Reconstruct Row Labels>>
+    <<Reconstruct Col Labels>>
+  }
+@ 
+
+Call \verb|IdentMain| and assign them meaningful names for
+convenience, the \verb|labelcols| being the columns where the labels
+can be found, etc. These should all be a \verb|vector|, except
+\verb|datacols| which is a \verb|list|.
+
+<<Call Ident Main>>=
+if(is.null(IdentResult))
+  IdentResult = IdentMain(datamat)
+labelcols = IdentResult$cols$label
+datacols = IdentResult$cols$data
+labelrows = IdentResult$rows$label
+datarows = IdentResult$rows$data
+@ %def labelcols datacols labelrows datarows
+
+We create a subset of \verb|datamat| that contains just the Row
+Labels. We also remove any columns that are completely empty
+(N.B. this may no longer be necessary, need to do some testing).
+
+We call \verb|PareFront| on our subset to discern the parentage of the
+Row Labels. We then use this to reconstruct the portion of the
+LongForm Dataframe relating to the Row Labels and assign this to
+\verb|rowvecs|.
+<<Reconstruct Row Labels>>=
+datamatRowLabels = datamat[datarows, labelcols, drop = FALSE]
+datamatRowLabels = datamatRowLabels[,
+  IdentNonEmpty(datamatRowLabels, 2), drop = FALSE]
+rowplist = PareFront(datamatRowLabels)
+rowvecs = ReconsRowLabels(rowplist)
+TCRsink("RRL", rowplist, rowvecs[1:4,])
+@ %def rowplist rowvecs
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> rowplist
++ Row Super-Parent (1, 1)
+- + Row Parent1 (2, 1)
+- - + Row Child1 (3, 1)
+- - - + Row Child-Child1 (3, 2)
+- - - + Row Child-Child2 (4, 2)
+- - + Row Child2 (5, 1)
+- - - + Row Child-Child1 (5, 2)
+- - - + Row Child-Child2 (6, 2)
+- + Row Parent2 (7, 1)
+- - + Row Child1 (8, 1)
+- - - + Row Child-Child1 (8, 2)
+- - - + Row Child-Child2 (9, 2)
+- - + Row Child2 (10, 1)
+- - - + Row Child-Child2 (10, 2)
+\end{verbatim}
+\begin{verbatim}
+> rowvecs[1:4,]
+ [,1]               [,2]          [,3]         [,4]              
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child2"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child2"
+\end{verbatim}
+
+Due to the various fringe cases that exist with Col Labels, we cannot
+simply call \verb|PareFront| and must instead call \verb|PareCol|.  We
+then create a subset of \verb|datamat| that contains just the Col
+Labels and call \verb|ReconsColLabels| which in truth reconstruct the
+entire LongForm Dataframe by making use of the \verb|rowvecs|
+generated above.
+<<Reconstruct Col Labels>>=
+colplist = PareCol(datamat, datacols, labelrows)
+datamatColLabels = datamat[datarows[unlist(rowplist)], unlist(datacols)]
+res = ReconsColLabels(colplist, datamatColLabels, rowvecs)
+TCRsink("RCL", colplist, res[1:4,])
+list(datafr = res, datamat = datamat, IdentResult = IdentResult,
+     rowplist = rowplist, colplist = colplist)
+@
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> colplist
++ Column Parent1 (1, 2)
+- + Column Child1 (1, 3)
+- + Column Child2 (2, 3)
+- + Column Child3 (3, 3)
+- + Column Child4 (4, 3)
++ Column Parent2 (5, 2)
+- + Column Child1 (5, 3)
+- + Column Child2 (6, 3)
+- + Column Child3 (7, 3)
+- + Column Child4 (8, 3)
+\end{verbatim}
+\begin{verbatim}
+> res[1:4,]
+         UNKNOWN          UNKNOWN     UNKNOWN    UNKNOWN          UNKNOWN
+1 Column Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child1
+2 Column Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child2
+3 Column Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child1
+4 Column Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child2
+  Column Child1 Column Child2 Column Child3 Column Child4
+1            12            22            32            42
+2            13            23            33            43
+3            14            24            34            44
+4            15            25            35            45
+\end{verbatim}
+
+\subsection{Reconstruction - Low Level Functions}
+\label{sec:ReconsLowLevel}
+The Low Level Reconstruction functions are called by the Main
+Reconstruction function. In particular, \verb|ReconsRowLabels| is
+always called first and its results are one of the arguments for
+\verb|ReconsColLabels|, which finishes the reconstruction of the
+entire LongForm Dataframe.
+<<Recons Low Level>>=
+<<Recons Row Labels>>
+<<Recons Column Labels>>
+@ 
+
+\subsubsection{Reconstruction - Row Labels}
+\label{sec:ReconsRowLabels}
+\verb|ReconsRowLabels| iterates down the row parentage list
+(\verb|plist|) recursively, extracting the names and using this to
+construct the columns of the finished LongForm Dataframe corresponding
+to the row labels. The final output is what was shown in the
+\emph{Reconstruct Row Labels} chunk above as \verb|rowvecs[1:4,]|.
+<<Recons Row Labels>>=
+ReconsRowLabels =
+  function(plist)
+  if(is.list(plist)){
+    rowvecs = as.list(names(plist))
+    for(i in 1:length(rowvecs))
+      rowvecs[[i]] = cbind(rowvecs[[i]], ReconsRowLabels(plist[[i]]))
+    do.call(rbind, rowvecs)
+  } else as.matrix(names(plist))
+@ %def ReconsRowLabels
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> rowvecs[1:4,]
+ [,1]               [,2]          [,3]         [,4]              
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child2"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child2"
+\end{verbatim}
+
+\subsubsection{Reconstruction - Column Labels}
+\label{sec:ReconsColLabels}
+As with the row labels, \verb|ReconsColLabels| iterates down the
+column parentage list (\verb|plist|) recursively. We also need to
+handle the parents differently from the lowest level child. The final
+output is what was shown in the \emph{Reconstruct Col Labels} chunk
+above as \verb|res[1:4,]|.
+<<Recons Column Labels>>=
+ReconsColLabels =
+  function(plist, datamat, rowvecs){
+    <<Recons Col Parents>>
+    <<Recons Col Children>>
+    datfr
+  }
+@ %def ReconsColLabels
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> res[1:4,]
+         UNKNOWN          UNKNOWN     UNKNOWN    UNKNOWN          UNKNOWN
+1 Column Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child1
+2 Column Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child2
+3 Column Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child1
+4 Column Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child2
+  Column Child1 Column Child2 Column Child3 Column Child4
+1            12            22            32            42
+2            13            23            33            43
+3            14            24            34            44
+4            15            25            35            45
+\end{verbatim}
+
+Any parents are used to construct additional columns of factors (the
+labels of the parents) for the LongForm Dataframe, which is attached
+to the portion previously constructed in \verb|ReconsRowLabels|.
+<<Recons Col Parents>>=
+if(is.list(plist)){
+  colvecs = as.list(names(plist))
+  for(i in 1:length(colvecs)){
+    colvecs[[i]] = cbind(colvecs[[i]],
+             ReconsColLabels(plist[[i]], datamat, rowvecs))
+    colnames(colvecs[[i]])[1] = "UNKNOWN"
+  }
+  datfr = do.call(rbind, colvecs)
+}
+@ 
+
+For the lowest level child, we extract the relevant `data bits' from
+the original table and bind it to our Dataframe, using the lowest
+level child as the labels of these columns of data values.
+<<Recons Col Children>>=
+else{
+  datbit = datamat[,plist]
+  mode(datbit) = "numeric"
+  ## Specify row.names to avoid annoying warnings
+  datfr =
+    cbind(as.data.frame(rowvecs, row.names = 1:nrow(rowvecs)), datbit)
+  colnames(datfr) =
+    c(rep("UNKNOWN", length = ncol(rowvecs)), names(plist))
+}
+@ 
+
+\section{Chunk Index}
+\label{sec:chunk-index}
+\nowebchunks
+
+\section{Identifier Index}
+\label{sec:identifier-index}
+Numbers indicate the chunks in which the function appears.
+Underline indicates the chunk where the function is defined.
+\medskip
+
+\nowebindex
+\newpage
+
+\addcontentsline{toc}{section}{References}
+\nocite{*}
+\bibliographystyle{./elsart-harv} % elsart-harv,plain,unsrt,alpha
+\bibliography{./TableToLongForm_refs}
+
+\end{document}

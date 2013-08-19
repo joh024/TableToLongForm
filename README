@@ -1,0 +1,9 @@
+TableToLongForm automatically converts hierarchical Tables intended
+for a human reader into a simple LongForm Dataframe that is machine
+readable. It does this by recognising positional queues present in
+the hierarchical Table (which would normally be interpreted visually
+by the human brain) to decompose, then reconstruct the data into a
+LongForm Dataframe. This repository contains the base Literate Program
+(Rnw) along with the Literate Documents (pdf).
+
+Queries should be directed to joh024@aucklanduni.ac.nz

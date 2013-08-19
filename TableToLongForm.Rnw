@@ -1,0 +1,7602 @@
+\documentclass[a4paper]{article}
+\addtolength{\oddsidemargin}{-.4in}
+\addtolength{\evensidemargin}{-.4in}
+\addtolength{\textwidth}{.8in}
+\addtolength{\voffset}{-.8in}
+\addtolength{\textheight}{1.2in}
+\usepackage{noweb}
+\noweboptions{english}
+\newcommand{\blankpage}{\begin{quote}\end{quote}}
+\newcommand{\itemverb}[1]{\item[\texttt{#1}]}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage[multiple]{footmisc}
+\begin{document}
+\renewcommand\abstractname{\large Abstract}
+%-----------------------------------------------------------------------
+% \begin{titlepage}
+  \title{\textbf{A Literate Program for\\
+      Converting Tables to\\
+      LongForm Dataframes}}
+  \author{\textit{Jimmy Oh}\\
+    [12pt] Department of Statistics \\ University of Auckland}
+\date{}
+\maketitle
+\codemargin=24pt
+\begin{abstract}\normalsize
+  TableToLongForm automatically converts hierarchical Tables intended
+  for a human reader into a simple LongForm Dataframe that is machine
+  readable. It does this by recognising positional queues present in
+  the hierarchical Table (which would normally be interpreted visually
+  by the human brain) to decompose, then reconstruct the data into a
+  LongForm Dataframe. This document provides a gallery of all
+  recognised patterns and structures, with accompanying toy examples,
+  before finally going into depth on the workings of the code itself.
+\end{abstract}
+\tableofcontents
+
+\subsection*{On Literate Programs}
+\label{sec:literate.program}
+This software is presented as a \emph{literate program} written in the
+\emph{noweb} format (\citealt{noweb}). It serves as both the
+documentation and container of the literate program. The \verb|noweb|
+file can be used to produce both the \emph{literate document} and the
+executable code.
+
+The literate document is separated into \emph{documentation chunks}
+and named \emph{code chunks}. Each \emph{code chunk} can contain code
+directly, or contain references to other \emph{code chunks} which act
+as placeholders for the contents of the respective \emph{code
+  chunk}. The name of each \emph{code chunk} should serve as a short
+description of the code it contains. Thus each \emph{code chunk}
+provides an overview of its purpose by either directly containing
+code, or by containing the names of other \emph{code chunks}. The
+reader is then free to delve deeper into the respective \emph{code
+  chunks} if desired.
+\newpage
+
+\section{Introduction}
+\label{sec:introduction}
+\subsection{Motivation}
+\label{sec:motivation}
+In recent times there has been a movement toward \emph{Open Data},
+particularly for government data\footnote{``In many countries across
+  the world, discussions, policies and developments are actively
+  emerging around open access to government data.''
+  \cite{JoCI}}\footnote{``Over 100 OGD [Open Government Data]
+  initiatives are active across the globe, ranging from community-led
+  OGD projects in urban India, to a World Bank sponsored OGD programme
+  in Kenya, government-led developments in Brazil, civil-society
+  initiated work in Russia, and a World Wide Web Foundation supported
+  programme in Ghana.'' \cite{JoCI929}}, yet there is still a
+prevalence of data releases being for direct human consumption, rather
+than for machine consumption. One symptom of this is the release of
+data in tabular form that relies on the human ability to identify
+patterns and discern structure, in order to decipher the data
+(henceforth referred to as a Table). Such tables are difficult to read
+and analyse with the computer, signficantly limiting potential
+applications of this `open' data.
+
+LongForm is a simple alternative method of releasing the data that,
+due to its simplicity, is both easy to implement and is machine
+readable, greatly enhancing potential applications of the data. It is
+easy to go from a simple format such as a LongForm Dataframe to any
+number of other forms of presentation, including hierarchical Tables
+more suitable for direct human consumption. However the converse is
+rarely true. This is where TableToLongForm comes in, providing a way
+to automatically convert hierarchical Tables to a simple LongForm
+Dataframe, thus enabling much greater utilisation of the data.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{./TestCase/StatsNZLabourForce.pdf}
+  \caption{An example of a hierarchical Table. The data is Labour
+    Force Status Survey data from Infoshare, \cite{Infoshare} and in
+    total spans 240 columns, making it suitable for neither man nor
+    machine. However it is relatively tame in terms of how unsuitable
+    for machines Tables can get and so could, with some manual labour,
+    be read by a machine.}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{./TestCase/StatsNZLabourForceconverted.pdf}
+  \caption{An example of a LongForm Dataframe. This is the Labour
+    Force Status Survey data after automatic conversion with
+    TableToLongForm. Most, if not all statistical software (including
+    spreadsheet software like Excel) can read, manipulate and run
+    analyses on this without any problems.}
+\end{figure}
+
+\subsection{The Plan of Attack}
+\label{sec:plan}
+Unless the Table is horrible beyond mortal imagination, it should have
+some kind of pattern, such that a human will be able to discern the
+structure and hence understand the data it represents. This code
+attempts to algorithmically search for such patterns, discern the
+structure, then reconstruct the data into a LongForm Dataframe. Refer
+to Section \ref{sec:known.patterns} for a full gallery of currently
+recognised patterns.
+
+The task can be seen to consist of three phases:
+\begin{itemize}
+\item Phase One is Identification (Section \ref{sec:identification}),
+  which involves identifying the rows and columns where the labels and
+  the data can be found.
+\item Phase Two is Discerning the Parentage (Section
+  \ref{sec:parentage}), which involves identifying the hierarchical
+  structure of the data, based on the row and column labels.
+\item Phase Three is Reconstruction (Section
+  \ref{sec:reconstruction}), where we use what we've found in the
+  first two phases to reconstruct the data into a LongForm Dataframe.
+\end{itemize}
+
+\subsection{Recognised Patterns}
+\label{sec:known.patterns}
+Here we list, with toy examples, all the recognised patterns and
+structures. TableToLongForm should be able to process any combination
+of these patterns to automatically convert many different types of
+tables. The last example is a \emph{complete} example that contains
+most of the recognised patterns in a single horrible table.
+
+\subsubsection{By Empty Below}
+\label{sec:kp.byemptybelow}
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyBelow.pdf}\\
+The most simple type of parentage, here the \emph{parent} and
+\emph{children} are in different columns and we can see which of the
+children belong to which parent through the use of empty space below
+each parent.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyBelowconverted.pdf}
+
+\subsubsection{By Empty Below Transposed}
+\label{sec:kp.byemptybelowT}
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyBelowT.pdf}\\
+We note that parentage patterns recognised for row labels can often be
+applied to the transpose of column labels. This is how TableToLongForm
+deciphers most column labels, with some exceptions.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyBelowTconverted.pdf}
+
+\subsubsection{By Empty Right 1}
+\label{sec:kp.byemptyright1}
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight1.pdf}\\
+In this situation we have children in the same column as their
+parent. We can still recognise these as children if the children have
+children (\emph{Child-Child}) in a different column, while the parent
+does not (and hence is Empty Right).
+
+Note the values pertaining to the Parent (if any) are discarded. This
+is because they are assumed to simply represent the sum of their
+children's values. It is planned for a sum-check to be implemented
+later to make this more robust.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight1converted.pdf}
+
+\subsubsection{By Empty Right 2}
+\label{sec:kp.byemptyright2}
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight2.pdf}\\
+Here we have both Empty Below and Empty Right. Either algorithm can
+handle this situation, but simply due to the ordering of the
+algorithms such situations are handled as Empty Right.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight2converted.pdf}
+
+\subsubsection{By Empty Right 3}
+\label{sec:kp.byemptyright3}
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight3.pdf}\\
+The ``parent-child in the same column'' situation can be extended
+further. Here we have parents (\emph{Super-Parent}) who have children
+(\emph{Parent}), who each further have children (\emph{Child}), all in
+the same column. Such situations can still be recognised if the
+lowest-level children in the column (\emph{Child}) have children in a
+different column (\emph{Child-Child}), while its direct parents
+(\emph{Parent}) each have children in the same column (\emph{Child})
+but not in a different column (is Empty Right), and the top-most
+parents (\emph{Super-Parents}) also have no children in a different
+column (is also Empty Right).
+
+The algorithm cannot currently handle super-super-parents.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight3converted.pdf}
+
+\subsubsection{Multi-row Column Label}
+\label{sec:kp.MultiRowColumnLabel}
+\includegraphics[width=\textwidth]{./TestCase/ToyExMultiRowColumnLabel.pdf}\\
+Often column labels are physically split over multiple rows rather
+than making use of line breaks in the same cell. In such occurences,
+any row not identified as a parent are collapsed into a single row of
+labels. It is eventually planned for pattern recognition to be used
+here to make this collapsing smarter.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExMultiRowColumnLabelconverted.pdf}
+
+\subsubsection{Misaligned Column Label}
+\label{sec:kp.MisalignedColumnLabel}
+\includegraphics[width=\textwidth]{./TestCase/ToyExMisalignedColumnLabel.pdf}\\
+Often column parents are physically centred over their children
+(N.B. where a spreadsheet's cell-merge feature is used to do the
+centering, the actual value is usually stored in the top-left cell and
+hence causes no problems). TableToLongForm makes use of pattern
+recognition to identify repeating patterns in the labels of the
+children, to help discern the correct parent for the children.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExMisalignedColumnLabelconverted.pdf}
+
+\subsubsection{Find Single Table}
+\label{sec:kp.FindSingleTable}
+\includegraphics[width=\textwidth]{./TestCase/ToyExFindSingleTable.pdf}\\
+A table is often found amongst miscellaneous information we do not
+want. TableToLongForm is intended to have several algorithms to
+identify not only a single table, but multiple tables on the same
+`page'. Currently however, it can only identify a single table per
+`page' by searching for a block (rectangular region) of numbers,
+which is assumed to be our table of data.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExFindSingleTableconverted.pdf}
+
+\subsubsection{Complete Example}
+\label{sec:kp.Complete}
+\includegraphics[width=\textwidth]{./TestCase/ToyExComplete.pdf}\\
+A complete example containing a combination of many of the patterns
+listed above.\\
+\includegraphics[width=\textwidth]{./TestCase/ToyExCompleteconverted.pdf}
+
+\section{Code Overview}
+\label{sec:code.overview}
+TableToLongForm is structured as follows.
+<<TableToLongForm.R>>=
+<<document header>>
+<<Front End>>
+<<Identification>>
+<<Discern Parentage>>
+<<Reconstruction>>
+<<Back End>>
+@
+
+We place a document header at the top of the extracted code to
+encourage people to read the literate description rather than
+attempting to study the code alone.
+<<document header>>=
+##----------------------------------------------------------------------
+## The code in this .R file is machine generated from the literate
+##  program, TableToLongForm.Rnw
+## Documentation can be found in the literate description for this
+##  program, TableToLongForm.pdf
+##----------------------------------------------------------------------
+@
+
+\subsection{Front End}
+\label{sec:front.end}
+The main function \verb|TableToLongForm| is defined here. For most
+users this is the only function they will call. However, the majority
+of the supporting functions are not hidden and therefore can easily be
+viewed and/or modified by users.
+<<Front End>>=
+TableToLongForm =
+  function(datamat, IdentResult = NULL,
+           fulloutput = FALSE, diag = FALSE, diagname = NULL){
+    if(diag){
+      if(is.null(diagname)) diagname = deparse(substitute(datamat))
+      assign("TCRunout", file(paste0(diagname, ".TCRunout"),
+                              "w"), envir = .GlobalEnv)
+      on.exit({
+        close(TCRunout)
+        rm("TCRunout", envir = .GlobalEnv)
+      })
+    }
+    
+    fullout = ReconsMain(datamat, IdentResult)
+    if(fulloutput) fullout else fullout$datafr
+  }
+@
+
+\subsection{Back End}
+\label{sec:back.end}
+Various code, mainly to help produce diagnostic output, can be ignored
+by most users.
+
+\paragraph{print.plist}
+A print method for class \verb|plist|, which are nested lists with a
+numeric vector at the lowest level; \verb|print.default| is rather
+inefficient in displaying such nested lists.
+
+\paragraph{TCRsink}
+Sinks the output to \verb|TCRunout| for diagnostic output. Requires
+the existence of \verb|TCRunout| which is created by the main function
+\verb|TableToLongForm| when \verb|diag = TRUE|.
+
+Spaces may be introduced by \verb|match.call|, thus any spaces in the
+args of \emph{variables to sink} (that is, the arguments supplied via
+\verb|...|) are removed without warning.
+
+<<Back End>>=
+print.plist = function(plist){
+  plistC = function(plist){
+    pLoc = attr(plist, "Loc")
+    if(is.list(plist)){
+      namevec = names(plist)
+      if(!is.null(pLoc))
+        namevec = paste0(names(plist),
+          " (", pLoc[,"rows"], ", ", pLoc[,"cols"], ")")
+      namelist = as.list(namevec)
+      for(i in 1:length(namelist))
+        namelist[[i]] =
+          c(paste("+", namelist[[i]]),
+            paste("-", plistC(plist[[i]])))
+      do.call(c, namelist)
+    } else{
+      if(!is.null(names(plist))){
+        namevec = names(plist)
+        if(!is.null(pLoc))
+          namevec = paste0(names(plist),
+            " (", plist, ", ", pLoc[,"cols"], ")")
+        paste("+", namevec)
+      } else paste(plist, collapse = " ")
+    }
+    }
+  cat(plistC(plist), sep = "\n")
+}
+
+attrLoc =
+  function(plist, rows = NULL, cols = NULL){
+    attr(plist, "Loc") = cbind(rows, cols)
+    class(plist) = "plist"
+    plist
+  }
+
+TCRsink =
+  function(ID, ...)
+  if(exists("TCRunout", envir = .GlobalEnv)){
+    varlist = list(...)
+    names(varlist) = gsub(" ", "", as.character(match.call()[-(1:2)]))
+    sink(TCRunout)
+    for(i in 1:length(varlist)){
+      cat("###TCR", ID, names(varlist)[i], "\n")
+      print(varlist[[i]])
+    }
+    sink()
+  }
+@ %def attrLoc TCRsink
+
+
+\section{Identification}
+\label{sec:identification}
+We separate the Identification functions into two groups.
+\begin{description}
+\item[Ident Main] contains the main function that is called by the
+  \emph{Front End} function.
+\item[Ident Low Level] contains supporting functions called by the
+  \emph{Ident Main} function.
+\end{description}
+<<Identification>>=
+<<Ident Main>>
+<<Ident Low Level>>
+@ 
+
+\subsection{Identification - Main Function}
+\label{sec:IdentMain}
+The purpose of the \verb|IdentMain| function is to identify where in
+the file the data is found and where the accompanying labels are,
+while ignoring any extraneous information we do not want. It should
+also identify the presence of multiple tables in the same file.
+
+It is intended for this procedure to involve a number of
+Identification algorithms that are used for a high degree of
+reliability and flexibility, but at this stage there is only a single
+algorithm.
+
+The algorithms used are:
+\begin{itemize}
+\item Ident by Most Common Boundary.
+\end{itemize}
+
+Algorithms planned for the near future are:
+\begin{itemize}
+\item Ident by Runs.
+\end{itemize}
+
+The output of \verb|IdentMain| will be a list containing two elements,
+\verb|rows| and \verb|cols|, each of which is a list containing these
+two elements:
+\begin{description}
+\item[label] - a vector of the rows or columns where the labels are
+  found.
+\item[data] - a vector of the rows or columns where the data are
+  found.
+\end{description}
+
+<<Ident Main>>=
+IdentMain =
+  function(datamat){
+    <<Ident by Most Common Boundary>>
+    <<Group Column Labels>>
+    TCRsink("IM", rowslist, colslist)
+    list(rows = rowslist, cols = colslist)
+  }
+@ %def IdentMain
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> rowslist
+$label
+[1] 1 2 3 4
+
+$data
+ [1]  5  6  7  8  9 10 11 12 13 14
+
+\end{verbatim}
+\begin{verbatim}
+> colslist
+$label
+[1] 1 2
+
+$data
+$data[1]
+[1] 4 5 6 7
+
+$data[2]
+[1]  8  9 10 11
+
+
+\end{verbatim}
+
+\subsubsection{Ident By Most Common Boundary}
+The \verb|IdentMostCommonBoundary| Low Level function is used to find
+the most common start and end rows and columns (the boundary) to
+search for a block (rectangular region) of numbers, which is assumed
+to be our table of data.
+<<Ident by Most Common Boundary>>=
+<<Get Non empty rows and cols>>
+<<Call Ident MostCommonBoundary>>
+<<Construct rowslist and colslist>>
+@ 
+
+<<Get Non empty rows and cols>>=
+rowNonempty = (1:nrow(datamat))[IdentNonEmpty(datamat, 1)]
+colNonempty = (1:ncol(datamat))[IdentNonEmpty(datamat, 2)]
+@ 
+
+<<Call Ident MostCommonBoundary>>=
+rowData = IdentMostCommonBoundary(datamat, 2)
+colData = IdentMostCommonBoundary(datamat, 1)
+## Temporary fix for first col being all numbers (e.g. years)
+if(colData[1] == 1) colData[1] = 2
+TCRsink("CIMCB", rowData, colData)
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> rowData
+[1]  5 14
+\end{verbatim}
+\begin{verbatim}
+> colData
+[1]  4 11
+\end{verbatim}
+
+We construct the interim \verb|rowslist| taking every non-empty row
+before the most common start of the numbers block (\verb|rowData[1]|)
+and assigning these to the \verb|label| region. The numbers block
+(which is bounded by \verb|rowData[1]| and \verb|rowData[2]|) is
+assigned to the \verb|data| region. The interim \verb|colslist| is
+constructed in the same manner.
+<<Construct rowslist and colslist>>=
+rowslist = list(label = rowNonempty[rowNonempty < rowData[1]],
+                data = rowNonempty[(rowNonempty >= rowData[1]) &
+                                   (rowNonempty <= rowData[2])])
+colslist = list(label = colNonempty[colNonempty < colData[1]],
+                data = colNonempty[(colNonempty >= colData[1]) &
+                                   (colNonempty <= colData[2])])
+TCRsink("CRAC", rowslist, colslist)
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> rowslist
+$label
+[1] 1 2 3 4
+
+$data
+ [1]  5  6  7  8  9 10 11 12 13 14
+
+\end{verbatim}
+\begin{verbatim}
+> colslist
+$label
+[1] 1 2
+
+$data
+[1]  4  5  6  7  8  9 10 11
+
+\end{verbatim}
+
+\subsubsection{Group Column Labels}
+We look for a repeating pattern in the column labels to handle cases
+of Misaligned Column Label (see Section
+\ref{sec:kp.MisalignedColumnLabel}).
+<<Group Column Labels>>=
+<<Generate Pattern vector>>
+<<Take Largest Pattern>>
+<<Group by Pattern>>
+@
+
+We loop through each row of the labels region and check for a pattern
+in either the contents of the cells (if they are all non-empty), or a
+pattern in which cells are empty (if any cells are empty), and store
+the results in \verb|Patvec| (Pattern Vector).
+<<Generate Pattern vector>>=
+curcol = colslist$data
+Patvec = NULL
+for(currow in rowslist$label){
+  curlabel = datamat[currow, curcol]
+  if(any(is.na(curlabel))){
+    if(!all(is.na(curlabel)))
+      Patvec = c(Patvec, IdentPattern(is.na(curlabel)))
+  } else Patvec = c(Patvec, IdentPattern(curlabel))
+}
+TCRsink("GPV", Patvec)
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> Patvec
+[1] 4 1 4
+\end{verbatim}
+
+Where multiple patterns are found, we assume the shorter patterns are
+patterns of families that are children to the parents of the largest
+pattern. Thus we always take the largest pattern found.
+
+Some problems with this and next chunk, refer to \verb|BUG-ID 2|.
+<<Take Largest Pattern>>=
+Patvec = max(Patvec)
+@ 
+
+If a pattern is found (\verb|NA| = No patterns found), we group the
+columns into separate elements in a list and update the
+\verb|colslist|. For easy handling later, irrespective of whether a
+pattern is found, \verb|colslist$data| is a list.
+<<Group by Pattern>>=
+if(!is.na(Patvec)){
+  megacolnum = length(curcol)/Patvec
+  megacollist = list()
+  for(i in 1:megacolnum)
+    megacollist =
+      c(megacollist, list(curcol[1:Patvec + Patvec * (i - 1)]))
+  colslist$data = megacollist
+} else colslist$data = list(curcol)
+@ 
+
+\subsection{Identification - Low Level Functions}
+\label{sec:IdentLowLevel}
+Here we discuss the low level functions that are called by the main
+Identification function. Each chunk corresponds to a separate low
+level function.
+<<Ident Low Level>>=
+<<Ident Non Empty>>
+<<Ident Pattern>>
+<<Ident Most Common Boundary>>
+@ 
+
+\subsubsection{IdentNonEmpty}
+Given a matrix (\verb|datamat|) and a margin (1 for rows, 2 for
+columns), return a vector giving the indices of non-empty rows or
+columns. Can specify a different empty identifying function (default
+\verb|is.na|). Procedure:
+\begin{enumerate}
+\item Compute \verb|isnonempty|, a logical vector about whether the
+  rows or cols are not empty.
+\item Use \verb|which| on \verb|isnonempty| to get indices.
+\end{enumerate}
+<<Ident Non Empty>>=
+IdentNonEmpty =
+  function(datamat, margin, emptyident = is.na){
+    isnonempty = apply(datamat, margin, function(x) !all(emptyident(x)))
+    which(isnonempty)
+  }
+@ %def IdentNonEmpty
+
+\subsubsection{IdentPattern}
+Attempt to discern a repeating pattern in \verb|vec|, which can be a
+vector of any type (which is coerced to \verb|character|). The
+returned value, \verb|res| is either \verb|NA| if no pattern is
+found. Or it is the grouping number for the repeating pattern, e.g.
+\begin{itemize}
+\item \verb|vec| = 1 1 1 1, then \verb|res| = 1
+\item \verb|vec| = 3 4 3 4, then \verb|res| = 2
+\item \verb|vec| = 1 2 3 1, then \verb|res| = \verb|NA|
+\end{itemize}
+\verb|IdentPattern| does this fairly efficiently by use of regular
+expressions. It combines the first \verb|i| elements of \verb|vec| and
+collapses this into a single string. A \verb|grep| is then called on
+the entire \verb|vec| that has been collapsed into a single string,
+checking to see if the entire string can be matched to some repeat of
+the aforementioned collapsed string of the first \verb|i| elements.
+
+For the moment it is possible for this to fail (and can even be
+intentionally gamed by providing something like
+\verb|vec = c(12, 1, 2)|, which will return a pattern of 1, when it
+should return \verb|NA|), so it should be changed to be more reliable
+(though less efficient).
+<<Ident Pattern>>=
+IdentPattern =
+  function(vec){
+    len = length(vec)
+    res = NA
+    for(i in 1:floor(len/2)){
+      curseg = paste("^(", paste(vec[1:i], collapse = ""),
+        ")+$", sep = "")
+      if(nchar(curseg) > 2559){
+        warning("Label lengths too long for regular expressions to ",
+                "work. IdentPattern has been aborted. A pattern may ",
+                "exist but it cannot be found with the current ",
+                "algorithm.")
+        break
+      } else if(length(grep(curseg, paste(vec, collapse = ""))) > 0){
+        res = i
+        break
+      }
+    }
+    res
+  }
+@ %def IdentPattern
+
+\subsubsection{Ident Most Common Boundary}
+Search for the most common first and last rows/cols to identify a
+block (rectangular region) of numbers. Procedure:
+\begin{enumerate}
+\item Suppose \verb|margin = 2|, then loop through each column and
+  search for cells containing numbers.
+\item Compute the first row with a number for each column
+  (\verb|nstarts|), and do the same for the last row (\verb|nends|).
+\item Return the most common first and last rows.
+\end{enumerate}
+
+<<Ident Most Common Boundary>>=
+IdentMostCommonBoundary =
+  function(datamat, margin){
+    isnumber = suppressWarnings(apply(datamat, margin,
+      function(x) which(!is.na(as.numeric(x)))))
+    nstarts = table(sapply(isnumber,
+      function(x) if(length(x) > 0) min(x) else NA))
+    nends = table(sapply(isnumber,
+      function(x) if(length(x) > 0) max(x) else NA))
+    as.numeric(names(c(which.max(nstarts), which.max(rev(nends)))))
+  }
+@ %def IdentMostCommonBoundary
+
+\section{Discern Parentage}
+\label{sec:parentage}
+We separate the Parentage functions into three groups.
+\begin{description}
+\item[Pare Front] is a simple `front-end' function that makes the
+  appropriate first call to \verb|PareMain|, and is the function
+  called by the \emph{Front End} function.
+\item[Pare Col] A specialised front-end to \verb|PareFront| that
+  handles various fringe cases for Discering Parentage for Column
+  Labels, before eventually calling \verb|PareFront|.
+\item[Pare Main] contains the main function that recursively call
+  itself until the all parentage is discerned.
+\item[Pare Low Level] contains supporting functions called by the
+  \emph{Pare Main} function.
+\end{description}
+
+See the section on the main function (Section \ref{sec:PareMain}) for
+details on the purpose of the \emph{Discern Parentage} stage.
+<<Discern Parentage>>=
+<<Pare Front>>
+<<Pare Col>>
+<<Pare Main>>
+<<Pare Low Level>>
+@ 
+
+\subsubsection{plist}
+\label{sec:plist.explain}
+explanation.
+
+\subsection{Parentage - Front End Function}
+\label{sec:PareFront}
+This front end function takes the \verb|datamat| and constructs an
+initialising \verb|plist| (Parentage List), which is used to make the
+first call to the main function.
+<<Pare Front>>=
+PareFront =
+  function(datamat)
+  PareMain(datamat = datamat, plist =
+           list(rows = 1:nrow(datamat), cols = 1:ncol(datamat)))
+@ %def PareFront
+
+\subsubsection{Pare Col}
+\label{sec:PareCol}
+The Parentage functions were initially designed to work with Row
+Labels only, however we can also use them to discern the parentage of
+Col Labels once we handle a few differences. We define a front-end to
+the front-end function called \verb|PareCol| to do this.
+<<Pare Col>>=
+PareCol =
+  function(datamat, datacols, labelrows){
+    <<Case Misaligned Col Parent>>
+    datacols = unlist(datacols)
+    <<Collapse Fullrow Labels>>
+  <<Call Pare Front>>
+}
+@ %def PareCol
+
+Unlike with Row Labels where the parents are reliably in the top-left
+corner of their family, Col Label parents are sometimes
+`misaligned'. In some cases this arises as Col Label parents might be
+centred over their family. Other times, it happens for no apparent
+logical reason.
+
+Regardless of the cause, we need to correct for this. During the
+Identification phase, we Grouped the Column Labels based on repeating
+patterns. We use these groupings to identify the families, and if the
+parent is not found where it should be, we simply shift it over to the
+right place.
+<<Case Misaligned Col Parent>>=
+for(j in 1:length(datacols)){
+  curfamily = datamat[labelrows, datacols[[j]], drop = FALSE]
+  firstcolempty = is.na(curfamily[,1])
+  if(any(firstcolempty))
+    for(i in which(firstcolempty)){
+      notempty = !is.na(curfamily[i,])
+      if(sum(notempty) == 1){
+        curfamily[i, 1] = curfamily[i, notempty]
+        curfamily[i, notempty] = NA
+      }
+    }
+  datamat[labelrows, datacols[[j]]] = curfamily
+}
+@ 
+
+It is also quite common for Col Labels that are too wide to be
+physically split over multiple rows to manage the width of the
+labels. For now, we simply assume that any rows that are not full (and
+hence not parents) should all really be a single row of children, and
+collapse these.
+<<Collapse Fullrow Labels>>=
+notfullrows = apply(datamat[labelrows, datacols, drop = FALSE], 1,
+  function(x) any(is.na(x)))
+if(any(diff(notfullrows) > 1))
+  warning("full rows followed by not full rows!")
+pastestring = ""
+pasterows = which(!notfullrows)
+for(i in 1:length(pasterows))
+  pastestring[i] = paste("datamat[labelrows[", pasterows[i],
+               "], datacols]", sep = "")
+collapsedlabels = eval(parse(text = paste("paste(",
+                               paste(pastestring, collapse = ", "),
+                               ")", sep = "")))
+@ 
+
+Once the above is handled, we can simply transpose our Col Labels and
+call \verb|PareFront| on it.
+<<Call Pare Front>>=
+labeldatamat = rbind(datamat[labelrows[notfullrows], datacols],
+  collapsedlabels)
+PareFront(t(labeldatamat))
+@ 
+
+\subsection{Parentage - Main Function}
+\label{sec:PareMain}
+The purpose of the \verb|PareMain| function is to identify (or
+\emph{Discern}, to better differentiate this stage from the
+\emph{Identification} stage) hierarchical relationships (the
+\emph{Parentage}) in the data.
+
+It first makes various checks for fringe cases, then calls various
+detection algorithms (\verb|Pare Low Levels|) to discern the
+parentage.
+<<Pare Main>>=
+PareMain =
+  function(datamat, plist){
+    <<If only one column>>
+    <<If first column empty>>
+    <<If only one row>>
+    <<If first cell empty>>
+    <<Otherwise call Pare Low Levels>>
+    class(res) = "plist"
+    res
+  }
+@ %def PareMain
+
+If only one column is found then this means we are in the right-most
+column (or there was only one column to begin with), and hence the
+currently examined cells cannot be parents. We return the rows of
+these children as a vector, with names that correspond to their
+labels.
+<<If only one column>>=
+if(length(plist$cols) == 1){
+  res = structure(plist$rows, .Names = datamat[plist$rows, plist$cols])
+  res = attrLoc(res, cols = plist$col)
+  TCRsink("IOOC", plist, res)
+}
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> plist
+$rows
+[1] 3 4
+
+$cols
+[1] 2
+
+\end{verbatim}
+\begin{verbatim}
+> res
++ Row Child-Child1 (3, 2)
++ Row Child-Child2 (4, 2)
+\end{verbatim}
+
+If the first column is found to be empty, then we will shift to the
+next column (which we know exists because we passed the check for only
+one column).
+<<If first column empty>>=
+else if(all(is.na(datamat[plist$rows, plist$cols[1]]))){
+  plist$cols = plist$cols[-1]
+  res = PareMain(datamat, plist)
+}
+@ 
+
+If only one row is found then our row is a parent to itself (we know
+there are children in the row as we passed the check for only one
+column). We return the row as a numeric vector, nested in a list using
+correct parentage and names of the parentage within the row.
+<<If only one row>>=
+else if(length(plist$rows) == 1){
+  res = structure(plist$rows,
+    .Names = datamat[plist$rows, plist$cols[length(plist$cols)]])
+  res = attrLoc(res, cols = plist$cols[length(plist$cols)])
+  for(i in (length(plist$cols) - 1):1){
+    res = list(res)
+    names(res) = datamat[plist$rows, plist$cols[i]]
+    res = attrLoc(res, rows = plist$rows, cols = plist$cols[i])
+  }
+  TCRsink("IOOR", plist, res)
+}
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> res
+Never occurs
+\end{verbatim}
+
+If the first cell is empty, after all previous checks, then this is an
+unrecognised format and we return a warning message.
+<<If first cell empty>>=
+else if(is.na(datamat[plist$rows[1], plist$cols[1]])){
+  warning("cell[1, 1] is empty")
+  print(plist)
+  res = NA
+}
+@ 
+
+If we have passed all the checks, we can then call the Low Level
+\verb|Pare| functions. We first call \verb|ByEmptyRight| to check for
+\emph{empty right} situations. If none are found, it returns
+\verb|NA|, in which case we try \verb|ByEmptyBelow| instead.
+
+We then loop through each element of the returned list and call the
+main function, as per the recursive nature of the function.
+<<Otherwise call Pare Low Levels>>=
+else{
+  res = PareByEmptyRight(datamat, plist)
+  if(any(is.na(res)))
+    res = PareByEmptyBelow(datamat, plist)
+  for(i in 1:length(res))
+    res[[i]] = PareMain(datamat, res[[i]])
+  res
+}
+@ 
+
+\subsection{Parentage - Low Level Functions}
+\label{sec:PareLowLevel}
+The Low Level Parentage functions are called by the Main Parentage
+function. In particular, \verb|ByEmptyRight| is always called
+first. Then \verb|ByEmptyBelow| is called on the results of the above.
+<<Pare Low Level>>=
+<<Pare By Empty Right>>
+<<Pare By Empty Below>>
+@ 
+
+\subsubsection{Pare By Empty Right}
+We check to see if we have an \emph{empty right} situation. If we do
+not, we return \verb|NA|.
+<<Pare By Empty Right>>=
+PareByEmptyRight =
+  function(datamat, plist)
+  with(plist,
+       if(all(is.na(datamat[rows[1], cols[-1]]))){
+         <<Check for Other Empty Rights>>
+         <<Case Single Empty Right>>
+         <<Case Multiple Empty Rights>>
+         res
+       } else NA)
+@ %def PareByEmptyRight
+
+\begin{table}[!h]
+\begin{minipage}{0.4\linewidth}
+  \begin{tabular}{| r | l | l |}
+    \hline
+     1 & \textbf{\textit{New Zealand}} &        \\
+     2 & \textbf{Auckland}             &        \\
+     3 & Accounting                    & Male   \\
+     4 &                               & Female \\
+     5 & Economics                     & Male   \\
+     6 &                               & Female \\
+     7 & Statistics                    & Male   \\
+     8 &                               & Female \\
+     9 & \textbf{Wellington}           &        \\
+    10 & Economics                     & Male   \\
+    11 &                               & Female \\
+    12 & Statistics                    & Male   \\
+    13 &                               & Female \\
+    14 & \textbf{\textit{Australia}}   &        \\
+    15 & \textbf{Sydney}               &        \\
+    16 & Accounting                    & Male   \\
+    17 &                               & Female \\
+    18 & Economics                     & Male   \\
+    19 &                               & Female \\
+    \hline
+  \end{tabular}
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+  Consider the toy example on the left.
+  
+  In this case we do not have a simple \verb|ByEmptyRight| structure.
+  We have \emph{super-parents} in the form of countries (New Zealand
+  and Australia), and also \emph{parents} in the form of cities
+  (Auckland, Wellington and Sydney). To handle situations such as
+  this, we must \textbf{Check for Other Empty Rights}.
+  
+  If only a \textbf{Single Empty Right} is found, the situation is
+  simple and we simply pass on the children of the single parent for
+  the next iteration of \verb|PareMain|.
+  
+  However, if \textbf{Multiple Empty Rights} are found, we must
+  identify the super-parents, and pass on the \emph{children} of these
+  super-parents (which would, in turn, contain parents and their
+  children) as a list, to be handled in the next iteration of
+  \verb|PareMain|. In this example, we would have a list of length
+  2. The first element of the list would contain the \verb|plist| with
+  \verb|rows| 2 to 13 (corresponding to the children of the New
+  Zealand super-parent). The second element would have \verb|rows| 15
+  to 19.
+\end{minipage}
+\end{table}
+
+<<Check for Other Empty Rights>>=
+emptyrights = apply(datamat[rows, cols[-1], drop = FALSE], 1,
+  function(x) all(is.na(x)))
+rowemptyright = rows[emptyrights]
+@ 
+
+In the case of only a single empty right, we know there is only a
+single parent, which is the first line. Thus we take everything except
+the first line (which will be the rows of the children of this parent)
+and pass this through with correct naming.
+<<Case Single Empty Right>>=
+if(length(rowemptyright) == 1){
+  res = list(list(rows = rows[-1], cols = cols))
+  names(res) = datamat[rows[1], cols[1]]
+  res = attrLoc(res, rows = rows[1], cols = cols[1])
+  TCRsink("CSER", res)
+}
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> res
+Never occurs
+\end{verbatim}
+
+In the case of multiple empty rights, we first call \verb|diff| to
+compute the gap in rows between the empty rights. If the value of
+\verb|rowdiff[i]| is 1, this means there is no gap between the
+i\textsuperscript{th} \verb|rowemptyright| and the (i + 1)
+\verb|rowemptyright|. This happens with \emph{super-parents} as
+described in the example above. In this case, we gather these
+super-parents and ignore all other \verb|rowemptyright| (the parents
+inside the super-parents will be handled at the next iteration of
+\verb|PareMain|). Note, we assume there are never any
+super-super-parents (i.e. we can only handle a maximum of 2-levels of
+parentage in the same column).
+
+Whether or not super-parents were identified, we compute the rows for
+the children of each parent (or super-parent) identified by
+\verb|rowemptyright| and pass this through as a list, with correct
+naming.
+<<Case Multiple Empty Rights>>=
+else{
+  rowdiff = diff(rowemptyright)
+  if(any(rowdiff == 1))
+    rowemptyright = rowemptyright[c(rowdiff == 1, FALSE)]
+  
+  rowstart = pmin(rowemptyright + 1, max(rows))
+  rowend = c(pmax(rowemptyright[-1] - 1, min(rows)), max(rows))
+  
+  res = list()
+  for(i in 1:length(rowstart))
+    res[i] = list(list(rows = rowstart[i]:rowend[i], cols = cols))
+  names(res) = datamat[rowemptyright, cols[1]]
+  res = attrLoc(res, rows = rowemptyright, cols = cols[1])
+  TCRsink("CMER", res)
+}
+@ 
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> res
++ Row Super-Parent (1, 1)
+- + rows
+- - 2 3 4 5 6 7 8 9 10
+- + cols
+- - 1 2
+\end{verbatim}
+
+\subsubsection{Pare By Empty Below}
+We check which cells are empty below (there should be at least 1 based
+on previous checks). Based on this, we compute the rows for the
+children of each parent and pass this through as a list, with correct
+naming.
+<<Pare By Empty Below>>=
+PareByEmptyBelow =
+  function(datamat, plist)
+  with(plist, {
+    emptybelow = is.na(datamat[rows, cols[1]])
+    rowstart = rows[!emptybelow]
+    rowend = c(rowstart[-1] - 1, max(rows))
+    res = list()
+    for(i in 1:length(rowstart))
+      res[i] = list(list(rows = rowstart[i]:rowend[i], cols = cols[-1]))
+    names(res) = datamat[rowstart, cols[1]]
+    res = attrLoc(res, rows = rowstart, cols = cols[1])
+    TCRsink("PBEB", res)
+    res
+  })
+@ %def PareByEmptyBelow
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> res
++ Row Child1 (3, 1)
+- + rows
+- - 3 4
+- + cols
+- - 2
++ Row Child2 (5, 1)
+- + rows
+- - 5 6
+- + cols
+- - 2
+\end{verbatim}
+
+\section{Reconstruction}
+\label{sec:reconstruction}
+We separate the Reconstruction functions into two groups.
+\begin{description}
+\item[Recons Main] contains the main function that is called by the
+  \emph{Front End} function.
+\item[Recons Low Level] contains supporting functions called by the
+  \emph{Recons Main} function.
+\end{description}
+<<Reconstruction>>=
+<<Recons Main>>
+<<Recons Low Level>>
+@
+
+\subsection{Reconstruction - Main Function}
+\label{sec:ReconsMain}
+The \verb|ReconsMain| function is, in a manner of speaking, the true
+\verb|TableToLongForm| function, as it makes the calls to
+\verb|IdentMain| and \verb|PareFront|, in conjunction with its own
+\verb|Recons Low Level| functions, to carry out the conversion.
+<<Recons Main>>=
+ReconsMain =
+  function(datamat, IdentResult){
+    <<Call Ident Main>>
+    <<Reconstruct Row Labels>>
+    <<Reconstruct Col Labels>>
+  }
+@ 
+
+Call \verb|IdentMain| and assign them meaningful names for
+convenience, the \verb|labelcols| being the columns where the labels
+can be found, etc. These should all be a \verb|vector|, except
+\verb|datacols| which is a \verb|list|.
+
+<<Call Ident Main>>=
+if(is.null(IdentResult))
+  IdentResult = IdentMain(datamat)
+labelcols = IdentResult$cols$label
+datacols = IdentResult$cols$data
+labelrows = IdentResult$rows$label
+datarows = IdentResult$rows$data
+@ %def labelcols datacols labelrows datarows
+
+We create a subset of \verb|datamat| that contains just the Row
+Labels. We also remove any columns that are completely empty
+(N.B. this may no longer be necessary, need to do some testing).
+
+We call \verb|PareFront| on our subset to discern the parentage of the
+Row Labels. We then use this to reconstruct the portion of the
+LongForm Dataframe relating to the Row Labels and assign this to
+\verb|rowvecs|.
+<<Reconstruct Row Labels>>=
+datamatRowLabels = datamat[datarows, labelcols, drop = FALSE]
+datamatRowLabels = datamatRowLabels[,
+  IdentNonEmpty(datamatRowLabels, 2), drop = FALSE]
+rowplist = PareFront(datamatRowLabels)
+rowvecs = ReconsRowLabels(rowplist)
+TCRsink("RRL", rowplist, rowvecs[1:4,])
+@ %def rowplist rowvecs
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> rowplist
++ Row Super-Parent (1, 1)
+- + Row Parent1 (2, 1)
+- - + Row Child1 (3, 1)
+- - - + Row Child-Child1 (3, 2)
+- - - + Row Child-Child2 (4, 2)
+- - + Row Child2 (5, 1)
+- - - + Row Child-Child1 (5, 2)
+- - - + Row Child-Child2 (6, 2)
+- + Row Parent2 (7, 1)
+- - + Row Child1 (8, 1)
+- - - + Row Child-Child1 (8, 2)
+- - - + Row Child-Child2 (9, 2)
+- - + Row Child2 (10, 1)
+- - - + Row Child-Child2 (10, 2)
+\end{verbatim}
+\begin{verbatim}
+> rowvecs[1:4,]
+ [,1]               [,2]          [,3]         [,4]              
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child2"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child2"
+\end{verbatim}
+
+Due to the various fringe cases that exist with Col Labels, we cannot
+simply call \verb|PareFront| and must instead call \verb|PareCol|.  We
+then create a subset of \verb|datamat| that contains just the Col
+Labels and call \verb|ReconsColLabels| which in truth reconstruct the
+entire LongForm Dataframe by making use of the \verb|rowvecs|
+generated above.
+<<Reconstruct Col Labels>>=
+colplist = PareCol(datamat, datacols, labelrows)
+datamatColLabels = datamat[datarows[unlist(rowplist)], unlist(datacols)]
+res = ReconsColLabels(colplist, datamatColLabels, rowvecs)
+TCRsink("RCL", colplist, res[1:4,])
+list(datafr = res, datamat = datamat, IdentResult = IdentResult,
+     rowplist = rowplist, colplist = colplist)
+@
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> colplist
++ Column Parent1 (1, 2)
+- + Column Child1 (1, 3)
+- + Column Child2 (2, 3)
+- + Column Child3 (3, 3)
+- + Column Child4 (4, 3)
++ Column Parent2 (5, 2)
+- + Column Child1 (5, 3)
+- + Column Child2 (6, 3)
+- + Column Child3 (7, 3)
+- + Column Child4 (8, 3)
+\end{verbatim}
+\begin{verbatim}
+> res[1:4,]
+         UNKNOWN          UNKNOWN     UNKNOWN    UNKNOWN          UNKNOWN
+1 Column Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child1
+2 Column Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child2
+3 Column Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child1
+4 Column Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child2
+  Column Child1 Column Child2 Column Child3 Column Child4
+1            12            22            32            42
+2            13            23            33            43
+3            14            24            34            44
+4            15            25            35            45
+\end{verbatim}
+
+\subsection{Reconstruction - Low Level Functions}
+\label{sec:ReconsLowLevel}
+The Low Level Reconstruction functions are called by the Main
+Reconstruction function. In particular, \verb|ReconsRowLabels| is
+always called first and its results are one of the arguments for
+\verb|ReconsColLabels|, which finishes the reconstruction of the
+entire LongForm Dataframe.
+<<Recons Low Level>>=
+<<Recons Row Labels>>
+<<Recons Column Labels>>
+@ 
+
+\subsubsection{Reconstruction - Row Labels}
+\label{sec:ReconsRowLabels}
+\verb|ReconsRowLabels| iterates down the row parentage list
+(\verb|plist|) recursively, extracting the names and using this to
+construct the columns of the finished LongForm Dataframe corresponding
+to the row labels. The final output is what was shown in the
+\emph{Reconstruct Row Labels} chunk above as \verb|rowvecs[1:4,]|.
+<<Recons Row Labels>>=
+ReconsRowLabels =
+  function(plist)
+  if(is.list(plist)){
+    rowvecs = as.list(names(plist))
+    for(i in 1:length(rowvecs))
+      rowvecs[[i]] = cbind(rowvecs[[i]], ReconsRowLabels(plist[[i]]))
+    do.call(rbind, rowvecs)
+  } else as.matrix(names(plist))
+@ %def ReconsRowLabels
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> rowvecs[1:4,]
+ [,1]               [,2]          [,3]         [,4]              
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child2"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child2"
+\end{verbatim}
+
+\subsubsection{Reconstruction - Column Labels}
+\label{sec:ReconsColLabels}
+As with the row labels, \verb|ReconsColLabels| iterates down the
+column parentage list (\verb|plist|) recursively. We also need to
+handle the parents differently from the lowest level child. The final
+output is what was shown in the \emph{Reconstruct Col Labels} chunk
+above as \verb|res[1:4,]|.
+<<Recons Column Labels>>=
+ReconsColLabels =
+  function(plist, datamat, rowvecs){
+    <<Recons Col Parents>>
+    <<Recons Col Children>>
+    datfr
+  }
+@ %def ReconsColLabels
+
+Example values for \textbf{ToyExComplete.csv}
+\begin{verbatim}
+> res[1:4,]
+         UNKNOWN          UNKNOWN     UNKNOWN    UNKNOWN          UNKNOWN
+1 Column Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child1
+2 Column Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child2
+3 Column Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child1
+4 Column Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child2
+  Column Child1 Column Child2 Column Child3 Column Child4
+1            12            22            32            42
+2            13            23            33            43
+3            14            24            34            44
+4            15            25            35            45
+\end{verbatim}
+
+Any parents are used to construct additional columns of factors (the
+labels of the parents) for the LongForm Dataframe, which is attached
+to the portion previously constructed in \verb|ReconsRowLabels|.
+<<Recons Col Parents>>=
+if(is.list(plist)){
+  colvecs = as.list(names(plist))
+  for(i in 1:length(colvecs)){
+    colvecs[[i]] = cbind(colvecs[[i]],
+             ReconsColLabels(plist[[i]], datamat, rowvecs))
+    colnames(colvecs[[i]])[1] = "UNKNOWN"
+  }
+  datfr = do.call(rbind, colvecs)
+}
+@ 
+
+For the lowest level child, we extract the relevant `data bits' from
+the original table and bind it to our Dataframe, using the lowest
+level child as the labels of these columns of data values.
+<<Recons Col Children>>=
+else{
+  datbit = datamat[,plist]
+  mode(datbit) = "numeric"
+  ## Specify row.names to avoid annoying warnings
+  datfr =
+    cbind(as.data.frame(rowvecs, row.names = 1:nrow(rowvecs)), datbit)
+  colnames(datfr) =
+    c(rep("UNKNOWN", length = ncol(rowvecs)), names(plist))
+}
+@ 
+
+\section{Chunk Index}
+\label{sec:chunk-index}
+\nowebchunks
+
+\section{Identifier Index}
+\label{sec:identifier-index}
+Numbers indicate the chunks in which the function appears.
+Underline indicates the chunk where the function is defined.
+\medskip
+
+\nowebindex
+\newpage
+
+\addcontentsline{toc}{section}{References}
+\nocite{*}
+\bibliographystyle{./elsart-harv} % elsart-harv,plain,unsrt,alpha
+\bibliography{./TableToLongForm_refs}
+
+
+\section{Appendix: TCRO}
+\newpage
+\subsection{NZQAScholarships.xls}
+\label{sec:TCRO_NZQAScholarships.xls}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{./TestCase/NZQAScholarships.pdf}
+\end{figure}
+\begin{verbatim}
+> rowData 
+[1]   7 462
+> colData 
+[1]  3 28
+> rowslist 
+$label
+[1] 1 3 4 5
+
+$data
+  [1]   7   9  10  11  12  13  14  15  16  17  18  19  20  22  23  24  25  26
+ [19]  27  28  29  30  31  32  33  35  36  37  38  39  40  41  42  43  44  45
+ [37]  46  48  49  50  51  52  53  54  55  56  57  58  59  61  62  63  64  65
+ [55]  66  67  68  69  70  71  72  74  75  76  77  78  79  80  81  82  83  84
+ [73]  85  87  88  89  90  91  92  93  94  95  96  97  98 100 101 102 103 104
+ [91] 105 106 107 108 109 110 111 113 114 115 116 117 118 119 120 121 122 123
+[109] 124 126 127 128 129 130 131 132 133 134 135 136 137 139 140 141 142 143
+[127] 144 145 146 147 148 149 150 152 153 154 155 156 157 158 159 160 161 162
+[145] 163 165 166 167 168 169 170 171 172 173 174 175 176 178 179 180 181 182
+[163] 183 184 185 186 187 188 189 191 192 193 194 195 196 197 198 199 200 201
+[181] 202 204 205 206 207 208 209 210 211 212 213 214 215 217 218 219 220 221
+[199] 222 223 224 225 226 227 228 230 231 232 233 234 235 236 237 238 239 240
+[217] 241 243 244 245 246 247 248 249 250 251 252 253 254 256 257 258 259 260
+[235] 261 262 263 264 265 266 267 269 270 271 272 273 274 275 276 277 278 279
+[253] 280 282 283 284 285 286 287 288 289 290 291 292 293 295 296 297 298 299
+[271] 300 301 302 303 304 305 306 308 309 310 311 312 313 314 315 316 317 318
+[289] 319 321 322 323 324 325 326 327 328 329 330 331 332 334 335 336 337 338
+[307] 339 340 341 342 343 344 345 347 348 349 350 351 352 353 354 355 356 357
+[325] 358 360 361 362 363 364 365 366 367 368 369 370 371 373 374 375 376 377
+[343] 378 379 380 381 382 383 384 386 387 388 389 390 391 392 393 394 395 396
+[361] 397 399 400 401 402 403 404 405 406 407 408 409 410 412 413 414 415 416
+[379] 417 418 419 420 421 422 423 425 426 427 428 429 430 431 432 433 434 435
+[397] 436 438 439 440 441 442 443 444 445 446 447 448 449 451 452 453 454 455
+[415] 456 457 458 459 460 461 462
+
+> colslist 
+$label
+[1] 1 2
+
+$data
+ [1]  3  4  5  7  8  9 10 12 13 14 16 17 18 19 21 22 23 25 26 27 28
+
+> Patvec 
+[1] 7 7 7
+> rowslist 
+$label
+[1] 1 3 4 5
+
+$data
+  [1]   7   9  10  11  12  13  14  15  16  17  18  19  20  22  23  24  25  26
+ [19]  27  28  29  30  31  32  33  35  36  37  38  39  40  41  42  43  44  45
+ [37]  46  48  49  50  51  52  53  54  55  56  57  58  59  61  62  63  64  65
+ [55]  66  67  68  69  70  71  72  74  75  76  77  78  79  80  81  82  83  84
+ [73]  85  87  88  89  90  91  92  93  94  95  96  97  98 100 101 102 103 104
+ [91] 105 106 107 108 109 110 111 113 114 115 116 117 118 119 120 121 122 123
+[109] 124 126 127 128 129 130 131 132 133 134 135 136 137 139 140 141 142 143
+[127] 144 145 146 147 148 149 150 152 153 154 155 156 157 158 159 160 161 162
+[145] 163 165 166 167 168 169 170 171 172 173 174 175 176 178 179 180 181 182
+[163] 183 184 185 186 187 188 189 191 192 193 194 195 196 197 198 199 200 201
+[181] 202 204 205 206 207 208 209 210 211 212 213 214 215 217 218 219 220 221
+[199] 222 223 224 225 226 227 228 230 231 232 233 234 235 236 237 238 239 240
+[217] 241 243 244 245 246 247 248 249 250 251 252 253 254 256 257 258 259 260
+[235] 261 262 263 264 265 266 267 269 270 271 272 273 274 275 276 277 278 279
+[253] 280 282 283 284 285 286 287 288 289 290 291 292 293 295 296 297 298 299
+[271] 300 301 302 303 304 305 306 308 309 310 311 312 313 314 315 316 317 318
+[289] 319 321 322 323 324 325 326 327 328 329 330 331 332 334 335 336 337 338
+[307] 339 340 341 342 343 344 345 347 348 349 350 351 352 353 354 355 356 357
+[325] 358 360 361 362 363 364 365 366 367 368 369 370 371 373 374 375 376 377
+[343] 378 379 380 381 382 383 384 386 387 388 389 390 391 392 393 394 395 396
+[361] 397 399 400 401 402 403 404 405 406 407 408 409 410 412 413 414 415 416
+[379] 417 418 419 420 421 422 423 425 426 427 428 429 430 431 432 433 434 435
+[397] 436 438 439 440 441 442 443 444 445 446 447 448 449 451 452 453 454 455
+[415] 456 457 458 459 460 461 462
+
+> colslist 
+$label
+[1] 1 2
+
+$data
+$data[1]
+[1]  3  4  5  7  8  9 10
+
+$data[2]
+[1] 12 13 14 16 17 18 19
+
+$data[3]
+[1] 21 22 23 25 26 27 28
+
+
+> res 
++ All Subjects (1, 1)
+- + rows
+- - 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 420 421
+- + cols
+- - 1 2
+> res 
++ Accounting (2, 1)
+- + rows
+- - 3 4 5 6 7 8 9 10 11 12 13
+- + cols
+- - 1 2
++ Agricultural & Horticultural Science (14, 1)
+- + rows
+- - 15 16 17 18 19 20 21 22 23 24 25
+- + cols
+- - 1 2
++ Art History (26, 1)
+- + rows
+- - 27 28 29 30 31 32 33 34 35 36 37
+- + cols
+- - 1 2
++ Biology (38, 1)
+- + rows
+- - 39 40 41 42 43 44 45 46 47 48 49
+- + cols
+- - 1 2
++ Chemistry (50, 1)
+- + rows
+- - 51 52 53 54 55 56 57 58 59 60 61
+- + cols
+- - 1 2
++ Chinese (62, 1)
+- + rows
+- - 63 64 65 66 67 68 69 70 71 72 73
+- + cols
+- - 1 2
++ Classical Studies (74, 1)
+- + rows
+- - 75 76 77 78 79 80 81 82 83 84 85
+- + cols
+- - 1 2
++ Dance (86, 1)
+- + rows
+- - 87 88 89 90 91 92 93 94 95 96 97
+- + cols
+- - 1 2
++ Design and Visual Communication (98, 1)
+- + rows
+- - 99 100 101 102 103 104 105 106 107 108 109
+- + cols
+- - 1 2
++ Drama (110, 1)
+- + rows
+- - 111 112 113 114 115 116 117 118 119 120 121
+- + cols
+- - 1 2
++ Economics (122, 1)
+- + rows
+- - 123 124 125 126 127 128 129 130 131 132 133
+- + cols
+- - 1 2
++ English (134, 1)
+- + rows
+- - 135 136 137 138 139 140 141 142 143 144 145
+- + cols
+- - 1 2
++ French (146, 1)
+- + rows
+- - 147 148 149 150 151 152 153 154 155 156 157
+- + cols
+- - 1 2
++ Geography (158, 1)
+- + rows
+- - 159 160 161 162 163 164 165 166 167 168 169
+- + cols
+- - 1 2
++ German (170, 1)
+- + rows
+- - 171 172 173 174 175 176 177 178 179 180 181
+- + cols
+- - 1 2
++ Graphics (182, 1)
+- + rows
+- - 183 184 185 186 187 188 189 190 191 192 193
+- + cols
+- - 1 2
++ History (194, 1)
+- + rows
+- - 195 196 197 198 199 200 201 202 203 204 205
+- + cols
+- - 1 2
++ Japanese (206, 1)
+- + rows
+- - 207 208 209 210 211 212 213 214 215 216 217
+- + cols
+- - 1 2
++ Latin (218, 1)
+- + rows
+- - 219 220 221 222 223 224 225 226 227 228 229
+- + cols
+- - 1 2
++ Mathematics with Calculus (230, 1)
+- + rows
+- - 231 232 233 234 235 236 237 238 239 240 241
+- + cols
+- - 1 2
++ Media Studies (242, 1)
+- + rows
+- - 243 244 245 246 247 248 249 250 251 252 253
+- + cols
+- - 1 2
++ Music Studies (254, 1)
+- + rows
+- - 255 256 257 258 259 260 261 262 263 264 265
+- + cols
+- - 1 2
++ Painting (266, 1)
+- + rows
+- - 267 268 269 270 271 272 273 274 275 276 277
+- + cols
+- - 1 2
++ Photography (278, 1)
+- + rows
+- - 279 280 281 282 283 284 285 286 287 288 289
+- + cols
+- - 1 2
++ Physical Education (290, 1)
+- + rows
+- - 291 292 293 294 295 296 297 298 299 300 301
+- + cols
+- - 1 2
++ Physics (302, 1)
+- + rows
+- - 303 304 305 306 307 308 309 310 311 312 313
+- + cols
+- - 1 2
++ Printmaking (314, 1)
+- + rows
+- - 315 316 317 318 319 320 321 322 323 324 325
+- + cols
+- - 1 2
++ Samoan (326, 1)
+- + rows
+- - 327 328 329 330 331 332 333 334 335 336 337
+- + cols
+- - 1 2
++ Science (338, 1)
+- + rows
+- - 339 340 341 342 343 344 345 346 347 348 349
+- + cols
+- - 1 2
++ Sculpture (350, 1)
+- + rows
+- - 351 352 353 354 355 356 357 358 359 360 361
+- + cols
+- - 1 2
++ Spanish (362, 1)
+- + rows
+- - 363 364 365 366 367 368 369 370 371 372 373
+- + cols
+- - 1 2
++ Statistics and Modelling (374, 1)
+- + rows
+- - 375 376 377 378 379 380 381 382 383 384 385
+- + cols
+- - 1 2
++ Te Reo Maori (386, 1)
+- + rows
+- - 387 388 389 390 391 392 393 394 395 396 397
+- + cols
+- - 1 2
++ Te Reo Rangatira (398, 1)
+- + rows
+- - 399 400 401 402 403 404 405 406 407 408 409
+- + cols
+- - 1 2
++ Technology (410, 1)
+- + rows
+- - 411 412 413 414 415 416 417 418 419 420 421
+- + cols
+- - 1 2
+> res 
++ NZ Maori (3, 1)
+- + rows
+- - 3 4
+- + cols
+- - 2
++ NZ European (5, 1)
+- + rows
+- - 5 6 7
+- + cols
+- - 2
++ Pasifika Peoples (8, 1)
+- + rows
+- - 8 9
+- + cols
+- - 2
++ Asian (10, 1)
+- + rows
+- - 10 11
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (12, 1)
+- + rows
+- - 12 13
+- + cols
+- - 2
+> plist 
+$rows
+[1] 3 4
+
+$cols
+[1] 2
+
+> res 
++ Male (3, 2)
++ Female (4, 2)
+> plist 
+$rows
+[1] 5 6 7
+
+$cols
+[1] 2
+
+> res 
++ Male (5, 2)
++ Female (6, 2)
++ Unknown (7, 2)
+> plist 
+$rows
+[1] 8 9
+
+$cols
+[1] 2
+
+> res 
++ Male (8, 2)
++ Female (9, 2)
+> plist 
+$rows
+[1] 10 11
+
+$cols
+[1] 2
+
+> res 
++ Male (10, 2)
++ Female (11, 2)
+> plist 
+$rows
+[1] 12 13
+
+$cols
+[1] 2
+
+> res 
++ Male (12, 2)
++ Female (13, 2)
+> res 
++ NZ Maori (15, 1)
+- + rows
+- - 15 16
+- + cols
+- - 2
++ NZ European (17, 1)
+- + rows
+- - 17 18 19
+- + cols
+- - 2
++ Pasifika Peoples (20, 1)
+- + rows
+- - 20 21
+- + cols
+- - 2
++ Asian (22, 1)
+- + rows
+- - 22 23
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (24, 1)
+- + rows
+- - 24 25
+- + cols
+- - 2
+> plist 
+$rows
+[1] 15 16
+
+$cols
+[1] 2
+
+> res 
++ Male (15, 2)
++ Female (16, 2)
+> plist 
+$rows
+[1] 17 18 19
+
+$cols
+[1] 2
+
+> res 
++ Male (17, 2)
++ Female (18, 2)
++ Unknown (19, 2)
+> plist 
+$rows
+[1] 20 21
+
+$cols
+[1] 2
+
+> res 
++ Male (20, 2)
++ Female (21, 2)
+> plist 
+$rows
+[1] 22 23
+
+$cols
+[1] 2
+
+> res 
++ Male (22, 2)
++ Female (23, 2)
+> plist 
+$rows
+[1] 24 25
+
+$cols
+[1] 2
+
+> res 
++ Male (24, 2)
++ Female (25, 2)
+> res 
++ NZ Maori (27, 1)
+- + rows
+- - 27 28
+- + cols
+- - 2
++ NZ European (29, 1)
+- + rows
+- - 29 30 31
+- + cols
+- - 2
++ Pasifika Peoples (32, 1)
+- + rows
+- - 32 33
+- + cols
+- - 2
++ Asian (34, 1)
+- + rows
+- - 34 35
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (36, 1)
+- + rows
+- - 36 37
+- + cols
+- - 2
+> plist 
+$rows
+[1] 27 28
+
+$cols
+[1] 2
+
+> res 
++ Male (27, 2)
++ Female (28, 2)
+> plist 
+$rows
+[1] 29 30 31
+
+$cols
+[1] 2
+
+> res 
++ Male (29, 2)
++ Female (30, 2)
++ Unknown (31, 2)
+> plist 
+$rows
+[1] 32 33
+
+$cols
+[1] 2
+
+> res 
++ Male (32, 2)
++ Female (33, 2)
+> plist 
+$rows
+[1] 34 35
+
+$cols
+[1] 2
+
+> res 
++ Male (34, 2)
++ Female (35, 2)
+> plist 
+$rows
+[1] 36 37
+
+$cols
+[1] 2
+
+> res 
++ Male (36, 2)
++ Female (37, 2)
+> res 
++ NZ Maori (39, 1)
+- + rows
+- - 39 40
+- + cols
+- - 2
++ NZ European (41, 1)
+- + rows
+- - 41 42 43
+- + cols
+- - 2
++ Pasifika Peoples (44, 1)
+- + rows
+- - 44 45
+- + cols
+- - 2
++ Asian (46, 1)
+- + rows
+- - 46 47
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (48, 1)
+- + rows
+- - 48 49
+- + cols
+- - 2
+> plist 
+$rows
+[1] 39 40
+
+$cols
+[1] 2
+
+> res 
++ Male (39, 2)
++ Female (40, 2)
+> plist 
+$rows
+[1] 41 42 43
+
+$cols
+[1] 2
+
+> res 
++ Male (41, 2)
++ Female (42, 2)
++ Unknown (43, 2)
+> plist 
+$rows
+[1] 44 45
+
+$cols
+[1] 2
+
+> res 
++ Male (44, 2)
++ Female (45, 2)
+> plist 
+$rows
+[1] 46 47
+
+$cols
+[1] 2
+
+> res 
++ Male (46, 2)
++ Female (47, 2)
+> plist 
+$rows
+[1] 48 49
+
+$cols
+[1] 2
+
+> res 
++ Male (48, 2)
++ Female (49, 2)
+> res 
++ NZ Maori (51, 1)
+- + rows
+- - 51 52
+- + cols
+- - 2
++ NZ European (53, 1)
+- + rows
+- - 53 54 55
+- + cols
+- - 2
++ Pasifika Peoples (56, 1)
+- + rows
+- - 56 57
+- + cols
+- - 2
++ Asian (58, 1)
+- + rows
+- - 58 59
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (60, 1)
+- + rows
+- - 60 61
+- + cols
+- - 2
+> plist 
+$rows
+[1] 51 52
+
+$cols
+[1] 2
+
+> res 
++ Male (51, 2)
++ Female (52, 2)
+> plist 
+$rows
+[1] 53 54 55
+
+$cols
+[1] 2
+
+> res 
++ Male (53, 2)
++ Female (54, 2)
++ Unknown (55, 2)
+> plist 
+$rows
+[1] 56 57
+
+$cols
+[1] 2
+
+> res 
++ Male (56, 2)
++ Female (57, 2)
+> plist 
+$rows
+[1] 58 59
+
+$cols
+[1] 2
+
+> res 
++ Male (58, 2)
++ Female (59, 2)
+> plist 
+$rows
+[1] 60 61
+
+$cols
+[1] 2
+
+> res 
++ Male (60, 2)
++ Female (61, 2)
+> res 
++ NZ Maori (63, 1)
+- + rows
+- - 63 64
+- + cols
+- - 2
++ NZ European (65, 1)
+- + rows
+- - 65 66 67
+- + cols
+- - 2
++ Pasifika Peoples (68, 1)
+- + rows
+- - 68 69
+- + cols
+- - 2
++ Asian (70, 1)
+- + rows
+- - 70 71
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (72, 1)
+- + rows
+- - 72 73
+- + cols
+- - 2
+> plist 
+$rows
+[1] 63 64
+
+$cols
+[1] 2
+
+> res 
++ Male (63, 2)
++ Female (64, 2)
+> plist 
+$rows
+[1] 65 66 67
+
+$cols
+[1] 2
+
+> res 
++ Male (65, 2)
++ Female (66, 2)
++ Unknown (67, 2)
+> plist 
+$rows
+[1] 68 69
+
+$cols
+[1] 2
+
+> res 
++ Male (68, 2)
++ Female (69, 2)
+> plist 
+$rows
+[1] 70 71
+
+$cols
+[1] 2
+
+> res 
++ Male (70, 2)
++ Female (71, 2)
+> plist 
+$rows
+[1] 72 73
+
+$cols
+[1] 2
+
+> res 
++ Male (72, 2)
++ Female (73, 2)
+> res 
++ NZ Maori (75, 1)
+- + rows
+- - 75 76
+- + cols
+- - 2
++ NZ European (77, 1)
+- + rows
+- - 77 78 79
+- + cols
+- - 2
++ Pasifika Peoples (80, 1)
+- + rows
+- - 80 81
+- + cols
+- - 2
++ Asian (82, 1)
+- + rows
+- - 82 83
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (84, 1)
+- + rows
+- - 84 85
+- + cols
+- - 2
+> plist 
+$rows
+[1] 75 76
+
+$cols
+[1] 2
+
+> res 
++ Male (75, 2)
++ Female (76, 2)
+> plist 
+$rows
+[1] 77 78 79
+
+$cols
+[1] 2
+
+> res 
++ Male (77, 2)
++ Female (78, 2)
++ Unknown (79, 2)
+> plist 
+$rows
+[1] 80 81
+
+$cols
+[1] 2
+
+> res 
++ Male (80, 2)
++ Female (81, 2)
+> plist 
+$rows
+[1] 82 83
+
+$cols
+[1] 2
+
+> res 
++ Male (82, 2)
++ Female (83, 2)
+> plist 
+$rows
+[1] 84 85
+
+$cols
+[1] 2
+
+> res 
++ Male (84, 2)
++ Female (85, 2)
+> res 
++ NZ Maori (87, 1)
+- + rows
+- - 87 88
+- + cols
+- - 2
++ NZ European (89, 1)
+- + rows
+- - 89 90 91
+- + cols
+- - 2
++ Pasifika Peoples (92, 1)
+- + rows
+- - 92 93
+- + cols
+- - 2
++ Asian (94, 1)
+- + rows
+- - 94 95
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (96, 1)
+- + rows
+- - 96 97
+- + cols
+- - 2
+> plist 
+$rows
+[1] 87 88
+
+$cols
+[1] 2
+
+> res 
++ Male (87, 2)
++ Female (88, 2)
+> plist 
+$rows
+[1] 89 90 91
+
+$cols
+[1] 2
+
+> res 
++ Male (89, 2)
++ Female (90, 2)
++ Unknown (91, 2)
+> plist 
+$rows
+[1] 92 93
+
+$cols
+[1] 2
+
+> res 
++ Male (92, 2)
++ Female (93, 2)
+> plist 
+$rows
+[1] 94 95
+
+$cols
+[1] 2
+
+> res 
++ Male (94, 2)
++ Female (95, 2)
+> plist 
+$rows
+[1] 96 97
+
+$cols
+[1] 2
+
+> res 
++ Male (96, 2)
++ Female (97, 2)
+> res 
++ NZ Maori (99, 1)
+- + rows
+- - 99 100
+- + cols
+- - 2
++ NZ European (101, 1)
+- + rows
+- - 101 102 103
+- + cols
+- - 2
++ Pasifika Peoples (104, 1)
+- + rows
+- - 104 105
+- + cols
+- - 2
++ Asian (106, 1)
+- + rows
+- - 106 107
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (108, 1)
+- + rows
+- - 108 109
+- + cols
+- - 2
+> plist 
+$rows
+[1]  99 100
+
+$cols
+[1] 2
+
+> res 
++ Male (99, 2)
++ Female (100, 2)
+> plist 
+$rows
+[1] 101 102 103
+
+$cols
+[1] 2
+
+> res 
++ Male (101, 2)
++ Female (102, 2)
++ Unknown (103, 2)
+> plist 
+$rows
+[1] 104 105
+
+$cols
+[1] 2
+
+> res 
++ Male (104, 2)
++ Female (105, 2)
+> plist 
+$rows
+[1] 106 107
+
+$cols
+[1] 2
+
+> res 
++ Male (106, 2)
++ Female (107, 2)
+> plist 
+$rows
+[1] 108 109
+
+$cols
+[1] 2
+
+> res 
++ Male (108, 2)
++ Female (109, 2)
+> res 
++ NZ Maori (111, 1)
+- + rows
+- - 111 112
+- + cols
+- - 2
++ NZ European (113, 1)
+- + rows
+- - 113 114 115
+- + cols
+- - 2
++ Pasifika Peoples (116, 1)
+- + rows
+- - 116 117
+- + cols
+- - 2
++ Asian (118, 1)
+- + rows
+- - 118 119
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (120, 1)
+- + rows
+- - 120 121
+- + cols
+- - 2
+> plist 
+$rows
+[1] 111 112
+
+$cols
+[1] 2
+
+> res 
++ Male (111, 2)
++ Female (112, 2)
+> plist 
+$rows
+[1] 113 114 115
+
+$cols
+[1] 2
+
+> res 
++ Male (113, 2)
++ Female (114, 2)
++ Unknown (115, 2)
+> plist 
+$rows
+[1] 116 117
+
+$cols
+[1] 2
+
+> res 
++ Male (116, 2)
++ Female (117, 2)
+> plist 
+$rows
+[1] 118 119
+
+$cols
+[1] 2
+
+> res 
++ Male (118, 2)
++ Female (119, 2)
+> plist 
+$rows
+[1] 120 121
+
+$cols
+[1] 2
+
+> res 
++ Male (120, 2)
++ Female (121, 2)
+> res 
++ NZ Maori (123, 1)
+- + rows
+- - 123 124
+- + cols
+- - 2
++ NZ European (125, 1)
+- + rows
+- - 125 126 127
+- + cols
+- - 2
++ Pasifika Peoples (128, 1)
+- + rows
+- - 128 129
+- + cols
+- - 2
++ Asian (130, 1)
+- + rows
+- - 130 131
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (132, 1)
+- + rows
+- - 132 133
+- + cols
+- - 2
+> plist 
+$rows
+[1] 123 124
+
+$cols
+[1] 2
+
+> res 
++ Male (123, 2)
++ Female (124, 2)
+> plist 
+$rows
+[1] 125 126 127
+
+$cols
+[1] 2
+
+> res 
++ Male (125, 2)
++ Female (126, 2)
++ Unknown (127, 2)
+> plist 
+$rows
+[1] 128 129
+
+$cols
+[1] 2
+
+> res 
++ Male (128, 2)
++ Female (129, 2)
+> plist 
+$rows
+[1] 130 131
+
+$cols
+[1] 2
+
+> res 
++ Male (130, 2)
++ Female (131, 2)
+> plist 
+$rows
+[1] 132 133
+
+$cols
+[1] 2
+
+> res 
++ Male (132, 2)
++ Female (133, 2)
+> res 
++ NZ Maori (135, 1)
+- + rows
+- - 135 136
+- + cols
+- - 2
++ NZ European (137, 1)
+- + rows
+- - 137 138 139
+- + cols
+- - 2
++ Pasifika Peoples (140, 1)
+- + rows
+- - 140 141
+- + cols
+- - 2
++ Asian (142, 1)
+- + rows
+- - 142 143
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (144, 1)
+- + rows
+- - 144 145
+- + cols
+- - 2
+> plist 
+$rows
+[1] 135 136
+
+$cols
+[1] 2
+
+> res 
++ Male (135, 2)
++ Female (136, 2)
+> plist 
+$rows
+[1] 137 138 139
+
+$cols
+[1] 2
+
+> res 
++ Male (137, 2)
++ Female (138, 2)
++ Unknown (139, 2)
+> plist 
+$rows
+[1] 140 141
+
+$cols
+[1] 2
+
+> res 
++ Male (140, 2)
++ Female (141, 2)
+> plist 
+$rows
+[1] 142 143
+
+$cols
+[1] 2
+
+> res 
++ Male (142, 2)
++ Female (143, 2)
+> plist 
+$rows
+[1] 144 145
+
+$cols
+[1] 2
+
+> res 
++ Male (144, 2)
++ Female (145, 2)
+> res 
++ NZ Maori (147, 1)
+- + rows
+- - 147 148
+- + cols
+- - 2
++ NZ European (149, 1)
+- + rows
+- - 149 150 151
+- + cols
+- - 2
++ Pasifika Peoples (152, 1)
+- + rows
+- - 152 153
+- + cols
+- - 2
++ Asian (154, 1)
+- + rows
+- - 154 155
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (156, 1)
+- + rows
+- - 156 157
+- + cols
+- - 2
+> plist 
+$rows
+[1] 147 148
+
+$cols
+[1] 2
+
+> res 
++ Male (147, 2)
++ Female (148, 2)
+> plist 
+$rows
+[1] 149 150 151
+
+$cols
+[1] 2
+
+> res 
++ Male (149, 2)
++ Female (150, 2)
++ Unknown (151, 2)
+> plist 
+$rows
+[1] 152 153
+
+$cols
+[1] 2
+
+> res 
++ Male (152, 2)
++ Female (153, 2)
+> plist 
+$rows
+[1] 154 155
+
+$cols
+[1] 2
+
+> res 
++ Male (154, 2)
++ Female (155, 2)
+> plist 
+$rows
+[1] 156 157
+
+$cols
+[1] 2
+
+> res 
++ Male (156, 2)
++ Female (157, 2)
+> res 
++ NZ Maori (159, 1)
+- + rows
+- - 159 160
+- + cols
+- - 2
++ NZ European (161, 1)
+- + rows
+- - 161 162 163
+- + cols
+- - 2
++ Pasifika Peoples (164, 1)
+- + rows
+- - 164 165
+- + cols
+- - 2
++ Asian (166, 1)
+- + rows
+- - 166 167
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (168, 1)
+- + rows
+- - 168 169
+- + cols
+- - 2
+> plist 
+$rows
+[1] 159 160
+
+$cols
+[1] 2
+
+> res 
++ Male (159, 2)
++ Female (160, 2)
+> plist 
+$rows
+[1] 161 162 163
+
+$cols
+[1] 2
+
+> res 
++ Male (161, 2)
++ Female (162, 2)
++ Unknown (163, 2)
+> plist 
+$rows
+[1] 164 165
+
+$cols
+[1] 2
+
+> res 
++ Male (164, 2)
++ Female (165, 2)
+> plist 
+$rows
+[1] 166 167
+
+$cols
+[1] 2
+
+> res 
++ Male (166, 2)
++ Female (167, 2)
+> plist 
+$rows
+[1] 168 169
+
+$cols
+[1] 2
+
+> res 
++ Male (168, 2)
++ Female (169, 2)
+> res 
++ NZ Maori (171, 1)
+- + rows
+- - 171 172
+- + cols
+- - 2
++ NZ European (173, 1)
+- + rows
+- - 173 174 175
+- + cols
+- - 2
++ Pasifika Peoples (176, 1)
+- + rows
+- - 176 177
+- + cols
+- - 2
++ Asian (178, 1)
+- + rows
+- - 178 179
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (180, 1)
+- + rows
+- - 180 181
+- + cols
+- - 2
+> plist 
+$rows
+[1] 171 172
+
+$cols
+[1] 2
+
+> res 
++ Male (171, 2)
++ Female (172, 2)
+> plist 
+$rows
+[1] 173 174 175
+
+$cols
+[1] 2
+
+> res 
++ Male (173, 2)
++ Female (174, 2)
++ Unknown (175, 2)
+> plist 
+$rows
+[1] 176 177
+
+$cols
+[1] 2
+
+> res 
++ Male (176, 2)
++ Female (177, 2)
+> plist 
+$rows
+[1] 178 179
+
+$cols
+[1] 2
+
+> res 
++ Male (178, 2)
++ Female (179, 2)
+> plist 
+$rows
+[1] 180 181
+
+$cols
+[1] 2
+
+> res 
++ Male (180, 2)
++ Female (181, 2)
+> res 
++ NZ Maori (183, 1)
+- + rows
+- - 183 184
+- + cols
+- - 2
++ NZ European (185, 1)
+- + rows
+- - 185 186 187
+- + cols
+- - 2
++ Pasifika Peoples (188, 1)
+- + rows
+- - 188 189
+- + cols
+- - 2
++ Asian (190, 1)
+- + rows
+- - 190 191
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (192, 1)
+- + rows
+- - 192 193
+- + cols
+- - 2
+> plist 
+$rows
+[1] 183 184
+
+$cols
+[1] 2
+
+> res 
++ Male (183, 2)
++ Female (184, 2)
+> plist 
+$rows
+[1] 185 186 187
+
+$cols
+[1] 2
+
+> res 
++ Male (185, 2)
++ Female (186, 2)
++ Unknown (187, 2)
+> plist 
+$rows
+[1] 188 189
+
+$cols
+[1] 2
+
+> res 
++ Male (188, 2)
++ Female (189, 2)
+> plist 
+$rows
+[1] 190 191
+
+$cols
+[1] 2
+
+> res 
++ Male (190, 2)
++ Female (191, 2)
+> plist 
+$rows
+[1] 192 193
+
+$cols
+[1] 2
+
+> res 
++ Male (192, 2)
++ Female (193, 2)
+> res 
++ NZ Maori (195, 1)
+- + rows
+- - 195 196
+- + cols
+- - 2
++ NZ European (197, 1)
+- + rows
+- - 197 198 199
+- + cols
+- - 2
++ Pasifika Peoples (200, 1)
+- + rows
+- - 200 201
+- + cols
+- - 2
++ Asian (202, 1)
+- + rows
+- - 202 203
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (204, 1)
+- + rows
+- - 204 205
+- + cols
+- - 2
+> plist 
+$rows
+[1] 195 196
+
+$cols
+[1] 2
+
+> res 
++ Male (195, 2)
++ Female (196, 2)
+> plist 
+$rows
+[1] 197 198 199
+
+$cols
+[1] 2
+
+> res 
++ Male (197, 2)
++ Female (198, 2)
++ Unknown (199, 2)
+> plist 
+$rows
+[1] 200 201
+
+$cols
+[1] 2
+
+> res 
++ Male (200, 2)
++ Female (201, 2)
+> plist 
+$rows
+[1] 202 203
+
+$cols
+[1] 2
+
+> res 
++ Male (202, 2)
++ Female (203, 2)
+> plist 
+$rows
+[1] 204 205
+
+$cols
+[1] 2
+
+> res 
++ Male (204, 2)
++ Female (205, 2)
+> res 
++ NZ Maori (207, 1)
+- + rows
+- - 207 208
+- + cols
+- - 2
++ NZ European (209, 1)
+- + rows
+- - 209 210 211
+- + cols
+- - 2
++ Pasifika Peoples (212, 1)
+- + rows
+- - 212 213
+- + cols
+- - 2
++ Asian (214, 1)
+- + rows
+- - 214 215
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (216, 1)
+- + rows
+- - 216 217
+- + cols
+- - 2
+> plist 
+$rows
+[1] 207 208
+
+$cols
+[1] 2
+
+> res 
++ Male (207, 2)
++ Female (208, 2)
+> plist 
+$rows
+[1] 209 210 211
+
+$cols
+[1] 2
+
+> res 
++ Male (209, 2)
++ Female (210, 2)
++ Unknown (211, 2)
+> plist 
+$rows
+[1] 212 213
+
+$cols
+[1] 2
+
+> res 
++ Male (212, 2)
++ Female (213, 2)
+> plist 
+$rows
+[1] 214 215
+
+$cols
+[1] 2
+
+> res 
++ Male (214, 2)
++ Female (215, 2)
+> plist 
+$rows
+[1] 216 217
+
+$cols
+[1] 2
+
+> res 
++ Male (216, 2)
++ Female (217, 2)
+> res 
++ NZ Maori (219, 1)
+- + rows
+- - 219 220
+- + cols
+- - 2
++ NZ European (221, 1)
+- + rows
+- - 221 222 223
+- + cols
+- - 2
++ Pasifika Peoples (224, 1)
+- + rows
+- - 224 225
+- + cols
+- - 2
++ Asian (226, 1)
+- + rows
+- - 226 227
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (228, 1)
+- + rows
+- - 228 229
+- + cols
+- - 2
+> plist 
+$rows
+[1] 219 220
+
+$cols
+[1] 2
+
+> res 
++ Male (219, 2)
++ Female (220, 2)
+> plist 
+$rows
+[1] 221 222 223
+
+$cols
+[1] 2
+
+> res 
++ Male (221, 2)
++ Female (222, 2)
++ Unknown (223, 2)
+> plist 
+$rows
+[1] 224 225
+
+$cols
+[1] 2
+
+> res 
++ Male (224, 2)
++ Female (225, 2)
+> plist 
+$rows
+[1] 226 227
+
+$cols
+[1] 2
+
+> res 
++ Male (226, 2)
++ Female (227, 2)
+> plist 
+$rows
+[1] 228 229
+
+$cols
+[1] 2
+
+> res 
++ Male (228, 2)
++ Female (229, 2)
+> res 
++ NZ Maori (231, 1)
+- + rows
+- - 231 232
+- + cols
+- - 2
++ NZ European (233, 1)
+- + rows
+- - 233 234 235
+- + cols
+- - 2
++ Pasifika Peoples (236, 1)
+- + rows
+- - 236 237
+- + cols
+- - 2
++ Asian (238, 1)
+- + rows
+- - 238 239
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (240, 1)
+- + rows
+- - 240 241
+- + cols
+- - 2
+> plist 
+$rows
+[1] 231 232
+
+$cols
+[1] 2
+
+> res 
++ Male (231, 2)
++ Female (232, 2)
+> plist 
+$rows
+[1] 233 234 235
+
+$cols
+[1] 2
+
+> res 
++ Male (233, 2)
++ Female (234, 2)
++ Unknown (235, 2)
+> plist 
+$rows
+[1] 236 237
+
+$cols
+[1] 2
+
+> res 
++ Male (236, 2)
++ Female (237, 2)
+> plist 
+$rows
+[1] 238 239
+
+$cols
+[1] 2
+
+> res 
++ Male (238, 2)
++ Female (239, 2)
+> plist 
+$rows
+[1] 240 241
+
+$cols
+[1] 2
+
+> res 
++ Male (240, 2)
++ Female (241, 2)
+> res 
++ NZ Maori (243, 1)
+- + rows
+- - 243 244
+- + cols
+- - 2
++ NZ European (245, 1)
+- + rows
+- - 245 246 247
+- + cols
+- - 2
++ Pasifika Peoples (248, 1)
+- + rows
+- - 248 249
+- + cols
+- - 2
++ Asian (250, 1)
+- + rows
+- - 250 251
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (252, 1)
+- + rows
+- - 252 253
+- + cols
+- - 2
+> plist 
+$rows
+[1] 243 244
+
+$cols
+[1] 2
+
+> res 
++ Male (243, 2)
++ Female (244, 2)
+> plist 
+$rows
+[1] 245 246 247
+
+$cols
+[1] 2
+
+> res 
++ Male (245, 2)
++ Female (246, 2)
++ Unknown (247, 2)
+> plist 
+$rows
+[1] 248 249
+
+$cols
+[1] 2
+
+> res 
++ Male (248, 2)
++ Female (249, 2)
+> plist 
+$rows
+[1] 250 251
+
+$cols
+[1] 2
+
+> res 
++ Male (250, 2)
++ Female (251, 2)
+> plist 
+$rows
+[1] 252 253
+
+$cols
+[1] 2
+
+> res 
++ Male (252, 2)
++ Female (253, 2)
+> res 
++ NZ Maori (255, 1)
+- + rows
+- - 255 256
+- + cols
+- - 2
++ NZ European (257, 1)
+- + rows
+- - 257 258 259
+- + cols
+- - 2
++ Pasifika Peoples (260, 1)
+- + rows
+- - 260 261
+- + cols
+- - 2
++ Asian (262, 1)
+- + rows
+- - 262 263
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (264, 1)
+- + rows
+- - 264 265
+- + cols
+- - 2
+> plist 
+$rows
+[1] 255 256
+
+$cols
+[1] 2
+
+> res 
++ Male (255, 2)
++ Female (256, 2)
+> plist 
+$rows
+[1] 257 258 259
+
+$cols
+[1] 2
+
+> res 
++ Male (257, 2)
++ Female (258, 2)
++ Unknown (259, 2)
+> plist 
+$rows
+[1] 260 261
+
+$cols
+[1] 2
+
+> res 
++ Male (260, 2)
++ Female (261, 2)
+> plist 
+$rows
+[1] 262 263
+
+$cols
+[1] 2
+
+> res 
++ Male (262, 2)
++ Female (263, 2)
+> plist 
+$rows
+[1] 264 265
+
+$cols
+[1] 2
+
+> res 
++ Male (264, 2)
++ Female (265, 2)
+> res 
++ NZ Maori (267, 1)
+- + rows
+- - 267 268
+- + cols
+- - 2
++ NZ European (269, 1)
+- + rows
+- - 269 270 271
+- + cols
+- - 2
++ Pasifika Peoples (272, 1)
+- + rows
+- - 272 273
+- + cols
+- - 2
++ Asian (274, 1)
+- + rows
+- - 274 275
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (276, 1)
+- + rows
+- - 276 277
+- + cols
+- - 2
+> plist 
+$rows
+[1] 267 268
+
+$cols
+[1] 2
+
+> res 
++ Male (267, 2)
++ Female (268, 2)
+> plist 
+$rows
+[1] 269 270 271
+
+$cols
+[1] 2
+
+> res 
++ Male (269, 2)
++ Female (270, 2)
++ Unknown (271, 2)
+> plist 
+$rows
+[1] 272 273
+
+$cols
+[1] 2
+
+> res 
++ Male (272, 2)
++ Female (273, 2)
+> plist 
+$rows
+[1] 274 275
+
+$cols
+[1] 2
+
+> res 
++ Male (274, 2)
++ Female (275, 2)
+> plist 
+$rows
+[1] 276 277
+
+$cols
+[1] 2
+
+> res 
++ Male (276, 2)
++ Female (277, 2)
+> res 
++ NZ Maori (279, 1)
+- + rows
+- - 279 280
+- + cols
+- - 2
++ NZ European (281, 1)
+- + rows
+- - 281 282 283
+- + cols
+- - 2
++ Pasifika Peoples (284, 1)
+- + rows
+- - 284 285
+- + cols
+- - 2
++ Asian (286, 1)
+- + rows
+- - 286 287
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (288, 1)
+- + rows
+- - 288 289
+- + cols
+- - 2
+> plist 
+$rows
+[1] 279 280
+
+$cols
+[1] 2
+
+> res 
++ Male (279, 2)
++ Female (280, 2)
+> plist 
+$rows
+[1] 281 282 283
+
+$cols
+[1] 2
+
+> res 
++ Male (281, 2)
++ Female (282, 2)
++ Unknown (283, 2)
+> plist 
+$rows
+[1] 284 285
+
+$cols
+[1] 2
+
+> res 
++ Male (284, 2)
++ Female (285, 2)
+> plist 
+$rows
+[1] 286 287
+
+$cols
+[1] 2
+
+> res 
++ Male (286, 2)
++ Female (287, 2)
+> plist 
+$rows
+[1] 288 289
+
+$cols
+[1] 2
+
+> res 
++ Male (288, 2)
++ Female (289, 2)
+> res 
++ NZ Maori (291, 1)
+- + rows
+- - 291 292
+- + cols
+- - 2
++ NZ European (293, 1)
+- + rows
+- - 293 294 295
+- + cols
+- - 2
++ Pasifika Peoples (296, 1)
+- + rows
+- - 296 297
+- + cols
+- - 2
++ Asian (298, 1)
+- + rows
+- - 298 299
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (300, 1)
+- + rows
+- - 300 301
+- + cols
+- - 2
+> plist 
+$rows
+[1] 291 292
+
+$cols
+[1] 2
+
+> res 
++ Male (291, 2)
++ Female (292, 2)
+> plist 
+$rows
+[1] 293 294 295
+
+$cols
+[1] 2
+
+> res 
++ Male (293, 2)
++ Female (294, 2)
++ Unknown (295, 2)
+> plist 
+$rows
+[1] 296 297
+
+$cols
+[1] 2
+
+> res 
++ Male (296, 2)
++ Female (297, 2)
+> plist 
+$rows
+[1] 298 299
+
+$cols
+[1] 2
+
+> res 
++ Male (298, 2)
++ Female (299, 2)
+> plist 
+$rows
+[1] 300 301
+
+$cols
+[1] 2
+
+> res 
++ Male (300, 2)
++ Female (301, 2)
+> res 
++ NZ Maori (303, 1)
+- + rows
+- - 303 304
+- + cols
+- - 2
++ NZ European (305, 1)
+- + rows
+- - 305 306 307
+- + cols
+- - 2
++ Pasifika Peoples (308, 1)
+- + rows
+- - 308 309
+- + cols
+- - 2
++ Asian (310, 1)
+- + rows
+- - 310 311
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (312, 1)
+- + rows
+- - 312 313
+- + cols
+- - 2
+> plist 
+$rows
+[1] 303 304
+
+$cols
+[1] 2
+
+> res 
++ Male (303, 2)
++ Female (304, 2)
+> plist 
+$rows
+[1] 305 306 307
+
+$cols
+[1] 2
+
+> res 
++ Male (305, 2)
++ Female (306, 2)
++ Unknown (307, 2)
+> plist 
+$rows
+[1] 308 309
+
+$cols
+[1] 2
+
+> res 
++ Male (308, 2)
++ Female (309, 2)
+> plist 
+$rows
+[1] 310 311
+
+$cols
+[1] 2
+
+> res 
++ Male (310, 2)
++ Female (311, 2)
+> plist 
+$rows
+[1] 312 313
+
+$cols
+[1] 2
+
+> res 
++ Male (312, 2)
++ Female (313, 2)
+> res 
++ NZ Maori (315, 1)
+- + rows
+- - 315 316
+- + cols
+- - 2
++ NZ European (317, 1)
+- + rows
+- - 317 318 319
+- + cols
+- - 2
++ Pasifika Peoples (320, 1)
+- + rows
+- - 320 321
+- + cols
+- - 2
++ Asian (322, 1)
+- + rows
+- - 322 323
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (324, 1)
+- + rows
+- - 324 325
+- + cols
+- - 2
+> plist 
+$rows
+[1] 315 316
+
+$cols
+[1] 2
+
+> res 
++ Male (315, 2)
++ Female (316, 2)
+> plist 
+$rows
+[1] 317 318 319
+
+$cols
+[1] 2
+
+> res 
++ Male (317, 2)
++ Female (318, 2)
++ Unknown (319, 2)
+> plist 
+$rows
+[1] 320 321
+
+$cols
+[1] 2
+
+> res 
++ Male (320, 2)
++ Female (321, 2)
+> plist 
+$rows
+[1] 322 323
+
+$cols
+[1] 2
+
+> res 
++ Male (322, 2)
++ Female (323, 2)
+> plist 
+$rows
+[1] 324 325
+
+$cols
+[1] 2
+
+> res 
++ Male (324, 2)
++ Female (325, 2)
+> res 
++ NZ Maori (327, 1)
+- + rows
+- - 327 328
+- + cols
+- - 2
++ NZ European (329, 1)
+- + rows
+- - 329 330 331
+- + cols
+- - 2
++ Pasifika Peoples (332, 1)
+- + rows
+- - 332 333
+- + cols
+- - 2
++ Asian (334, 1)
+- + rows
+- - 334 335
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (336, 1)
+- + rows
+- - 336 337
+- + cols
+- - 2
+> plist 
+$rows
+[1] 327 328
+
+$cols
+[1] 2
+
+> res 
++ Male (327, 2)
++ Female (328, 2)
+> plist 
+$rows
+[1] 329 330 331
+
+$cols
+[1] 2
+
+> res 
++ Male (329, 2)
++ Female (330, 2)
++ Unknown (331, 2)
+> plist 
+$rows
+[1] 332 333
+
+$cols
+[1] 2
+
+> res 
++ Male (332, 2)
++ Female (333, 2)
+> plist 
+$rows
+[1] 334 335
+
+$cols
+[1] 2
+
+> res 
++ Male (334, 2)
++ Female (335, 2)
+> plist 
+$rows
+[1] 336 337
+
+$cols
+[1] 2
+
+> res 
++ Male (336, 2)
++ Female (337, 2)
+> res 
++ NZ Maori (339, 1)
+- + rows
+- - 339 340
+- + cols
+- - 2
++ NZ European (341, 1)
+- + rows
+- - 341 342 343
+- + cols
+- - 2
++ Pasifika Peoples (344, 1)
+- + rows
+- - 344 345
+- + cols
+- - 2
++ Asian (346, 1)
+- + rows
+- - 346 347
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (348, 1)
+- + rows
+- - 348 349
+- + cols
+- - 2
+> plist 
+$rows
+[1] 339 340
+
+$cols
+[1] 2
+
+> res 
++ Male (339, 2)
++ Female (340, 2)
+> plist 
+$rows
+[1] 341 342 343
+
+$cols
+[1] 2
+
+> res 
++ Male (341, 2)
++ Female (342, 2)
++ Unknown (343, 2)
+> plist 
+$rows
+[1] 344 345
+
+$cols
+[1] 2
+
+> res 
++ Male (344, 2)
++ Female (345, 2)
+> plist 
+$rows
+[1] 346 347
+
+$cols
+[1] 2
+
+> res 
++ Male (346, 2)
++ Female (347, 2)
+> plist 
+$rows
+[1] 348 349
+
+$cols
+[1] 2
+
+> res 
++ Male (348, 2)
++ Female (349, 2)
+> res 
++ NZ Maori (351, 1)
+- + rows
+- - 351 352
+- + cols
+- - 2
++ NZ European (353, 1)
+- + rows
+- - 353 354 355
+- + cols
+- - 2
++ Pasifika Peoples (356, 1)
+- + rows
+- - 356 357
+- + cols
+- - 2
++ Asian (358, 1)
+- + rows
+- - 358 359
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (360, 1)
+- + rows
+- - 360 361
+- + cols
+- - 2
+> plist 
+$rows
+[1] 351 352
+
+$cols
+[1] 2
+
+> res 
++ Male (351, 2)
++ Female (352, 2)
+> plist 
+$rows
+[1] 353 354 355
+
+$cols
+[1] 2
+
+> res 
++ Male (353, 2)
++ Female (354, 2)
++ Unknown (355, 2)
+> plist 
+$rows
+[1] 356 357
+
+$cols
+[1] 2
+
+> res 
++ Male (356, 2)
++ Female (357, 2)
+> plist 
+$rows
+[1] 358 359
+
+$cols
+[1] 2
+
+> res 
++ Male (358, 2)
++ Female (359, 2)
+> plist 
+$rows
+[1] 360 361
+
+$cols
+[1] 2
+
+> res 
++ Male (360, 2)
++ Female (361, 2)
+> res 
++ NZ Maori (363, 1)
+- + rows
+- - 363 364
+- + cols
+- - 2
++ NZ European (365, 1)
+- + rows
+- - 365 366 367
+- + cols
+- - 2
++ Pasifika Peoples (368, 1)
+- + rows
+- - 368 369
+- + cols
+- - 2
++ Asian (370, 1)
+- + rows
+- - 370 371
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (372, 1)
+- + rows
+- - 372 373
+- + cols
+- - 2
+> plist 
+$rows
+[1] 363 364
+
+$cols
+[1] 2
+
+> res 
++ Male (363, 2)
++ Female (364, 2)
+> plist 
+$rows
+[1] 365 366 367
+
+$cols
+[1] 2
+
+> res 
++ Male (365, 2)
++ Female (366, 2)
++ Unknown (367, 2)
+> plist 
+$rows
+[1] 368 369
+
+$cols
+[1] 2
+
+> res 
++ Male (368, 2)
++ Female (369, 2)
+> plist 
+$rows
+[1] 370 371
+
+$cols
+[1] 2
+
+> res 
++ Male (370, 2)
++ Female (371, 2)
+> plist 
+$rows
+[1] 372 373
+
+$cols
+[1] 2
+
+> res 
++ Male (372, 2)
++ Female (373, 2)
+> res 
++ NZ Maori (375, 1)
+- + rows
+- - 375 376
+- + cols
+- - 2
++ NZ European (377, 1)
+- + rows
+- - 377 378 379
+- + cols
+- - 2
++ Pasifika Peoples (380, 1)
+- + rows
+- - 380 381
+- + cols
+- - 2
++ Asian (382, 1)
+- + rows
+- - 382 383
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (384, 1)
+- + rows
+- - 384 385
+- + cols
+- - 2
+> plist 
+$rows
+[1] 375 376
+
+$cols
+[1] 2
+
+> res 
++ Male (375, 2)
++ Female (376, 2)
+> plist 
+$rows
+[1] 377 378 379
+
+$cols
+[1] 2
+
+> res 
++ Male (377, 2)
++ Female (378, 2)
++ Unknown (379, 2)
+> plist 
+$rows
+[1] 380 381
+
+$cols
+[1] 2
+
+> res 
++ Male (380, 2)
++ Female (381, 2)
+> plist 
+$rows
+[1] 382 383
+
+$cols
+[1] 2
+
+> res 
++ Male (382, 2)
++ Female (383, 2)
+> plist 
+$rows
+[1] 384 385
+
+$cols
+[1] 2
+
+> res 
++ Male (384, 2)
++ Female (385, 2)
+> res 
++ NZ Maori (387, 1)
+- + rows
+- - 387 388
+- + cols
+- - 2
++ NZ European (389, 1)
+- + rows
+- - 389 390 391
+- + cols
+- - 2
++ Pasifika Peoples (392, 1)
+- + rows
+- - 392 393
+- + cols
+- - 2
++ Asian (394, 1)
+- + rows
+- - 394 395
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (396, 1)
+- + rows
+- - 396 397
+- + cols
+- - 2
+> plist 
+$rows
+[1] 387 388
+
+$cols
+[1] 2
+
+> res 
++ Male (387, 2)
++ Female (388, 2)
+> plist 
+$rows
+[1] 389 390 391
+
+$cols
+[1] 2
+
+> res 
++ Male (389, 2)
++ Female (390, 2)
++ Unknown (391, 2)
+> plist 
+$rows
+[1] 392 393
+
+$cols
+[1] 2
+
+> res 
++ Male (392, 2)
++ Female (393, 2)
+> plist 
+$rows
+[1] 394 395
+
+$cols
+[1] 2
+
+> res 
++ Male (394, 2)
++ Female (395, 2)
+> plist 
+$rows
+[1] 396 397
+
+$cols
+[1] 2
+
+> res 
++ Male (396, 2)
++ Female (397, 2)
+> res 
++ NZ Maori (399, 1)
+- + rows
+- - 399 400
+- + cols
+- - 2
++ NZ European (401, 1)
+- + rows
+- - 401 402 403
+- + cols
+- - 2
++ Pasifika Peoples (404, 1)
+- + rows
+- - 404 405
+- + cols
+- - 2
++ Asian (406, 1)
+- + rows
+- - 406 407
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (408, 1)
+- + rows
+- - 408 409
+- + cols
+- - 2
+> plist 
+$rows
+[1] 399 400
+
+$cols
+[1] 2
+
+> res 
++ Male (399, 2)
++ Female (400, 2)
+> plist 
+$rows
+[1] 401 402 403
+
+$cols
+[1] 2
+
+> res 
++ Male (401, 2)
++ Female (402, 2)
++ Unknown (403, 2)
+> plist 
+$rows
+[1] 404 405
+
+$cols
+[1] 2
+
+> res 
++ Male (404, 2)
++ Female (405, 2)
+> plist 
+$rows
+[1] 406 407
+
+$cols
+[1] 2
+
+> res 
++ Male (406, 2)
++ Female (407, 2)
+> plist 
+$rows
+[1] 408 409
+
+$cols
+[1] 2
+
+> res 
++ Male (408, 2)
++ Female (409, 2)
+> res 
++ NZ Maori (411, 1)
+- + rows
+- - 411 412
+- + cols
+- - 2
++ NZ European (413, 1)
+- + rows
+- - 413 414 415
+- + cols
+- - 2
++ Pasifika Peoples (416, 1)
+- + rows
+- - 416 417
+- + cols
+- - 2
++ Asian (418, 1)
+- + rows
+- - 418 419
+- + cols
+- - 2
++ Other/Unspecified Ethnicity (420, 1)
+- + rows
+- - 420 421
+- + cols
+- - 2
+> plist 
+$rows
+[1] 411 412
+
+$cols
+[1] 2
+
+> res 
++ Male (411, 2)
++ Female (412, 2)
+> plist 
+$rows
+[1] 413 414 415
+
+$cols
+[1] 2
+
+> res 
++ Male (413, 2)
++ Female (414, 2)
++ Unknown (415, 2)
+> plist 
+$rows
+[1] 416 417
+
+$cols
+[1] 2
+
+> res 
++ Male (416, 2)
++ Female (417, 2)
+> plist 
+$rows
+[1] 418 419
+
+$cols
+[1] 2
+
+> res 
++ Male (418, 2)
++ Female (419, 2)
+> plist 
+$rows
+[1] 420 421
+
+$cols
+[1] 2
+
+> res 
++ Male (420, 2)
++ Female (421, 2)
+> rowplist 
++ All Subjects (1, 1)
+- + Accounting (2, 1)
+- - + NZ Maori (3, 1)
+- - - + Male (3, 2)
+- - - + Female (4, 2)
+- - + NZ European (5, 1)
+- - - + Male (5, 2)
+- - - + Female (6, 2)
+- - - + Unknown (7, 2)
+- - + Pasifika Peoples (8, 1)
+- - - + Male (8, 2)
+- - - + Female (9, 2)
+- - + Asian (10, 1)
+- - - + Male (10, 2)
+- - - + Female (11, 2)
+- - + Other/Unspecified Ethnicity (12, 1)
+- - - + Male (12, 2)
+- - - + Female (13, 2)
+- + Agricultural & Horticultural Science (14, 1)
+- - + NZ Maori (15, 1)
+- - - + Male (15, 2)
+- - - + Female (16, 2)
+- - + NZ European (17, 1)
+- - - + Male (17, 2)
+- - - + Female (18, 2)
+- - - + Unknown (19, 2)
+- - + Pasifika Peoples (20, 1)
+- - - + Male (20, 2)
+- - - + Female (21, 2)
+- - + Asian (22, 1)
+- - - + Male (22, 2)
+- - - + Female (23, 2)
+- - + Other/Unspecified Ethnicity (24, 1)
+- - - + Male (24, 2)
+- - - + Female (25, 2)
+- + Art History (26, 1)
+- - + NZ Maori (27, 1)
+- - - + Male (27, 2)
+- - - + Female (28, 2)
+- - + NZ European (29, 1)
+- - - + Male (29, 2)
+- - - + Female (30, 2)
+- - - + Unknown (31, 2)
+- - + Pasifika Peoples (32, 1)
+- - - + Male (32, 2)
+- - - + Female (33, 2)
+- - + Asian (34, 1)
+- - - + Male (34, 2)
+- - - + Female (35, 2)
+- - + Other/Unspecified Ethnicity (36, 1)
+- - - + Male (36, 2)
+- - - + Female (37, 2)
+- + Biology (38, 1)
+- - + NZ Maori (39, 1)
+- - - + Male (39, 2)
+- - - + Female (40, 2)
+- - + NZ European (41, 1)
+- - - + Male (41, 2)
+- - - + Female (42, 2)
+- - - + Unknown (43, 2)
+- - + Pasifika Peoples (44, 1)
+- - - + Male (44, 2)
+- - - + Female (45, 2)
+- - + Asian (46, 1)
+- - - + Male (46, 2)
+- - - + Female (47, 2)
+- - + Other/Unspecified Ethnicity (48, 1)
+- - - + Male (48, 2)
+- - - + Female (49, 2)
+- + Chemistry (50, 1)
+- - + NZ Maori (51, 1)
+- - - + Male (51, 2)
+- - - + Female (52, 2)
+- - + NZ European (53, 1)
+- - - + Male (53, 2)
+- - - + Female (54, 2)
+- - - + Unknown (55, 2)
+- - + Pasifika Peoples (56, 1)
+- - - + Male (56, 2)
+- - - + Female (57, 2)
+- - + Asian (58, 1)
+- - - + Male (58, 2)
+- - - + Female (59, 2)
+- - + Other/Unspecified Ethnicity (60, 1)
+- - - + Male (60, 2)
+- - - + Female (61, 2)
+- + Chinese (62, 1)
+- - + NZ Maori (63, 1)
+- - - + Male (63, 2)
+- - - + Female (64, 2)
+- - + NZ European (65, 1)
+- - - + Male (65, 2)
+- - - + Female (66, 2)
+- - - + Unknown (67, 2)
+- - + Pasifika Peoples (68, 1)
+- - - + Male (68, 2)
+- - - + Female (69, 2)
+- - + Asian (70, 1)
+- - - + Male (70, 2)
+- - - + Female (71, 2)
+- - + Other/Unspecified Ethnicity (72, 1)
+- - - + Male (72, 2)
+- - - + Female (73, 2)
+- + Classical Studies (74, 1)
+- - + NZ Maori (75, 1)
+- - - + Male (75, 2)
+- - - + Female (76, 2)
+- - + NZ European (77, 1)
+- - - + Male (77, 2)
+- - - + Female (78, 2)
+- - - + Unknown (79, 2)
+- - + Pasifika Peoples (80, 1)
+- - - + Male (80, 2)
+- - - + Female (81, 2)
+- - + Asian (82, 1)
+- - - + Male (82, 2)
+- - - + Female (83, 2)
+- - + Other/Unspecified Ethnicity (84, 1)
+- - - + Male (84, 2)
+- - - + Female (85, 2)
+- + Dance (86, 1)
+- - + NZ Maori (87, 1)
+- - - + Male (87, 2)
+- - - + Female (88, 2)
+- - + NZ European (89, 1)
+- - - + Male (89, 2)
+- - - + Female (90, 2)
+- - - + Unknown (91, 2)
+- - + Pasifika Peoples (92, 1)
+- - - + Male (92, 2)
+- - - + Female (93, 2)
+- - + Asian (94, 1)
+- - - + Male (94, 2)
+- - - + Female (95, 2)
+- - + Other/Unspecified Ethnicity (96, 1)
+- - - + Male (96, 2)
+- - - + Female (97, 2)
+- + Design and Visual Communication (98, 1)
+- - + NZ Maori (99, 1)
+- - - + Male (99, 2)
+- - - + Female (100, 2)
+- - + NZ European (101, 1)
+- - - + Male (101, 2)
+- - - + Female (102, 2)
+- - - + Unknown (103, 2)
+- - + Pasifika Peoples (104, 1)
+- - - + Male (104, 2)
+- - - + Female (105, 2)
+- - + Asian (106, 1)
+- - - + Male (106, 2)
+- - - + Female (107, 2)
+- - + Other/Unspecified Ethnicity (108, 1)
+- - - + Male (108, 2)
+- - - + Female (109, 2)
+- + Drama (110, 1)
+- - + NZ Maori (111, 1)
+- - - + Male (111, 2)
+- - - + Female (112, 2)
+- - + NZ European (113, 1)
+- - - + Male (113, 2)
+- - - + Female (114, 2)
+- - - + Unknown (115, 2)
+- - + Pasifika Peoples (116, 1)
+- - - + Male (116, 2)
+- - - + Female (117, 2)
+- - + Asian (118, 1)
+- - - + Male (118, 2)
+- - - + Female (119, 2)
+- - + Other/Unspecified Ethnicity (120, 1)
+- - - + Male (120, 2)
+- - - + Female (121, 2)
+- + Economics (122, 1)
+- - + NZ Maori (123, 1)
+- - - + Male (123, 2)
+- - - + Female (124, 2)
+- - + NZ European (125, 1)
+- - - + Male (125, 2)
+- - - + Female (126, 2)
+- - - + Unknown (127, 2)
+- - + Pasifika Peoples (128, 1)
+- - - + Male (128, 2)
+- - - + Female (129, 2)
+- - + Asian (130, 1)
+- - - + Male (130, 2)
+- - - + Female (131, 2)
+- - + Other/Unspecified Ethnicity (132, 1)
+- - - + Male (132, 2)
+- - - + Female (133, 2)
+- + English (134, 1)
+- - + NZ Maori (135, 1)
+- - - + Male (135, 2)
+- - - + Female (136, 2)
+- - + NZ European (137, 1)
+- - - + Male (137, 2)
+- - - + Female (138, 2)
+- - - + Unknown (139, 2)
+- - + Pasifika Peoples (140, 1)
+- - - + Male (140, 2)
+- - - + Female (141, 2)
+- - + Asian (142, 1)
+- - - + Male (142, 2)
+- - - + Female (143, 2)
+- - + Other/Unspecified Ethnicity (144, 1)
+- - - + Male (144, 2)
+- - - + Female (145, 2)
+- + French (146, 1)
+- - + NZ Maori (147, 1)
+- - - + Male (147, 2)
+- - - + Female (148, 2)
+- - + NZ European (149, 1)
+- - - + Male (149, 2)
+- - - + Female (150, 2)
+- - - + Unknown (151, 2)
+- - + Pasifika Peoples (152, 1)
+- - - + Male (152, 2)
+- - - + Female (153, 2)
+- - + Asian (154, 1)
+- - - + Male (154, 2)
+- - - + Female (155, 2)
+- - + Other/Unspecified Ethnicity (156, 1)
+- - - + Male (156, 2)
+- - - + Female (157, 2)
+- + Geography (158, 1)
+- - + NZ Maori (159, 1)
+- - - + Male (159, 2)
+- - - + Female (160, 2)
+- - + NZ European (161, 1)
+- - - + Male (161, 2)
+- - - + Female (162, 2)
+- - - + Unknown (163, 2)
+- - + Pasifika Peoples (164, 1)
+- - - + Male (164, 2)
+- - - + Female (165, 2)
+- - + Asian (166, 1)
+- - - + Male (166, 2)
+- - - + Female (167, 2)
+- - + Other/Unspecified Ethnicity (168, 1)
+- - - + Male (168, 2)
+- - - + Female (169, 2)
+- + German (170, 1)
+- - + NZ Maori (171, 1)
+- - - + Male (171, 2)
+- - - + Female (172, 2)
+- - + NZ European (173, 1)
+- - - + Male (173, 2)
+- - - + Female (174, 2)
+- - - + Unknown (175, 2)
+- - + Pasifika Peoples (176, 1)
+- - - + Male (176, 2)
+- - - + Female (177, 2)
+- - + Asian (178, 1)
+- - - + Male (178, 2)
+- - - + Female (179, 2)
+- - + Other/Unspecified Ethnicity (180, 1)
+- - - + Male (180, 2)
+- - - + Female (181, 2)
+- + Graphics (182, 1)
+- - + NZ Maori (183, 1)
+- - - + Male (183, 2)
+- - - + Female (184, 2)
+- - + NZ European (185, 1)
+- - - + Male (185, 2)
+- - - + Female (186, 2)
+- - - + Unknown (187, 2)
+- - + Pasifika Peoples (188, 1)
+- - - + Male (188, 2)
+- - - + Female (189, 2)
+- - + Asian (190, 1)
+- - - + Male (190, 2)
+- - - + Female (191, 2)
+- - + Other/Unspecified Ethnicity (192, 1)
+- - - + Male (192, 2)
+- - - + Female (193, 2)
+- + History (194, 1)
+- - + NZ Maori (195, 1)
+- - - + Male (195, 2)
+- - - + Female (196, 2)
+- - + NZ European (197, 1)
+- - - + Male (197, 2)
+- - - + Female (198, 2)
+- - - + Unknown (199, 2)
+- - + Pasifika Peoples (200, 1)
+- - - + Male (200, 2)
+- - - + Female (201, 2)
+- - + Asian (202, 1)
+- - - + Male (202, 2)
+- - - + Female (203, 2)
+- - + Other/Unspecified Ethnicity (204, 1)
+- - - + Male (204, 2)
+- - - + Female (205, 2)
+- + Japanese (206, 1)
+- - + NZ Maori (207, 1)
+- - - + Male (207, 2)
+- - - + Female (208, 2)
+- - + NZ European (209, 1)
+- - - + Male (209, 2)
+- - - + Female (210, 2)
+- - - + Unknown (211, 2)
+- - + Pasifika Peoples (212, 1)
+- - - + Male (212, 2)
+- - - + Female (213, 2)
+- - + Asian (214, 1)
+- - - + Male (214, 2)
+- - - + Female (215, 2)
+- - + Other/Unspecified Ethnicity (216, 1)
+- - - + Male (216, 2)
+- - - + Female (217, 2)
+- + Latin (218, 1)
+- - + NZ Maori (219, 1)
+- - - + Male (219, 2)
+- - - + Female (220, 2)
+- - + NZ European (221, 1)
+- - - + Male (221, 2)
+- - - + Female (222, 2)
+- - - + Unknown (223, 2)
+- - + Pasifika Peoples (224, 1)
+- - - + Male (224, 2)
+- - - + Female (225, 2)
+- - + Asian (226, 1)
+- - - + Male (226, 2)
+- - - + Female (227, 2)
+- - + Other/Unspecified Ethnicity (228, 1)
+- - - + Male (228, 2)
+- - - + Female (229, 2)
+- + Mathematics with Calculus (230, 1)
+- - + NZ Maori (231, 1)
+- - - + Male (231, 2)
+- - - + Female (232, 2)
+- - + NZ European (233, 1)
+- - - + Male (233, 2)
+- - - + Female (234, 2)
+- - - + Unknown (235, 2)
+- - + Pasifika Peoples (236, 1)
+- - - + Male (236, 2)
+- - - + Female (237, 2)
+- - + Asian (238, 1)
+- - - + Male (238, 2)
+- - - + Female (239, 2)
+- - + Other/Unspecified Ethnicity (240, 1)
+- - - + Male (240, 2)
+- - - + Female (241, 2)
+- + Media Studies (242, 1)
+- - + NZ Maori (243, 1)
+- - - + Male (243, 2)
+- - - + Female (244, 2)
+- - + NZ European (245, 1)
+- - - + Male (245, 2)
+- - - + Female (246, 2)
+- - - + Unknown (247, 2)
+- - + Pasifika Peoples (248, 1)
+- - - + Male (248, 2)
+- - - + Female (249, 2)
+- - + Asian (250, 1)
+- - - + Male (250, 2)
+- - - + Female (251, 2)
+- - + Other/Unspecified Ethnicity (252, 1)
+- - - + Male (252, 2)
+- - - + Female (253, 2)
+- + Music Studies (254, 1)
+- - + NZ Maori (255, 1)
+- - - + Male (255, 2)
+- - - + Female (256, 2)
+- - + NZ European (257, 1)
+- - - + Male (257, 2)
+- - - + Female (258, 2)
+- - - + Unknown (259, 2)
+- - + Pasifika Peoples (260, 1)
+- - - + Male (260, 2)
+- - - + Female (261, 2)
+- - + Asian (262, 1)
+- - - + Male (262, 2)
+- - - + Female (263, 2)
+- - + Other/Unspecified Ethnicity (264, 1)
+- - - + Male (264, 2)
+- - - + Female (265, 2)
+- + Painting (266, 1)
+- - + NZ Maori (267, 1)
+- - - + Male (267, 2)
+- - - + Female (268, 2)
+- - + NZ European (269, 1)
+- - - + Male (269, 2)
+- - - + Female (270, 2)
+- - - + Unknown (271, 2)
+- - + Pasifika Peoples (272, 1)
+- - - + Male (272, 2)
+- - - + Female (273, 2)
+- - + Asian (274, 1)
+- - - + Male (274, 2)
+- - - + Female (275, 2)
+- - + Other/Unspecified Ethnicity (276, 1)
+- - - + Male (276, 2)
+- - - + Female (277, 2)
+- + Photography (278, 1)
+- - + NZ Maori (279, 1)
+- - - + Male (279, 2)
+- - - + Female (280, 2)
+- - + NZ European (281, 1)
+- - - + Male (281, 2)
+- - - + Female (282, 2)
+- - - + Unknown (283, 2)
+- - + Pasifika Peoples (284, 1)
+- - - + Male (284, 2)
+- - - + Female (285, 2)
+- - + Asian (286, 1)
+- - - + Male (286, 2)
+- - - + Female (287, 2)
+- - + Other/Unspecified Ethnicity (288, 1)
+- - - + Male (288, 2)
+- - - + Female (289, 2)
+- + Physical Education (290, 1)
+- - + NZ Maori (291, 1)
+- - - + Male (291, 2)
+- - - + Female (292, 2)
+- - + NZ European (293, 1)
+- - - + Male (293, 2)
+- - - + Female (294, 2)
+- - - + Unknown (295, 2)
+- - + Pasifika Peoples (296, 1)
+- - - + Male (296, 2)
+- - - + Female (297, 2)
+- - + Asian (298, 1)
+- - - + Male (298, 2)
+- - - + Female (299, 2)
+- - + Other/Unspecified Ethnicity (300, 1)
+- - - + Male (300, 2)
+- - - + Female (301, 2)
+- + Physics (302, 1)
+- - + NZ Maori (303, 1)
+- - - + Male (303, 2)
+- - - + Female (304, 2)
+- - + NZ European (305, 1)
+- - - + Male (305, 2)
+- - - + Female (306, 2)
+- - - + Unknown (307, 2)
+- - + Pasifika Peoples (308, 1)
+- - - + Male (308, 2)
+- - - + Female (309, 2)
+- - + Asian (310, 1)
+- - - + Male (310, 2)
+- - - + Female (311, 2)
+- - + Other/Unspecified Ethnicity (312, 1)
+- - - + Male (312, 2)
+- - - + Female (313, 2)
+- + Printmaking (314, 1)
+- - + NZ Maori (315, 1)
+- - - + Male (315, 2)
+- - - + Female (316, 2)
+- - + NZ European (317, 1)
+- - - + Male (317, 2)
+- - - + Female (318, 2)
+- - - + Unknown (319, 2)
+- - + Pasifika Peoples (320, 1)
+- - - + Male (320, 2)
+- - - + Female (321, 2)
+- - + Asian (322, 1)
+- - - + Male (322, 2)
+- - - + Female (323, 2)
+- - + Other/Unspecified Ethnicity (324, 1)
+- - - + Male (324, 2)
+- - - + Female (325, 2)
+- + Samoan (326, 1)
+- - + NZ Maori (327, 1)
+- - - + Male (327, 2)
+- - - + Female (328, 2)
+- - + NZ European (329, 1)
+- - - + Male (329, 2)
+- - - + Female (330, 2)
+- - - + Unknown (331, 2)
+- - + Pasifika Peoples (332, 1)
+- - - + Male (332, 2)
+- - - + Female (333, 2)
+- - + Asian (334, 1)
+- - - + Male (334, 2)
+- - - + Female (335, 2)
+- - + Other/Unspecified Ethnicity (336, 1)
+- - - + Male (336, 2)
+- - - + Female (337, 2)
+- + Science (338, 1)
+- - + NZ Maori (339, 1)
+- - - + Male (339, 2)
+- - - + Female (340, 2)
+- - + NZ European (341, 1)
+- - - + Male (341, 2)
+- - - + Female (342, 2)
+- - - + Unknown (343, 2)
+- - + Pasifika Peoples (344, 1)
+- - - + Male (344, 2)
+- - - + Female (345, 2)
+- - + Asian (346, 1)
+- - - + Male (346, 2)
+- - - + Female (347, 2)
+- - + Other/Unspecified Ethnicity (348, 1)
+- - - + Male (348, 2)
+- - - + Female (349, 2)
+- + Sculpture (350, 1)
+- - + NZ Maori (351, 1)
+- - - + Male (351, 2)
+- - - + Female (352, 2)
+- - + NZ European (353, 1)
+- - - + Male (353, 2)
+- - - + Female (354, 2)
+- - - + Unknown (355, 2)
+- - + Pasifika Peoples (356, 1)
+- - - + Male (356, 2)
+- - - + Female (357, 2)
+- - + Asian (358, 1)
+- - - + Male (358, 2)
+- - - + Female (359, 2)
+- - + Other/Unspecified Ethnicity (360, 1)
+- - - + Male (360, 2)
+- - - + Female (361, 2)
+- + Spanish (362, 1)
+- - + NZ Maori (363, 1)
+- - - + Male (363, 2)
+- - - + Female (364, 2)
+- - + NZ European (365, 1)
+- - - + Male (365, 2)
+- - - + Female (366, 2)
+- - - + Unknown (367, 2)
+- - + Pasifika Peoples (368, 1)
+- - - + Male (368, 2)
+- - - + Female (369, 2)
+- - + Asian (370, 1)
+- - - + Male (370, 2)
+- - - + Female (371, 2)
+- - + Other/Unspecified Ethnicity (372, 1)
+- - - + Male (372, 2)
+- - - + Female (373, 2)
+- + Statistics and Modelling (374, 1)
+- - + NZ Maori (375, 1)
+- - - + Male (375, 2)
+- - - + Female (376, 2)
+- - + NZ European (377, 1)
+- - - + Male (377, 2)
+- - - + Female (378, 2)
+- - - + Unknown (379, 2)
+- - + Pasifika Peoples (380, 1)
+- - - + Male (380, 2)
+- - - + Female (381, 2)
+- - + Asian (382, 1)
+- - - + Male (382, 2)
+- - - + Female (383, 2)
+- - + Other/Unspecified Ethnicity (384, 1)
+- - - + Male (384, 2)
+- - - + Female (385, 2)
+- + Te Reo Maori (386, 1)
+- - + NZ Maori (387, 1)
+- - - + Male (387, 2)
+- - - + Female (388, 2)
+- - + NZ European (389, 1)
+- - - + Male (389, 2)
+- - - + Female (390, 2)
+- - - + Unknown (391, 2)
+- - + Pasifika Peoples (392, 1)
+- - - + Male (392, 2)
+- - - + Female (393, 2)
+- - + Asian (394, 1)
+- - - + Male (394, 2)
+- - - + Female (395, 2)
+- - + Other/Unspecified Ethnicity (396, 1)
+- - - + Male (396, 2)
+- - - + Female (397, 2)
+- + Te Reo Rangatira (398, 1)
+- - + NZ Maori (399, 1)
+- - - + Male (399, 2)
+- - - + Female (400, 2)
+- - + NZ European (401, 1)
+- - - + Male (401, 2)
+- - - + Female (402, 2)
+- - - + Unknown (403, 2)
+- - + Pasifika Peoples (404, 1)
+- - - + Male (404, 2)
+- - - + Female (405, 2)
+- - + Asian (406, 1)
+- - - + Male (406, 2)
+- - - + Female (407, 2)
+- - + Other/Unspecified Ethnicity (408, 1)
+- - - + Male (408, 2)
+- - - + Female (409, 2)
+- + Technology (410, 1)
+- - + NZ Maori (411, 1)
+- - - + Male (411, 2)
+- - - + Female (412, 2)
+- - + NZ European (413, 1)
+- - - + Male (413, 2)
+- - - + Female (414, 2)
+- - - + Unknown (415, 2)
+- - + Pasifika Peoples (416, 1)
+- - - + Male (416, 2)
+- - - + Female (417, 2)
+- - + Asian (418, 1)
+- - - + Male (418, 2)
+- - - + Female (419, 2)
+- - + Other/Unspecified Ethnicity (420, 1)
+- - - + Male (420, 2)
+- - - + Female (421, 2)
+> rowvecs[1:4,] 
+     [,1]           [,2]         [,3]          [,4]    
+[1,] "All Subjects" "Accounting" "NZ Maori"    "Male"  
+[2,] "All Subjects" "Accounting" "NZ Maori"    "Female"
+[3,] "All Subjects" "Accounting" "NZ European" "Male"  
+[4,] "All Subjects" "Accounting" "NZ European" "Female"
+> res 
++ Decile 1-3 (1, 2)
+- + rows
+- - 1 2 3 4 5 6 7
+- + cols
+- - 3
++ Decile 4-7 (8, 2)
+- + rows
+- - 8 9 10 11 12 13 14
+- + cols
+- - 3
++ Decile 8-10 (15, 2)
+- + rows
+- - 15 16 17 18 19 20 21
+- + cols
+- - 3
+> plist 
+$rows
+[1] 1 2 3 4 5 6 7
+
+$cols
+[1] 3
+
+> res 
++ # of  Entries (1, 3)
++ #  Absent (2, 3)
++ #  SNA (3, 3)
++ #  Assessed (4, 3)
++ # Not  Achieved (5, 3)
++ #  Scholarship (6, 3)
++ #  Outstanding (7, 3)
+> plist 
+$rows
+[1]  8  9 10 11 12 13 14
+
+$cols
+[1] 3
+
+> res 
++ # of  Entries (8, 3)
++ #  Absent (9, 3)
++ #  SNA (10, 3)
++ #  Assessed (11, 3)
++ # Not  Achieved (12, 3)
++ #  Scholarship (13, 3)
++ #  Outstanding (14, 3)
+> plist 
+$rows
+[1] 15 16 17 18 19 20 21
+
+$cols
+[1] 3
+
+> res 
++ # of  Entries (15, 3)
++ #  Absent (16, 3)
++ #  SNA (17, 3)
++ #  Assessed (18, 3)
++ # Not  Achieved (19, 3)
++ #  Scholarship (20, 3)
++ #  Outstanding (21, 3)
+> colplist 
++ Decile 1-3 (1, 2)
+- + # of  Entries (1, 3)
+- + #  Absent (2, 3)
+- + #  SNA (3, 3)
+- + #  Assessed (4, 3)
+- + # Not  Achieved (5, 3)
+- + #  Scholarship (6, 3)
+- + #  Outstanding (7, 3)
++ Decile 4-7 (8, 2)
+- + # of  Entries (8, 3)
+- + #  Absent (9, 3)
+- + #  SNA (10, 3)
+- + #  Assessed (11, 3)
+- + # Not  Achieved (12, 3)
+- + #  Scholarship (13, 3)
+- + #  Outstanding (14, 3)
++ Decile 8-10 (15, 2)
+- + # of  Entries (15, 3)
+- + #  Absent (16, 3)
+- + #  SNA (17, 3)
+- + #  Assessed (18, 3)
+- + # Not  Achieved (19, 3)
+- + #  Scholarship (20, 3)
+- + #  Outstanding (21, 3)
+> res[1:4,] 
+     UNKNOWN      UNKNOWN    UNKNOWN     UNKNOWN UNKNOWN # of  Entries
+1 Decile 1-3 All Subjects Accounting    NZ Maori    Male             2
+2 Decile 1-3 All Subjects Accounting    NZ Maori  Female             0
+3 Decile 1-3 All Subjects Accounting NZ European    Male             2
+4 Decile 1-3 All Subjects Accounting NZ European  Female             3
+  #  Absent #  SNA #  Assessed # Not  Achieved #  Scholarship #  Outstanding
+1         1      0           1               1              0              0
+2         0      0           0               0              0              0
+3         0      0           2               1              1              0
+4         0      0           3               2              1              0
+\end{verbatim}
+
+\newpage
+\subsection{NZQASubjects.xls}
+\label{sec:TCRO_NZQASubjects.xls}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{./TestCase/NZQASubjects.pdf}
+\end{figure}
+\begin{verbatim}
+> rowData 
+[1]  6 55
+> colData 
+[1]  5 13
+> rowslist 
+$label
+[1] 1 3 4
+
+$data
+ [1]  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 23 24 25 26 27 28 29 30 31
+[26] 32 33 34 35 36 37 38 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
+
+> colslist 
+$label
+[1] 1 2 3
+
+$data
+[1]  5  7  9 11 13
+
+> Patvec 
+[1] NA NA
+> rowslist 
+$label
+[1] 1 3 4
+
+$data
+ [1]  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 23 24 25 26 27 28 29 30 31
+[26] 32 33 34 35 36 37 38 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
+
+> colslist 
+$label
+[1] 1 2 3
+
+$data
+$data[1]
+[1]  5  7  9 11 13
+
+
+> res 
++ Level 1 (1, 1)
+- + rows
+- - 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+- + cols
+- - 1 2 3
++ Level 2 (17, 1)
+- + rows
+- - 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32
+- + cols
+- - 1 2 3
++ Level 3 (33, 1)
+- + rows
+- - 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
+- + cols
+- - 1 2 3
+> res 
++ NZ Maori (2, 2)
+- + rows
+- - 3 4
+- + cols
+- - 2 3
++ NZ European (5, 2)
+- + rows
+- - 6 7
+- + cols
+- - 2 3
++ Pasifika Peoples (8, 2)
+- + rows
+- - 9 10
+- + cols
+- - 2 3
++ Asian (11, 2)
+- + rows
+- - 12 13
+- + cols
+- - 2 3
++ Other/Unspecified Ethnicity (14, 2)
+- + rows
+- - 15 16
+- + cols
+- - 2 3
+> plist 
+$rows
+[1] 3 4
+
+$cols
+[1] 3
+
+> res 
++ Male (3, 3)
++ Female (4, 3)
+> plist 
+$rows
+[1] 6 7
+
+$cols
+[1] 3
+
+> res 
++ Male (6, 3)
++ Female (7, 3)
+> plist 
+$rows
+[1]  9 10
+
+$cols
+[1] 3
+
+> res 
++ Male (9, 3)
++ Female (10, 3)
+> plist 
+$rows
+[1] 12 13
+
+$cols
+[1] 3
+
+> res 
++ Male (12, 3)
++ Female (13, 3)
+> plist 
+$rows
+[1] 15 16
+
+$cols
+[1] 3
+
+> res 
++ Male (15, 3)
++ Female (16, 3)
+> res 
++ NZ Maori (18, 2)
+- + rows
+- - 19 20
+- + cols
+- - 2 3
++ NZ European (21, 2)
+- + rows
+- - 22 23
+- + cols
+- - 2 3
++ Pasifika Peoples (24, 2)
+- + rows
+- - 25 26
+- + cols
+- - 2 3
++ Asian (27, 2)
+- + rows
+- - 28 29
+- + cols
+- - 2 3
++ Other/Unspecified Ethnicity (30, 2)
+- + rows
+- - 31 32
+- + cols
+- - 2 3
+> plist 
+$rows
+[1] 19 20
+
+$cols
+[1] 3
+
+> res 
++ Male (19, 3)
++ Female (20, 3)
+> plist 
+$rows
+[1] 22 23
+
+$cols
+[1] 3
+
+> res 
++ Male (22, 3)
++ Female (23, 3)
+> plist 
+$rows
+[1] 25 26
+
+$cols
+[1] 3
+
+> res 
++ Male (25, 3)
++ Female (26, 3)
+> plist 
+$rows
+[1] 28 29
+
+$cols
+[1] 3
+
+> res 
++ Male (28, 3)
++ Female (29, 3)
+> plist 
+$rows
+[1] 31 32
+
+$cols
+[1] 3
+
+> res 
++ Male (31, 3)
++ Female (32, 3)
+> res 
++ NZ Maori (34, 2)
+- + rows
+- - 35 36
+- + cols
+- - 2 3
++ NZ European (37, 2)
+- + rows
+- - 38 39
+- + cols
+- - 2 3
++ Pasifika Peoples (40, 2)
+- + rows
+- - 41 42
+- + cols
+- - 2 3
++ Asian (43, 2)
+- + rows
+- - 44 45
+- + cols
+- - 2 3
++ Other/Unspecified Ethnicity (46, 2)
+- + rows
+- - 47 48
+- + cols
+- - 2 3
+> plist 
+$rows
+[1] 35 36
+
+$cols
+[1] 3
+
+> res 
++ Male (35, 3)
++ Female (36, 3)
+> plist 
+$rows
+[1] 38 39
+
+$cols
+[1] 3
+
+> res 
++ Male (38, 3)
++ Female (39, 3)
+> plist 
+$rows
+[1] 41 42
+
+$cols
+[1] 3
+
+> res 
++ Male (41, 3)
++ Female (42, 3)
+> plist 
+$rows
+[1] 44 45
+
+$cols
+[1] 3
+
+> res 
++ Male (44, 3)
++ Female (45, 3)
+> plist 
+$rows
+[1] 47 48
+
+$cols
+[1] 3
+
+> res 
++ Male (47, 3)
++ Female (48, 3)
+> rowplist 
++ Level 1 (1, 1)
+- + NZ Maori (2, 2)
+- - + Male (3, 3)
+- - + Female (4, 3)
+- + NZ European (5, 2)
+- - + Male (6, 3)
+- - + Female (7, 3)
+- + Pasifika Peoples (8, 2)
+- - + Male (9, 3)
+- - + Female (10, 3)
+- + Asian (11, 2)
+- - + Male (12, 3)
+- - + Female (13, 3)
+- + Other/Unspecified Ethnicity (14, 2)
+- - + Male (15, 3)
+- - + Female (16, 3)
++ Level 2 (17, 1)
+- + NZ Maori (18, 2)
+- - + Male (19, 3)
+- - + Female (20, 3)
+- + NZ European (21, 2)
+- - + Male (22, 3)
+- - + Female (23, 3)
+- + Pasifika Peoples (24, 2)
+- - + Male (25, 3)
+- - + Female (26, 3)
+- + Asian (27, 2)
+- - + Male (28, 3)
+- - + Female (29, 3)
+- + Other/Unspecified Ethnicity (30, 2)
+- - + Male (31, 3)
+- - + Female (32, 3)
++ Level 3 (33, 1)
+- + NZ Maori (34, 2)
+- - + Male (35, 3)
+- - + Female (36, 3)
+- + NZ European (37, 2)
+- - + Male (38, 3)
+- - + Female (39, 3)
+- + Pasifika Peoples (40, 2)
+- - + Male (41, 3)
+- - + Female (42, 3)
+- + Asian (43, 2)
+- - + Male (44, 3)
+- - + Female (45, 3)
+- + Other/Unspecified Ethnicity (46, 2)
+- - + Male (47, 3)
+- - + Female (48, 3)
+> rowvecs[1:4,] 
+     [,1]      [,2]          [,3]    
+[1,] "Level 1" "NZ Maori"    "Male"  
+[2,] "Level 1" "NZ Maori"    "Female"
+[3,] "Level 1" "NZ European" "Male"  
+[4,] "Level 1" "NZ European" "Female"
+> res 
++ National (1, 2)
+- + rows
+- - 1 2 3 4 5
+- + cols
+- - 3
+> plist 
+$rows
+[1] 1 2 3 4 5
+
+$cols
+[1] 3
+
+> res 
++ # of Results (1, 3)
++ # Not Achieved (2, 3)
++ # Achieved (3, 3)
++ # Merit (4, 3)
++ # Excellence (5, 3)
+> colplist 
++ National (1, 2)
+- + # of Results (1, 3)
+- + # Not Achieved (2, 3)
+- + # Achieved (3, 3)
+- + # Merit (4, 3)
+- + # Excellence (5, 3)
+> res[1:4,] 
+   UNKNOWN UNKNOWN     UNKNOWN UNKNOWN # of Results # Not Achieved # Achieved
+1 National Level 1    NZ Maori    Male          847            260        327
+2 National Level 1    NZ Maori  Female          786            285        282
+3 National Level 1 NZ European    Male         5508            976       1935
+4 National Level 1 NZ European  Female         3896            634       1146
+  # Merit # Excellence
+1     193           67
+2     157           62
+3    1673          924
+4    1200          916
+\end{verbatim}
+
+\newpage
+\subsection{StatsNZLabourForce.csv}
+\label{sec:TCRO_StatsNZLabourForce.csv}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{./TestCase/StatsNZLabourForce.pdf}
+\end{figure}
+\begin{verbatim}
+> rowData 
+[1]  5 26
+> colData 
+[1]   2 241
+> rowslist 
+$label
+[1] 1 2 3 4
+
+$data
+ [1]  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+
+> colslist 
+$label
+[1] 1
+
+$data
+  [1]   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19
+ [19]  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37
+ [37]  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55
+ [55]  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73
+ [73]  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91
+ [91]  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107 108 109
+[109] 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[127] 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145
+[145] 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163
+[163] 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181
+[181] 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199
+[199] 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217
+[217] 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235
+[235] 236 237 238 239 240 241
+
+> Patvec 
+[1] 80  8  8
+> rowslist 
+$label
+[1] 1 2 3 4
+
+$data
+ [1]  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+
+> colslist 
+$label
+[1] 1
+
+$data
+$data[1]
+ [1]  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+[26] 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51
+[51] 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76
+[76] 77 78 79 80 81
+
+$data[2]
+ [1]  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100
+[20] 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119
+[39] 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138
+[58] 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157
+[77] 158 159 160 161
+
+$data[3]
+ [1] 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180
+[20] 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199
+[39] 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218
+[58] 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237
+[77] 238 239 240 241
+
+
+> plist 
+$rows
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22
+
+$cols
+[1] 1
+
+> res 
++ 2007Q4 (1, 1)
++ 2008Q1 (2, 1)
++ 2008Q2 (3, 1)
++ 2008Q3 (4, 1)
++ 2008Q4 (5, 1)
++ 2009Q1 (6, 1)
++ 2009Q2 (7, 1)
++ 2009Q3 (8, 1)
++ 2009Q4 (9, 1)
++ 2010Q1 (10, 1)
++ 2010Q2 (11, 1)
++ 2010Q3 (12, 1)
++ 2010Q4 (13, 1)
++ 2011Q1 (14, 1)
++ 2011Q2 (15, 1)
++ 2011Q3 (16, 1)
++ 2011Q4 (17, 1)
++ 2012Q1 (18, 1)
++ 2012Q2 (19, 1)
++ 2012Q3 (20, 1)
++ 2012Q4 (21, 1)
++ 2013Q1 (22, 1)
+> rowplist 
++ 2007Q4 (1, 1)
++ 2008Q1 (2, 1)
++ 2008Q2 (3, 1)
++ 2008Q3 (4, 1)
++ 2008Q4 (5, 1)
++ 2009Q1 (6, 1)
++ 2009Q2 (7, 1)
++ 2009Q3 (8, 1)
++ 2009Q4 (9, 1)
++ 2010Q1 (10, 1)
++ 2010Q2 (11, 1)
++ 2010Q3 (12, 1)
++ 2010Q4 (13, 1)
++ 2011Q1 (14, 1)
++ 2011Q2 (15, 1)
++ 2011Q3 (16, 1)
++ 2011Q4 (17, 1)
++ 2012Q1 (18, 1)
++ 2012Q2 (19, 1)
++ 2012Q3 (20, 1)
++ 2012Q4 (21, 1)
++ 2013Q1 (22, 1)
+> rowvecs[1:4,] 
+[1] "2007Q4" "2008Q1" "2008Q2" "2008Q3"
+> res 
++ Male (1, 2)
+- + rows
+- - 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80
+- + cols
+- - 3 4
++ Female (81, 2)
+- + rows
+- - 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160
+- + cols
+- - 3 4
++ Total Both Sexes (161, 2)
+- + rows
+- - 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240
+- + cols
+- - 3 4
+> res 
++ European Only (1, 3)
+- + rows
+- - 1 2 3 4 5 6 7 8
+- + cols
+- - 4
++ Maori Only (9, 3)
+- + rows
+- - 9 10 11 12 13 14 15 16
+- + cols
+- - 4
++ Pacific Peoples Only (17, 3)
+- + rows
+- - 17 18 19 20 21 22 23 24
+- + cols
+- - 4
++ Asian Only (25, 3)
+- + rows
+- - 25 26 27 28 29 30 31 32
+- + cols
+- - 4
++ MELAA Only (33, 3)
+- + rows
+- - 33 34 35 36 37 38 39 40
+- + cols
+- - 4
++ Other Ethnicity Only (41, 3)
+- + rows
+- - 41 42 43 44 45 46 47 48
+- + cols
+- - 4
++ European/Maori (49, 3)
+- + rows
+- - 49 50 51 52 53 54 55 56
+- + cols
+- - 4
++ Two or More Groups Not Elsewhere Included (57, 3)
+- + rows
+- - 57 58 59 60 61 62 63 64
+- + cols
+- - 4
++ Residual Categories (65, 3)
+- + rows
+- - 65 66 67 68 69 70 71 72
+- + cols
+- - 4
++ Total All Ethnic Groups (73, 3)
+- + rows
+- - 73 74 75 76 77 78 79 80
+- + cols
+- - 4
+> plist 
+$rows
+[1] 1 2 3 4 5 6 7 8
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (1, 4)
++ Persons Unemployed in Labour Force (2, 4)
++ Not in Labour Force (3, 4)
++ Working Age Population (4, 4)
++ Labour Force Participation Rate (5, 4)
++ Unemployment Rate (6, 4)
++ Employment Rate (7, 4)
++ Total Labour Force (8, 4)
+> plist 
+$rows
+[1]  9 10 11 12 13 14 15 16
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (9, 4)
++ Persons Unemployed in Labour Force (10, 4)
++ Not in Labour Force (11, 4)
++ Working Age Population (12, 4)
++ Labour Force Participation Rate (13, 4)
++ Unemployment Rate (14, 4)
++ Employment Rate (15, 4)
++ Total Labour Force (16, 4)
+> plist 
+$rows
+[1] 17 18 19 20 21 22 23 24
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (17, 4)
++ Persons Unemployed in Labour Force (18, 4)
++ Not in Labour Force (19, 4)
++ Working Age Population (20, 4)
++ Labour Force Participation Rate (21, 4)
++ Unemployment Rate (22, 4)
++ Employment Rate (23, 4)
++ Total Labour Force (24, 4)
+> plist 
+$rows
+[1] 25 26 27 28 29 30 31 32
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (25, 4)
++ Persons Unemployed in Labour Force (26, 4)
++ Not in Labour Force (27, 4)
++ Working Age Population (28, 4)
++ Labour Force Participation Rate (29, 4)
++ Unemployment Rate (30, 4)
++ Employment Rate (31, 4)
++ Total Labour Force (32, 4)
+> plist 
+$rows
+[1] 33 34 35 36 37 38 39 40
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (33, 4)
++ Persons Unemployed in Labour Force (34, 4)
++ Not in Labour Force (35, 4)
++ Working Age Population (36, 4)
++ Labour Force Participation Rate (37, 4)
++ Unemployment Rate (38, 4)
++ Employment Rate (39, 4)
++ Total Labour Force (40, 4)
+> plist 
+$rows
+[1] 41 42 43 44 45 46 47 48
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (41, 4)
++ Persons Unemployed in Labour Force (42, 4)
++ Not in Labour Force (43, 4)
++ Working Age Population (44, 4)
++ Labour Force Participation Rate (45, 4)
++ Unemployment Rate (46, 4)
++ Employment Rate (47, 4)
++ Total Labour Force (48, 4)
+> plist 
+$rows
+[1] 49 50 51 52 53 54 55 56
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (49, 4)
++ Persons Unemployed in Labour Force (50, 4)
++ Not in Labour Force (51, 4)
++ Working Age Population (52, 4)
++ Labour Force Participation Rate (53, 4)
++ Unemployment Rate (54, 4)
++ Employment Rate (55, 4)
++ Total Labour Force (56, 4)
+> plist 
+$rows
+[1] 57 58 59 60 61 62 63 64
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (57, 4)
++ Persons Unemployed in Labour Force (58, 4)
++ Not in Labour Force (59, 4)
++ Working Age Population (60, 4)
++ Labour Force Participation Rate (61, 4)
++ Unemployment Rate (62, 4)
++ Employment Rate (63, 4)
++ Total Labour Force (64, 4)
+> plist 
+$rows
+[1] 65 66 67 68 69 70 71 72
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (65, 4)
++ Persons Unemployed in Labour Force (66, 4)
++ Not in Labour Force (67, 4)
++ Working Age Population (68, 4)
++ Labour Force Participation Rate (69, 4)
++ Unemployment Rate (70, 4)
++ Employment Rate (71, 4)
++ Total Labour Force (72, 4)
+> plist 
+$rows
+[1] 73 74 75 76 77 78 79 80
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (73, 4)
++ Persons Unemployed in Labour Force (74, 4)
++ Not in Labour Force (75, 4)
++ Working Age Population (76, 4)
++ Labour Force Participation Rate (77, 4)
++ Unemployment Rate (78, 4)
++ Employment Rate (79, 4)
++ Total Labour Force (80, 4)
+> res 
++ European Only (81, 3)
+- + rows
+- - 81 82 83 84 85 86 87 88
+- + cols
+- - 4
++ Maori Only (89, 3)
+- + rows
+- - 89 90 91 92 93 94 95 96
+- + cols
+- - 4
++ Pacific Peoples Only (97, 3)
+- + rows
+- - 97 98 99 100 101 102 103 104
+- + cols
+- - 4
++ Asian Only (105, 3)
+- + rows
+- - 105 106 107 108 109 110 111 112
+- + cols
+- - 4
++ MELAA Only (113, 3)
+- + rows
+- - 113 114 115 116 117 118 119 120
+- + cols
+- - 4
++ Other Ethnicity Only (121, 3)
+- + rows
+- - 121 122 123 124 125 126 127 128
+- + cols
+- - 4
++ European/Maori (129, 3)
+- + rows
+- - 129 130 131 132 133 134 135 136
+- + cols
+- - 4
++ Two or More Groups Not Elsewhere Included (137, 3)
+- + rows
+- - 137 138 139 140 141 142 143 144
+- + cols
+- - 4
++ Residual Categories (145, 3)
+- + rows
+- - 145 146 147 148 149 150 151 152
+- + cols
+- - 4
++ Total All Ethnic Groups (153, 3)
+- + rows
+- - 153 154 155 156 157 158 159 160
+- + cols
+- - 4
+> plist 
+$rows
+[1] 81 82 83 84 85 86 87 88
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (81, 4)
++ Persons Unemployed in Labour Force (82, 4)
++ Not in Labour Force (83, 4)
++ Working Age Population (84, 4)
++ Labour Force Participation Rate (85, 4)
++ Unemployment Rate (86, 4)
++ Employment Rate (87, 4)
++ Total Labour Force (88, 4)
+> plist 
+$rows
+[1] 89 90 91 92 93 94 95 96
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (89, 4)
++ Persons Unemployed in Labour Force (90, 4)
++ Not in Labour Force (91, 4)
++ Working Age Population (92, 4)
++ Labour Force Participation Rate (93, 4)
++ Unemployment Rate (94, 4)
++ Employment Rate (95, 4)
++ Total Labour Force (96, 4)
+> plist 
+$rows
+[1]  97  98  99 100 101 102 103 104
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (97, 4)
++ Persons Unemployed in Labour Force (98, 4)
++ Not in Labour Force (99, 4)
++ Working Age Population (100, 4)
++ Labour Force Participation Rate (101, 4)
++ Unemployment Rate (102, 4)
++ Employment Rate (103, 4)
++ Total Labour Force (104, 4)
+> plist 
+$rows
+[1] 105 106 107 108 109 110 111 112
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (105, 4)
++ Persons Unemployed in Labour Force (106, 4)
++ Not in Labour Force (107, 4)
++ Working Age Population (108, 4)
++ Labour Force Participation Rate (109, 4)
++ Unemployment Rate (110, 4)
++ Employment Rate (111, 4)
++ Total Labour Force (112, 4)
+> plist 
+$rows
+[1] 113 114 115 116 117 118 119 120
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (113, 4)
++ Persons Unemployed in Labour Force (114, 4)
++ Not in Labour Force (115, 4)
++ Working Age Population (116, 4)
++ Labour Force Participation Rate (117, 4)
++ Unemployment Rate (118, 4)
++ Employment Rate (119, 4)
++ Total Labour Force (120, 4)
+> plist 
+$rows
+[1] 121 122 123 124 125 126 127 128
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (121, 4)
++ Persons Unemployed in Labour Force (122, 4)
++ Not in Labour Force (123, 4)
++ Working Age Population (124, 4)
++ Labour Force Participation Rate (125, 4)
++ Unemployment Rate (126, 4)
++ Employment Rate (127, 4)
++ Total Labour Force (128, 4)
+> plist 
+$rows
+[1] 129 130 131 132 133 134 135 136
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (129, 4)
++ Persons Unemployed in Labour Force (130, 4)
++ Not in Labour Force (131, 4)
++ Working Age Population (132, 4)
++ Labour Force Participation Rate (133, 4)
++ Unemployment Rate (134, 4)
++ Employment Rate (135, 4)
++ Total Labour Force (136, 4)
+> plist 
+$rows
+[1] 137 138 139 140 141 142 143 144
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (137, 4)
++ Persons Unemployed in Labour Force (138, 4)
++ Not in Labour Force (139, 4)
++ Working Age Population (140, 4)
++ Labour Force Participation Rate (141, 4)
++ Unemployment Rate (142, 4)
++ Employment Rate (143, 4)
++ Total Labour Force (144, 4)
+> plist 
+$rows
+[1] 145 146 147 148 149 150 151 152
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (145, 4)
++ Persons Unemployed in Labour Force (146, 4)
++ Not in Labour Force (147, 4)
++ Working Age Population (148, 4)
++ Labour Force Participation Rate (149, 4)
++ Unemployment Rate (150, 4)
++ Employment Rate (151, 4)
++ Total Labour Force (152, 4)
+> plist 
+$rows
+[1] 153 154 155 156 157 158 159 160
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (153, 4)
++ Persons Unemployed in Labour Force (154, 4)
++ Not in Labour Force (155, 4)
++ Working Age Population (156, 4)
++ Labour Force Participation Rate (157, 4)
++ Unemployment Rate (158, 4)
++ Employment Rate (159, 4)
++ Total Labour Force (160, 4)
+> res 
++ European Only (161, 3)
+- + rows
+- - 161 162 163 164 165 166 167 168
+- + cols
+- - 4
++ Maori Only (169, 3)
+- + rows
+- - 169 170 171 172 173 174 175 176
+- + cols
+- - 4
++ Pacific Peoples Only (177, 3)
+- + rows
+- - 177 178 179 180 181 182 183 184
+- + cols
+- - 4
++ Asian Only (185, 3)
+- + rows
+- - 185 186 187 188 189 190 191 192
+- + cols
+- - 4
++ MELAA Only (193, 3)
+- + rows
+- - 193 194 195 196 197 198 199 200
+- + cols
+- - 4
++ Other Ethnicity Only (201, 3)
+- + rows
+- - 201 202 203 204 205 206 207 208
+- + cols
+- - 4
++ European/Maori (209, 3)
+- + rows
+- - 209 210 211 212 213 214 215 216
+- + cols
+- - 4
++ Two or More Groups Not Elsewhere Included (217, 3)
+- + rows
+- - 217 218 219 220 221 222 223 224
+- + cols
+- - 4
++ Residual Categories (225, 3)
+- + rows
+- - 225 226 227 228 229 230 231 232
+- + cols
+- - 4
++ Total All Ethnic Groups (233, 3)
+- + rows
+- - 233 234 235 236 237 238 239 240
+- + cols
+- - 4
+> plist 
+$rows
+[1] 161 162 163 164 165 166 167 168
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (161, 4)
++ Persons Unemployed in Labour Force (162, 4)
++ Not in Labour Force (163, 4)
++ Working Age Population (164, 4)
++ Labour Force Participation Rate (165, 4)
++ Unemployment Rate (166, 4)
++ Employment Rate (167, 4)
++ Total Labour Force (168, 4)
+> plist 
+$rows
+[1] 169 170 171 172 173 174 175 176
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (169, 4)
++ Persons Unemployed in Labour Force (170, 4)
++ Not in Labour Force (171, 4)
++ Working Age Population (172, 4)
++ Labour Force Participation Rate (173, 4)
++ Unemployment Rate (174, 4)
++ Employment Rate (175, 4)
++ Total Labour Force (176, 4)
+> plist 
+$rows
+[1] 177 178 179 180 181 182 183 184
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (177, 4)
++ Persons Unemployed in Labour Force (178, 4)
++ Not in Labour Force (179, 4)
++ Working Age Population (180, 4)
++ Labour Force Participation Rate (181, 4)
++ Unemployment Rate (182, 4)
++ Employment Rate (183, 4)
++ Total Labour Force (184, 4)
+> plist 
+$rows
+[1] 185 186 187 188 189 190 191 192
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (185, 4)
++ Persons Unemployed in Labour Force (186, 4)
++ Not in Labour Force (187, 4)
++ Working Age Population (188, 4)
++ Labour Force Participation Rate (189, 4)
++ Unemployment Rate (190, 4)
++ Employment Rate (191, 4)
++ Total Labour Force (192, 4)
+> plist 
+$rows
+[1] 193 194 195 196 197 198 199 200
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (193, 4)
++ Persons Unemployed in Labour Force (194, 4)
++ Not in Labour Force (195, 4)
++ Working Age Population (196, 4)
++ Labour Force Participation Rate (197, 4)
++ Unemployment Rate (198, 4)
++ Employment Rate (199, 4)
++ Total Labour Force (200, 4)
+> plist 
+$rows
+[1] 201 202 203 204 205 206 207 208
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (201, 4)
++ Persons Unemployed in Labour Force (202, 4)
++ Not in Labour Force (203, 4)
++ Working Age Population (204, 4)
++ Labour Force Participation Rate (205, 4)
++ Unemployment Rate (206, 4)
++ Employment Rate (207, 4)
++ Total Labour Force (208, 4)
+> plist 
+$rows
+[1] 209 210 211 212 213 214 215 216
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (209, 4)
++ Persons Unemployed in Labour Force (210, 4)
++ Not in Labour Force (211, 4)
++ Working Age Population (212, 4)
++ Labour Force Participation Rate (213, 4)
++ Unemployment Rate (214, 4)
++ Employment Rate (215, 4)
++ Total Labour Force (216, 4)
+> plist 
+$rows
+[1] 217 218 219 220 221 222 223 224
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (217, 4)
++ Persons Unemployed in Labour Force (218, 4)
++ Not in Labour Force (219, 4)
++ Working Age Population (220, 4)
++ Labour Force Participation Rate (221, 4)
++ Unemployment Rate (222, 4)
++ Employment Rate (223, 4)
++ Total Labour Force (224, 4)
+> plist 
+$rows
+[1] 225 226 227 228 229 230 231 232
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (225, 4)
++ Persons Unemployed in Labour Force (226, 4)
++ Not in Labour Force (227, 4)
++ Working Age Population (228, 4)
++ Labour Force Participation Rate (229, 4)
++ Unemployment Rate (230, 4)
++ Employment Rate (231, 4)
++ Total Labour Force (232, 4)
+> plist 
+$rows
+[1] 233 234 235 236 237 238 239 240
+
+$cols
+[1] 4
+
+> res 
++ Persons Employed in Labour Force (233, 4)
++ Persons Unemployed in Labour Force (234, 4)
++ Not in Labour Force (235, 4)
++ Working Age Population (236, 4)
++ Labour Force Participation Rate (237, 4)
++ Unemployment Rate (238, 4)
++ Employment Rate (239, 4)
++ Total Labour Force (240, 4)
+> colplist 
++ Male (1, 2)
+- + European Only (1, 3)
+- - + Persons Employed in Labour Force (1, 4)
+- - + Persons Unemployed in Labour Force (2, 4)
+- - + Not in Labour Force (3, 4)
+- - + Working Age Population (4, 4)
+- - + Labour Force Participation Rate (5, 4)
+- - + Unemployment Rate (6, 4)
+- - + Employment Rate (7, 4)
+- - + Total Labour Force (8, 4)
+- + Maori Only (9, 3)
+- - + Persons Employed in Labour Force (9, 4)
+- - + Persons Unemployed in Labour Force (10, 4)
+- - + Not in Labour Force (11, 4)
+- - + Working Age Population (12, 4)
+- - + Labour Force Participation Rate (13, 4)
+- - + Unemployment Rate (14, 4)
+- - + Employment Rate (15, 4)
+- - + Total Labour Force (16, 4)
+- + Pacific Peoples Only (17, 3)
+- - + Persons Employed in Labour Force (17, 4)
+- - + Persons Unemployed in Labour Force (18, 4)
+- - + Not in Labour Force (19, 4)
+- - + Working Age Population (20, 4)
+- - + Labour Force Participation Rate (21, 4)
+- - + Unemployment Rate (22, 4)
+- - + Employment Rate (23, 4)
+- - + Total Labour Force (24, 4)
+- + Asian Only (25, 3)
+- - + Persons Employed in Labour Force (25, 4)
+- - + Persons Unemployed in Labour Force (26, 4)
+- - + Not in Labour Force (27, 4)
+- - + Working Age Population (28, 4)
+- - + Labour Force Participation Rate (29, 4)
+- - + Unemployment Rate (30, 4)
+- - + Employment Rate (31, 4)
+- - + Total Labour Force (32, 4)
+- + MELAA Only (33, 3)
+- - + Persons Employed in Labour Force (33, 4)
+- - + Persons Unemployed in Labour Force (34, 4)
+- - + Not in Labour Force (35, 4)
+- - + Working Age Population (36, 4)
+- - + Labour Force Participation Rate (37, 4)
+- - + Unemployment Rate (38, 4)
+- - + Employment Rate (39, 4)
+- - + Total Labour Force (40, 4)
+- + Other Ethnicity Only (41, 3)
+- - + Persons Employed in Labour Force (41, 4)
+- - + Persons Unemployed in Labour Force (42, 4)
+- - + Not in Labour Force (43, 4)
+- - + Working Age Population (44, 4)
+- - + Labour Force Participation Rate (45, 4)
+- - + Unemployment Rate (46, 4)
+- - + Employment Rate (47, 4)
+- - + Total Labour Force (48, 4)
+- + European/Maori (49, 3)
+- - + Persons Employed in Labour Force (49, 4)
+- - + Persons Unemployed in Labour Force (50, 4)
+- - + Not in Labour Force (51, 4)
+- - + Working Age Population (52, 4)
+- - + Labour Force Participation Rate (53, 4)
+- - + Unemployment Rate (54, 4)
+- - + Employment Rate (55, 4)
+- - + Total Labour Force (56, 4)
+- + Two or More Groups Not Elsewhere Included (57, 3)
+- - + Persons Employed in Labour Force (57, 4)
+- - + Persons Unemployed in Labour Force (58, 4)
+- - + Not in Labour Force (59, 4)
+- - + Working Age Population (60, 4)
+- - + Labour Force Participation Rate (61, 4)
+- - + Unemployment Rate (62, 4)
+- - + Employment Rate (63, 4)
+- - + Total Labour Force (64, 4)
+- + Residual Categories (65, 3)
+- - + Persons Employed in Labour Force (65, 4)
+- - + Persons Unemployed in Labour Force (66, 4)
+- - + Not in Labour Force (67, 4)
+- - + Working Age Population (68, 4)
+- - + Labour Force Participation Rate (69, 4)
+- - + Unemployment Rate (70, 4)
+- - + Employment Rate (71, 4)
+- - + Total Labour Force (72, 4)
+- + Total All Ethnic Groups (73, 3)
+- - + Persons Employed in Labour Force (73, 4)
+- - + Persons Unemployed in Labour Force (74, 4)
+- - + Not in Labour Force (75, 4)
+- - + Working Age Population (76, 4)
+- - + Labour Force Participation Rate (77, 4)
+- - + Unemployment Rate (78, 4)
+- - + Employment Rate (79, 4)
+- - + Total Labour Force (80, 4)
++ Female (81, 2)
+- + European Only (81, 3)
+- - + Persons Employed in Labour Force (81, 4)
+- - + Persons Unemployed in Labour Force (82, 4)
+- - + Not in Labour Force (83, 4)
+- - + Working Age Population (84, 4)
+- - + Labour Force Participation Rate (85, 4)
+- - + Unemployment Rate (86, 4)
+- - + Employment Rate (87, 4)
+- - + Total Labour Force (88, 4)
+- + Maori Only (89, 3)
+- - + Persons Employed in Labour Force (89, 4)
+- - + Persons Unemployed in Labour Force (90, 4)
+- - + Not in Labour Force (91, 4)
+- - + Working Age Population (92, 4)
+- - + Labour Force Participation Rate (93, 4)
+- - + Unemployment Rate (94, 4)
+- - + Employment Rate (95, 4)
+- - + Total Labour Force (96, 4)
+- + Pacific Peoples Only (97, 3)
+- - + Persons Employed in Labour Force (97, 4)
+- - + Persons Unemployed in Labour Force (98, 4)
+- - + Not in Labour Force (99, 4)
+- - + Working Age Population (100, 4)
+- - + Labour Force Participation Rate (101, 4)
+- - + Unemployment Rate (102, 4)
+- - + Employment Rate (103, 4)
+- - + Total Labour Force (104, 4)
+- + Asian Only (105, 3)
+- - + Persons Employed in Labour Force (105, 4)
+- - + Persons Unemployed in Labour Force (106, 4)
+- - + Not in Labour Force (107, 4)
+- - + Working Age Population (108, 4)
+- - + Labour Force Participation Rate (109, 4)
+- - + Unemployment Rate (110, 4)
+- - + Employment Rate (111, 4)
+- - + Total Labour Force (112, 4)
+- + MELAA Only (113, 3)
+- - + Persons Employed in Labour Force (113, 4)
+- - + Persons Unemployed in Labour Force (114, 4)
+- - + Not in Labour Force (115, 4)
+- - + Working Age Population (116, 4)
+- - + Labour Force Participation Rate (117, 4)
+- - + Unemployment Rate (118, 4)
+- - + Employment Rate (119, 4)
+- - + Total Labour Force (120, 4)
+- + Other Ethnicity Only (121, 3)
+- - + Persons Employed in Labour Force (121, 4)
+- - + Persons Unemployed in Labour Force (122, 4)
+- - + Not in Labour Force (123, 4)
+- - + Working Age Population (124, 4)
+- - + Labour Force Participation Rate (125, 4)
+- - + Unemployment Rate (126, 4)
+- - + Employment Rate (127, 4)
+- - + Total Labour Force (128, 4)
+- + European/Maori (129, 3)
+- - + Persons Employed in Labour Force (129, 4)
+- - + Persons Unemployed in Labour Force (130, 4)
+- - + Not in Labour Force (131, 4)
+- - + Working Age Population (132, 4)
+- - + Labour Force Participation Rate (133, 4)
+- - + Unemployment Rate (134, 4)
+- - + Employment Rate (135, 4)
+- - + Total Labour Force (136, 4)
+- + Two or More Groups Not Elsewhere Included (137, 3)
+- - + Persons Employed in Labour Force (137, 4)
+- - + Persons Unemployed in Labour Force (138, 4)
+- - + Not in Labour Force (139, 4)
+- - + Working Age Population (140, 4)
+- - + Labour Force Participation Rate (141, 4)
+- - + Unemployment Rate (142, 4)
+- - + Employment Rate (143, 4)
+- - + Total Labour Force (144, 4)
+- + Residual Categories (145, 3)
+- - + Persons Employed in Labour Force (145, 4)
+- - + Persons Unemployed in Labour Force (146, 4)
+- - + Not in Labour Force (147, 4)
+- - + Working Age Population (148, 4)
+- - + Labour Force Participation Rate (149, 4)
+- - + Unemployment Rate (150, 4)
+- - + Employment Rate (151, 4)
+- - + Total Labour Force (152, 4)
+- + Total All Ethnic Groups (153, 3)
+- - + Persons Employed in Labour Force (153, 4)
+- - + Persons Unemployed in Labour Force (154, 4)
+- - + Not in Labour Force (155, 4)
+- - + Working Age Population (156, 4)
+- - + Labour Force Participation Rate (157, 4)
+- - + Unemployment Rate (158, 4)
+- - + Employment Rate (159, 4)
+- - + Total Labour Force (160, 4)
++ Total Both Sexes (161, 2)
+- + European Only (161, 3)
+- - + Persons Employed in Labour Force (161, 4)
+- - + Persons Unemployed in Labour Force (162, 4)
+- - + Not in Labour Force (163, 4)
+- - + Working Age Population (164, 4)
+- - + Labour Force Participation Rate (165, 4)
+- - + Unemployment Rate (166, 4)
+- - + Employment Rate (167, 4)
+- - + Total Labour Force (168, 4)
+- + Maori Only (169, 3)
+- - + Persons Employed in Labour Force (169, 4)
+- - + Persons Unemployed in Labour Force (170, 4)
+- - + Not in Labour Force (171, 4)
+- - + Working Age Population (172, 4)
+- - + Labour Force Participation Rate (173, 4)
+- - + Unemployment Rate (174, 4)
+- - + Employment Rate (175, 4)
+- - + Total Labour Force (176, 4)
+- + Pacific Peoples Only (177, 3)
+- - + Persons Employed in Labour Force (177, 4)
+- - + Persons Unemployed in Labour Force (178, 4)
+- - + Not in Labour Force (179, 4)
+- - + Working Age Population (180, 4)
+- - + Labour Force Participation Rate (181, 4)
+- - + Unemployment Rate (182, 4)
+- - + Employment Rate (183, 4)
+- - + Total Labour Force (184, 4)
+- + Asian Only (185, 3)
+- - + Persons Employed in Labour Force (185, 4)
+- - + Persons Unemployed in Labour Force (186, 4)
+- - + Not in Labour Force (187, 4)
+- - + Working Age Population (188, 4)
+- - + Labour Force Participation Rate (189, 4)
+- - + Unemployment Rate (190, 4)
+- - + Employment Rate (191, 4)
+- - + Total Labour Force (192, 4)
+- + MELAA Only (193, 3)
+- - + Persons Employed in Labour Force (193, 4)
+- - + Persons Unemployed in Labour Force (194, 4)
+- - + Not in Labour Force (195, 4)
+- - + Working Age Population (196, 4)
+- - + Labour Force Participation Rate (197, 4)
+- - + Unemployment Rate (198, 4)
+- - + Employment Rate (199, 4)
+- - + Total Labour Force (200, 4)
+- + Other Ethnicity Only (201, 3)
+- - + Persons Employed in Labour Force (201, 4)
+- - + Persons Unemployed in Labour Force (202, 4)
+- - + Not in Labour Force (203, 4)
+- - + Working Age Population (204, 4)
+- - + Labour Force Participation Rate (205, 4)
+- - + Unemployment Rate (206, 4)
+- - + Employment Rate (207, 4)
+- - + Total Labour Force (208, 4)
+- + European/Maori (209, 3)
+- - + Persons Employed in Labour Force (209, 4)
+- - + Persons Unemployed in Labour Force (210, 4)
+- - + Not in Labour Force (211, 4)
+- - + Working Age Population (212, 4)
+- - + Labour Force Participation Rate (213, 4)
+- - + Unemployment Rate (214, 4)
+- - + Employment Rate (215, 4)
+- - + Total Labour Force (216, 4)
+- + Two or More Groups Not Elsewhere Included (217, 3)
+- - + Persons Employed in Labour Force (217, 4)
+- - + Persons Unemployed in Labour Force (218, 4)
+- - + Not in Labour Force (219, 4)
+- - + Working Age Population (220, 4)
+- - + Labour Force Participation Rate (221, 4)
+- - + Unemployment Rate (222, 4)
+- - + Employment Rate (223, 4)
+- - + Total Labour Force (224, 4)
+- + Residual Categories (225, 3)
+- - + Persons Employed in Labour Force (225, 4)
+- - + Persons Unemployed in Labour Force (226, 4)
+- - + Not in Labour Force (227, 4)
+- - + Working Age Population (228, 4)
+- - + Labour Force Participation Rate (229, 4)
+- - + Unemployment Rate (230, 4)
+- - + Employment Rate (231, 4)
+- - + Total Labour Force (232, 4)
+- + Total All Ethnic Groups (233, 3)
+- - + Persons Employed in Labour Force (233, 4)
+- - + Persons Unemployed in Labour Force (234, 4)
+- - + Not in Labour Force (235, 4)
+- - + Working Age Population (236, 4)
+- - + Labour Force Participation Rate (237, 4)
+- - + Unemployment Rate (238, 4)
+- - + Employment Rate (239, 4)
+- - + Total Labour Force (240, 4)
+> res[1:4,] 
+  UNKNOWN       UNKNOWN UNKNOWN Persons Employed in Labour Force
+1    Male European Only  2007Q4                            855.8
+2    Male European Only  2008Q1                            863.0
+3    Male European Only  2008Q2                            850.1
+4    Male European Only  2008Q3                            839.6
+  Persons Unemployed in Labour Force Not in Labour Force Working Age Population
+1                               20.0               280.0                 1155.8
+2                               25.4               283.5                 1171.9
+3                               26.0               280.7                 1156.8
+4                               29.8               285.9                 1155.3
+  Labour Force Participation Rate Unemployment Rate Employment Rate
+1                            75.8               2.3            74.0
+2                            75.8               2.9            73.6
+3                            75.7               3.0            73.5
+4                            75.2               3.4            72.7
+  Total Labour Force
+1              875.8
+2              888.5
+3              876.1
+4              869.4
+\end{verbatim}
+
+\newpage
+\subsection{ToyExByEmptyBelow.csv}
+\label{sec:TCRO_ToyExByEmptyBelow.csv}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyBelow.pdf}
+\end{figure}
+\begin{verbatim}
+> rowData 
+[1] 2 5
+> colData 
+[1] 3 6
+> rowslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5
+
+> colslist 
+$label
+[1] 1 2
+
+$data
+[1] 3 4 5 6
+
+> Patvec 
+[1] NA
+> rowslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5
+
+> colslist 
+$label
+[1] 1 2
+
+$data
+$data[1]
+[1] 3 4 5 6
+
+
+> res 
++ Row Parent1 (1, 1)
+- + rows
+- - 1 2
+- + cols
+- - 2
++ Row Parent2 (3, 1)
+- + rows
+- - 3 4
+- + cols
+- - 2
+> plist 
+$rows
+[1] 1 2
+
+$cols
+[1] 2
+
+> res 
++ Row Child1 (1, 2)
++ Row Child2 (2, 2)
+> plist 
+$rows
+[1] 3 4
+
+$cols
+[1] 2
+
+> res 
++ Row Child1 (3, 2)
++ Row Child2 (4, 2)
+> rowplist 
++ Row Parent1 (1, 1)
+- + Row Child1 (1, 2)
+- + Row Child2 (2, 2)
++ Row Parent2 (3, 1)
+- + Row Child1 (3, 2)
+- + Row Child2 (4, 2)
+> rowvecs[1:4,] 
+     [,1]          [,2]        
+[1,] "Row Parent1" "Row Child1"
+[2,] "Row Parent1" "Row Child2"
+[3,] "Row Parent2" "Row Child1"
+[4,] "Row Parent2" "Row Child2"
+> plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+> res 
++ Column 1 (1, 1)
++ Column 2 (2, 1)
++ Column 3 (3, 1)
++ Column 4 (4, 1)
+> colplist 
++ Column 1 (1, 1)
++ Column 2 (2, 1)
++ Column 3 (3, 1)
++ Column 4 (4, 1)
+> res[1:4,] 
+      UNKNOWN    UNKNOWN Column 1 Column 2 Column 3 Column 4
+1 Row Parent1 Row Child1       10       20       30       40
+2 Row Parent1 Row Child2       11       21       31       41
+3 Row Parent2 Row Child1       12       22       32       42
+4 Row Parent2 Row Child2       13       23       33       43
+\end{verbatim}
+
+\newpage
+\subsection{ToyExByEmptyBelowT.csv}
+\label{sec:TCRO_ToyExByEmptyBelowT.csv}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyBelowT.pdf}
+\end{figure}
+\begin{verbatim}
+> rowData 
+[1] 3 6
+> colData 
+[1] 2 5
+> rowslist 
+$label
+[1] 1 2
+
+$data
+[1] 3 4 5 6
+
+> colslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5
+
+> Patvec 
+[1] 2 2
+> rowslist 
+$label
+[1] 1 2
+
+$data
+[1] 3 4 5 6
+
+> colslist 
+$label
+[1] 1
+
+$data
+$data[1]
+[1] 2 3
+
+$data[2]
+[1] 4 5
+
+
+> plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+> res 
++ Column 1 (1, 1)
++ Column 2 (2, 1)
++ Column 3 (3, 1)
++ Column 4 (4, 1)
+> rowplist 
++ Column 1 (1, 1)
++ Column 2 (2, 1)
++ Column 3 (3, 1)
++ Column 4 (4, 1)
+> rowvecs[1:4,] 
+[1] "Column 1" "Column 2" "Column 3" "Column 4"
+> res 
++ Row Parent1 (1, 1)
+- + rows
+- - 1 2
+- + cols
+- - 2
++ Row Parent2 (3, 1)
+- + rows
+- - 3 4
+- + cols
+- - 2
+> plist 
+$rows
+[1] 1 2
+
+$cols
+[1] 2
+
+> res 
++ Row Child1 (1, 2)
++ Row Child2 (2, 2)
+> plist 
+$rows
+[1] 3 4
+
+$cols
+[1] 2
+
+> res 
++ Row Child1 (3, 2)
++ Row Child2 (4, 2)
+> colplist 
++ Row Parent1 (1, 1)
+- + Row Child1 (1, 2)
+- + Row Child2 (2, 2)
++ Row Parent2 (3, 1)
+- + Row Child1 (3, 2)
+- + Row Child2 (4, 2)
+> res[1:4,] 
+      UNKNOWN  UNKNOWN Row Child1 Row Child2
+1 Row Parent1 Column 1         10         11
+2 Row Parent1 Column 2         20         21
+3 Row Parent1 Column 3         30         31
+4 Row Parent1 Column 4         40         41
+\end{verbatim}
+
+\newpage
+\subsection{ToyExByEmptyRight1.csv}
+\label{sec:TCRO_ToyExByEmptyRight1.csv}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight1.pdf}
+\end{figure}
+\begin{verbatim}
+> rowData 
+[1] 2 7
+> colData 
+[1] 4 7
+> rowslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5 6 7
+
+> colslist 
+$label
+[1] 1 2
+
+$data
+[1] 4 5 6 7
+
+> Patvec 
+[1] NA
+> rowslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5 6 7
+
+> colslist 
+$label
+[1] 1 2
+
+$data
+$data[1]
+[1] 4 5 6 7
+
+
+> res 
++ Row Parent1 (1, 1)
+- + rows
+- - 2 3
+- + cols
+- - 1 2
++ Row Parent2 (4, 1)
+- + rows
+- - 5 6
+- + cols
+- - 1 2
+> res 
++ Row Child1 (2, 1)
+- + rows
+- - 2
+- + cols
+- - 2
++ Row Child2 (3, 1)
+- + rows
+- - 3
+- + cols
+- - 2
+> plist 
+$rows
+[1] 2
+
+$cols
+[1] 2
+
+> res 
++ Row Child-Child1 (2, 2)
+> plist 
+$rows
+[1] 3
+
+$cols
+[1] 2
+
+> res 
++ Row Child-Child2 (3, 2)
+> res 
++ Row Child1 (5, 1)
+- + rows
+- - 5 6
+- + cols
+- - 2
+> plist 
+$rows
+[1] 5 6
+
+$cols
+[1] 2
+
+> res 
++ Row Child-Child1 (5, 2)
++ Row Child-Child2 (6, 2)
+> rowplist 
++ Row Parent1 (1, 1)
+- + Row Child1 (2, 1)
+- - + Row Child-Child1 (2, 2)
+- + Row Child2 (3, 1)
+- - + Row Child-Child2 (3, 2)
++ Row Parent2 (4, 1)
+- + Row Child1 (5, 1)
+- - + Row Child-Child1 (5, 2)
+- - + Row Child-Child2 (6, 2)
+> rowvecs[1:4,] 
+   [,1]          [,2]         [,3]              
+V2 "Row Parent1" "Row Child1" "Row Child-Child1"
+V2 "Row Parent1" "Row Child2" "Row Child-Child2"
+   "Row Parent2" "Row Child1" "Row Child-Child1"
+   "Row Parent2" "Row Child1" "Row Child-Child2"
+> plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+> res 
++ Column 1 (1, 1)
++ Column 2 (2, 1)
++ Column 3 (3, 1)
++ Column 4 (4, 1)
+> colplist 
++ Column 1 (1, 1)
++ Column 2 (2, 1)
++ Column 3 (3, 1)
++ Column 4 (4, 1)
+> res[1:4,] 
+      UNKNOWN    UNKNOWN          UNKNOWN Column 1 Column 2 Column 3 Column 4
+1 Row Parent1 Row Child1 Row Child-Child1       11       21       31       41
+2 Row Parent1 Row Child2 Row Child-Child2       12       22       32       42
+3 Row Parent2 Row Child1 Row Child-Child1       14       24       34       44
+4 Row Parent2 Row Child1 Row Child-Child2       15       25       35       45
+\end{verbatim}
+
+\newpage
+\subsection{ToyExByEmptyRight2.csv}
+\label{sec:TCRO_ToyExByEmptyRight2.csv}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight2.pdf}
+\end{figure}
+\begin{verbatim}
+> rowData 
+[1] 2 7
+> colData 
+[1] 3 6
+> rowslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5 6 7
+
+> colslist 
+$label
+[1] 1 2
+
+$data
+[1] 3 4 5 6
+
+> Patvec 
+[1] NA
+> rowslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5 6 7
+
+> colslist 
+$label
+[1] 1 2
+
+$data
+$data[1]
+[1] 3 4 5 6
+
+
+> res 
++ Row Parent1 (1, 1)
+- + rows
+- - 2 3
+- + cols
+- - 1 2
++ Row Parent2 (4, 1)
+- + rows
+- - 5 6
+- + cols
+- - 1 2
+> plist 
+$rows
+[1] 2 3
+
+$cols
+[1] 2
+
+> res 
++ Row Child1 (2, 2)
++ Row Child2 (3, 2)
+> plist 
+$rows
+[1] 5 6
+
+$cols
+[1] 2
+
+> res 
++ Row Child1 (5, 2)
++ Row Child2 (6, 2)
+> rowplist 
++ Row Parent1 (1, 1)
+- + Row Child1 (2, 2)
+- + Row Child2 (3, 2)
++ Row Parent2 (4, 1)
+- + Row Child1 (5, 2)
+- + Row Child2 (6, 2)
+> rowvecs[1:4,] 
+     [,1]          [,2]        
+[1,] "Row Parent1" "Row Child1"
+[2,] "Row Parent1" "Row Child2"
+[3,] "Row Parent2" "Row Child1"
+[4,] "Row Parent2" "Row Child2"
+> plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+> res 
++ Column 1 (1, 1)
++ Column 2 (2, 1)
++ Column 3 (3, 1)
++ Column 4 (4, 1)
+> colplist 
++ Column 1 (1, 1)
++ Column 2 (2, 1)
++ Column 3 (3, 1)
++ Column 4 (4, 1)
+> res[1:4,] 
+      UNKNOWN    UNKNOWN Column 1 Column 2 Column 3 Column 4
+1 Row Parent1 Row Child1       11       21       31       41
+2 Row Parent1 Row Child2       12       22       32       42
+3 Row Parent2 Row Child1       14       24       34       44
+4 Row Parent2 Row Child2       15       25       35       45
+\end{verbatim}
+
+\newpage
+\subsection{ToyExByEmptyRight3.csv}
+\label{sec:TCRO_ToyExByEmptyRight3.csv}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{./TestCase/ToyExByEmptyRight3.pdf}
+\end{figure}
+\begin{verbatim}
+> rowData 
+[1]  2 11
+> colData 
+[1] 4 7
+> rowslist 
+$label
+[1] 1
+
+$data
+ [1]  2  3  4  5  6  7  8  9 10 11
+
+> colslist 
+$label
+[1] 1 2
+
+$data
+[1] 4 5 6 7
+
+> Patvec 
+[1] NA
+> rowslist 
+$label
+[1] 1
+
+$data
+ [1]  2  3  4  5  6  7  8  9 10 11
+
+> colslist 
+$label
+[1] 1 2
+
+$data
+$data[1]
+[1] 4 5 6 7
+
+
+> res 
++ Row Super-Parent1 (1, 1)
+- + rows
+- - 2 3 4 5
+- + cols
+- - 1 2
++ Row Super-Parent2 (6, 1)
+- + rows
+- - 7 8 9 10
+- + cols
+- - 1 2
+> res 
++ Row Parent1 (2, 1)
+- + rows
+- - 3
+- + cols
+- - 1 2
++ Row Parent2 (4, 1)
+- + rows
+- - 5
+- + cols
+- - 1 2
+> plist 
+$rows
+[1] 3
+
+$cols
+[1] 1 2
+
+> res 
++ Row Child1 (3, 1)
+- + Row Child-Child1 (3, 2)
+> plist 
+$rows
+[1] 5
+
+$cols
+[1] 1 2
+
+> res 
++ Row Child1 (5, 1)
+- + Row Child-Child1 (5, 2)
+> res 
++ Row Parent1 (7, 1)
+- + rows
+- - 8
+- + cols
+- - 1 2
++ Row Parent2 (9, 1)
+- + rows
+- - 10
+- + cols
+- - 1 2
+> plist 
+$rows
+[1] 8
+
+$cols
+[1] 1 2
+
+> res 
++ Row Child1 (8, 1)
+- + Row Child-Child1 (8, 2)
+> plist 
+$rows
+[1] 10
+
+$cols
+[1] 1 2
+
+> res 
++ Row Child1 (10, 1)
+- + Row Child-Child1 (10, 2)
+> rowplist 
++ Row Super-Parent1 (1, 1)
+- + Row Parent1 (2, 1)
+- - + Row Child1 (3, 1)
+- - - + Row Child-Child1 (3, 2)
+- + Row Parent2 (4, 1)
+- - + Row Child1 (5, 1)
+- - - + Row Child-Child1 (5, 2)
++ Row Super-Parent2 (6, 1)
+- + Row Parent1 (7, 1)
+- - + Row Child1 (8, 1)
+- - - + Row Child-Child1 (8, 2)
+- + Row Parent2 (9, 1)
+- - + Row Child1 (10, 1)
+- - - + Row Child-Child1 (10, 2)
+> rowvecs[1:4,] 
+   [,1]                [,2]          [,3]         [,4]              
+V2 "Row Super-Parent1" "Row Parent1" "Row Child1" "Row Child-Child1"
+V2 "Row Super-Parent1" "Row Parent2" "Row Child1" "Row Child-Child1"
+V2 "Row Super-Parent2" "Row Parent1" "Row Child1" "Row Child-Child1"
+V2 "Row Super-Parent2" "Row Parent2" "Row Child1" "Row Child-Child1"
+> plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+> res 
++ Column 1 (1, 1)
++ Column 2 (2, 1)
++ Column 3 (3, 1)
++ Column 4 (4, 1)
+> colplist 
++ Column 1 (1, 1)
++ Column 2 (2, 1)
++ Column 3 (3, 1)
++ Column 4 (4, 1)
+> res[1:4,] 
+            UNKNOWN     UNKNOWN    UNKNOWN          UNKNOWN Column 1 Column 2
+1 Row Super-Parent1 Row Parent1 Row Child1 Row Child-Child1       12       22
+2 Row Super-Parent1 Row Parent2 Row Child1 Row Child-Child1       14       24
+3 Row Super-Parent2 Row Parent1 Row Child1 Row Child-Child1       17       27
+4 Row Super-Parent2 Row Parent2 Row Child1 Row Child-Child1       19       29
+  Column 3 Column 4
+1       32       42
+2       34       44
+3       37       47
+4       39       49
+\end{verbatim}
+
+\newpage
+\subsection{ToyExComplete.csv}
+\label{sec:TCRO_ToyExComplete.csv}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{./TestCase/ToyExComplete.pdf}
+\end{figure}
+\begin{verbatim}
+> rowData 
+[1]  5 14
+> colData 
+[1]  4 11
+> rowslist 
+$label
+[1] 1 2 3 4
+
+$data
+ [1]  5  6  7  8  9 10 11 12 13 14
+
+> colslist 
+$label
+[1] 1 2
+
+$data
+[1]  4  5  6  7  8  9 10 11
+
+> Patvec 
+[1] 4 1 4
+> rowslist 
+$label
+[1] 1 2 3 4
+
+$data
+ [1]  5  6  7  8  9 10 11 12 13 14
+
+> colslist 
+$label
+[1] 1 2
+
+$data
+$data[1]
+[1] 4 5 6 7
+
+$data[2]
+[1]  8  9 10 11
+
+
+> res 
++ Row Super-Parent (1, 1)
+- + rows
+- - 2 3 4 5 6 7 8 9 10
+- + cols
+- - 1 2
+> res 
++ Row Parent1 (2, 1)
+- + rows
+- - 3 4 5 6
+- + cols
+- - 1 2
++ Row Parent2 (7, 1)
+- + rows
+- - 8 9 10
+- + cols
+- - 1 2
+> res 
++ Row Child1 (3, 1)
+- + rows
+- - 3 4
+- + cols
+- - 2
++ Row Child2 (5, 1)
+- + rows
+- - 5 6
+- + cols
+- - 2
+> plist 
+$rows
+[1] 3 4
+
+$cols
+[1] 2
+
+> res 
++ Row Child-Child1 (3, 2)
++ Row Child-Child2 (4, 2)
+> plist 
+$rows
+[1] 5 6
+
+$cols
+[1] 2
+
+> res 
++ Row Child-Child1 (5, 2)
++ Row Child-Child2 (6, 2)
+> res 
++ Row Child1 (8, 1)
+- + rows
+- - 8 9
+- + cols
+- - 2
++ Row Child2 (10, 1)
+- + rows
+- - 10
+- + cols
+- - 2
+> plist 
+$rows
+[1] 8 9
+
+$cols
+[1] 2
+
+> res 
++ Row Child-Child1 (8, 2)
++ Row Child-Child2 (9, 2)
+> plist 
+$rows
+[1] 10
+
+$cols
+[1] 2
+
+> res 
++ Row Child-Child2 (10, 2)
+> rowplist 
++ Row Super-Parent (1, 1)
+- + Row Parent1 (2, 1)
+- - + Row Child1 (3, 1)
+- - - + Row Child-Child1 (3, 2)
+- - - + Row Child-Child2 (4, 2)
+- - + Row Child2 (5, 1)
+- - - + Row Child-Child1 (5, 2)
+- - - + Row Child-Child2 (6, 2)
+- + Row Parent2 (7, 1)
+- - + Row Child1 (8, 1)
+- - - + Row Child-Child1 (8, 2)
+- - - + Row Child-Child2 (9, 2)
+- - + Row Child2 (10, 1)
+- - - + Row Child-Child2 (10, 2)
+> rowvecs[1:4,] 
+ [,1]               [,2]          [,3]         [,4]              
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child2"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child2"
+> res 
++ Column Parent1 (1, 2)
+- + rows
+- - 1 2 3 4
+- + cols
+- - 3
++ Column Parent2 (5, 2)
+- + rows
+- - 5 6 7 8
+- + cols
+- - 3
+> plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 3
+
+> res 
++ Column Child1 (1, 3)
++ Column Child2 (2, 3)
++ Column Child3 (3, 3)
++ Column Child4 (4, 3)
+> plist 
+$rows
+[1] 5 6 7 8
+
+$cols
+[1] 3
+
+> res 
++ Column Child1 (5, 3)
++ Column Child2 (6, 3)
++ Column Child3 (7, 3)
++ Column Child4 (8, 3)
+> colplist 
++ Column Parent1 (1, 2)
+- + Column Child1 (1, 3)
+- + Column Child2 (2, 3)
+- + Column Child3 (3, 3)
+- + Column Child4 (4, 3)
++ Column Parent2 (5, 2)
+- + Column Child1 (5, 3)
+- + Column Child2 (6, 3)
+- + Column Child3 (7, 3)
+- + Column Child4 (8, 3)
+> res[1:4,] 
+         UNKNOWN          UNKNOWN     UNKNOWN    UNKNOWN          UNKNOWN
+1 Column Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child1
+2 Column Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child2
+3 Column Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child1
+4 Column Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child2
+  Column Child1 Column Child2 Column Child3 Column Child4
+1            12            22            32            42
+2            13            23            33            43
+3            14            24            34            44
+4            15            25            35            45
+\end{verbatim}
+
+\newpage
+\subsection{ToyExFindSingleTable.csv}
+\label{sec:TCRO_ToyExFindSingleTable.csv}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{./TestCase/ToyExFindSingleTable.pdf}
+\end{figure}
+\begin{verbatim}
+> rowData 
+[1] 4 7
+> colData 
+[1] 2 5
+> rowslist 
+$label
+[1] 1 2 3
+
+$data
+[1] 4 5 6 7
+
+> colslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5
+
+> Patvec 
+[1] NA
+> rowslist 
+$label
+[1] 1 2 3
+
+$data
+[1] 4 5 6 7
+
+> colslist 
+$label
+[1] 1
+
+$data
+$data[1]
+[1] 2 3 4 5
+
+
+> plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+> res 
++ Row 1 (1, 1)
++ Row 2 (2, 1)
++ Row 3 (3, 1)
++ Row 4 (4, 1)
+> rowplist 
++ Row 1 (1, 1)
++ Row 2 (2, 1)
++ Row 3 (3, 1)
++ Row 4 (4, 1)
+> rowvecs[1:4,] 
+[1] "Row 1" "Row 2" "Row 3" "Row 4"
+> plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 3
+
+> res 
++ Column 1 (1, 3)
++ Column 2 (2, 3)
++ Column 3 (3, 3)
++ Column 4 (4, 3)
+> colplist 
++ Column 1 (1, 3)
++ Column 2 (2, 3)
++ Column 3 (3, 3)
++ Column 4 (4, 3)
+> res[1:4,] 
+  UNKNOWN Column 1 Column 2 Column 3 Column 4
+1   Row 1       10       20       30       40
+2   Row 2       11       21       31       41
+3   Row 3       12       22       32       42
+4   Row 4       13       23       33       43
+\end{verbatim}
+
+\newpage
+\subsection{ToyExMisalignedColumnLabel.csv}
+\label{sec:TCRO_ToyExMisalignedColumnLabel.csv}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{./TestCase/ToyExMisalignedColumnLabel.pdf}
+\end{figure}
+\begin{verbatim}
+> rowData 
+[1] 3 6
+> colData 
+[1] 2 9
+> rowslist 
+$label
+[1] 1 2
+
+$data
+[1] 3 4 5 6
+
+> colslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5 6 7 8 9
+
+> Patvec 
+[1] 4 4
+> rowslist 
+$label
+[1] 1 2
+
+$data
+[1] 3 4 5 6
+
+> colslist 
+$label
+[1] 1
+
+$data
+$data[1]
+[1] 2 3 4 5
+
+$data[2]
+[1] 6 7 8 9
+
+
+> plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+> res 
++ Row 1 (1, 1)
++ Row 2 (2, 1)
++ Row 3 (3, 1)
++ Row 4 (4, 1)
+> rowplist 
++ Row 1 (1, 1)
++ Row 2 (2, 1)
++ Row 3 (3, 1)
++ Row 4 (4, 1)
+> rowvecs[1:4,] 
+[1] "Row 1" "Row 2" "Row 3" "Row 4"
+> res 
++ Column Parent1 (1, 1)
+- + rows
+- - 1 2 3 4
+- + cols
+- - 2
++ Column Parent2 (5, 1)
+- + rows
+- - 5 6 7 8
+- + cols
+- - 2
+> plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 2
+
+> res 
++ Col Child1 (1, 2)
++ Col Child2 (2, 2)
++ Col Child3 (3, 2)
++ Col Child4 (4, 2)
+> plist 
+$rows
+[1] 5 6 7 8
+
+$cols
+[1] 2
+
+> res 
++ Col Child1 (5, 2)
++ Col Child2 (6, 2)
++ Col Child3 (7, 2)
++ Col Child4 (8, 2)
+> colplist 
++ Column Parent1 (1, 1)
+- + Col Child1 (1, 2)
+- + Col Child2 (2, 2)
+- + Col Child3 (3, 2)
+- + Col Child4 (4, 2)
++ Column Parent2 (5, 1)
+- + Col Child1 (5, 2)
+- + Col Child2 (6, 2)
+- + Col Child3 (7, 2)
+- + Col Child4 (8, 2)
+> res[1:4,] 
+         UNKNOWN UNKNOWN Col Child1 Col Child2 Col Child3 Col Child4
+1 Column Parent1   Row 1         10         20         30         40
+2 Column Parent1   Row 2         11         21         31         41
+3 Column Parent1   Row 3         12         22         32         42
+4 Column Parent1   Row 4         13         23         33         43
+\end{verbatim}
+
+\newpage
+\subsection{ToyExMultiRowColumnLabel.csv}
+\label{sec:TCRO_ToyExMultiRowColumnLabel.csv}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\textwidth]{./TestCase/ToyExMultiRowColumnLabel.pdf}
+\end{figure}
+\begin{verbatim}
+> rowData 
+[1] 3 6
+> colData 
+[1] 2 5
+> rowslist 
+$label
+[1] 1 2
+
+$data
+[1] 3 4 5 6
+
+> colslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5
+
+> Patvec 
+[1]  1 NA
+> rowslist 
+$label
+[1] 1 2
+
+$data
+[1] 3 4 5 6
+
+> colslist 
+$label
+[1] 1
+
+$data
+$data[1]
+[1] 2 3 4 5
+
+
+> plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+> res 
++ Row 1 (1, 1)
++ Row 2 (2, 1)
++ Row 3 (3, 1)
++ Row 4 (4, 1)
+> rowplist 
++ Row 1 (1, 1)
++ Row 2 (2, 1)
++ Row 3 (3, 1)
++ Row 4 (4, 1)
+> rowvecs[1:4,] 
+[1] "Row 1" "Row 2" "Row 3" "Row 4"
+> plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+> res 
++ Column Child1 (1, 1)
++ Column Child2 (2, 1)
++ Column Child3 (3, 1)
++ Column Child4 (4, 1)
+> colplist 
++ Column Child1 (1, 1)
++ Column Child2 (2, 1)
++ Column Child3 (3, 1)
++ Column Child4 (4, 1)
+> res[1:4,] 
+  UNKNOWN Column Child1 Column Child2 Column Child3 Column Child4
+1   Row 1            10            20            30            40
+2   Row 2            11            21            31            41
+3   Row 3            12            22            32            42
+4   Row 4            13            23            33            43
+\end{verbatim}
+
+\end{document}
