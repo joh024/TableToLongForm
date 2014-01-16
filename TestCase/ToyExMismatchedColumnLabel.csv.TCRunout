@@ -1,0 +1,89 @@
+###TCR CIMCB rowData 
+[1] 2 5
+###TCR CIMCB colData 
+[1] 3 9
+###TCR CRAC rowslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5
+
+###TCR CRAC colslist 
+$label
+[1] 1 2
+
+$data
+[1] 3 4 5 6 7 8 9
+
+###TCR IOOC plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+###TCR IOOC res 
+Row 1 Row 2 Row 3 Row 4 
+    1     2     3     4 
+###TCR RRL rowplist 
+Row 1 Row 2 Row 3 Row 4 
+    1     2     3     4 
+###TCR RRL rowvecs 
+     [,1]   
+[1,] "Row 1"
+[2,] "Row 2"
+[3,] "Row 3"
+[4,] "Row 4"
+###TCR MCPBefore matColLabel 
+     V2           V4           V6           V8          
+[1,] "Col Child1" "Col Child2" "Col Child3" "Col Child4"
+###TCR ACP cursub 
+          V2           V4           V6           V8 
+"Col Child1" "Col Child2" "Col Child3" "Col Child4" 
+###TCR ACP currow[curcols] 
+          V2           V4           V6           V8 
+"Col Child1" "Col Child2" "Col Child3" "Col Child4" 
+###TCR MCPAfter matColLabel 
+     V2           V4           V6           V8          
+[1,] "Col Child1" "Col Child2" "Col Child3" "Col Child4"
+###TCR MCLBefore matColLabel 
+     V2           V4           V6           V8          
+[1,] "Col Child1" "Col Child2" "Col Child3" "Col Child4"
+###TCR MCLAfter matColLabel 
+     V2           V4           V6           V8          
+[1,] "Col Child1" "Col Child2" "Col Child3" "Col Child4"
+###TCR IOOC plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+###TCR IOOC res 
+Col Child1 Col Child2 Col Child3 Col Child4 
+         1          2          3          4 
+###TCR RCC plist 
+Col Child1 Col Child2 Col Child3 Col Child4 
+         1          2          3          4 
+###TCR RCC matData 
+     V3   V5   V7   V9  
+[1,] "10" "20" "30" "40"
+[2,] "11" "21" "31" "41"
+[3,] "12" "22" "32" "42"
+[4,] "13" "23" "33" "43"
+###TCR RCC datbit 
+     V3   V5   V7   V9  
+[1,] "10" "20" "30" "40"
+[2,] "11" "21" "31" "41"
+[3,] "12" "22" "32" "42"
+[4,] "13" "23" "33" "43"
+###TCR RCL colplist 
+Col Child1 Col Child2 Col Child3 Col Child4 
+         1          2          3          4 
+###TCR RCL res 
+  UNKNOWN Col Child1 Col Child2 Col Child3 Col Child4
+1   Row 1         10         20         30         40
+2   Row 2         11         21         31         41
+3   Row 3         12         22         32         42
+4   Row 4         13         23         33         43

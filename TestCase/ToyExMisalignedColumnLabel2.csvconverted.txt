@@ -1,0 +1,9 @@
+"UNKNOWN" "UNKNOWN" "UNKNOWN" "Col Child1" "Col Child2" "Col Child3" "Col Child4"
+"1" "Col Super-Parent" "Col Parent1" "Row 1" 10 20 30 40
+"2" "Col Super-Parent" "Col Parent1" "Row 2" 11 21 31 41
+"3" "Col Super-Parent" "Col Parent1" "Row 3" 12 22 32 42
+"4" "Col Super-Parent" "Col Parent1" "Row 4" 13 23 33 43
+"5" "Col Super-Parent" "Col Parent2" "Row 1" 50 60 70 80
+"6" "Col Super-Parent" "Col Parent2" "Row 2" 51 61 71 81
+"7" "Col Super-Parent" "Col Parent2" "Row 3" 52 62 72 82
+"8" "Col Super-Parent" "Col Parent2" "Row 4" 53 63 73 83

@@ -1,0 +1,661 @@
+"UNKNOWN" "UNKNOWN" "UNKNOWN" "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" "Not in Labour Force" "Working Age Population" "Labour Force Participation Rate" "Unemployment Rate" "Employment Rate" "Total Labour Force"
+"1" "Male" "European Only" "2007Q4" 855.8 20 280 1155.8 75.8 2.3 74 875.8
+"2" "Male" "European Only" "2008Q1" 863 25.4 283.5 1171.9 75.8 2.9 73.6 888.5
+"3" "Male" "European Only" "2008Q2" 850.1 26 280.7 1156.8 75.7 3 73.5 876.1
+"4" "Male" "European Only" "2008Q3" 839.6 29.8 285.9 1155.3 75.2 3.4 72.7 869.4
+"5" "Male" "European Only" "2008Q4" 854.8 29.5 274.7 1158.9 76.3 3.3 73.8 884.2
+"6" "Male" "European Only" "2009Q1" 845 35.4 279.4 1159.8 75.9 4 72.9 880.4
+"7" "Male" "European Only" "2009Q2" 831.6 34.9 279.7 1146.2 75.6 4 72.6 866.5
+"8" "Male" "European Only" "2009Q3" 813.3 42.5 290.4 1146.2 74.7 5 71 855.8
+"9" "Male" "European Only" "2009Q4" 831.1 40.1 277 1148.2 75.9 4.6 72.4 871.2
+"10" "Male" "European Only" "2010Q1" 822.5 36.4 283.2 1142.1 75.2 4.2 72 858.9
+"11" "Male" "European Only" "2010Q2" 825.3 39.9 290.1 1155.3 74.9 4.6 71.4 865.2
+"12" "Male" "European Only" "2010Q3" 836.9 31 287.1 1155.1 75.1 3.6 72.5 867.9
+"13" "Male" "European Only" "2010Q4" 838.1 39.6 277.1 1154.8 76 4.5 72.6 877.7
+"14" "Male" "European Only" "2011Q1" 829.6 36.8 281.2 1147.6 75.5 4.2 72.3 866.4
+"15" "Male" "European Only" "2011Q2" 838.7 41 279 1158.7 75.9 4.7 72.4 879.6
+"16" "Male" "European Only" "2011Q3" 830.5 34.6 280.2 1145.3 75.5 4 72.5 865.1
+"17" "Male" "European Only" "2011Q4" 841.8 34.8 277.5 1154.1 76 4 72.9 876.6
+"18" "Male" "European Only" "2012Q1" 843.1 43.3 282.7 1169.1 75.8 4.9 72.1 886.3
+"19" "Male" "European Only" "2012Q2" 837.1 38.2 296.5 1171.8 74.7 4.4 71.4 875.3
+"20" "Male" "European Only" "2012Q3" 833 38 298.4 1169.3 74.5 4.4 71.2 871
+"21" "Male" "European Only" "2012Q4" 833.4 41 298.2 1172.6 74.6 4.7 71.1 874.4
+"22" "Male" "European Only" "2013Q1" 832 35.8 294.7 1162.5 74.6 4.1 71.6 867.8
+"23" "Male" "Maori Only" "2007Q4" 71.1 6.1 28.1 105.3 73.4 7.9 67.6 77.2
+"24" "Male" "Maori Only" "2008Q1" 69.1 7.5 31.4 107.9 71 9.7 64.1 76.6
+"25" "Male" "Maori Only" "2008Q2" 67.2 5.7 27.4 100.2 72.7 7.8 67 72.8
+"26" "Male" "Maori Only" "2008Q3" 71.7 8.7 30.7 111.1 72.3 10.8 64.5 80.3
+"27" "Male" "Maori Only" "2008Q4" 76.1 8.5 28.5 113.1 74.8 10 67.3 84.5
+"28" "Male" "Maori Only" "2009Q1" 75.4 8.4 35.7 119.5 70.1 10.1 63.1 83.8
+"29" "Male" "Maori Only" "2009Q2" 74.2 9.9 33.1 117.3 71.8 11.8 63.3 84.2
+"30" "Male" "Maori Only" "2009Q3" 70.9 10.9 36 117.8 69.5 13.4 60.2 81.8
+"31" "Male" "Maori Only" "2009Q4" 71.7 13.6 33.2 118.5 71.9 15.9 60.5 85.3
+"32" "Male" "Maori Only" "2010Q1" 71.8 11.3 35.3 118.4 70.2 13.6 60.6 83.1
+"33" "Male" "Maori Only" "2010Q2" 71.9 13.7 33.7 119.2 71.8 16 60.3 85.6
+"34" "Male" "Maori Only" "2010Q3" 69.8 13.5 34.1 117.3 71 16.2 59.5 83.3
+"35" "Male" "Maori Only" "2010Q4" 70.7 14.4 36.4 121.5 70 16.9 58.2 85.1
+"36" "Male" "Maori Only" "2011Q1" 70.7 13.9 35.3 119.8 70.6 16.4 59 84.6
+"37" "Male" "Maori Only" "2011Q2" 67.1 10.5 37.1 114.7 67.6 13.5 58.5 77.6
+"38" "Male" "Maori Only" "2011Q3" 69.5 13.4 34.9 117.8 70.4 16.1 59 82.9
+"39" "Male" "Maori Only" "2011Q4" 69.2 12.7 36.1 118 69.4 15.5 58.6 81.8
+"40" "Male" "Maori Only" "2012Q1" 71.5 11.2 34.6 117.3 70.5 13.6 60.9 82.7
+"41" "Male" "Maori Only" "2012Q2" 66.2 10.6 33 109.7 69.9 13.8 60.3 76.8
+"42" "Male" "Maori Only" "2012Q3" 67.1 13.1 33 113.2 70.8 16.4 59.2 80.2
+"43" "Male" "Maori Only" "2012Q4" 63 12.3 35.4 110.7 68 16.3 56.9 75.3
+"44" "Male" "Maori Only" "2013Q1" 69.9 12.2 38.2 120.3 68.3 14.9 58.1 82.2
+"45" "Male" "Pacific Peoples Only" "2007Q4" 42.8 1.5 18.9 63.2 70.1 3.5 67.7 44.3
+"46" "Male" "Pacific Peoples Only" "2008Q1" 41.1 3.4 18.1 62.6 71.1 7.6 65.6 44.5
+"47" "Male" "Pacific Peoples Only" "2008Q2" 42.2 2.4 18 62.5 71.2 5.3 67.4 44.5
+"48" "Male" "Pacific Peoples Only" "2008Q3" 45.2 3.3 19.4 67.9 71.5 6.9 66.6 48.6
+"49" "Male" "Pacific Peoples Only" "2008Q4" 47.7 3.3 17.5 68.4 74.5 6.4 69.7 51
+"50" "Male" "Pacific Peoples Only" "2009Q1" 41.9 7.3 18.4 67.6 72.8 14.8 62 49.2
+"51" "Male" "Pacific Peoples Only" "2009Q2" 42.3 5.3 19 66.6 71.5 11.1 63.6 47.6
+"52" "Male" "Pacific Peoples Only" "2009Q3" 39.6 5.1 21.2 65.9 67.9 11.5 60.1 44.7
+"53" "Male" "Pacific Peoples Only" "2009Q4" 40.9 6.7 20.4 67.9 70 14 60.2 47.6
+"54" "Male" "Pacific Peoples Only" "2010Q1" 43.7 6.9 21.8 72.4 69.9 13.6 60.3 50.6
+"55" "Male" "Pacific Peoples Only" "2010Q2" 39.1 6.1 21.8 67 67.5 13.6 58.4 45.2
+"56" "Male" "Pacific Peoples Only" "2010Q3" 41.8 5.2 20.9 67.9 69.2 11.1 61.5 47
+"57" "Male" "Pacific Peoples Only" "2010Q4" 45.3 6.2 23.2 74.7 68.9 12.1 60.6 51.5
+"58" "Male" "Pacific Peoples Only" "2011Q1" 46.8 7.3 21.9 76 71.2 13.6 61.6 54.1
+"59" "Male" "Pacific Peoples Only" "2011Q2" 41.3 5.8 23.8 71 66.4 12.3 58.3 47.1
+"60" "Male" "Pacific Peoples Only" "2011Q3" 49.2 7.3 27 83.5 67.6 12.9 58.9 56.5
+"61" "Male" "Pacific Peoples Only" "2011Q4" 48.2 6.8 24.8 79.9 68.9 12.4 60.3 55
+"62" "Male" "Pacific Peoples Only" "2012Q1" 43.3 6 24.3 73.7 67.1 12.2 58.8 49.4
+"63" "Male" "Pacific Peoples Only" "2012Q2" 40.6 5.5 23.8 69.9 66 12 58 46.1
+"64" "Male" "Pacific Peoples Only" "2012Q3" 41.8 5.4 22 69.2 68.2 11.5 60.3 47.2
+"65" "Male" "Pacific Peoples Only" "2012Q4" 39.9 4.7 22.2 66.8 66.8 10.6 59.7 44.6
+"66" "Male" "Pacific Peoples Only" "2013Q1" 41.8 5.1 20.1 67 70 10.8 62.5 46.9
+"67" "Male" "Asian Only" "2007Q4" 95.9 5.2 32.2 133.2 75.9 5.1 72 101.1
+"68" "Male" "Asian Only" "2008Q1" 90.9 3.8 36.4 131.2 72.2 4.1 69.3 94.8
+"69" "Male" "Asian Only" "2008Q2" 98.3 4.2 44.5 146.9 69.7 4.1 66.9 102.5
+"70" "Male" "Asian Only" "2008Q3" 101.3 3.8 41 146 71.9 3.6 69.3 105
+"71" "Male" "Asian Only" "2008Q4" 106.4 6.2 33.9 146.6 76.9 5.5 72.6 112.7
+"72" "Male" "Asian Only" "2009Q1" 99.7 6.6 40.1 146.4 72.6 6.2 68.1 106.3
+"73" "Male" "Asian Only" "2009Q2" 109.9 8.3 42.2 160.3 73.7 7 68.5 118.1
+"74" "Male" "Asian Only" "2009Q3" 108.2 10 48.1 166.3 71.1 8.4 65.1 118.2
+"75" "Male" "Asian Only" "2009Q4" 116.6 11.6 42.3 170.6 75.2 9 68.4 128.2
+"76" "Male" "Asian Only" "2010Q1" 114.7 10.9 43.8 169.5 74.1 8.7 67.7 125.6
+"77" "Male" "Asian Only" "2010Q2" 112.4 13.5 39.3 165.2 76.2 10.7 68.1 125.9
+"78" "Male" "Asian Only" "2010Q3" 106.8 9.9 44.4 161.1 72.5 8.5 66.3 116.7
+"79" "Male" "Asian Only" "2010Q4" 112.8 9.3 41.8 163.9 74.5 7.6 68.8 122.1
+"80" "Male" "Asian Only" "2011Q1" 121 13.2 38.5 172.7 77.7 9.8 70.1 134.2
+"81" "Male" "Asian Only" "2011Q2" 111.6 8 47.6 167.1 71.5 6.7 66.8 119.6
+"82" "Male" "Asian Only" "2011Q3" 113.4 8.6 46.5 168.4 72.4 7 67.3 121.9
+"83" "Male" "Asian Only" "2011Q4" 117.7 14.1 41.7 173.5 76 10.7 67.8 131.9
+"84" "Male" "Asian Only" "2012Q1" 116.7 10.4 37 164.2 77.5 8.2 71.1 127.2
+"85" "Male" "Asian Only" "2012Q2" 111.9 9.2 45.6 166.6 72.7 7.6 67.1 121
+"86" "Male" "Asian Only" "2012Q3" 118 16.6 45.6 180.1 74.7 12.3 65.5 134.6
+"87" "Male" "Asian Only" "2012Q4" 123.8 8.6 47 179.4 73.8 6.5 69 132.4
+"88" "Male" "Asian Only" "2013Q1" 136.9 7 51.1 195 73.8 4.9 70.2 143.9
+"89" "Male" "MELAA Only" "2007Q4" 9.8 NA 3.5 14.2 75 NA 69 10.6
+"90" "Male" "MELAA Only" "2008Q1" 9.3 NA 4.9 14.7 66.4 NA 63.1 9.8
+"91" "Male" "MELAA Only" "2008Q2" 9.6 2 3.3 14.9 77.7 17.2 64.4 11.6
+"92" "Male" "MELAA Only" "2008Q3" 8.1 NA 6.7 15.5 57.1 NA 52.2 8.9
+"93" "Male" "MELAA Only" "2008Q4" 8.4 NA 4.7 13.7 66 NA 61.3 9
+"94" "Male" "MELAA Only" "2009Q1" 8.1 NA 5 14.1 64.7 NA 57.9 9.1
+"95" "Male" "MELAA Only" "2009Q2" 9.5 1.4 6.2 17.1 64 13.2 55.6 10.9
+"96" "Male" "MELAA Only" "2009Q3" 9.2 NA 5.7 15.9 64 NA 57.9 10.2
+"97" "Male" "MELAA Only" "2009Q4" 8.1 1.3 4.1 13.5 69.6 14.2 59.8 9.4
+"98" "Male" "MELAA Only" "2010Q1" 9.9 1.5 4.5 16 71.5 13.1 62.2 11.4
+"99" "Male" "MELAA Only" "2010Q2" 9.7 NA 6.5 17.1 61.8 NA 56.8 10.5
+"100" "Male" "MELAA Only" "2010Q3" 10.2 1.1 7.5 18.8 60.2 10.1 54.2 11.3
+"101" "Male" "MELAA Only" "2010Q4" 8.9 NA 5 14.9 66.5 NA 59.9 9.9
+"102" "Male" "MELAA Only" "2011Q1" 9.1 NA 4.6 14.7 68.3 NA 61.8 10
+"103" "Male" "MELAA Only" "2011Q2" 11.2 1.2 5.3 17.7 70 9.5 63.3 12.4
+"104" "Male" "MELAA Only" "2011Q3" 11.1 1.2 5.4 17.7 69.7 9.8 62.9 12.3
+"105" "Male" "MELAA Only" "2011Q4" 11 1.1 3.4 15.5 78.4 9.1 71.2 12.2
+"106" "Male" "MELAA Only" "2012Q1" 10.2 NA 4.5 15.6 71.4 NA 65.3 11.1
+"107" "Male" "MELAA Only" "2012Q2" 11.5 NA 4.7 17.1 72.7 NA 67.5 12.4
+"108" "Male" "MELAA Only" "2012Q3" 10.9 NA 2.6 14.6 82 NA 75.1 11.9
+"109" "Male" "MELAA Only" "2012Q4" 10.2 1.1 3.3 14.6 77.4 9.3 70.2 11.3
+"110" "Male" "MELAA Only" "2013Q1" 8.2 1.3 3.6 13.1 72.6 13.8 62.6 9.5
+"111" "Male" "Other Ethnicity Only" "2007Q4" 5.9 NA 1.1 7.2 84.1 NA 82 6.1
+"112" "Male" "Other Ethnicity Only" "2008Q1" 6.8 NA 1.9 9.2 79.8 NA 74.5 7.3
+"113" "Male" "Other Ethnicity Only" "2008Q2" 11.2 NA 2.9 14.6 80 NA 77.1 11.6
+"114" "Male" "Other Ethnicity Only" "2008Q3" 10.5 NA 4.1 14.7 71.9 NA 71.5 10.6
+"115" "Male" "Other Ethnicity Only" "2008Q4" 13.5 NA 4.1 18.1 77.1 NA 74.9 14
+"116" "Male" "Other Ethnicity Only" "2009Q1" 16.6 NA 5.4 22.3 75.6 NA 74.4 16.9
+"117" "Male" "Other Ethnicity Only" "2009Q2" 19 NA 5.5 25.2 78 NA 75.6 19.6
+"118" "Male" "Other Ethnicity Only" "2009Q3" 19.3 NA 6.9 26.9 74.3 NA 71.7 19.9
+"119" "Male" "Other Ethnicity Only" "2009Q4" 18.7 NA 7.9 27.2 71.1 NA 68.7 19.4
+"120" "Male" "Other Ethnicity Only" "2010Q1" 20.6 NA 9.1 30.6 70.3 NA 67.3 21.5
+"121" "Male" "Other Ethnicity Only" "2010Q2" 22.6 NA 9.1 32.5 71.8 NA 69.7 23.3
+"122" "Male" "Other Ethnicity Only" "2010Q3" 26.6 NA 8.9 36.4 75.5 NA 73 27.5
+"123" "Male" "Other Ethnicity Only" "2010Q4" 24.9 1.1 9.5 35.5 73.2 4.2 70.2 26
+"124" "Male" "Other Ethnicity Only" "2011Q1" 22.8 NA 9.5 33.2 71.3 NA 68.8 23.7
+"125" "Male" "Other Ethnicity Only" "2011Q2" 23.3 NA 10.1 34.4 70.7 NA 67.8 24.3
+"126" "Male" "Other Ethnicity Only" "2011Q3" 22.9 NA 11.1 34.5 67.8 2.1 66.3 23.4
+"127" "Male" "Other Ethnicity Only" "2011Q4" 20.9 1.2 10 32.2 68.9 5.5 65.1 22.2
+"128" "Male" "Other Ethnicity Only" "2012Q1" 22 1.1 9.9 33 70 4.9 66.5 23.1
+"129" "Male" "Other Ethnicity Only" "2012Q2" 23.4 1.3 9.9 34.6 71.3 5.4 67.5 24.7
+"130" "Male" "Other Ethnicity Only" "2012Q3" 18.8 1.4 10.7 31 65.3 6.9 60.8 20.2
+"131" "Male" "Other Ethnicity Only" "2012Q4" 21.3 NA 10.4 32.6 68.2 NA 65.4 22.2
+"132" "Male" "Other Ethnicity Only" "2013Q1" 22.9 NA 11 34.5 68.2 NA 66.3 23.5
+"133" "Male" "European/Maori" "2007Q4" 60.1 4.7 13.9 78.8 82.4 7.3 76.4 64.9
+"134" "Male" "European/Maori" "2008Q1" 56.9 4.4 19.6 80.9 75.8 7.2 70.3 61.3
+"135" "Male" "European/Maori" "2008Q2" 64.3 5.2 18.9 88.4 78.6 7.5 72.7 69.5
+"136" "Male" "European/Maori" "2008Q3" 57.2 4.6 18.2 80 77.3 7.5 71.5 61.8
+"137" "Male" "European/Maori" "2008Q4" 57.9 4 17.2 79.2 78.2 6.4 73.2 61.9
+"138" "Male" "European/Maori" "2009Q1" 49.2 6.3 17 72.4 76.6 11.3 67.9 55.4
+"139" "Male" "European/Maori" "2009Q2" 51 6.7 16.9 74.5 77.4 11.6 68.4 57.7
+"140" "Male" "European/Maori" "2009Q3" 51.8 5.4 16.2 73.3 78 9.4 70.6 57.2
+"141" "Male" "European/Maori" "2009Q4" 48 7.6 17.5 73.1 76.1 13.6 65.7 55.6
+"142" "Male" "European/Maori" "2010Q1" 50.6 6.2 17 73.8 77 10.9 68.6 56.8
+"143" "Male" "European/Maori" "2010Q2" 51.1 4.6 18.8 74.5 74.8 8.2 68.7 55.7
+"144" "Male" "European/Maori" "2010Q3" 53.7 5.4 18.4 77.6 76.3 9.1 69.3 59.1
+"145" "Male" "European/Maori" "2010Q4" 51.9 5.3 17.8 75 76.3 9.3 69.2 57.2
+"146" "Male" "European/Maori" "2011Q1" 52 5.4 19.3 76.8 74.9 9.5 67.8 57.5
+"147" "Male" "European/Maori" "2011Q2" 57.2 5.2 20.9 83.3 74.9 8.3 68.7 62.4
+"148" "Male" "European/Maori" "2011Q3" 55.7 6.7 18.8 81.1 76.8 10.7 68.6 62.3
+"149" "Male" "European/Maori" "2011Q4" 54.9 7.4 18.4 80.6 77.2 11.8 68.1 62.2
+"150" "Male" "European/Maori" "2012Q1" 55.1 6.3 17.6 78.9 77.7 10.3 69.7 61.4
+"151" "Male" "European/Maori" "2012Q2" 60.7 7.4 19.4 87.5 77.8 10.9 69.4 68.1
+"152" "Male" "European/Maori" "2012Q3" 55.2 7.5 22.2 84.9 73.9 11.9 65.1 62.7
+"153" "Male" "European/Maori" "2012Q4" 57.2 6.9 22.7 86.8 73.9 10.8 65.9 64.1
+"154" "Male" "European/Maori" "2013Q1" 54.7 6.8 19.6 81.1 75.8 11 67.5 61.5
+"155" "Male" "Two or More Groups Not Elsewhere Included" "2007Q4" 28.2 1.2 7.1 36.5 80.5 4 77.3 29.3
+"156" "Male" "Two or More Groups Not Elsewhere Included" "2008Q1" 17 1.6 5.4 24 77.6 8.7 70.9 18.6
+"157" "Male" "Two or More Groups Not Elsewhere Included" "2008Q2" 17.2 NA 5.5 23.5 76.7 4.8 73 18
+"158" "Male" "Two or More Groups Not Elsewhere Included" "2008Q3" 18.1 NA 5 23.7 79 3.1 76.6 18.7
+"159" "Male" "Two or More Groups Not Elsewhere Included" "2008Q4" 17.6 1.2 4.5 23.3 80.7 6.5 75.5 18.8
+"160" "Male" "Two or More Groups Not Elsewhere Included" "2009Q1" 16.3 2.4 5.8 24.5 76.2 12.6 66.6 18.7
+"161" "Male" "Two or More Groups Not Elsewhere Included" "2009Q2" 16.7 1.1 8.8 26.6 66.8 6 62.8 17.8
+"162" "Male" "Two or More Groups Not Elsewhere Included" "2009Q3" 15.9 3 9 28 67.9 16 57 19
+"163" "Male" "Two or More Groups Not Elsewhere Included" "2009Q4" 17.2 3.3 8 28.5 71.9 16.2 60.3 20.5
+"164" "Male" "Two or More Groups Not Elsewhere Included" "2010Q1" 19.8 2.4 8.2 30.4 72.9 10.6 65.1 22.2
+"165" "Male" "Two or More Groups Not Elsewhere Included" "2010Q2" 15.9 2.8 8.6 27.3 68.5 15 58.2 18.7
+"166" "Male" "Two or More Groups Not Elsewhere Included" "2010Q3" 18.3 2.4 9.4 30.1 68.8 11.7 60.7 20.7
+"167" "Male" "Two or More Groups Not Elsewhere Included" "2010Q4" 17.5 3.2 8.5 29.1 71 15.4 60 20.7
+"168" "Male" "Two or More Groups Not Elsewhere Included" "2011Q1" 18.5 4.1 10.3 33 68.7 18.1 56.2 22.6
+"169" "Male" "Two or More Groups Not Elsewhere Included" "2011Q2" 17.8 4.2 9.2 31.1 70.6 19.3 57 22
+"170" "Male" "Two or More Groups Not Elsewhere Included" "2011Q3" 19.3 3.7 9.7 32.6 70.3 16.1 59 22.9
+"171" "Male" "Two or More Groups Not Elsewhere Included" "2011Q4" 20.2 3.5 8.8 32.6 72.8 14.9 62 23.7
+"172" "Male" "Two or More Groups Not Elsewhere Included" "2012Q1" 22.8 4.8 8.9 36.6 75.6 17.4 62.4 27.6
+"173" "Male" "Two or More Groups Not Elsewhere Included" "2012Q2" 21.9 3.5 11.4 36.8 69 13.6 59.6 25.4
+"174" "Male" "Two or More Groups Not Elsewhere Included" "2012Q3" 19 4.6 13.4 36.9 63.8 19.6 51.3 23.6
+"175" "Male" "Two or More Groups Not Elsewhere Included" "2012Q4" 22.1 3.9 12.7 38.7 67.1 14.9 57.1 26
+"176" "Male" "Two or More Groups Not Elsewhere Included" "2013Q1" 19.6 2.7 11.7 34 65.5 12 57.6 22.2
+"177" "Male" "Residual Categories" "2007Q4" 7.3 NA 1.7 9.3 81.8 NA 77.7 7.6
+"178" "Male" "Residual Categories" "2008Q1" 4.1 NA 2.6 6.9 62.4 NA 59.1 4.3
+"179" "Male" "Residual Categories" "2008Q2" 2.7 NA 3 5.7 46.8 NA 46.8 2.7
+"180" "Male" "Residual Categories" "2008Q3" 2.9 NA NA 3.3 88.8 NA 88.8 2.9
+"181" "Male" "Residual Categories" "2008Q4" 1.6 NA NA 2.2 81.6 NA 75.7 1.8
+"182" "Male" "Residual Categories" "2009Q1" 2.2 NA NA 3.1 88.9 NA 69.4 2.8
+"183" "Male" "Residual Categories" "2009Q2" 1.9 NA NA 2.3 NA NA 79.8 1.9
+"184" "Male" "Residual Categories" "2009Q3" 1.3 NA NA 2 67.3 NA 67.3 1.3
+"185" "Male" "Residual Categories" "2009Q4" 1.7 NA NA 2.3 NA NA 76.5 1.8
+"186" "Male" "Residual Categories" "2010Q1" 3 NA NA 3.9 NA NA 77.9 3
+"187" "Male" "Residual Categories" "2010Q2" 2.8 NA NA 3.9 NA NA 71.8 3.4
+"188" "Male" "Residual Categories" "2010Q3" 1.3 NA NA 2.2 NA NA 57.8 1.5
+"189" "Male" "Residual Categories" "2010Q4" 2.7 NA NA 3.7 NA NA 70.9 2.8
+"190" "Male" "Residual Categories" "2011Q1" 5.7 NA 1.6 7.7 79.9 NA 74.4 6.2
+"191" "Male" "Residual Categories" "2011Q2" 3.7 NA 1.1 5.3 80.1 NA 70.6 4.2
+"192" "Male" "Residual Categories" "2011Q3" 4.2 NA NA 5.4 84.8 8.8 77.3 4.6
+"193" "Male" "Residual Categories" "2011Q4" 3.4 NA 1.5 5.1 71 NA 66.9 3.6
+"194" "Male" "Residual Categories" "2012Q1" 5.1 NA 1.7 7.4 76.8 NA 69.6 5.7
+"195" "Male" "Residual Categories" "2012Q2" 2.8 NA NA 4.1 90.3 NA 69.5 3.7
+"196" "Male" "Residual Categories" "2012Q3" 1.6 NA NA 2.4 73.3 NA 66.6 1.8
+"197" "Male" "Residual Categories" "2012Q4" 2.6 NA 1.2 4 69.4 NA 64.8 2.8
+"198" "Male" "Residual Categories" "2013Q1" 3.2 NA 1.1 4.4 74.7 NA 72 3.3
+"199" "Male" "Total All Ethnic Groups" "2007Q4" 1176.9 40.1 386.6 1603.6 75.9 3.3 73.4 1217
+"200" "Male" "Total All Ethnic Groups" "2008Q1" 1158.3 47.4 403.7 1609.4 74.9 3.9 72 1205.7
+"201" "Male" "Total All Ethnic Groups" "2008Q2" 1162.7 46.6 404.2 1613.5 74.9 3.9 72.1 1209.3
+"202" "Male" "Total All Ethnic Groups" "2008Q3" 1154.7 51.5 411.4 1617.6 74.6 4.3 71.4 1206.2
+"203" "Male" "Total All Ethnic Groups" "2008Q4" 1184.1 53.8 385.5 1623.4 76.3 4.3 72.9 1237.9
+"204" "Male" "Total All Ethnic Groups" "2009Q1" 1154.4 68.2 407.1 1629.7 75 5.6 70.8 1222.6
+"205" "Male" "Total All Ethnic Groups" "2009Q2" 1156 68.2 411.8 1636.1 74.8 5.6 70.7 1224.2
+"206" "Male" "Total All Ethnic Groups" "2009Q3" 1129.5 78.6 434.1 1642.2 73.6 6.5 68.8 1208.2
+"207" "Male" "Total All Ethnic Groups" "2009Q4" 1154.1 84.8 410.8 1649.7 75.1 6.8 70 1238.9
+"208" "Male" "Total All Ethnic Groups" "2010Q1" 1156.7 76.5 423.9 1657.1 74.4 6.2 69.8 1233.2
+"209" "Male" "Total All Ethnic Groups" "2010Q2" 1150.9 82.7 428.3 1661.9 74.2 6.7 69.3 1233.6
+"210" "Male" "Total All Ethnic Groups" "2010Q3" 1165.4 69.7 431.4 1666.5 74.1 5.6 69.9 1235.1
+"211" "Male" "Total All Ethnic Groups" "2010Q4" 1172.8 80.2 420.2 1673.1 74.9 6.4 70.1 1252.9
+"212" "Male" "Total All Ethnic Groups" "2011Q1" 1176.3 82.9 422.2 1681.4 74.9 6.6 70 1259.2
+"213" "Male" "Total All Ethnic Groups" "2011Q2" 1172 77.3 434.1 1683.3 74.2 6.2 69.6 1249.2
+"214" "Male" "Total All Ethnic Groups" "2011Q3" 1175.7 76.3 434.4 1686.4 74.2 6.1 69.7 1252
+"215" "Male" "Total All Ethnic Groups" "2011Q4" 1187.4 81.9 422.2 1691.4 75 6.5 70.2 1269.3
+"216" "Male" "Total All Ethnic Groups" "2012Q1" 1189.8 84.7 421.2 1695.7 75.2 6.6 70.2 1274.5
+"217" "Male" "Total All Ethnic Groups" "2012Q2" 1176.2 77.4 444.7 1698.2 73.8 6.2 69.3 1253.5
+"218" "Male" "Total All Ethnic Groups" "2012Q3" 1165.4 87.8 448.5 1701.6 73.6 7 68.5 1253.1
+"219" "Male" "Total All Ethnic Groups" "2012Q4" 1173.6 79.6 453.1 1706.2 73.4 6.3 68.8 1253.1
+"220" "Male" "Total All Ethnic Groups" "2013Q1" 1189.2 71.6 451 1711.8 73.7 5.7 69.5 1260.8
+"221" "Female" "European Only" "2007Q4" 763.3 16.6 441.6 1221.6 63.8 2.1 62.5 780
+"222" "Female" "European Only" "2008Q1" 737.5 24.5 456.5 1218.5 62.5 3.2 60.5 762
+"223" "Female" "European Only" "2008Q2" 744.6 19.8 442.5 1206.9 63.3 2.6 61.7 764.4
+"224" "Female" "European Only" "2008Q3" 746.3 21.5 439.2 1207 63.6 2.8 61.8 767.9
+"225" "Female" "European Only" "2008Q4" 754.8 23.6 437.1 1215.4 64 3 62.1 778.4
+"226" "Female" "European Only" "2009Q1" 735.5 29.6 441.3 1206.5 63.4 3.9 61 765.1
+"227" "Female" "European Only" "2009Q2" 735 31.2 447 1213.1 63.2 4.1 60.6 766.2
+"228" "Female" "European Only" "2009Q3" 736.8 31.3 436.3 1204.4 63.8 4.1 61.2 768.1
+"229" "Female" "European Only" "2009Q4" 740.1 35.5 432.3 1207.9 64.2 4.6 61.3 775.6
+"230" "Female" "European Only" "2010Q1" 733.9 34.6 442.2 1210.6 63.5 4.5 60.6 768.5
+"231" "Female" "European Only" "2010Q2" 739.7 31.9 440.4 1212 63.7 4.1 61 771.6
+"232" "Female" "European Only" "2010Q3" 731.2 38.8 439 1209 63.7 5 60.5 770
+"233" "Female" "European Only" "2010Q4" 734.6 36.1 438.2 1208.9 63.8 4.7 60.8 770.7
+"234" "Female" "European Only" "2011Q1" 727.7 43.4 430 1201.1 64.2 5.6 60.6 771.1
+"235" "Female" "European Only" "2011Q2" 734.8 36.4 441.7 1212.9 63.6 4.7 60.6 771.2
+"236" "Female" "European Only" "2011Q3" 730.9 36 435.8 1202.7 63.8 4.7 60.8 766.9
+"237" "Female" "European Only" "2011Q4" 750 32.6 430 1212.6 64.5 4.2 61.8 782.6
+"238" "Female" "European Only" "2012Q1" 737.8 39 431.7 1208.4 64.3 5 61.1 776.8
+"239" "Female" "European Only" "2012Q2" 750.5 39.1 429.6 1219.2 64.8 5 61.6 789.6
+"240" "Female" "European Only" "2012Q3" 739.2 40 432 1211.2 64.3 5.1 61 779.2
+"241" "Female" "European Only" "2012Q4" 731.9 36.2 448.7 1216.8 63.1 4.7 60.2 768.1
+"242" "Female" "European Only" "2013Q1" 739.2 41.7 425.1 1205.9 64.8 5.3 61.3 780.8
+"243" "Female" "Maori Only" "2007Q4" 62.7 6.5 49.2 118.4 58.4 9.4 53 69.2
+"244" "Female" "Maori Only" "2008Q1" 60.5 7.3 54.9 122.8 55.3 10.8 49.3 67.9
+"245" "Female" "Maori Only" "2008Q2" 59 5.4 47.1 111.5 57.8 8.4 52.9 64.4
+"246" "Female" "Maori Only" "2008Q3" 62 5.6 50.5 118 57.2 8.2 52.5 67.5
+"247" "Female" "Maori Only" "2008Q4" 65.7 6.9 46.8 119.3 60.8 9.5 55 72.5
+"248" "Female" "Maori Only" "2009Q1" 65.4 8.4 51.9 125.6 58.7 11.4 52 73.8
+"249" "Female" "Maori Only" "2009Q2" 61.7 9.7 51.4 122.8 58.2 13.6 50.3 71.4
+"250" "Female" "Maori Only" "2009Q3" 61.1 10.9 53.2 125.1 57.5 15.1 48.8 72
+"251" "Female" "Maori Only" "2009Q4" 65.4 11.4 53.1 129.9 59.1 14.8 50.4 76.8
+"252" "Female" "Maori Only" "2010Q1" 66.3 11.5 52.8 130.5 59.6 14.8 50.8 77.8
+"253" "Female" "Maori Only" "2010Q2" 62 12.7 56.3 131 57 16.9 47.3 74.7
+"254" "Female" "Maori Only" "2010Q3" 63.1 12.1 55.6 130.7 57.5 16.1 48.2 75.2
+"255" "Female" "Maori Only" "2010Q4" 65.7 10.6 56.6 133 57.4 13.9 49.4 76.4
+"256" "Female" "Maori Only" "2011Q1" 65.1 12.1 56.8 134.1 57.6 15.7 48.6 77.2
+"257" "Female" "Maori Only" "2011Q2" 65.4 10.6 55.9 132 57.6 13.9 49.6 76
+"258" "Female" "Maori Only" "2011Q3" 65.7 10.5 56.5 132.8 57.5 13.8 49.5 76.3
+"259" "Female" "Maori Only" "2011Q4" 65.8 11.2 54.4 131.4 58.6 14.6 50.1 77
+"260" "Female" "Maori Only" "2012Q1" 65.5 12.5 51.3 129.4 60.4 16.1 50.7 78.1
+"261" "Female" "Maori Only" "2012Q2" 63.6 10.7 54.7 129 57.6 14.3 49.3 74.2
+"262" "Female" "Maori Only" "2012Q3" 63.7 12.7 52.2 128.6 59.4 16.7 49.5 76.4
+"263" "Female" "Maori Only" "2012Q4" 62.5 12.8 53.8 129.2 58.3 17 48.4 75.3
+"264" "Female" "Maori Only" "2013Q1" 65.4 11.6 58.2 135.2 57 15.1 48.4 77
+"265" "Female" "Pacific Peoples Only" "2007Q4" 36.9 2.8 31.4 71.2 55.9 7.1 51.9 39.8
+"266" "Female" "Pacific Peoples Only" "2008Q1" 33.4 3.7 33.3 70.4 52.7 10 47.4 37.1
+"267" "Female" "Pacific Peoples Only" "2008Q2" 34.9 3.2 31.7 69.8 54.6 8.3 50.1 38.1
+"268" "Female" "Pacific Peoples Only" "2008Q3" 39 3.6 33.9 76.5 55.7 8.5 51 42.6
+"269" "Female" "Pacific Peoples Only" "2008Q4" 37.7 4 32 73.7 56.6 9.5 51.2 41.7
+"270" "Female" "Pacific Peoples Only" "2009Q1" 35.1 4.9 37.9 77.8 51.3 12.2 45 39.9
+"271" "Female" "Pacific Peoples Only" "2009Q2" 31.3 5.6 39.4 76.3 48.4 15 41.1 36.9
+"272" "Female" "Pacific Peoples Only" "2009Q3" 33.5 5.1 39.8 78.4 49.2 13.3 42.7 38.6
+"273" "Female" "Pacific Peoples Only" "2009Q4" 34.3 5.6 36.4 76.3 52.3 14 45 39.9
+"274" "Female" "Pacific Peoples Only" "2010Q1" 35.2 6.4 37.3 78.9 52.8 15.4 44.7 41.7
+"275" "Female" "Pacific Peoples Only" "2010Q2" 30.5 5.3 37.4 73.3 48.9 14.9 41.7 35.9
+"276" "Female" "Pacific Peoples Only" "2010Q3" 32.9 6.5 39.1 78.5 50.2 16.5 41.9 39.4
+"277" "Female" "Pacific Peoples Only" "2010Q4" 36.3 6.5 38.6 81.4 52.6 15.3 44.6 42.8
+"278" "Female" "Pacific Peoples Only" "2011Q1" 38.8 6.6 39.2 84.5 53.7 14.4 45.9 45.4
+"279" "Female" "Pacific Peoples Only" "2011Q2" 33 5.4 38.4 76.8 50 14.1 42.9 38.4
+"280" "Female" "Pacific Peoples Only" "2011Q3" 37.3 6.5 42.4 86.2 50.8 14.9 43.2 43.8
+"281" "Female" "Pacific Peoples Only" "2011Q4" 37.7 7.4 38.8 83.8 53.8 16.5 44.9 45.1
+"282" "Female" "Pacific Peoples Only" "2012Q1" 33.9 7.2 37.3 78.5 52.4 17.6 43.2 41.1
+"283" "Female" "Pacific Peoples Only" "2012Q2" 31.8 7.4 40.8 80.1 49 18.9 39.8 39.3
+"284" "Female" "Pacific Peoples Only" "2012Q3" 31.2 7.6 39.1 77.9 49.9 19.6 40.1 38.9
+"285" "Female" "Pacific Peoples Only" "2012Q4" 30.3 7.4 39.7 77.4 48.7 19.7 39.1 37.7
+"286" "Female" "Pacific Peoples Only" "2013Q1" 33.2 8.4 41 82.6 50.4 20.1 40.3 41.6
+"287" "Female" "Asian Only" "2007Q4" 76.2 4.7 64.1 145 55.8 5.8 52.5 80.9
+"288" "Female" "Asian Only" "2008Q1" 79 6.6 70.7 156.3 54.8 7.7 50.5 85.6
+"289" "Female" "Asian Only" "2008Q2" 87.6 5.9 69.5 163 57.4 6.3 53.8 93.6
+"290" "Female" "Asian Only" "2008Q3" 86.4 5.4 68.4 160.3 57.3 5.9 53.9 91.8
+"291" "Female" "Asian Only" "2008Q4" 89.9 6.9 66.5 163.3 59.3 7.2 55 96.8
+"292" "Female" "Asian Only" "2009Q1" 93.6 7.3 69.2 170.1 59.3 7.2 55.1 100.9
+"293" "Female" "Asian Only" "2009Q2" 89.1 8.6 66.9 164.6 59.3 8.8 54.1 97.7
+"294" "Female" "Asian Only" "2009Q3" 89.7 8.3 76.2 174.3 56.2 8.5 51.5 98
+"295" "Female" "Asian Only" "2009Q4" 92.4 9.6 75.1 177.1 57.6 9.4 52.2 102
+"296" "Female" "Asian Only" "2010Q1" 91.1 11.4 73 175.6 58.4 11.2 51.9 102.6
+"297" "Female" "Asian Only" "2010Q2" 90.4 10.4 76.8 177.6 56.7 10.3 50.9 100.8
+"298" "Female" "Asian Only" "2010Q3" 91.5 7.2 75.7 174.4 56.6 7.3 52.4 98.7
+"299" "Female" "Asian Only" "2010Q4" 95.3 12.1 70.2 177.5 60.5 11.2 53.7 107.3
+"300" "Female" "Asian Only" "2011Q1" 99.2 9.5 71.2 180 60.4 8.8 55.1 108.8
+"301" "Female" "Asian Only" "2011Q2" 102.2 5.8 68.9 176.9 61.1 5.4 57.8 108
+"302" "Female" "Asian Only" "2011Q3" 100.1 9.4 77.2 186.7 58.7 8.6 53.6 109.5
+"303" "Female" "Asian Only" "2011Q4" 101 7.2 74.7 182.9 59.1 6.6 55.2 108.2
+"304" "Female" "Asian Only" "2012Q1" 100.6 11.5 74.8 186.9 60 10.2 53.8 112.1
+"305" "Female" "Asian Only" "2012Q2" 100.9 9.8 68.8 179.5 61.7 8.9 56.2 110.7
+"306" "Female" "Asian Only" "2012Q3" 109.4 10.2 76.6 196.2 61 8.5 55.8 119.6
+"307" "Female" "Asian Only" "2012Q4" 110.1 10.5 75.2 195.8 61.6 8.7 56.2 120.6
+"308" "Female" "Asian Only" "2013Q1" 116.6 11.7 79.9 208.2 61.6 9.1 56 128.3
+"309" "Female" "MELAA Only" "2007Q4" 4.3 NA 8.2 13.2 37.9 NA 32.9 5
+"310" "Female" "MELAA Only" "2008Q1" 5 1.2 7.4 13.6 45.4 19 36.8 6.2
+"311" "Female" "MELAA Only" "2008Q2" 6.6 1 8.9 16.5 45.8 13.4 39.7 7.6
+"312" "Female" "MELAA Only" "2008Q3" 6.8 NA 9.5 17.2 44.7 NA 39.6 7.7
+"313" "Female" "MELAA Only" "2008Q4" 4.2 NA 6.4 11.5 43.9 NA 36.4 5
+"314" "Female" "MELAA Only" "2009Q1" 4.3 NA 7 12 41.9 NA 35.6 5
+"315" "Female" "MELAA Only" "2009Q2" 6.6 1.4 6.1 14.1 56.6 17.3 46.8 8
+"316" "Female" "MELAA Only" "2009Q3" 6.2 NA 7 13.6 48.7 NA 45.9 6.6
+"317" "Female" "MELAA Only" "2009Q4" 5.3 1.4 7.1 13.9 48.5 21.1 38.3 6.7
+"318" "Female" "MELAA Only" "2010Q1" 5.1 1.4 6.2 12.7 51 21.9 39.8 6.5
+"319" "Female" "MELAA Only" "2010Q2" 7.6 NA 7.2 15.6 53.8 NA 48.4 8.4
+"320" "Female" "MELAA Only" "2010Q3" 8.7 1.2 6.9 16.8 59 12.3 51.8 9.9
+"321" "Female" "MELAA Only" "2010Q4" 7.8 NA 7.7 15.6 50.5 NA 49.6 7.9
+"322" "Female" "MELAA Only" "2011Q1" 9.1 NA 6.1 15.9 61.7 NA 57 9.8
+"323" "Female" "MELAA Only" "2011Q2" 10.1 1.7 6.6 18.5 64.1 14.8 54.6 11.8
+"324" "Female" "MELAA Only" "2011Q3" 6.8 2 5.6 14.3 61.3 22.2 47.6 8.8
+"325" "Female" "MELAA Only" "2011Q4" 6.3 NA 6.7 13.4 49.8 NA 46.7 6.7
+"326" "Female" "MELAA Only" "2012Q1" 6.2 2 5.4 13.6 60.2 24.3 45.6 8.2
+"327" "Female" "MELAA Only" "2012Q2" 4.2 NA 7.1 11.9 40.3 NA 35.3 4.8
+"328" "Female" "MELAA Only" "2012Q3" 4.5 NA 6.5 11.7 44.3 NA 38.4 5.2
+"329" "Female" "MELAA Only" "2012Q4" 3.9 NA 6 10 40.4 NA 38.9 4.1
+"330" "Female" "MELAA Only" "2013Q1" 4.7 NA 6.6 11.8 43.9 NA 39.9 5.2
+"331" "Female" "Other Ethnicity Only" "2007Q4" 5.7 NA 1.9 7.6 74.6 NA 74.6 5.7
+"332" "Female" "Other Ethnicity Only" "2008Q1" 6.6 NA 4.2 10.9 61.4 NA 60.4 6.7
+"333" "Female" "Other Ethnicity Only" "2008Q2" 8.8 1.1 6.6 16.6 60 11.4 53.2 9.9
+"334" "Female" "Other Ethnicity Only" "2008Q3" 11.4 NA 6.9 19 63.7 NA 59.8 12.1
+"335" "Female" "Other Ethnicity Only" "2008Q4" 12.6 NA 7.6 20.9 63.5 NA 60 13.3
+"336" "Female" "Other Ethnicity Only" "2009Q1" 14.6 NA 7.6 22.7 66.5 NA 64.5 15.1
+"337" "Female" "Other Ethnicity Only" "2009Q2" 16.1 NA 7.8 24.5 68 NA 65.9 16.6
+"338" "Female" "Other Ethnicity Only" "2009Q3" 17.4 NA 9.5 27.6 65.5 NA 62.8 18.1
+"339" "Female" "Other Ethnicity Only" "2009Q4" 16 NA 10.8 27.3 60.6 NA 58.6 16.5
+"340" "Female" "Other Ethnicity Only" "2010Q1" 17.5 1.4 10.7 29.6 63.8 7.3 59.1 18.9
+"341" "Female" "Other Ethnicity Only" "2010Q2" 18.3 NA 12.3 31.3 60.8 NA 58.5 19
+"342" "Female" "Other Ethnicity Only" "2010Q3" 21.7 NA 12.4 34.5 64.2 NA 62.9 22.2
+"343" "Female" "Other Ethnicity Only" "2010Q4" 21.7 NA 12 34.6 65.4 NA 62.8 22.6
+"344" "Female" "Other Ethnicity Only" "2011Q1" 22.9 NA 11.9 35.7 66.7 NA 64 23.8
+"345" "Female" "Other Ethnicity Only" "2011Q2" 19.9 1.2 13.8 34.9 60.4 5.5 57.1 21.1
+"346" "Female" "Other Ethnicity Only" "2011Q3" 20.7 1.1 14.1 36 60.7 5.2 57.6 21.9
+"347" "Female" "Other Ethnicity Only" "2011Q4" 19.3 1.1 14.7 35.1 58.3 5.5 55 20.5
+"348" "Female" "Other Ethnicity Only" "2012Q1" 20.5 1.6 14.1 36.2 61.2 7.4 56.7 22.2
+"349" "Female" "Other Ethnicity Only" "2012Q2" 21.1 2.3 13.3 36.7 63.8 9.8 57.5 23.4
+"350" "Female" "Other Ethnicity Only" "2012Q3" 18.9 1.3 12.3 32.5 62.2 6.6 58.1 20.2
+"351" "Female" "Other Ethnicity Only" "2012Q4" 19.7 1 11.5 32.2 64.2 4.9 61 20.7
+"352" "Female" "Other Ethnicity Only" "2013Q1" 20.7 NA 11.9 33.1 64 NA 62.6 21.2
+"353" "Female" "European/Maori" "2007Q4" 54.1 2.4 28.2 84.7 66.7 4.2 63.9 56.5
+"354" "Female" "European/Maori" "2008Q1" 55.3 4.2 27.2 86.7 68.7 7.1 63.8 59.5
+"355" "Female" "European/Maori" "2008Q2" 59.8 3.8 34.3 97.8 65 5.9 61.1 63.5
+"356" "Female" "European/Maori" "2008Q3" 57.2 3.5 31.5 92.2 65.9 5.7 62.1 60.7
+"357" "Female" "European/Maori" "2008Q4" 60.3 4.9 25.6 90.8 71.7 7.5 66.4 65.1
+"358" "Female" "European/Maori" "2009Q1" 51.6 6.9 26.2 84.7 69 11.8 60.9 58.5
+"359" "Female" "European/Maori" "2009Q2" 51.9 5.1 31.1 88.1 64.7 8.9 58.9 57
+"360" "Female" "European/Maori" "2009Q3" 50 6.4 30 86.4 65.3 11.4 57.9 56.4
+"361" "Female" "European/Maori" "2009Q4" 46.4 7.2 29.4 83 64.5 13.5 55.8 53.6
+"362" "Female" "European/Maori" "2010Q1" 45.4 8.2 28.1 81.7 65.6 15.3 55.6 53.6
+"363" "Female" "European/Maori" "2010Q2" 47.9 6.7 28.5 83.1 65.7 12.2 57.7 54.6
+"364" "Female" "European/Maori" "2010Q3" 49.7 5.4 29.5 84.6 65.1 9.8 58.8 55.1
+"365" "Female" "European/Maori" "2010Q4" 49.8 6.3 28 84.1 66.7 11.3 59.2 56.1
+"366" "Female" "European/Maori" "2011Q1" 46.6 8.5 28.4 83.5 66 15.5 55.8 55.1
+"367" "Female" "European/Maori" "2011Q2" 48.8 8 29.5 86.4 65.8 14.1 56.5 56.9
+"368" "Female" "European/Maori" "2011Q3" 49.3 5.3 32.4 87.1 62.8 9.8 56.7 54.7
+"369" "Female" "European/Maori" "2011Q4" 49 6.2 33.8 89 62 11.2 55 55.2
+"370" "Female" "European/Maori" "2012Q1" 50.2 7 30.5 87.7 65.2 12.2 57.3 57.2
+"371" "Female" "European/Maori" "2012Q2" 49.1 5.1 35.7 89.8 60.3 9.4 54.6 54.2
+"372" "Female" "European/Maori" "2012Q3" 50.8 7.2 31.5 89.5 64.8 12.4 56.8 58
+"373" "Female" "European/Maori" "2012Q4" 50.3 7.2 33.1 90.6 63.4 12.4 55.5 57.5
+"374" "Female" "European/Maori" "2013Q1" 50.9 6.9 30.5 88.3 65.5 11.9 57.7 57.8
+"375" "Female" "Two or More Groups Not Elsewhere Included" "2007Q4" 21.5 1.8 13 36.3 64.1 7.7 59.2 23.3
+"376" "Female" "Two or More Groups Not Elsewhere Included" "2008Q1" 15.6 NA 9.2 25.3 63.8 NA 61.7 16.2
+"377" "Female" "Two or More Groups Not Elsewhere Included" "2008Q2" 17.5 NA 10.4 28.6 63.6 NA 61.2 18.2
+"378" "Female" "Two or More Groups Not Elsewhere Included" "2008Q3" 16.4 1.1 8.8 26.4 66.5 6.5 62.2 17.6
+"379" "Female" "Two or More Groups Not Elsewhere Included" "2008Q4" 16.4 1.1 10.1 27.6 63.3 6.4 59.3 17.5
+"380" "Female" "Two or More Groups Not Elsewhere Included" "2009Q1" 17.7 2.2 10.1 30 66.4 11.1 59 19.9
+"381" "Female" "Two or More Groups Not Elsewhere Included" "2009Q2" 16.5 3 10.1 29.6 65.9 15.2 55.9 19.5
+"382" "Female" "Two or More Groups Not Elsewhere Included" "2009Q3" 17.8 2.7 9.2 29.6 69 13.2 59.9 20.4
+"383" "Female" "Two or More Groups Not Elsewhere Included" "2009Q4" 20.2 2.8 8.9 31.9 72.3 12.3 63.4 23.1
+"384" "Female" "Two or More Groups Not Elsewhere Included" "2010Q1" 18 2 13.1 33.1 60.4 9.8 54.4 20
+"385" "Female" "Two or More Groups Not Elsewhere Included" "2010Q2" 16.5 3.7 12.5 32.7 61.9 18.5 50.4 20.2
+"386" "Female" "Two or More Groups Not Elsewhere Included" "2010Q3" 16.2 2.9 12.2 31.3 61 15.3 51.7 19.1
+"387" "Female" "Two or More Groups Not Elsewhere Included" "2010Q4" 16.7 2.7 11.6 30.9 62.6 13.8 54 19.4
+"388" "Female" "Two or More Groups Not Elsewhere Included" "2011Q1" 18.6 1.5 11.5 31.6 63.7 7.6 58.9 20.1
+"389" "Female" "Two or More Groups Not Elsewhere Included" "2011Q2" 18.2 3 11.7 33 64.4 14.2 55.2 21.2
+"390" "Female" "Two or More Groups Not Elsewhere Included" "2011Q3" 17.2 3.4 9.8 30.5 67.8 16.7 56.4 20.6
+"391" "Female" "Two or More Groups Not Elsewhere Included" "2011Q4" 19.2 2.2 11 32.4 66.2 10.4 59.3 21.4
+"392" "Female" "Two or More Groups Not Elsewhere Included" "2012Q1" 22.3 4.5 12.9 39.6 67.5 16.8 56.2 26.8
+"393" "Female" "Two or More Groups Not Elsewhere Included" "2012Q2" 20.6 3.6 15.2 39.3 61.4 14.8 52.3 24.2
+"394" "Female" "Two or More Groups Not Elsewhere Included" "2012Q3" 24 2.2 17.4 43.6 60.2 8.5 55.1 26.3
+"395" "Female" "Two or More Groups Not Elsewhere Included" "2012Q4" 20.7 5.5 15.1 41.3 63.4 21.1 50 26.2
+"396" "Female" "Two or More Groups Not Elsewhere Included" "2013Q1" 18 3.1 12.1 33.2 63.5 14.5 54.3 21.1
+"397" "Female" "Residual Categories" "2007Q4" 5.8 NA 4 10.1 60 NA 57.5 6.1
+"398" "Female" "Residual Categories" "2008Q1" 5.6 NA 2.7 8.6 69 NA 65.1 6
+"399" "Female" "Residual Categories" "2008Q2" 2.8 NA 3.3 6.1 45.9 NA 45.9 2.8
+"400" "Female" "Residual Categories" "2008Q3" 3.3 NA NA 3.9 86.4 NA 85 3.4
+"401" "Female" "Residual Categories" "2008Q4" 2.3 NA NA 3.1 75.7 NA 74.5 2.4
+"402" "Female" "Residual Categories" "2009Q1" NA NA NA 1.7 63.3 NA NA 1.1
+"403" "Female" "Residual Categories" "2009Q2" 1.8 NA 1 3.1 67.3 NA 58 2.1
+"404" "Female" "Residual Categories" "2009Q3" 1.5 NA NA 2.3 67.4 NA 65 1.6
+"405" "Female" "Residual Categories" "2009Q4" NA NA NA 1.4 NA NA NA NA
+"406" "Female" "Residual Categories" "2010Q1" 1.4 NA NA 2.2 NA NA 63.3 1.5
+"407" "Female" "Residual Categories" "2010Q2" 1.8 NA NA 2.8 NA NA 65.6 2.1
+"408" "Female" "Residual Categories" "2010Q3" 1.5 NA 2 3.6 44.9 NA 41.8 1.6
+"409" "Female" "Residual Categories" "2010Q4" 2.4 NA 1.2 3.7 69 NA 64.8 2.6
+"410" "Female" "Residual Categories" "2011Q1" 5.6 NA 3.6 9.7 62.5 NA 58 6.1
+"411" "Female" "Residual Categories" "2011Q2" 3.9 NA 2.2 6.5 66.6 NA 60.5 4.3
+"412" "Female" "Residual Categories" "2011Q3" 2.7 NA 1 4 74.7 12.1 65.7 3
+"413" "Female" "Residual Categories" "2011Q4" 1.5 NA 2.1 3.9 46.6 NA 37.5 1.8
+"414" "Female" "Residual Categories" "2012Q1" 4 1.1 2.6 7.8 66.3 22.1 51.6 5.2
+"415" "Female" "Residual Categories" "2012Q2" 2.4 NA 1.5 4.4 65 NA 55.1 2.8
+"416" "Female" "Residual Categories" "2012Q3" 1 NA NA 1.7 67.8 NA 58.9 1.2
+"417" "Female" "Residual Categories" "2012Q4" 2.2 NA 1.2 3.5 66.6 NA 62 2.3
+"418" "Female" "Residual Categories" "2013Q1" 1.7 NA 1 2.7 62.7 NA 62.7 1.7
+"419" "Female" "Total All Ethnic Groups" "2007Q4" 1030.6 35.7 641.7 1708 62.4 3.3 60.3 1066.3
+"420" "Female" "Total All Ethnic Groups" "2008Q1" 998.6 48.6 666.1 1713.3 61.1 4.6 58.3 1047.1
+"421" "Female" "Total All Ethnic Groups" "2008Q2" 1021.6 40.8 654.4 1716.8 61.9 3.8 59.5 1062.4
+"422" "Female" "Total All Ethnic Groups" "2008Q3" 1028.9 42.4 649.2 1720.5 62.3 4 59.8 1071.3
+"423" "Female" "Total All Ethnic Groups" "2008Q4" 1043.9 49 633 1725.8 63.3 4.5 60.5 1092.8
+"424" "Female" "Total All Ethnic Groups" "2009Q1" 1018.6 60.6 651.8 1731.1 62.3 5.6 58.8 1079.3
+"425" "Female" "Total All Ethnic Groups" "2009Q2" 1010.1 65.3 660.8 1736.2 61.9 6.1 58.2 1075.4
+"426" "Female" "Total All Ethnic Groups" "2009Q3" 1013.9 65.9 662 1741.8 62 6.1 58.2 1079.7
+"427" "Female" "Total All Ethnic Groups" "2009Q4" 1020.9 74 653.8 1748.7 62.6 6.8 58.4 1095
+"428" "Female" "Total All Ethnic Groups" "2010Q1" 1014 76.9 664.1 1755 62.2 7.1 57.8 1090.9
+"429" "Female" "Total All Ethnic Groups" "2010Q2" 1014.7 72.6 672.1 1759.4 61.8 6.7 57.7 1087.3
+"430" "Female" "Total All Ethnic Groups" "2010Q3" 1016.5 74.7 672.3 1763.5 61.9 6.8 57.6 1091.2
+"431" "Female" "Total All Ethnic Groups" "2010Q4" 1030.2 75.5 664 1769.7 62.5 6.8 58.2 1105.7
+"432" "Female" "Total All Ethnic Groups" "2011Q1" 1033.7 83.8 658.7 1776.2 62.9 7.5 58.2 1117.5
+"433" "Female" "Total All Ethnic Groups" "2011Q2" 1036.4 72.6 668.8 1777.8 62.4 6.5 58.3 1108.9
+"434" "Female" "Total All Ethnic Groups" "2011Q3" 1030.8 74.7 674.8 1780.3 62.1 6.8 57.9 1105.5
+"435" "Female" "Total All Ethnic Groups" "2011Q4" 1049.7 68.8 666.1 1784.6 62.7 6.1 58.8 1118.4
+"436" "Female" "Total All Ethnic Groups" "2012Q1" 1041.1 86.5 660.6 1788.2 63.1 7.7 58.2 1127.6
+"437" "Female" "Total All Ethnic Groups" "2012Q2" 1044.2 79 666.7 1789.9 62.8 7 58.3 1123.2
+"438" "Female" "Total All Ethnic Groups" "2012Q3" 1042.7 82.2 668 1792.9 62.7 7.3 58.2 1124.9
+"439" "Female" "Total All Ethnic Groups" "2012Q4" 1031.6 80.9 684.3 1796.8 61.9 7.3 57.4 1112.5
+"440" "Female" "Total All Ethnic Groups" "2013Q1" 1050.6 84.2 666.3 1801.1 63 7.4 58.3 1134.8
+"441" "Total Both Sexes" "European Only" "2007Q4" 1619.1 36.6 721.7 2377.4 69.6 2.2 68.1 1655.7
+"442" "Total Both Sexes" "European Only" "2008Q1" 1600.5 49.9 740 2390.5 69 3 67 1650.5
+"443" "Total Both Sexes" "European Only" "2008Q2" 1594.7 45.7 723.2 2363.6 69.4 2.8 67.5 1640.4
+"444" "Total Both Sexes" "European Only" "2008Q3" 1585.9 51.3 725.1 2362.3 69.3 3.1 67.1 1637.2
+"445" "Total Both Sexes" "European Only" "2008Q4" 1609.6 53.1 711.7 2374.3 70 3.2 67.8 1662.6
+"446" "Total Both Sexes" "European Only" "2009Q1" 1580.5 65 720.8 2366.2 69.5 3.9 66.8 1645.5
+"447" "Total Both Sexes" "European Only" "2009Q2" 1566.6 66 726.7 2359.3 69.2 4 66.4 1632.6
+"448" "Total Both Sexes" "European Only" "2009Q3" 1550 73.8 726.7 2350.6 69.1 4.5 65.9 1623.8
+"449" "Total Both Sexes" "European Only" "2009Q4" 1571.2 75.6 709.3 2356.1 69.9 4.6 66.7 1646.8
+"450" "Total Both Sexes" "European Only" "2010Q1" 1556.4 71 725.3 2352.7 69.2 4.4 66.2 1627.4
+"451" "Total Both Sexes" "European Only" "2010Q2" 1565 71.8 730.5 2367.3 69.1 4.4 66.1 1636.8
+"452" "Total Both Sexes" "European Only" "2010Q3" 1568.1 69.8 726.1 2364 69.3 4.3 66.3 1637.9
+"453" "Total Both Sexes" "European Only" "2010Q4" 1572.7 75.7 715.3 2363.7 69.7 4.6 66.5 1648.4
+"454" "Total Both Sexes" "European Only" "2011Q1" 1557.3 80.2 711.3 2348.7 69.7 4.9 66.3 1637.5
+"455" "Total Both Sexes" "European Only" "2011Q2" 1573.4 77.4 720.7 2371.6 69.6 4.7 66.3 1650.8
+"456" "Total Both Sexes" "European Only" "2011Q3" 1561.4 70.7 716 2348 69.5 4.3 66.5 1632
+"457" "Total Both Sexes" "European Only" "2011Q4" 1591.8 67.4 707.5 2366.7 70.1 4.1 67.3 1659.2
+"458" "Total Both Sexes" "European Only" "2012Q1" 1580.9 82.2 714.4 2377.5 70 4.9 66.5 1663.1
+"459" "Total Both Sexes" "European Only" "2012Q2" 1587.6 77.3 726.1 2391 69.6 4.6 66.4 1664.9
+"460" "Total Both Sexes" "European Only" "2012Q3" 1572.1 78 730.3 2380.5 69.3 4.7 66 1650.2
+"461" "Total Both Sexes" "European Only" "2012Q4" 1565.3 77.2 746.9 2389.4 68.7 4.7 65.5 1642.5
+"462" "Total Both Sexes" "European Only" "2013Q1" 1571.2 77.4 719.8 2368.4 69.6 4.7 66.3 1648.6
+"463" "Total Both Sexes" "Maori Only" "2007Q4" 133.8 12.6 77.3 223.7 65.5 8.6 59.8 146.4
+"464" "Total Both Sexes" "Maori Only" "2008Q1" 129.7 14.8 86.3 230.8 62.6 10.2 56.2 144.5
+"465" "Total Both Sexes" "Maori Only" "2008Q2" 126.2 11.1 74.5 211.8 64.8 8.1 59.6 137.3
+"466" "Total Both Sexes" "Maori Only" "2008Q3" 133.7 14.2 81.2 229.1 64.6 9.6 58.3 147.9
+"467" "Total Both Sexes" "Maori Only" "2008Q4" 141.7 15.3 75.4 232.4 67.6 9.8 61 157.1
+"468" "Total Both Sexes" "Maori Only" "2009Q1" 140.8 16.8 87.6 245.2 64.3 10.7 57.4 157.6
+"469" "Total Both Sexes" "Maori Only" "2009Q2" 135.9 19.6 84.5 240.1 64.8 12.6 56.6 155.6
+"470" "Total Both Sexes" "Maori Only" "2009Q3" 132 21.8 89.1 242.9 63.3 14.2 54.3 153.8
+"471" "Total Both Sexes" "Maori Only" "2009Q4" 137.1 24.9 86.3 248.4 65.2 15.4 55.2 162
+"472" "Total Both Sexes" "Maori Only" "2010Q1" 138.1 22.8 88.1 249 64.6 14.2 55.5 160.9
+"473" "Total Both Sexes" "Maori Only" "2010Q2" 133.9 26.4 90 250.3 64 16.4 53.5 160.3
+"474" "Total Both Sexes" "Maori Only" "2010Q3" 132.8 25.6 89.6 248 63.9 16.2 53.5 158.4
+"475" "Total Both Sexes" "Maori Only" "2010Q4" 136.4 25 93 254.5 63.4 15.5 53.6 161.4
+"476" "Total Both Sexes" "Maori Only" "2011Q1" 135.8 26 92.1 253.9 63.7 16.1 53.5 161.8
+"477" "Total Both Sexes" "Maori Only" "2011Q2" 132.6 21 93.1 246.7 62.3 13.7 53.7 153.6
+"478" "Total Both Sexes" "Maori Only" "2011Q3" 135.3 23.9 91.4 250.6 63.5 15 54 159.2
+"479" "Total Both Sexes" "Maori Only" "2011Q4" 135 23.9 90.5 249.4 63.7 15 54.1 158.9
+"480" "Total Both Sexes" "Maori Only" "2012Q1" 137 23.8 85.9 246.7 65.2 14.8 55.5 160.8
+"481" "Total Both Sexes" "Maori Only" "2012Q2" 129.8 21.2 87.7 238.7 63.3 14 54.4 151
+"482" "Total Both Sexes" "Maori Only" "2012Q3" 130.8 25.9 85.2 241.8 64.8 16.5 54.1 156.6
+"483" "Total Both Sexes" "Maori Only" "2012Q4" 125.5 25.1 89.2 239.9 62.8 16.7 52.3 150.7
+"484" "Total Both Sexes" "Maori Only" "2013Q1" 135.4 23.8 96.4 255.6 62.3 15 53 159.2
+"485" "Total Both Sexes" "Pacific Peoples Only" "2007Q4" 79.7 4.4 50.3 134.4 62.6 5.2 59.3 84.1
+"486" "Total Both Sexes" "Pacific Peoples Only" "2008Q1" 74.5 7.1 51.4 133 61.3 8.7 56 81.6
+"487" "Total Both Sexes" "Pacific Peoples Only" "2008Q2" 77.1 5.5 49.7 132.3 62.4 6.7 58.3 82.6
+"488" "Total Both Sexes" "Pacific Peoples Only" "2008Q3" 84.2 7 53.2 144.5 63.2 7.7 58.3 91.2
+"489" "Total Both Sexes" "Pacific Peoples Only" "2008Q4" 85.4 7.2 49.5 142.1 65.2 7.8 60.1 92.7
+"490" "Total Both Sexes" "Pacific Peoples Only" "2009Q1" 77 12.2 56.3 145.4 61.3 13.6 52.9 89.1
+"491" "Total Both Sexes" "Pacific Peoples Only" "2009Q2" 73.7 10.8 58.3 142.8 59.2 12.8 51.6 84.5
+"492" "Total Both Sexes" "Pacific Peoples Only" "2009Q3" 73.1 10.2 61 144.3 57.7 12.3 50.6 83.3
+"493" "Total Both Sexes" "Pacific Peoples Only" "2009Q4" 75.2 12.2 56.7 144.2 60.7 14 52.2 87.5
+"494" "Total Both Sexes" "Pacific Peoples Only" "2010Q1" 78.9 13.3 59.1 151.3 61 14.4 52.2 92.2
+"495" "Total Both Sexes" "Pacific Peoples Only" "2010Q2" 69.6 11.5 59.2 140.3 57.8 14.1 49.6 81.1
+"496" "Total Both Sexes" "Pacific Peoples Only" "2010Q3" 74.7 11.7 60 146.4 59 13.5 51 86.4
+"497" "Total Both Sexes" "Pacific Peoples Only" "2010Q4" 81.5 12.7 61.8 156 60.4 13.5 52.2 94.3
+"498" "Total Both Sexes" "Pacific Peoples Only" "2011Q1" 85.6 13.9 61 160.5 62 14 53.3 99.5
+"499" "Total Both Sexes" "Pacific Peoples Only" "2011Q2" 74.3 11.2 62.3 147.8 57.9 13.1 50.3 85.5
+"500" "Total Both Sexes" "Pacific Peoples Only" "2011Q3" 86.5 13.8 69.4 169.7 59.1 13.8 50.9 100.3
+"501" "Total Both Sexes" "Pacific Peoples Only" "2011Q4" 85.8 14.3 63.6 163.7 61.2 14.3 52.4 100.1
+"502" "Total Both Sexes" "Pacific Peoples Only" "2012Q1" 77.3 13.3 61.6 152.1 59.5 14.7 50.8 90.5
+"503" "Total Both Sexes" "Pacific Peoples Only" "2012Q2" 72.4 13 64.6 150 56.9 15.2 48.3 85.4
+"504" "Total Both Sexes" "Pacific Peoples Only" "2012Q3" 73 13 61.1 147.1 58.5 15.2 49.6 86
+"505" "Total Both Sexes" "Pacific Peoples Only" "2012Q4" 70.2 12.1 61.9 144.2 57.1 14.8 48.7 82.3
+"506" "Total Both Sexes" "Pacific Peoples Only" "2013Q1" 75.1 13.5 61 149.6 59.2 15.2 50.2 88.5
+"507" "Total Both Sexes" "Asian Only" "2007Q4" 172.1 9.9 96.3 278.3 65.4 5.4 61.8 182
+"508" "Total Both Sexes" "Asian Only" "2008Q1" 169.9 10.5 107.1 287.5 62.8 5.8 59.1 180.4
+"509" "Total Both Sexes" "Asian Only" "2008Q2" 186 10.1 113.9 310 63.2 5.1 60 196
+"510" "Total Both Sexes" "Asian Only" "2008Q3" 187.7 9.2 109.5 306.3 64.3 4.7 61.3 196.8
+"511" "Total Both Sexes" "Asian Only" "2008Q4" 196.3 13.2 100.4 309.9 67.6 6.3 63.4 209.5
+"512" "Total Both Sexes" "Asian Only" "2009Q1" 193.3 13.9 109.3 316.5 65.5 6.7 61.1 207.2
+"513" "Total Both Sexes" "Asian Only" "2009Q2" 198.9 16.9 109.1 325 66.4 7.8 61.2 215.8
+"514" "Total Both Sexes" "Asian Only" "2009Q3" 197.9 18.3 124.4 340.6 63.5 8.5 58.1 216.2
+"515" "Total Both Sexes" "Asian Only" "2009Q4" 209 21.2 117.5 347.7 66.2 9.2 60.1 230.2
+"516" "Total Both Sexes" "Asian Only" "2010Q1" 205.8 22.4 116.8 345 66.1 9.8 59.7 228.2
+"517" "Total Both Sexes" "Asian Only" "2010Q2" 202.8 23.9 116.1 342.8 66.1 10.5 59.2 226.7
+"518" "Total Both Sexes" "Asian Only" "2010Q3" 198.3 17.2 120.1 335.5 64.2 8 59.1 215.4
+"519" "Total Both Sexes" "Asian Only" "2010Q4" 208 21.3 111.9 341.3 67.2 9.3 60.9 229.4
+"520" "Total Both Sexes" "Asian Only" "2011Q1" 220.2 22.7 109.7 352.6 68.9 9.3 62.5 242.9
+"521" "Total Both Sexes" "Asian Only" "2011Q2" 213.8 13.8 116.4 344 66.2 6.1 62.1 227.6
+"522" "Total Both Sexes" "Asian Only" "2011Q3" 213.5 17.9 123.7 355.1 65.2 7.8 60.1 231.4
+"523" "Total Both Sexes" "Asian Only" "2011Q4" 218.7 21.3 116.4 356.5 67.3 8.9 61.4 240
+"524" "Total Both Sexes" "Asian Only" "2012Q1" 217.4 21.9 111.8 351.1 68.2 9.2 61.9 239.3
+"525" "Total Both Sexes" "Asian Only" "2012Q2" 212.8 19 114.4 346.1 67 8.2 61.5 231.8
+"526" "Total Both Sexes" "Asian Only" "2012Q3" 227.4 26.8 122.2 376.3 67.5 10.5 60.4 254.2
+"527" "Total Both Sexes" "Asian Only" "2012Q4" 233.9 19.1 122.2 375.2 67.4 7.5 62.4 253
+"528" "Total Both Sexes" "Asian Only" "2013Q1" 253.5 18.7 131 403.2 67.5 6.9 62.9 272.2
+"529" "Total Both Sexes" "MELAA Only" "2007Q4" 14.1 1.5 11.7 27.3 57.1 9.6 51.6 15.6
+"530" "Total Both Sexes" "MELAA Only" "2008Q1" 14.3 1.7 12.4 28.3 56.3 10.4 50.4 16
+"531" "Total Both Sexes" "MELAA Only" "2008Q2" 16.1 3 12.3 31.4 61 15.7 51.4 19.1
+"532" "Total Both Sexes" "MELAA Only" "2008Q3" 14.9 1.6 16.2 32.8 50.6 9.9 45.6 16.6
+"533" "Total Both Sexes" "MELAA Only" "2008Q4" 12.6 1.5 11.1 25.2 55.9 10.7 49.9 14.1
+"534" "Total Both Sexes" "MELAA Only" "2009Q1" 12.4 1.7 12 26.1 54.2 12 47.6 14.1
+"535" "Total Both Sexes" "MELAA Only" "2009Q2" 16.1 2.8 12.3 31.2 60.7 14.9 51.6 18.9
+"536" "Total Both Sexes" "MELAA Only" "2009Q3" 15.5 1.3 12.7 29.5 56.9 8 52.4 16.8
+"537" "Total Both Sexes" "MELAA Only" "2009Q4" 13.4 2.8 11.2 27.4 58.9 17.1 48.9 16.1
+"538" "Total Both Sexes" "MELAA Only" "2010Q1" 15 2.9 10.8 28.7 62.4 16.2 52.3 17.9
+"539" "Total Both Sexes" "MELAA Only" "2010Q2" 17.2 1.7 13.7 32.7 58 9 52.8 18.9
+"540" "Total Both Sexes" "MELAA Only" "2010Q3" 18.9 2.4 14.4 35.6 59.7 11.1 53 21.3
+"541" "Total Both Sexes" "MELAA Only" "2010Q4" 16.7 1.1 12.7 30.6 58.3 6.3 54.6 17.8
+"542" "Total Both Sexes" "MELAA Only" "2011Q1" 18.1 1.7 10.7 30.6 64.9 8.6 59.3 19.8
+"543" "Total Both Sexes" "MELAA Only" "2011Q2" 21.3 2.9 12 36.2 67 12.1 58.9 24.2
+"544" "Total Both Sexes" "MELAA Only" "2011Q3" 17.9 3.2 10.9 32 65.9 15 56 21.1
+"545" "Total Both Sexes" "MELAA Only" "2011Q4" 17.3 1.5 10.1 28.9 65.1 8.1 59.8 18.8
+"546" "Total Both Sexes" "MELAA Only" "2012Q1" 16.4 2.9 9.9 29.2 66.2 15.2 56.1 19.3
+"547" "Total Both Sexes" "MELAA Only" "2012Q2" 15.7 1.5 11.8 29 59.4 8.6 54.3 17.2
+"548" "Total Both Sexes" "MELAA Only" "2012Q3" 15.4 1.7 9.1 26.2 65.2 9.9 58.8 17.1
+"549" "Total Both Sexes" "MELAA Only" "2012Q4" 14.1 1.2 9.3 24.6 62.3 7.8 57.5 15.3
+"550" "Total Both Sexes" "MELAA Only" "2013Q1" 12.9 1.8 10.2 24.9 59 12.1 51.8 14.7
+"551" "Total Both Sexes" "Other Ethnicity Only" "2007Q4" 11.6 NA 3.1 14.8 79.2 NA 78.2 11.7
+"552" "Total Both Sexes" "Other Ethnicity Only" "2008Q1" 13.4 NA 6.1 20.1 69.8 NA 66.8 14
+"553" "Total Both Sexes" "Other Ethnicity Only" "2008Q2" 20 1.6 9.6 31.2 69.3 7.2 64.3 21.6
+"554" "Total Both Sexes" "Other Ethnicity Only" "2008Q3" 21.9 NA 11 33.7 67.3 NA 64.9 22.7
+"555" "Total Both Sexes" "Other Ethnicity Only" "2008Q4" 26.1 1.1 11.8 39 69.8 4.1 66.9 27.2
+"556" "Total Both Sexes" "Other Ethnicity Only" "2009Q1" 31.2 NA 13 44.9 71 NA 69.4 31.9
+"557" "Total Both Sexes" "Other Ethnicity Only" "2009Q2" 35.1 1.1 13.4 49.6 73.1 3.1 70.8 36.2
+"558" "Total Both Sexes" "Other Ethnicity Only" "2009Q3" 36.6 1.4 16.5 54.5 69.8 3.7 67.2 38
+"559" "Total Both Sexes" "Other Ethnicity Only" "2009Q4" 34.7 1.2 18.6 54.5 65.8 3.3 63.6 35.9
+"560" "Total Both Sexes" "Other Ethnicity Only" "2010Q1" 38.1 2.3 19.8 60.2 67.1 5.7 63.2 40.4
+"561" "Total Both Sexes" "Other Ethnicity Only" "2010Q2" 40.9 1.4 21.4 63.7 66.4 3.3 64.2 42.3
+"562" "Total Both Sexes" "Other Ethnicity Only" "2010Q3" 48.3 1.4 21.3 70.9 70 2.7 68.1 49.6
+"563" "Total Both Sexes" "Other Ethnicity Only" "2010Q4" 46.6 2 21.5 70.1 69.4 4.1 66.6 48.6
+"564" "Total Both Sexes" "Other Ethnicity Only" "2011Q1" 45.7 1.8 21.4 68.9 68.9 3.8 66.3 47.5
+"565" "Total Both Sexes" "Other Ethnicity Only" "2011Q2" 43.3 2.1 23.9 69.3 65.5 4.7 62.4 45.4
+"566" "Total Both Sexes" "Other Ethnicity Only" "2011Q3" 43.6 1.6 25.2 70.5 64.2 3.6 61.9 45.2
+"567" "Total Both Sexes" "Other Ethnicity Only" "2011Q4" 40.3 2.3 24.7 67.3 63.3 5.5 59.9 42.6
+"568" "Total Both Sexes" "Other Ethnicity Only" "2012Q1" 42.5 2.8 24 69.2 65.4 6.1 61.4 45.3
+"569" "Total Both Sexes" "Other Ethnicity Only" "2012Q2" 44.5 3.6 23.2 71.3 67.5 7.5 62.4 48.1
+"570" "Total Both Sexes" "Other Ethnicity Only" "2012Q3" 37.7 2.7 23 63.5 63.7 6.7 59.4 40.5
+"571" "Total Both Sexes" "Other Ethnicity Only" "2012Q4" 41 1.9 21.9 64.8 66.2 4.5 63.2 42.9
+"572" "Total Both Sexes" "Other Ethnicity Only" "2013Q1" 43.6 1.1 22.9 67.6 66.1 2.4 64.5 44.7
+"573" "Total Both Sexes" "European/Maori" "2007Q4" 114.3 7.1 42.1 163.5 74.3 5.9 69.9 121.4
+"574" "Total Both Sexes" "European/Maori" "2008Q1" 112.2 8.7 46.8 167.6 72.1 7.2 66.9 120.8
+"575" "Total Both Sexes" "European/Maori" "2008Q2" 124 8.9 53.2 186.2 71.4 6.7 66.6 133
+"576" "Total Both Sexes" "European/Maori" "2008Q3" 114.4 8.1 49.6 172.2 71.2 6.6 66.5 122.5
+"577" "Total Both Sexes" "European/Maori" "2008Q4" 118.2 8.8 42.9 169.9 74.8 7 69.6 127.1
+"578" "Total Both Sexes" "European/Maori" "2009Q1" 100.7 13.2 43.2 157.1 72.5 11.6 64.1 113.9
+"579" "Total Both Sexes" "European/Maori" "2009Q2" 102.9 11.8 47.9 162.6 70.5 10.3 63.3 114.7
+"580" "Total Both Sexes" "European/Maori" "2009Q3" 101.8 11.8 46.1 159.7 71.1 10.4 63.7 113.6
+"581" "Total Both Sexes" "European/Maori" "2009Q4" 94.4 14.8 46.9 156.1 69.9 13.6 60.5 109.2
+"582" "Total Both Sexes" "European/Maori" "2010Q1" 96 14.4 45.1 155.5 71 13 61.7 110.4
+"583" "Total Both Sexes" "European/Maori" "2010Q2" 99.1 11.2 47.3 157.6 70 10.2 62.9 110.3
+"584" "Total Both Sexes" "European/Maori" "2010Q3" 103.5 10.8 47.9 162.2 70.5 9.4 63.8 114.3
+"585" "Total Both Sexes" "European/Maori" "2010Q4" 101.7 11.6 45.8 159.1 71.2 10.3 63.9 113.3
+"586" "Total Both Sexes" "European/Maori" "2011Q1" 98.6 14 47.7 160.3 70.3 12.4 61.5 112.6
+"587" "Total Both Sexes" "European/Maori" "2011Q2" 106 13.2 50.4 169.7 70.3 11.1 62.5 119.3
+"588" "Total Both Sexes" "European/Maori" "2011Q3" 105 12 51.2 168.2 69.6 10.3 62.4 117
+"589" "Total Both Sexes" "European/Maori" "2011Q4" 103.9 13.6 52.2 169.6 69.2 11.6 61.2 117.4
+"590" "Total Both Sexes" "European/Maori" "2012Q1" 105.3 13.3 48.1 166.7 71.1 11.2 63.2 118.6
+"591" "Total Both Sexes" "European/Maori" "2012Q2" 109.8 12.5 55 177.4 69 10.2 61.9 122.3
+"592" "Total Both Sexes" "European/Maori" "2012Q3" 106 14.7 53.7 174.4 69.2 12.2 60.8 120.7
+"593" "Total Both Sexes" "European/Maori" "2012Q4" 107.5 14.1 55.8 177.3 68.5 11.6 60.6 121.6
+"594" "Total Both Sexes" "European/Maori" "2013Q1" 105.7 13.7 50.1 169.4 70.4 11.5 62.4 119.4
+"595" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2007Q4" 49.7 3 20.1 72.8 72.3 5.6 68.3 52.6
+"596" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2008Q1" 32.6 2.2 14.5 49.3 70.5 6.2 66.2 34.8
+"597" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2008Q2" 34.7 1.6 15.9 52.1 69.5 4.3 66.5 36.2
+"598" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2008Q3" 34.6 1.7 13.8 50.1 72.4 4.7 69 36.3
+"599" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2008Q4" 34 2.3 14.6 50.9 71.3 6.5 66.7 36.3
+"600" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2009Q1" 34 4.6 15.9 54.5 70.8 11.8 62.4 38.6
+"601" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2009Q2" 33.2 4 18.9 56.2 66.3 10.8 59.1 37.3
+"602" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2009Q3" 33.7 5.7 18.2 57.6 68.4 14.5 58.5 39.4
+"603" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2009Q4" 37.4 6.1 16.8 60.4 72.1 14.1 61.9 43.6
+"604" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2010Q1" 37.8 4.3 21.4 63.5 66.4 10.3 59.6 42.1
+"605" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2010Q2" 32.4 6.5 21.1 60 64.9 16.8 54 38.9
+"606" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2010Q3" 34.5 5.4 21.6 61.5 64.8 13.4 56.1 39.9
+"607" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2010Q4" 34.2 5.9 20 60.1 66.7 14.6 56.9 40
+"608" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2011Q1" 37.2 5.6 21.8 64.6 66.2 13.1 57.5 42.8
+"609" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2011Q2" 36 7.3 20.9 64.1 67.4 16.8 56.1 43.2
+"610" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2011Q3" 36.4 7.1 19.5 63.1 69.1 16.4 57.8 43.6
+"611" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2011Q4" 39.4 5.8 19.8 65 69.5 12.8 60.6 45.2
+"612" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2012Q1" 45.1 9.3 21.8 76.2 71.4 17.1 59.2 54.4
+"613" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2012Q2" 42.5 7 26.6 76.1 65.1 14.2 55.8 49.5
+"614" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2012Q3" 43 6.9 30.8 80.6 61.8 13.8 53.3 49.8
+"615" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2012Q4" 42.8 9.4 27.9 80.1 65.2 18 53.5 52.2
+"616" "Total Both Sexes" "Two or More Groups Not Elsewhere Included" "2013Q1" 37.6 5.7 23.9 67.2 64.5 13.2 56 43.3
+"617" "Total Both Sexes" "Residual Categories" "2007Q4" 13.1 NA 5.7 19.5 70.5 NA 67.2 13.7
+"618" "Total Both Sexes" "Residual Categories" "2008Q1" 9.7 NA 5.3 15.6 66.1 NA 62.5 10.3
+"619" "Total Both Sexes" "Residual Categories" "2008Q2" 5.5 NA 6.3 11.8 46.3 NA 46.3 5.5
+"620" "Total Both Sexes" "Residual Categories" "2008Q3" 6.3 NA NA 7.2 87.5 NA 86.8 6.3
+"621" "Total Both Sexes" "Residual Categories" "2008Q4" 4 NA 1.2 5.3 78.1 NA 75 4.1
+"622" "Total Both Sexes" "Residual Categories" "2009Q1" 3 NA NA 4.8 79.9 NA 63.4 3.8
+"623" "Total Both Sexes" "Residual Categories" "2009Q2" 3.7 NA 1.5 5.5 72.6 NA 67.3 4
+"624" "Total Both Sexes" "Residual Categories" "2009Q3" 2.8 NA 1.4 4.3 67.3 NA 66.1 2.9
+"625" "Total Both Sexes" "Residual Categories" "2009Q4" 2.5 NA 1.1 3.7 69.2 NA 67.3 2.5
+"626" "Total Both Sexes" "Residual Categories" "2010Q1" 4.4 NA 1.6 6.1 74 NA 72.6 4.5
+"627" "Total Both Sexes" "Residual Categories" "2010Q2" 4.6 NA 1.1 6.7 83.3 NA 69.2 5.6
+"628" "Total Both Sexes" "Residual Categories" "2010Q3" 2.8 NA 2.7 5.8 53.6 NA 48 3.1
+"629" "Total Both Sexes" "Residual Categories" "2010Q4" 5.1 NA 2.1 7.5 71.3 NA 67.9 5.3
+"630" "Total Both Sexes" "Residual Categories" "2011Q1" 11.4 NA 5.2 17.4 70.2 NA 65.3 12.2
+"631" "Total Both Sexes" "Residual Categories" "2011Q2" 7.7 NA 3.2 11.8 72.6 NA 65 8.6
+"632" "Total Both Sexes" "Residual Categories" "2011Q3" 6.9 NA 1.8 9.5 80.5 10.1 72.4 7.6
+"633" "Total Both Sexes" "Residual Categories" "2011Q4" 4.9 NA 3.6 9.1 60.4 NA 54.1 5.5
+"634" "Total Both Sexes" "Residual Categories" "2012Q1" 9.2 1.7 4.4 15.2 71.4 15.5 60.3 10.9
+"635" "Total Both Sexes" "Residual Categories" "2012Q2" 5.2 1.3 1.9 8.5 77.2 19.6 62 6.5
+"636" "Total Both Sexes" "Residual Categories" "2012Q3" 2.6 NA 1.2 4.1 71 NA 63.4 2.9
+"637" "Total Both Sexes" "Residual Categories" "2012Q4" 4.8 NA 2.4 7.5 68.1 NA 63.5 5.1
+"638" "Total Both Sexes" "Residual Categories" "2013Q1" 4.9 NA 2.1 7.1 70.1 NA 68.4 5
+"639" "Total Both Sexes" "Total All Ethnic Groups" "2007Q4" 2207.5 75.8 1028.3 3311.6 68.9 3.3 66.7 2283.3
+"640" "Total Both Sexes" "Total All Ethnic Groups" "2008Q1" 2156.9 96 1069.8 3322.7 67.8 4.3 64.9 2252.8
+"641" "Total Both Sexes" "Total All Ethnic Groups" "2008Q2" 2184.3 87.5 1058.6 3330.3 68.2 3.9 65.6 2271.7
+"642" "Total Both Sexes" "Total All Ethnic Groups" "2008Q3" 2183.6 93.9 1060.6 3338.1 68.2 4.1 65.4 2277.6
+"643" "Total Both Sexes" "Total All Ethnic Groups" "2008Q4" 2227.9 102.8 1018.5 3349.2 69.6 4.4 66.5 2330.7
+"644" "Total Both Sexes" "Total All Ethnic Groups" "2009Q1" 2173 128.8 1058.9 3360.8 68.5 5.6 64.7 2301.8
+"645" "Total Both Sexes" "Total All Ethnic Groups" "2009Q2" 2166.1 133.5 1072.6 3372.2 68.2 5.8 64.2 2299.6
+"646" "Total Both Sexes" "Total All Ethnic Groups" "2009Q3" 2143.4 144.5 1096.1 3384 67.6 6.3 63.3 2287.9
+"647" "Total Both Sexes" "Total All Ethnic Groups" "2009Q4" 2175 158.9 1064.6 3398.4 68.7 6.8 64 2333.9
+"648" "Total Both Sexes" "Total All Ethnic Groups" "2010Q1" 2170.6 153.5 1088 3412.1 68.1 6.6 63.6 2324.1
+"649" "Total Both Sexes" "Total All Ethnic Groups" "2010Q2" 2165.6 155.3 1100.4 3421.3 67.8 6.7 63.3 2320.9
+"650" "Total Both Sexes" "Total All Ethnic Groups" "2010Q3" 2181.9 144.5 1103.7 3430 67.8 6.2 63.6 2326.3
+"651" "Total Both Sexes" "Total All Ethnic Groups" "2010Q4" 2203 155.6 1084.2 3442.8 68.5 6.6 64 2358.6
+"652" "Total Both Sexes" "Total All Ethnic Groups" "2011Q1" 2209.9 166.7 1080.9 3457.6 68.7 7 63.9 2376.7
+"653" "Total Both Sexes" "Total All Ethnic Groups" "2011Q2" 2208.3 149.9 1102.9 3461.1 68.1 6.4 63.8 2358.2
+"654" "Total Both Sexes" "Total All Ethnic Groups" "2011Q3" 2206.5 151 1109.2 3466.6 68 6.4 63.6 2357.5
+"655" "Total Both Sexes" "Total All Ethnic Groups" "2011Q4" 2237 150.7 1088.3 3476 68.7 6.3 64.4 2387.7
+"656" "Total Both Sexes" "Total All Ethnic Groups" "2012Q1" 2230.9 171.2 1081.7 3483.9 69 7.1 64 2402.1
+"657" "Total Both Sexes" "Total All Ethnic Groups" "2012Q2" 2220.4 156.4 1111.3 3488.1 68.1 6.6 63.7 2376.8
+"658" "Total Both Sexes" "Total All Ethnic Groups" "2012Q3" 2208.1 170 1116.5 3494.6 68.1 7.1 63.2 2378.1
+"659" "Total Both Sexes" "Total All Ethnic Groups" "2012Q4" 2205.1 160.5 1137.4 3503 67.5 6.8 62.9 2365.6
+"660" "Total Both Sexes" "Total All Ethnic Groups" "2013Q1" 2239.8 155.8 1117.3 3512.9 68.2 6.5 63.8 2395.6

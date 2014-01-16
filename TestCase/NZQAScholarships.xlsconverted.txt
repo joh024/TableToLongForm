@@ -1,0 +1,1156 @@
+"UNKNOWN" "UNKNOWN" "UNKNOWN" "UNKNOWN" "UNKNOWN" "# of  Entries" "#  Absent" "#  SNA" "#  Assessed" "# Not  Achieved" "#  Scholarship" "#  Outstanding"
+"1" "Decile 1-3" "All Subjects" "Accounting" "NZ Maori" "Male" 2 1 0 1 1 0 0
+"2" "Decile 1-3" "All Subjects" "Accounting" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"3" "Decile 1-3" "All Subjects" "Accounting" "NZ European" "Male" 2 0 0 2 1 1 0
+"4" "Decile 1-3" "All Subjects" "Accounting" "NZ European" "Female" 3 0 0 3 2 1 0
+"5" "Decile 1-3" "All Subjects" "Accounting" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"6" "Decile 1-3" "All Subjects" "Accounting" "Pasifika Peoples" "Male" 2 0 0 2 2 0 0
+"7" "Decile 1-3" "All Subjects" "Accounting" "Pasifika Peoples" "Female" 6 2 0 4 4 0 0
+"8" "Decile 1-3" "All Subjects" "Accounting" "Asian" "Male" 5 0 0 5 5 0 0
+"9" "Decile 1-3" "All Subjects" "Accounting" "Asian" "Female" 2 1 0 1 1 0 0
+"10" "Decile 1-3" "All Subjects" "Accounting" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"11" "Decile 1-3" "All Subjects" "Accounting" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"12" "Decile 1-3" "All Subjects" "Agricultural & Horticultural Science" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"13" "Decile 1-3" "All Subjects" "Agricultural & Horticultural Science" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"14" "Decile 1-3" "All Subjects" "Agricultural & Horticultural Science" "NZ European" "Male" 0 0 0 0 0 0 0
+"15" "Decile 1-3" "All Subjects" "Agricultural & Horticultural Science" "NZ European" "Female" 0 0 0 0 0 0 0
+"16" "Decile 1-3" "All Subjects" "Agricultural & Horticultural Science" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"17" "Decile 1-3" "All Subjects" "Agricultural & Horticultural Science" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"18" "Decile 1-3" "All Subjects" "Agricultural & Horticultural Science" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"19" "Decile 1-3" "All Subjects" "Agricultural & Horticultural Science" "Asian" "Male" 0 0 0 0 0 0 0
+"20" "Decile 1-3" "All Subjects" "Agricultural & Horticultural Science" "Asian" "Female" 0 0 0 0 0 0 0
+"21" "Decile 1-3" "All Subjects" "Agricultural & Horticultural Science" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"22" "Decile 1-3" "All Subjects" "Agricultural & Horticultural Science" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"23" "Decile 1-3" "All Subjects" "Art History" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"24" "Decile 1-3" "All Subjects" "Art History" "NZ Maori" "Female" 2 0 0 2 2 0 0
+"25" "Decile 1-3" "All Subjects" "Art History" "NZ European" "Male" 1 1 0 0 0 0 0
+"26" "Decile 1-3" "All Subjects" "Art History" "NZ European" "Female" 3 0 0 3 3 0 0
+"27" "Decile 1-3" "All Subjects" "Art History" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"28" "Decile 1-3" "All Subjects" "Art History" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"29" "Decile 1-3" "All Subjects" "Art History" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"30" "Decile 1-3" "All Subjects" "Art History" "Asian" "Male" 0 0 0 0 0 0 0
+"31" "Decile 1-3" "All Subjects" "Art History" "Asian" "Female" 0 0 0 0 0 0 0
+"32" "Decile 1-3" "All Subjects" "Art History" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"33" "Decile 1-3" "All Subjects" "Art History" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"34" "Decile 1-3" "All Subjects" "Biology" "NZ Maori" "Male" 6 1 0 5 5 0 0
+"35" "Decile 1-3" "All Subjects" "Biology" "NZ Maori" "Female" 3 2 0 1 1 0 0
+"36" "Decile 1-3" "All Subjects" "Biology" "NZ European" "Male" 7 0 0 7 5 2 0
+"37" "Decile 1-3" "All Subjects" "Biology" "NZ European" "Female" 15 2 1 12 7 5 0
+"38" "Decile 1-3" "All Subjects" "Biology" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"39" "Decile 1-3" "All Subjects" "Biology" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"40" "Decile 1-3" "All Subjects" "Biology" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"41" "Decile 1-3" "All Subjects" "Biology" "Asian" "Male" 5 2 0 3 3 0 0
+"42" "Decile 1-3" "All Subjects" "Biology" "Asian" "Female" 13 1 1 11 10 1 0
+"43" "Decile 1-3" "All Subjects" "Biology" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"44" "Decile 1-3" "All Subjects" "Biology" "Other/Unspecified Ethnicity" "Female" 1 1 0 0 0 0 0
+"45" "Decile 1-3" "All Subjects" "Chemistry" "NZ Maori" "Male" 2 0 0 2 2 0 0
+"46" "Decile 1-3" "All Subjects" "Chemistry" "NZ Maori" "Female" 4 3 0 1 1 0 0
+"47" "Decile 1-3" "All Subjects" "Chemistry" "NZ European" "Male" 15 4 0 11 8 2 1
+"48" "Decile 1-3" "All Subjects" "Chemistry" "NZ European" "Female" 11 1 0 10 9 1 0
+"49" "Decile 1-3" "All Subjects" "Chemistry" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"50" "Decile 1-3" "All Subjects" "Chemistry" "Pasifika Peoples" "Male" 1 0 0 1 1 0 0
+"51" "Decile 1-3" "All Subjects" "Chemistry" "Pasifika Peoples" "Female" 4 0 0 4 4 0 0
+"52" "Decile 1-3" "All Subjects" "Chemistry" "Asian" "Male" 11 3 0 8 7 1 0
+"53" "Decile 1-3" "All Subjects" "Chemistry" "Asian" "Female" 10 0 0 10 10 0 0
+"54" "Decile 1-3" "All Subjects" "Chemistry" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"55" "Decile 1-3" "All Subjects" "Chemistry" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"56" "Decile 1-3" "All Subjects" "Chinese" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"57" "Decile 1-3" "All Subjects" "Chinese" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"58" "Decile 1-3" "All Subjects" "Chinese" "NZ European" "Male" 0 0 0 0 0 0 0
+"59" "Decile 1-3" "All Subjects" "Chinese" "NZ European" "Female" 0 0 0 0 0 0 0
+"60" "Decile 1-3" "All Subjects" "Chinese" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"61" "Decile 1-3" "All Subjects" "Chinese" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"62" "Decile 1-3" "All Subjects" "Chinese" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"63" "Decile 1-3" "All Subjects" "Chinese" "Asian" "Male" 0 0 0 0 0 0 0
+"64" "Decile 1-3" "All Subjects" "Chinese" "Asian" "Female" 0 0 0 0 0 0 0
+"65" "Decile 1-3" "All Subjects" "Chinese" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"66" "Decile 1-3" "All Subjects" "Chinese" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"67" "Decile 1-3" "All Subjects" "Classical Studies" "NZ Maori" "Male" 1 0 0 1 1 0 0
+"68" "Decile 1-3" "All Subjects" "Classical Studies" "NZ Maori" "Female" 2 0 0 2 1 1 0
+"69" "Decile 1-3" "All Subjects" "Classical Studies" "NZ European" "Male" 1 0 1 0 0 0 0
+"70" "Decile 1-3" "All Subjects" "Classical Studies" "NZ European" "Female" 8 2 0 6 4 1 1
+"71" "Decile 1-3" "All Subjects" "Classical Studies" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"72" "Decile 1-3" "All Subjects" "Classical Studies" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"73" "Decile 1-3" "All Subjects" "Classical Studies" "Pasifika Peoples" "Female" 3 0 0 3 3 0 0
+"74" "Decile 1-3" "All Subjects" "Classical Studies" "Asian" "Male" 0 0 0 0 0 0 0
+"75" "Decile 1-3" "All Subjects" "Classical Studies" "Asian" "Female" 2 0 0 2 2 0 0
+"76" "Decile 1-3" "All Subjects" "Classical Studies" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"77" "Decile 1-3" "All Subjects" "Classical Studies" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"78" "Decile 1-3" "All Subjects" "Dance" "NZ Maori" "Male" 1 1 0 0 0 0 0
+"79" "Decile 1-3" "All Subjects" "Dance" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"80" "Decile 1-3" "All Subjects" "Dance" "NZ European" "Male" 0 0 0 0 0 0 0
+"81" "Decile 1-3" "All Subjects" "Dance" "NZ European" "Female" 5 1 0 4 4 0 0
+"82" "Decile 1-3" "All Subjects" "Dance" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"83" "Decile 1-3" "All Subjects" "Dance" "Pasifika Peoples" "Male" 1 0 0 1 1 0 0
+"84" "Decile 1-3" "All Subjects" "Dance" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"85" "Decile 1-3" "All Subjects" "Dance" "Asian" "Male" 0 0 0 0 0 0 0
+"86" "Decile 1-3" "All Subjects" "Dance" "Asian" "Female" 0 0 0 0 0 0 0
+"87" "Decile 1-3" "All Subjects" "Dance" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"88" "Decile 1-3" "All Subjects" "Dance" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"89" "Decile 1-3" "All Subjects" "Design and Visual Communication" "NZ Maori" "Male" 1 1 0 0 0 0 0
+"90" "Decile 1-3" "All Subjects" "Design and Visual Communication" "NZ Maori" "Female" 5 4 0 1 1 0 0
+"91" "Decile 1-3" "All Subjects" "Design and Visual Communication" "NZ European" "Male" 3 2 0 1 1 0 0
+"92" "Decile 1-3" "All Subjects" "Design and Visual Communication" "NZ European" "Female" 3 3 0 0 0 0 0
+"93" "Decile 1-3" "All Subjects" "Design and Visual Communication" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"94" "Decile 1-3" "All Subjects" "Design and Visual Communication" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"95" "Decile 1-3" "All Subjects" "Design and Visual Communication" "Pasifika Peoples" "Female" 8 4 0 4 4 0 0
+"96" "Decile 1-3" "All Subjects" "Design and Visual Communication" "Asian" "Male" 2 1 0 1 1 0 0
+"97" "Decile 1-3" "All Subjects" "Design and Visual Communication" "Asian" "Female" 2 2 0 0 0 0 0
+"98" "Decile 1-3" "All Subjects" "Design and Visual Communication" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"99" "Decile 1-3" "All Subjects" "Design and Visual Communication" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"100" "Decile 1-3" "All Subjects" "Drama" "NZ Maori" "Male" 1 1 0 0 0 0 0
+"101" "Decile 1-3" "All Subjects" "Drama" "NZ Maori" "Female" 2 0 0 2 0 2 0
+"102" "Decile 1-3" "All Subjects" "Drama" "NZ European" "Male" 0 0 0 0 0 0 0
+"103" "Decile 1-3" "All Subjects" "Drama" "NZ European" "Female" 4 2 0 2 2 0 0
+"104" "Decile 1-3" "All Subjects" "Drama" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"105" "Decile 1-3" "All Subjects" "Drama" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"106" "Decile 1-3" "All Subjects" "Drama" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"107" "Decile 1-3" "All Subjects" "Drama" "Asian" "Male" 0 0 0 0 0 0 0
+"108" "Decile 1-3" "All Subjects" "Drama" "Asian" "Female" 0 0 0 0 0 0 0
+"109" "Decile 1-3" "All Subjects" "Drama" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"110" "Decile 1-3" "All Subjects" "Drama" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"111" "Decile 1-3" "All Subjects" "Economics" "NZ Maori" "Male" 1 0 0 1 1 0 0
+"112" "Decile 1-3" "All Subjects" "Economics" "NZ Maori" "Female" 1 0 0 1 1 0 0
+"113" "Decile 1-3" "All Subjects" "Economics" "NZ European" "Male" 2 0 0 2 1 1 0
+"114" "Decile 1-3" "All Subjects" "Economics" "NZ European" "Female" 1 0 0 1 1 0 0
+"115" "Decile 1-3" "All Subjects" "Economics" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"116" "Decile 1-3" "All Subjects" "Economics" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"117" "Decile 1-3" "All Subjects" "Economics" "Pasifika Peoples" "Female" 1 0 0 1 1 0 0
+"118" "Decile 1-3" "All Subjects" "Economics" "Asian" "Male" 3 0 0 3 3 0 0
+"119" "Decile 1-3" "All Subjects" "Economics" "Asian" "Female" 2 0 0 2 2 0 0
+"120" "Decile 1-3" "All Subjects" "Economics" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"121" "Decile 1-3" "All Subjects" "Economics" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"122" "Decile 1-3" "All Subjects" "English" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"123" "Decile 1-3" "All Subjects" "English" "NZ Maori" "Female" 7 0 0 7 6 1 0
+"124" "Decile 1-3" "All Subjects" "English" "NZ European" "Male" 8 1 0 7 7 0 0
+"125" "Decile 1-3" "All Subjects" "English" "NZ European" "Female" 22 0 0 22 17 5 0
+"126" "Decile 1-3" "All Subjects" "English" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"127" "Decile 1-3" "All Subjects" "English" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"128" "Decile 1-3" "All Subjects" "English" "Pasifika Peoples" "Female" 4 2 0 2 2 0 0
+"129" "Decile 1-3" "All Subjects" "English" "Asian" "Male" 2 0 0 2 2 0 0
+"130" "Decile 1-3" "All Subjects" "English" "Asian" "Female" 3 1 0 2 2 0 0
+"131" "Decile 1-3" "All Subjects" "English" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"132" "Decile 1-3" "All Subjects" "English" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"133" "Decile 1-3" "All Subjects" "French" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"134" "Decile 1-3" "All Subjects" "French" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"135" "Decile 1-3" "All Subjects" "French" "NZ European" "Male" 2 0 0 2 1 0 1
+"136" "Decile 1-3" "All Subjects" "French" "NZ European" "Female" 0 0 0 0 0 0 0
+"137" "Decile 1-3" "All Subjects" "French" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"138" "Decile 1-3" "All Subjects" "French" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"139" "Decile 1-3" "All Subjects" "French" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"140" "Decile 1-3" "All Subjects" "French" "Asian" "Male" 0 0 0 0 0 0 0
+"141" "Decile 1-3" "All Subjects" "French" "Asian" "Female" 0 0 0 0 0 0 0
+"142" "Decile 1-3" "All Subjects" "French" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 0 1 0
+"143" "Decile 1-3" "All Subjects" "French" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"144" "Decile 1-3" "All Subjects" "Geography" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"145" "Decile 1-3" "All Subjects" "Geography" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"146" "Decile 1-3" "All Subjects" "Geography" "NZ European" "Male" 6 1 0 5 4 1 0
+"147" "Decile 1-3" "All Subjects" "Geography" "NZ European" "Female" 7 0 0 7 6 1 0
+"148" "Decile 1-3" "All Subjects" "Geography" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"149" "Decile 1-3" "All Subjects" "Geography" "Pasifika Peoples" "Male" 1 0 0 1 1 0 0
+"150" "Decile 1-3" "All Subjects" "Geography" "Pasifika Peoples" "Female" 3 2 0 1 1 0 0
+"151" "Decile 1-3" "All Subjects" "Geography" "Asian" "Male" 1 1 0 0 0 0 0
+"152" "Decile 1-3" "All Subjects" "Geography" "Asian" "Female" 9 1 0 8 8 0 0
+"153" "Decile 1-3" "All Subjects" "Geography" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"154" "Decile 1-3" "All Subjects" "Geography" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"155" "Decile 1-3" "All Subjects" "German" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"156" "Decile 1-3" "All Subjects" "German" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"157" "Decile 1-3" "All Subjects" "German" "NZ European" "Male" 0 0 0 0 0 0 0
+"158" "Decile 1-3" "All Subjects" "German" "NZ European" "Female" 0 0 0 0 0 0 0
+"159" "Decile 1-3" "All Subjects" "German" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"160" "Decile 1-3" "All Subjects" "German" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"161" "Decile 1-3" "All Subjects" "German" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"162" "Decile 1-3" "All Subjects" "German" "Asian" "Male" 0 0 0 0 0 0 0
+"163" "Decile 1-3" "All Subjects" "German" "Asian" "Female" 0 0 0 0 0 0 0
+"164" "Decile 1-3" "All Subjects" "German" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"165" "Decile 1-3" "All Subjects" "German" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"166" "Decile 1-3" "All Subjects" "Graphics" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"167" "Decile 1-3" "All Subjects" "Graphics" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"168" "Decile 1-3" "All Subjects" "Graphics" "NZ European" "Male" 1 0 1 0 0 0 0
+"169" "Decile 1-3" "All Subjects" "Graphics" "NZ European" "Female" 0 0 0 0 0 0 0
+"170" "Decile 1-3" "All Subjects" "Graphics" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"171" "Decile 1-3" "All Subjects" "Graphics" "Pasifika Peoples" "Male" 1 0 1 0 0 0 0
+"172" "Decile 1-3" "All Subjects" "Graphics" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"173" "Decile 1-3" "All Subjects" "Graphics" "Asian" "Male" 3 0 1 2 2 0 0
+"174" "Decile 1-3" "All Subjects" "Graphics" "Asian" "Female" 1 0 0 1 1 0 0
+"175" "Decile 1-3" "All Subjects" "Graphics" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"176" "Decile 1-3" "All Subjects" "Graphics" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"177" "Decile 1-3" "All Subjects" "History" "NZ Maori" "Male" 3 0 0 3 3 0 0
+"178" "Decile 1-3" "All Subjects" "History" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"179" "Decile 1-3" "All Subjects" "History" "NZ European" "Male" 10 2 2 6 5 1 0
+"180" "Decile 1-3" "All Subjects" "History" "NZ European" "Female" 8 0 0 8 5 3 0
+"181" "Decile 1-3" "All Subjects" "History" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"182" "Decile 1-3" "All Subjects" "History" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"183" "Decile 1-3" "All Subjects" "History" "Pasifika Peoples" "Female" 1 0 0 1 1 0 0
+"184" "Decile 1-3" "All Subjects" "History" "Asian" "Male" 0 0 0 0 0 0 0
+"185" "Decile 1-3" "All Subjects" "History" "Asian" "Female" 0 0 0 0 0 0 0
+"186" "Decile 1-3" "All Subjects" "History" "Other/Unspecified Ethnicity" "Male" 1 1 0 0 0 0 0
+"187" "Decile 1-3" "All Subjects" "History" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"188" "Decile 1-3" "All Subjects" "Japanese" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"189" "Decile 1-3" "All Subjects" "Japanese" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"190" "Decile 1-3" "All Subjects" "Japanese" "NZ European" "Male" 0 0 0 0 0 0 0
+"191" "Decile 1-3" "All Subjects" "Japanese" "NZ European" "Female" 0 0 0 0 0 0 0
+"192" "Decile 1-3" "All Subjects" "Japanese" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"193" "Decile 1-3" "All Subjects" "Japanese" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"194" "Decile 1-3" "All Subjects" "Japanese" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"195" "Decile 1-3" "All Subjects" "Japanese" "Asian" "Male" 0 0 0 0 0 0 0
+"196" "Decile 1-3" "All Subjects" "Japanese" "Asian" "Female" 0 0 0 0 0 0 0
+"197" "Decile 1-3" "All Subjects" "Japanese" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"198" "Decile 1-3" "All Subjects" "Japanese" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"199" "Decile 1-3" "All Subjects" "Latin" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"200" "Decile 1-3" "All Subjects" "Latin" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"201" "Decile 1-3" "All Subjects" "Latin" "NZ European" "Male" 0 0 0 0 0 0 0
+"202" "Decile 1-3" "All Subjects" "Latin" "NZ European" "Female" 0 0 0 0 0 0 0
+"203" "Decile 1-3" "All Subjects" "Latin" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"204" "Decile 1-3" "All Subjects" "Latin" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"205" "Decile 1-3" "All Subjects" "Latin" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"206" "Decile 1-3" "All Subjects" "Latin" "Asian" "Male" 0 0 0 0 0 0 0
+"207" "Decile 1-3" "All Subjects" "Latin" "Asian" "Female" 0 0 0 0 0 0 0
+"208" "Decile 1-3" "All Subjects" "Latin" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"209" "Decile 1-3" "All Subjects" "Latin" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"210" "Decile 1-3" "All Subjects" "Mathematics with Calculus" "NZ Maori" "Male" 1 0 0 1 1 0 0
+"211" "Decile 1-3" "All Subjects" "Mathematics with Calculus" "NZ Maori" "Female" 3 2 0 1 1 0 0
+"212" "Decile 1-3" "All Subjects" "Mathematics with Calculus" "NZ European" "Male" 11 3 0 8 4 3 1
+"213" "Decile 1-3" "All Subjects" "Mathematics with Calculus" "NZ European" "Female" 8 1 0 7 7 0 0
+"214" "Decile 1-3" "All Subjects" "Mathematics with Calculus" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"215" "Decile 1-3" "All Subjects" "Mathematics with Calculus" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"216" "Decile 1-3" "All Subjects" "Mathematics with Calculus" "Pasifika Peoples" "Female" 1 0 0 1 1 0 0
+"217" "Decile 1-3" "All Subjects" "Mathematics with Calculus" "Asian" "Male" 14 3 0 11 9 2 0
+"218" "Decile 1-3" "All Subjects" "Mathematics with Calculus" "Asian" "Female" 6 1 0 5 5 0 0
+"219" "Decile 1-3" "All Subjects" "Mathematics with Calculus" "Other/Unspecified Ethnicity" "Male" 1 1 0 0 0 0 0
+"220" "Decile 1-3" "All Subjects" "Mathematics with Calculus" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"221" "Decile 1-3" "All Subjects" "Media Studies" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"222" "Decile 1-3" "All Subjects" "Media Studies" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"223" "Decile 1-3" "All Subjects" "Media Studies" "NZ European" "Male" 3 1 0 2 2 0 0
+"224" "Decile 1-3" "All Subjects" "Media Studies" "NZ European" "Female" 2 0 0 2 2 0 0
+"225" "Decile 1-3" "All Subjects" "Media Studies" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"226" "Decile 1-3" "All Subjects" "Media Studies" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"227" "Decile 1-3" "All Subjects" "Media Studies" "Pasifika Peoples" "Female" 1 1 0 0 0 0 0
+"228" "Decile 1-3" "All Subjects" "Media Studies" "Asian" "Male" 0 0 0 0 0 0 0
+"229" "Decile 1-3" "All Subjects" "Media Studies" "Asian" "Female" 1 0 0 1 1 0 0
+"230" "Decile 1-3" "All Subjects" "Media Studies" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"231" "Decile 1-3" "All Subjects" "Media Studies" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"232" "Decile 1-3" "All Subjects" "Music Studies" "NZ Maori" "Male" 2 1 0 1 1 0 0
+"233" "Decile 1-3" "All Subjects" "Music Studies" "NZ Maori" "Female" 1 1 0 0 0 0 0
+"234" "Decile 1-3" "All Subjects" "Music Studies" "NZ European" "Male" 1 0 0 1 1 0 0
+"235" "Decile 1-3" "All Subjects" "Music Studies" "NZ European" "Female" 0 0 0 0 0 0 0
+"236" "Decile 1-3" "All Subjects" "Music Studies" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"237" "Decile 1-3" "All Subjects" "Music Studies" "Pasifika Peoples" "Male" 2 1 0 1 1 0 0
+"238" "Decile 1-3" "All Subjects" "Music Studies" "Pasifika Peoples" "Female" 1 0 0 1 1 0 0
+"239" "Decile 1-3" "All Subjects" "Music Studies" "Asian" "Male" 0 0 0 0 0 0 0
+"240" "Decile 1-3" "All Subjects" "Music Studies" "Asian" "Female" 0 0 0 0 0 0 0
+"241" "Decile 1-3" "All Subjects" "Music Studies" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"242" "Decile 1-3" "All Subjects" "Music Studies" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"243" "Decile 1-3" "All Subjects" "Painting" "NZ Maori" "Male" 3 2 0 1 0 1 0
+"244" "Decile 1-3" "All Subjects" "Painting" "NZ Maori" "Female" 9 3 0 6 6 0 0
+"245" "Decile 1-3" "All Subjects" "Painting" "NZ European" "Male" 3 0 0 3 1 2 0
+"246" "Decile 1-3" "All Subjects" "Painting" "NZ European" "Female" 12 5 0 7 6 1 0
+"247" "Decile 1-3" "All Subjects" "Painting" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"248" "Decile 1-3" "All Subjects" "Painting" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"249" "Decile 1-3" "All Subjects" "Painting" "Pasifika Peoples" "Female" 4 2 0 2 0 2 0
+"250" "Decile 1-3" "All Subjects" "Painting" "Asian" "Male" 0 0 0 0 0 0 0
+"251" "Decile 1-3" "All Subjects" "Painting" "Asian" "Female" 2 1 0 1 1 0 0
+"252" "Decile 1-3" "All Subjects" "Painting" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"253" "Decile 1-3" "All Subjects" "Painting" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"254" "Decile 1-3" "All Subjects" "Photography" "NZ Maori" "Male" 1 0 0 1 1 0 0
+"255" "Decile 1-3" "All Subjects" "Photography" "NZ Maori" "Female" 2 2 0 0 0 0 0
+"256" "Decile 1-3" "All Subjects" "Photography" "NZ European" "Male" 3 2 0 1 1 0 0
+"257" "Decile 1-3" "All Subjects" "Photography" "NZ European" "Female" 7 3 0 4 2 2 0
+"258" "Decile 1-3" "All Subjects" "Photography" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"259" "Decile 1-3" "All Subjects" "Photography" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"260" "Decile 1-3" "All Subjects" "Photography" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"261" "Decile 1-3" "All Subjects" "Photography" "Asian" "Male" 1 0 0 1 1 0 0
+"262" "Decile 1-3" "All Subjects" "Photography" "Asian" "Female" 1 1 0 0 0 0 0
+"263" "Decile 1-3" "All Subjects" "Photography" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"264" "Decile 1-3" "All Subjects" "Photography" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"265" "Decile 1-3" "All Subjects" "Physical Education" "NZ Maori" "Male" 2 1 0 1 1 0 0
+"266" "Decile 1-3" "All Subjects" "Physical Education" "NZ Maori" "Female" 4 0 0 4 4 0 0
+"267" "Decile 1-3" "All Subjects" "Physical Education" "NZ European" "Male" 3 0 0 3 3 0 0
+"268" "Decile 1-3" "All Subjects" "Physical Education" "NZ European" "Female" 10 3 0 7 6 1 0
+"269" "Decile 1-3" "All Subjects" "Physical Education" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"270" "Decile 1-3" "All Subjects" "Physical Education" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"271" "Decile 1-3" "All Subjects" "Physical Education" "Pasifika Peoples" "Female" 3 3 0 0 0 0 0
+"272" "Decile 1-3" "All Subjects" "Physical Education" "Asian" "Male" 1 0 0 1 1 0 0
+"273" "Decile 1-3" "All Subjects" "Physical Education" "Asian" "Female" 2 1 0 1 1 0 0
+"274" "Decile 1-3" "All Subjects" "Physical Education" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"275" "Decile 1-3" "All Subjects" "Physical Education" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"276" "Decile 1-3" "All Subjects" "Physics" "NZ Maori" "Male" 3 1 0 2 2 0 0
+"277" "Decile 1-3" "All Subjects" "Physics" "NZ Maori" "Female" 1 0 0 1 1 0 0
+"278" "Decile 1-3" "All Subjects" "Physics" "NZ European" "Male" 20 3 0 17 14 2 1
+"279" "Decile 1-3" "All Subjects" "Physics" "NZ European" "Female" 6 0 0 6 6 0 0
+"280" "Decile 1-3" "All Subjects" "Physics" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"281" "Decile 1-3" "All Subjects" "Physics" "Pasifika Peoples" "Male" 1 0 0 1 1 0 0
+"282" "Decile 1-3" "All Subjects" "Physics" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"283" "Decile 1-3" "All Subjects" "Physics" "Asian" "Male" 10 2 0 8 7 1 0
+"284" "Decile 1-3" "All Subjects" "Physics" "Asian" "Female" 2 0 0 2 2 0 0
+"285" "Decile 1-3" "All Subjects" "Physics" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"286" "Decile 1-3" "All Subjects" "Physics" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"287" "Decile 1-3" "All Subjects" "Printmaking" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"288" "Decile 1-3" "All Subjects" "Printmaking" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"289" "Decile 1-3" "All Subjects" "Printmaking" "NZ European" "Male" 0 0 0 0 0 0 0
+"290" "Decile 1-3" "All Subjects" "Printmaking" "NZ European" "Female" 0 0 0 0 0 0 0
+"291" "Decile 1-3" "All Subjects" "Printmaking" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"292" "Decile 1-3" "All Subjects" "Printmaking" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"293" "Decile 1-3" "All Subjects" "Printmaking" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"294" "Decile 1-3" "All Subjects" "Printmaking" "Asian" "Male" 0 0 0 0 0 0 0
+"295" "Decile 1-3" "All Subjects" "Printmaking" "Asian" "Female" 0 0 0 0 0 0 0
+"296" "Decile 1-3" "All Subjects" "Printmaking" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"297" "Decile 1-3" "All Subjects" "Printmaking" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"298" "Decile 1-3" "All Subjects" "Samoan" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"299" "Decile 1-3" "All Subjects" "Samoan" "NZ Maori" "Female" 1 0 0 1 1 0 0
+"300" "Decile 1-3" "All Subjects" "Samoan" "NZ European" "Male" 0 0 0 0 0 0 0
+"301" "Decile 1-3" "All Subjects" "Samoan" "NZ European" "Female" 0 0 0 0 0 0 0
+"302" "Decile 1-3" "All Subjects" "Samoan" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"303" "Decile 1-3" "All Subjects" "Samoan" "Pasifika Peoples" "Male" 17 3 1 13 13 0 0
+"304" "Decile 1-3" "All Subjects" "Samoan" "Pasifika Peoples" "Female" 50 10 2 38 30 7 1
+"305" "Decile 1-3" "All Subjects" "Samoan" "Asian" "Male" 0 0 0 0 0 0 0
+"306" "Decile 1-3" "All Subjects" "Samoan" "Asian" "Female" 0 0 0 0 0 0 0
+"307" "Decile 1-3" "All Subjects" "Samoan" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"308" "Decile 1-3" "All Subjects" "Samoan" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"309" "Decile 1-3" "All Subjects" "Science" "NZ Maori" "Male" 1 0 0 1 1 0 0
+"310" "Decile 1-3" "All Subjects" "Science" "NZ Maori" "Female" 3 0 0 3 3 0 0
+"311" "Decile 1-3" "All Subjects" "Science" "NZ European" "Male" 2 0 0 2 1 1 0
+"312" "Decile 1-3" "All Subjects" "Science" "NZ European" "Female" 1 0 0 1 1 0 0
+"313" "Decile 1-3" "All Subjects" "Science" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"314" "Decile 1-3" "All Subjects" "Science" "Pasifika Peoples" "Male" 1 1 0 0 0 0 0
+"315" "Decile 1-3" "All Subjects" "Science" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"316" "Decile 1-3" "All Subjects" "Science" "Asian" "Male" 1 1 0 0 0 0 0
+"317" "Decile 1-3" "All Subjects" "Science" "Asian" "Female" 2 1 0 1 1 0 0
+"318" "Decile 1-3" "All Subjects" "Science" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"319" "Decile 1-3" "All Subjects" "Science" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"320" "Decile 1-3" "All Subjects" "Sculpture" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"321" "Decile 1-3" "All Subjects" "Sculpture" "NZ Maori" "Female" 1 0 0 1 1 0 0
+"322" "Decile 1-3" "All Subjects" "Sculpture" "NZ European" "Male" 0 0 0 0 0 0 0
+"323" "Decile 1-3" "All Subjects" "Sculpture" "NZ European" "Female" 0 0 0 0 0 0 0
+"324" "Decile 1-3" "All Subjects" "Sculpture" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"325" "Decile 1-3" "All Subjects" "Sculpture" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"326" "Decile 1-3" "All Subjects" "Sculpture" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"327" "Decile 1-3" "All Subjects" "Sculpture" "Asian" "Male" 0 0 0 0 0 0 0
+"328" "Decile 1-3" "All Subjects" "Sculpture" "Asian" "Female" 0 0 0 0 0 0 0
+"329" "Decile 1-3" "All Subjects" "Sculpture" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"330" "Decile 1-3" "All Subjects" "Sculpture" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"331" "Decile 1-3" "All Subjects" "Spanish" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"332" "Decile 1-3" "All Subjects" "Spanish" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"333" "Decile 1-3" "All Subjects" "Spanish" "NZ European" "Male" 0 0 0 0 0 0 0
+"334" "Decile 1-3" "All Subjects" "Spanish" "NZ European" "Female" 1 0 0 1 1 0 0
+"335" "Decile 1-3" "All Subjects" "Spanish" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"336" "Decile 1-3" "All Subjects" "Spanish" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"337" "Decile 1-3" "All Subjects" "Spanish" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"338" "Decile 1-3" "All Subjects" "Spanish" "Asian" "Male" 0 0 0 0 0 0 0
+"339" "Decile 1-3" "All Subjects" "Spanish" "Asian" "Female" 0 0 0 0 0 0 0
+"340" "Decile 1-3" "All Subjects" "Spanish" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"341" "Decile 1-3" "All Subjects" "Spanish" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"342" "Decile 1-3" "All Subjects" "Statistics and Modelling" "NZ Maori" "Male" 4 0 0 4 3 1 0
+"343" "Decile 1-3" "All Subjects" "Statistics and Modelling" "NZ Maori" "Female" 4 1 0 3 3 0 0
+"344" "Decile 1-3" "All Subjects" "Statistics and Modelling" "NZ European" "Male" 11 1 0 10 5 4 1
+"345" "Decile 1-3" "All Subjects" "Statistics and Modelling" "NZ European" "Female" 8 0 0 8 6 2 0
+"346" "Decile 1-3" "All Subjects" "Statistics and Modelling" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"347" "Decile 1-3" "All Subjects" "Statistics and Modelling" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"348" "Decile 1-3" "All Subjects" "Statistics and Modelling" "Pasifika Peoples" "Female" 3 3 0 0 0 0 0
+"349" "Decile 1-3" "All Subjects" "Statistics and Modelling" "Asian" "Male" 14 2 0 12 11 0 1
+"350" "Decile 1-3" "All Subjects" "Statistics and Modelling" "Asian" "Female" 4 0 0 4 4 0 0
+"351" "Decile 1-3" "All Subjects" "Statistics and Modelling" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"352" "Decile 1-3" "All Subjects" "Statistics and Modelling" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"353" "Decile 1-3" "All Subjects" "Te Reo Maori" "NZ Maori" "Male" 24 0 1 23 14 8 1
+"354" "Decile 1-3" "All Subjects" "Te Reo Maori" "NZ Maori" "Female" 48 7 0 41 34 6 1
+"355" "Decile 1-3" "All Subjects" "Te Reo Maori" "NZ European" "Male" 0 0 0 0 0 0 0
+"356" "Decile 1-3" "All Subjects" "Te Reo Maori" "NZ European" "Female" 3 0 0 3 2 1 0
+"357" "Decile 1-3" "All Subjects" "Te Reo Maori" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"358" "Decile 1-3" "All Subjects" "Te Reo Maori" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"359" "Decile 1-3" "All Subjects" "Te Reo Maori" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"360" "Decile 1-3" "All Subjects" "Te Reo Maori" "Asian" "Male" 0 0 0 0 0 0 0
+"361" "Decile 1-3" "All Subjects" "Te Reo Maori" "Asian" "Female" 0 0 0 0 0 0 0
+"362" "Decile 1-3" "All Subjects" "Te Reo Maori" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"363" "Decile 1-3" "All Subjects" "Te Reo Maori" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"364" "Decile 1-3" "All Subjects" "Te Reo Rangatira" "NZ Maori" "Male" 9 2 1 6 5 1 0
+"365" "Decile 1-3" "All Subjects" "Te Reo Rangatira" "NZ Maori" "Female" 9 2 0 7 6 1 0
+"366" "Decile 1-3" "All Subjects" "Te Reo Rangatira" "NZ European" "Male" 0 0 0 0 0 0 0
+"367" "Decile 1-3" "All Subjects" "Te Reo Rangatira" "NZ European" "Female" 0 0 0 0 0 0 0
+"368" "Decile 1-3" "All Subjects" "Te Reo Rangatira" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"369" "Decile 1-3" "All Subjects" "Te Reo Rangatira" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"370" "Decile 1-3" "All Subjects" "Te Reo Rangatira" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"371" "Decile 1-3" "All Subjects" "Te Reo Rangatira" "Asian" "Male" 0 0 0 0 0 0 0
+"372" "Decile 1-3" "All Subjects" "Te Reo Rangatira" "Asian" "Female" 0 0 0 0 0 0 0
+"373" "Decile 1-3" "All Subjects" "Te Reo Rangatira" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"374" "Decile 1-3" "All Subjects" "Te Reo Rangatira" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"375" "Decile 1-3" "All Subjects" "Technology" "NZ Maori" "Male" 1 0 0 1 1 0 0
+"376" "Decile 1-3" "All Subjects" "Technology" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"377" "Decile 1-3" "All Subjects" "Technology" "NZ European" "Male" 2 1 0 1 1 0 0
+"378" "Decile 1-3" "All Subjects" "Technology" "NZ European" "Female" 0 0 0 0 0 0 0
+"379" "Decile 1-3" "All Subjects" "Technology" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"380" "Decile 1-3" "All Subjects" "Technology" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"381" "Decile 1-3" "All Subjects" "Technology" "Pasifika Peoples" "Female" 1 1 0 0 0 0 0
+"382" "Decile 1-3" "All Subjects" "Technology" "Asian" "Male" 2 0 0 2 2 0 0
+"383" "Decile 1-3" "All Subjects" "Technology" "Asian" "Female" 0 0 0 0 0 0 0
+"384" "Decile 1-3" "All Subjects" "Technology" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"385" "Decile 1-3" "All Subjects" "Technology" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"386" "Decile 4-7" "All Subjects" "Accounting" "NZ Maori" "Male" 2 1 0 1 1 0 0
+"387" "Decile 4-7" "All Subjects" "Accounting" "NZ Maori" "Female" 7 2 0 5 4 1 0
+"388" "Decile 4-7" "All Subjects" "Accounting" "NZ European" "Male" 51 13 0 38 30 8 0
+"389" "Decile 4-7" "All Subjects" "Accounting" "NZ European" "Female" 44 12 0 32 27 3 2
+"390" "Decile 4-7" "All Subjects" "Accounting" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"391" "Decile 4-7" "All Subjects" "Accounting" "Pasifika Peoples" "Male" 3 0 0 3 3 0 0
+"392" "Decile 4-7" "All Subjects" "Accounting" "Pasifika Peoples" "Female" 4 2 0 2 2 0 0
+"393" "Decile 4-7" "All Subjects" "Accounting" "Asian" "Male" 29 4 0 25 16 9 0
+"394" "Decile 4-7" "All Subjects" "Accounting" "Asian" "Female" 15 7 0 8 6 2 0
+"395" "Decile 4-7" "All Subjects" "Accounting" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"396" "Decile 4-7" "All Subjects" "Accounting" "Other/Unspecified Ethnicity" "Female" 1 0 0 1 1 0 0
+"397" "Decile 4-7" "All Subjects" "Agricultural & Horticultural Science" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"398" "Decile 4-7" "All Subjects" "Agricultural & Horticultural Science" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"399" "Decile 4-7" "All Subjects" "Agricultural & Horticultural Science" "NZ European" "Male" 10 1 0 9 9 0 0
+"400" "Decile 4-7" "All Subjects" "Agricultural & Horticultural Science" "NZ European" "Female" 5 2 0 3 1 2 0
+"401" "Decile 4-7" "All Subjects" "Agricultural & Horticultural Science" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"402" "Decile 4-7" "All Subjects" "Agricultural & Horticultural Science" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"403" "Decile 4-7" "All Subjects" "Agricultural & Horticultural Science" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"404" "Decile 4-7" "All Subjects" "Agricultural & Horticultural Science" "Asian" "Male" 0 0 0 0 0 0 0
+"405" "Decile 4-7" "All Subjects" "Agricultural & Horticultural Science" "Asian" "Female" 0 0 0 0 0 0 0
+"406" "Decile 4-7" "All Subjects" "Agricultural & Horticultural Science" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"407" "Decile 4-7" "All Subjects" "Agricultural & Horticultural Science" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"408" "Decile 4-7" "All Subjects" "Art History" "NZ Maori" "Male" 1 0 0 1 0 1 0
+"409" "Decile 4-7" "All Subjects" "Art History" "NZ Maori" "Female" 4 1 1 2 2 0 0
+"410" "Decile 4-7" "All Subjects" "Art History" "NZ European" "Male" 7 2 0 5 5 0 0
+"411" "Decile 4-7" "All Subjects" "Art History" "NZ European" "Female" 60 17 1 42 35 7 0
+"412" "Decile 4-7" "All Subjects" "Art History" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"413" "Decile 4-7" "All Subjects" "Art History" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"414" "Decile 4-7" "All Subjects" "Art History" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"415" "Decile 4-7" "All Subjects" "Art History" "Asian" "Male" 3 0 0 3 1 1 1
+"416" "Decile 4-7" "All Subjects" "Art History" "Asian" "Female" 7 2 0 5 4 1 0
+"417" "Decile 4-7" "All Subjects" "Art History" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"418" "Decile 4-7" "All Subjects" "Art History" "Other/Unspecified Ethnicity" "Female" 5 1 0 4 4 0 0
+"419" "Decile 4-7" "All Subjects" "Biology" "NZ Maori" "Male" 13 1 1 11 11 0 0
+"420" "Decile 4-7" "All Subjects" "Biology" "NZ Maori" "Female" 24 11 1 12 10 2 0
+"421" "Decile 4-7" "All Subjects" "Biology" "NZ European" "Male" 130 27 6 97 78 17 2
+"422" "Decile 4-7" "All Subjects" "Biology" "NZ European" "Female" 190 45 4 141 104 34 3
+"423" "Decile 4-7" "All Subjects" "Biology" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"424" "Decile 4-7" "All Subjects" "Biology" "Pasifika Peoples" "Male" 2 0 0 2 1 1 0
+"425" "Decile 4-7" "All Subjects" "Biology" "Pasifika Peoples" "Female" 3 2 0 1 1 0 0
+"426" "Decile 4-7" "All Subjects" "Biology" "Asian" "Male" 39 5 0 34 25 9 0
+"427" "Decile 4-7" "All Subjects" "Biology" "Asian" "Female" 71 17 0 54 44 10 0
+"428" "Decile 4-7" "All Subjects" "Biology" "Other/Unspecified Ethnicity" "Male" 2 0 0 2 2 0 0
+"429" "Decile 4-7" "All Subjects" "Biology" "Other/Unspecified Ethnicity" "Female" 9 1 0 8 6 1 1
+"430" "Decile 4-7" "All Subjects" "Chemistry" "NZ Maori" "Male" 9 3 0 6 6 0 0
+"431" "Decile 4-7" "All Subjects" "Chemistry" "NZ Maori" "Female" 8 6 0 2 2 0 0
+"432" "Decile 4-7" "All Subjects" "Chemistry" "NZ European" "Male" 178 30 1 147 123 23 1
+"433" "Decile 4-7" "All Subjects" "Chemistry" "NZ European" "Female" 118 36 0 82 75 7 0
+"434" "Decile 4-7" "All Subjects" "Chemistry" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"435" "Decile 4-7" "All Subjects" "Chemistry" "Pasifika Peoples" "Male" 5 1 0 4 4 0 0
+"436" "Decile 4-7" "All Subjects" "Chemistry" "Pasifika Peoples" "Female" 2 1 0 1 1 0 0
+"437" "Decile 4-7" "All Subjects" "Chemistry" "Asian" "Male" 74 18 0 56 41 12 3
+"438" "Decile 4-7" "All Subjects" "Chemistry" "Asian" "Female" 71 21 0 50 45 5 0
+"439" "Decile 4-7" "All Subjects" "Chemistry" "Other/Unspecified Ethnicity" "Male" 3 0 0 3 3 0 0
+"440" "Decile 4-7" "All Subjects" "Chemistry" "Other/Unspecified Ethnicity" "Female" 3 2 0 1 0 1 0
+"441" "Decile 4-7" "All Subjects" "Chinese" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"442" "Decile 4-7" "All Subjects" "Chinese" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"443" "Decile 4-7" "All Subjects" "Chinese" "NZ European" "Male" 1 0 0 1 1 0 0
+"444" "Decile 4-7" "All Subjects" "Chinese" "NZ European" "Female" 1 0 0 1 1 0 0
+"445" "Decile 4-7" "All Subjects" "Chinese" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"446" "Decile 4-7" "All Subjects" "Chinese" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"447" "Decile 4-7" "All Subjects" "Chinese" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"448" "Decile 4-7" "All Subjects" "Chinese" "Asian" "Male" 17 3 0 14 13 1 0
+"449" "Decile 4-7" "All Subjects" "Chinese" "Asian" "Female" 27 1 0 26 24 2 0
+"450" "Decile 4-7" "All Subjects" "Chinese" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"451" "Decile 4-7" "All Subjects" "Chinese" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"452" "Decile 4-7" "All Subjects" "Classical Studies" "NZ Maori" "Male" 12 3 0 9 8 0 1
+"453" "Decile 4-7" "All Subjects" "Classical Studies" "NZ Maori" "Female" 19 6 0 13 9 4 0
+"454" "Decile 4-7" "All Subjects" "Classical Studies" "NZ European" "Male" 69 11 2 56 46 10 0
+"455" "Decile 4-7" "All Subjects" "Classical Studies" "NZ European" "Female" 144 43 1 100 83 13 4
+"456" "Decile 4-7" "All Subjects" "Classical Studies" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"457" "Decile 4-7" "All Subjects" "Classical Studies" "Pasifika Peoples" "Male" 3 0 1 2 1 1 0
+"458" "Decile 4-7" "All Subjects" "Classical Studies" "Pasifika Peoples" "Female" 5 4 0 1 1 0 0
+"459" "Decile 4-7" "All Subjects" "Classical Studies" "Asian" "Male" 10 1 1 8 4 2 2
+"460" "Decile 4-7" "All Subjects" "Classical Studies" "Asian" "Female" 34 8 0 26 18 7 1
+"461" "Decile 4-7" "All Subjects" "Classical Studies" "Other/Unspecified Ethnicity" "Male" 3 1 0 2 2 0 0
+"462" "Decile 4-7" "All Subjects" "Classical Studies" "Other/Unspecified Ethnicity" "Female" 2 1 0 1 1 0 0
+"463" "Decile 4-7" "All Subjects" "Dance" "NZ Maori" "Male" 3 2 0 1 0 1 0
+"464" "Decile 4-7" "All Subjects" "Dance" "NZ Maori" "Female" 7 6 0 1 1 0 0
+"465" "Decile 4-7" "All Subjects" "Dance" "NZ European" "Male" 3 0 0 3 2 1 0
+"466" "Decile 4-7" "All Subjects" "Dance" "NZ European" "Female" 35 15 0 20 14 5 1
+"467" "Decile 4-7" "All Subjects" "Dance" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"468" "Decile 4-7" "All Subjects" "Dance" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"469" "Decile 4-7" "All Subjects" "Dance" "Pasifika Peoples" "Female" 2 0 0 2 1 1 0
+"470" "Decile 4-7" "All Subjects" "Dance" "Asian" "Male" 0 0 0 0 0 0 0
+"471" "Decile 4-7" "All Subjects" "Dance" "Asian" "Female" 3 0 0 3 3 0 0
+"472" "Decile 4-7" "All Subjects" "Dance" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"473" "Decile 4-7" "All Subjects" "Dance" "Other/Unspecified Ethnicity" "Female" 2 1 0 1 1 0 0
+"474" "Decile 4-7" "All Subjects" "Design and Visual Communication" "NZ Maori" "Male" 10 9 0 1 1 0 0
+"475" "Decile 4-7" "All Subjects" "Design and Visual Communication" "NZ Maori" "Female" 14 8 0 6 4 2 0
+"476" "Decile 4-7" "All Subjects" "Design and Visual Communication" "NZ European" "Male" 54 35 0 19 17 2 0
+"477" "Decile 4-7" "All Subjects" "Design and Visual Communication" "NZ European" "Female" 101 54 0 47 34 11 2
+"478" "Decile 4-7" "All Subjects" "Design and Visual Communication" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"479" "Decile 4-7" "All Subjects" "Design and Visual Communication" "Pasifika Peoples" "Male" 3 2 0 1 1 0 0
+"480" "Decile 4-7" "All Subjects" "Design and Visual Communication" "Pasifika Peoples" "Female" 5 4 0 1 1 0 0
+"481" "Decile 4-7" "All Subjects" "Design and Visual Communication" "Asian" "Male" 10 8 0 2 0 2 0
+"482" "Decile 4-7" "All Subjects" "Design and Visual Communication" "Asian" "Female" 22 7 0 15 9 5 1
+"483" "Decile 4-7" "All Subjects" "Design and Visual Communication" "Other/Unspecified Ethnicity" "Male" 1 1 0 0 0 0 0
+"484" "Decile 4-7" "All Subjects" "Design and Visual Communication" "Other/Unspecified Ethnicity" "Female" 3 1 0 2 2 0 0
+"485" "Decile 4-7" "All Subjects" "Drama" "NZ Maori" "Male" 7 4 0 3 3 0 0
+"486" "Decile 4-7" "All Subjects" "Drama" "NZ Maori" "Female" 8 6 0 2 2 0 0
+"487" "Decile 4-7" "All Subjects" "Drama" "NZ European" "Male" 35 20 0 15 9 6 0
+"488" "Decile 4-7" "All Subjects" "Drama" "NZ European" "Female" 92 37 0 55 46 9 0
+"489" "Decile 4-7" "All Subjects" "Drama" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"490" "Decile 4-7" "All Subjects" "Drama" "Pasifika Peoples" "Male" 1 0 0 1 1 0 0
+"491" "Decile 4-7" "All Subjects" "Drama" "Pasifika Peoples" "Female" 3 1 0 2 1 1 0
+"492" "Decile 4-7" "All Subjects" "Drama" "Asian" "Male" 1 1 0 0 0 0 0
+"493" "Decile 4-7" "All Subjects" "Drama" "Asian" "Female" 2 1 0 1 1 0 0
+"494" "Decile 4-7" "All Subjects" "Drama" "Other/Unspecified Ethnicity" "Male" 3 1 0 2 1 1 0
+"495" "Decile 4-7" "All Subjects" "Drama" "Other/Unspecified Ethnicity" "Female" 3 3 0 0 0 0 0
+"496" "Decile 4-7" "All Subjects" "Economics" "NZ Maori" "Male" 3 1 0 2 2 0 0
+"497" "Decile 4-7" "All Subjects" "Economics" "NZ Maori" "Female" 7 3 0 4 4 0 0
+"498" "Decile 4-7" "All Subjects" "Economics" "NZ European" "Male" 103 16 2 85 65 18 2
+"499" "Decile 4-7" "All Subjects" "Economics" "NZ European" "Female" 53 17 0 36 26 7 3
+"500" "Decile 4-7" "All Subjects" "Economics" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"501" "Decile 4-7" "All Subjects" "Economics" "Pasifika Peoples" "Male" 3 0 0 3 3 0 0
+"502" "Decile 4-7" "All Subjects" "Economics" "Pasifika Peoples" "Female" 4 1 0 3 2 1 0
+"503" "Decile 4-7" "All Subjects" "Economics" "Asian" "Male" 22 2 1 19 16 1 2
+"504" "Decile 4-7" "All Subjects" "Economics" "Asian" "Female" 23 6 0 17 14 3 0
+"505" "Decile 4-7" "All Subjects" "Economics" "Other/Unspecified Ethnicity" "Male" 7 2 0 5 5 0 0
+"506" "Decile 4-7" "All Subjects" "Economics" "Other/Unspecified Ethnicity" "Female" 1 1 0 0 0 0 0
+"507" "Decile 4-7" "All Subjects" "English" "NZ Maori" "Male" 12 2 0 10 7 3 0
+"508" "Decile 4-7" "All Subjects" "English" "NZ Maori" "Female" 35 15 0 20 16 4 0
+"509" "Decile 4-7" "All Subjects" "English" "NZ European" "Male" 154 34 1 119 91 24 4
+"510" "Decile 4-7" "All Subjects" "English" "NZ European" "Female" 316 92 3 221 173 45 3
+"511" "Decile 4-7" "All Subjects" "English" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"512" "Decile 4-7" "All Subjects" "English" "Pasifika Peoples" "Male" 7 1 0 6 6 0 0
+"513" "Decile 4-7" "All Subjects" "English" "Pasifika Peoples" "Female" 8 4 0 4 4 0 0
+"514" "Decile 4-7" "All Subjects" "English" "Asian" "Male" 20 2 0 18 12 6 0
+"515" "Decile 4-7" "All Subjects" "English" "Asian" "Female" 32 5 0 27 22 5 0
+"516" "Decile 4-7" "All Subjects" "English" "Other/Unspecified Ethnicity" "Male" 4 1 0 3 3 0 0
+"517" "Decile 4-7" "All Subjects" "English" "Other/Unspecified Ethnicity" "Female" 10 4 0 6 5 1 0
+"518" "Decile 4-7" "All Subjects" "French" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"519" "Decile 4-7" "All Subjects" "French" "NZ Maori" "Female" 2 1 0 1 1 0 0
+"520" "Decile 4-7" "All Subjects" "French" "NZ European" "Male" 7 1 0 6 6 0 0
+"521" "Decile 4-7" "All Subjects" "French" "NZ European" "Female" 28 6 0 22 21 1 0
+"522" "Decile 4-7" "All Subjects" "French" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"523" "Decile 4-7" "All Subjects" "French" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"524" "Decile 4-7" "All Subjects" "French" "Pasifika Peoples" "Female" 2 0 0 2 2 0 0
+"525" "Decile 4-7" "All Subjects" "French" "Asian" "Male" 1 0 0 1 1 0 0
+"526" "Decile 4-7" "All Subjects" "French" "Asian" "Female" 7 1 0 6 5 1 0
+"527" "Decile 4-7" "All Subjects" "French" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"528" "Decile 4-7" "All Subjects" "French" "Other/Unspecified Ethnicity" "Female" 2 0 0 2 0 2 0
+"529" "Decile 4-7" "All Subjects" "Geography" "NZ Maori" "Male" 13 6 0 7 7 0 0
+"530" "Decile 4-7" "All Subjects" "Geography" "NZ Maori" "Female" 26 9 0 17 17 0 0
+"531" "Decile 4-7" "All Subjects" "Geography" "NZ European" "Male" 132 19 0 113 95 17 1
+"532" "Decile 4-7" "All Subjects" "Geography" "NZ European" "Female" 174 34 0 140 109 29 2
+"533" "Decile 4-7" "All Subjects" "Geography" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"534" "Decile 4-7" "All Subjects" "Geography" "Pasifika Peoples" "Male" 8 1 0 7 7 0 0
+"535" "Decile 4-7" "All Subjects" "Geography" "Pasifika Peoples" "Female" 7 2 0 5 5 0 0
+"536" "Decile 4-7" "All Subjects" "Geography" "Asian" "Male" 17 4 0 13 11 2 0
+"537" "Decile 4-7" "All Subjects" "Geography" "Asian" "Female" 22 3 0 19 15 4 0
+"538" "Decile 4-7" "All Subjects" "Geography" "Other/Unspecified Ethnicity" "Male" 2 1 0 1 1 0 0
+"539" "Decile 4-7" "All Subjects" "Geography" "Other/Unspecified Ethnicity" "Female" 3 1 0 2 2 0 0
+"540" "Decile 4-7" "All Subjects" "German" "NZ Maori" "Male" 1 0 0 1 1 0 0
+"541" "Decile 4-7" "All Subjects" "German" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"542" "Decile 4-7" "All Subjects" "German" "NZ European" "Male" 7 2 0 5 5 0 0
+"543" "Decile 4-7" "All Subjects" "German" "NZ European" "Female" 22 0 0 22 18 4 0
+"544" "Decile 4-7" "All Subjects" "German" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"545" "Decile 4-7" "All Subjects" "German" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"546" "Decile 4-7" "All Subjects" "German" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"547" "Decile 4-7" "All Subjects" "German" "Asian" "Male" 0 0 0 0 0 0 0
+"548" "Decile 4-7" "All Subjects" "German" "Asian" "Female" 0 0 0 0 0 0 0
+"549" "Decile 4-7" "All Subjects" "German" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"550" "Decile 4-7" "All Subjects" "German" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"551" "Decile 4-7" "All Subjects" "Graphics" "NZ Maori" "Male" 3 0 1 2 0 2 0
+"552" "Decile 4-7" "All Subjects" "Graphics" "NZ Maori" "Female" 6 0 1 5 5 0 0
+"553" "Decile 4-7" "All Subjects" "Graphics" "NZ European" "Male" 35 1 2 32 29 1 2
+"554" "Decile 4-7" "All Subjects" "Graphics" "NZ European" "Female" 46 0 9 37 35 2 0
+"555" "Decile 4-7" "All Subjects" "Graphics" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"556" "Decile 4-7" "All Subjects" "Graphics" "Pasifika Peoples" "Male" 1 0 0 1 1 0 0
+"557" "Decile 4-7" "All Subjects" "Graphics" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"558" "Decile 4-7" "All Subjects" "Graphics" "Asian" "Male" 15 0 0 15 11 4 0
+"559" "Decile 4-7" "All Subjects" "Graphics" "Asian" "Female" 19 0 3 16 15 1 0
+"560" "Decile 4-7" "All Subjects" "Graphics" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"561" "Decile 4-7" "All Subjects" "Graphics" "Other/Unspecified Ethnicity" "Female" 1 0 1 0 0 0 0
+"562" "Decile 4-7" "All Subjects" "History" "NZ Maori" "Male" 12 2 0 10 5 4 1
+"563" "Decile 4-7" "All Subjects" "History" "NZ Maori" "Female" 14 5 0 9 7 2 0
+"564" "Decile 4-7" "All Subjects" "History" "NZ European" "Male" 87 16 2 69 56 12 1
+"565" "Decile 4-7" "All Subjects" "History" "NZ European" "Female" 169 50 7 112 81 28 3
+"566" "Decile 4-7" "All Subjects" "History" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"567" "Decile 4-7" "All Subjects" "History" "Pasifika Peoples" "Male" 5 3 0 2 0 2 0
+"568" "Decile 4-7" "All Subjects" "History" "Pasifika Peoples" "Female" 11 3 0 8 7 1 0
+"569" "Decile 4-7" "All Subjects" "History" "Asian" "Male" 3 1 0 2 1 1 0
+"570" "Decile 4-7" "All Subjects" "History" "Asian" "Female" 16 2 1 13 3 9 1
+"571" "Decile 4-7" "All Subjects" "History" "Other/Unspecified Ethnicity" "Male" 3 0 0 3 2 1 0
+"572" "Decile 4-7" "All Subjects" "History" "Other/Unspecified Ethnicity" "Female" 3 0 0 3 3 0 0
+"573" "Decile 4-7" "All Subjects" "Japanese" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"574" "Decile 4-7" "All Subjects" "Japanese" "NZ Maori" "Female" 1 0 0 1 1 0 0
+"575" "Decile 4-7" "All Subjects" "Japanese" "NZ European" "Male" 9 2 1 6 4 2 0
+"576" "Decile 4-7" "All Subjects" "Japanese" "NZ European" "Female" 8 0 0 8 8 0 0
+"577" "Decile 4-7" "All Subjects" "Japanese" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"578" "Decile 4-7" "All Subjects" "Japanese" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"579" "Decile 4-7" "All Subjects" "Japanese" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"580" "Decile 4-7" "All Subjects" "Japanese" "Asian" "Male" 9 1 0 8 7 1 0
+"581" "Decile 4-7" "All Subjects" "Japanese" "Asian" "Female" 20 1 1 18 16 2 0
+"582" "Decile 4-7" "All Subjects" "Japanese" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"583" "Decile 4-7" "All Subjects" "Japanese" "Other/Unspecified Ethnicity" "Female" 1 0 0 1 1 0 0
+"584" "Decile 4-7" "All Subjects" "Latin" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"585" "Decile 4-7" "All Subjects" "Latin" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"586" "Decile 4-7" "All Subjects" "Latin" "NZ European" "Male" 1 0 0 1 0 0 1
+"587" "Decile 4-7" "All Subjects" "Latin" "NZ European" "Female" 0 0 0 0 0 0 0
+"588" "Decile 4-7" "All Subjects" "Latin" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"589" "Decile 4-7" "All Subjects" "Latin" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"590" "Decile 4-7" "All Subjects" "Latin" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"591" "Decile 4-7" "All Subjects" "Latin" "Asian" "Male" 0 0 0 0 0 0 0
+"592" "Decile 4-7" "All Subjects" "Latin" "Asian" "Female" 0 0 0 0 0 0 0
+"593" "Decile 4-7" "All Subjects" "Latin" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"594" "Decile 4-7" "All Subjects" "Latin" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"595" "Decile 4-7" "All Subjects" "Mathematics with Calculus" "NZ Maori" "Male" 11 2 0 9 9 0 0
+"596" "Decile 4-7" "All Subjects" "Mathematics with Calculus" "NZ Maori" "Female" 9 6 0 3 3 0 0
+"597" "Decile 4-7" "All Subjects" "Mathematics with Calculus" "NZ European" "Male" 211 38 0 173 148 22 3
+"598" "Decile 4-7" "All Subjects" "Mathematics with Calculus" "NZ European" "Female" 73 10 0 63 56 7 0
+"599" "Decile 4-7" "All Subjects" "Mathematics with Calculus" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"600" "Decile 4-7" "All Subjects" "Mathematics with Calculus" "Pasifika Peoples" "Male" 1 1 0 0 0 0 0
+"601" "Decile 4-7" "All Subjects" "Mathematics with Calculus" "Pasifika Peoples" "Female" 5 2 0 3 3 0 0
+"602" "Decile 4-7" "All Subjects" "Mathematics with Calculus" "Asian" "Male" 116 28 0 88 71 15 2
+"603" "Decile 4-7" "All Subjects" "Mathematics with Calculus" "Asian" "Female" 66 23 0 43 40 3 0
+"604" "Decile 4-7" "All Subjects" "Mathematics with Calculus" "Other/Unspecified Ethnicity" "Male" 4 0 0 4 4 0 0
+"605" "Decile 4-7" "All Subjects" "Mathematics with Calculus" "Other/Unspecified Ethnicity" "Female" 3 3 0 0 0 0 0
+"606" "Decile 4-7" "All Subjects" "Media Studies" "NZ Maori" "Male" 6 2 0 4 3 0 1
+"607" "Decile 4-7" "All Subjects" "Media Studies" "NZ Maori" "Female" 10 5 1 4 4 0 0
+"608" "Decile 4-7" "All Subjects" "Media Studies" "NZ European" "Male" 30 8 1 21 16 4 1
+"609" "Decile 4-7" "All Subjects" "Media Studies" "NZ European" "Female" 81 29 0 52 39 13 0
+"610" "Decile 4-7" "All Subjects" "Media Studies" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"611" "Decile 4-7" "All Subjects" "Media Studies" "Pasifika Peoples" "Male" 2 0 0 2 2 0 0
+"612" "Decile 4-7" "All Subjects" "Media Studies" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"613" "Decile 4-7" "All Subjects" "Media Studies" "Asian" "Male" 8 3 0 5 4 1 0
+"614" "Decile 4-7" "All Subjects" "Media Studies" "Asian" "Female" 6 2 0 4 4 0 0
+"615" "Decile 4-7" "All Subjects" "Media Studies" "Other/Unspecified Ethnicity" "Male" 1 1 0 0 0 0 0
+"616" "Decile 4-7" "All Subjects" "Media Studies" "Other/Unspecified Ethnicity" "Female" 3 2 0 1 1 0 0
+"617" "Decile 4-7" "All Subjects" "Music Studies" "NZ Maori" "Male" 2 0 0 2 2 0 0
+"618" "Decile 4-7" "All Subjects" "Music Studies" "NZ Maori" "Female" 3 1 0 2 1 1 0
+"619" "Decile 4-7" "All Subjects" "Music Studies" "NZ European" "Male" 25 5 0 20 16 3 1
+"620" "Decile 4-7" "All Subjects" "Music Studies" "NZ European" "Female" 23 5 0 18 16 2 0
+"621" "Decile 4-7" "All Subjects" "Music Studies" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"622" "Decile 4-7" "All Subjects" "Music Studies" "Pasifika Peoples" "Male" 2 0 0 2 1 0 1
+"623" "Decile 4-7" "All Subjects" "Music Studies" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"624" "Decile 4-7" "All Subjects" "Music Studies" "Asian" "Male" 0 0 0 0 0 0 0
+"625" "Decile 4-7" "All Subjects" "Music Studies" "Asian" "Female" 7 1 0 6 4 2 0
+"626" "Decile 4-7" "All Subjects" "Music Studies" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"627" "Decile 4-7" "All Subjects" "Music Studies" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"628" "Decile 4-7" "All Subjects" "Painting" "NZ Maori" "Male" 7 5 0 2 1 1 0
+"629" "Decile 4-7" "All Subjects" "Painting" "NZ Maori" "Female" 17 10 0 7 5 2 0
+"630" "Decile 4-7" "All Subjects" "Painting" "NZ European" "Male" 36 14 0 22 17 5 0
+"631" "Decile 4-7" "All Subjects" "Painting" "NZ European" "Female" 146 65 0 81 64 15 2
+"632" "Decile 4-7" "All Subjects" "Painting" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"633" "Decile 4-7" "All Subjects" "Painting" "Pasifika Peoples" "Male" 3 2 0 1 1 0 0
+"634" "Decile 4-7" "All Subjects" "Painting" "Pasifika Peoples" "Female" 4 3 0 1 1 0 0
+"635" "Decile 4-7" "All Subjects" "Painting" "Asian" "Male" 5 4 0 1 0 1 0
+"636" "Decile 4-7" "All Subjects" "Painting" "Asian" "Female" 25 11 0 14 11 3 0
+"637" "Decile 4-7" "All Subjects" "Painting" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"638" "Decile 4-7" "All Subjects" "Painting" "Other/Unspecified Ethnicity" "Female" 5 3 0 2 2 0 0
+"639" "Decile 4-7" "All Subjects" "Photography" "NZ Maori" "Male" 4 4 0 0 0 0 0
+"640" "Decile 4-7" "All Subjects" "Photography" "NZ Maori" "Female" 18 14 0 4 4 0 0
+"641" "Decile 4-7" "All Subjects" "Photography" "NZ European" "Male" 33 16 0 17 14 1 2
+"642" "Decile 4-7" "All Subjects" "Photography" "NZ European" "Female" 153 72 0 81 66 15 0
+"643" "Decile 4-7" "All Subjects" "Photography" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"644" "Decile 4-7" "All Subjects" "Photography" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"645" "Decile 4-7" "All Subjects" "Photography" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"646" "Decile 4-7" "All Subjects" "Photography" "Asian" "Male" 8 6 0 2 1 1 0
+"647" "Decile 4-7" "All Subjects" "Photography" "Asian" "Female" 11 5 0 6 6 0 0
+"648" "Decile 4-7" "All Subjects" "Photography" "Other/Unspecified Ethnicity" "Male" 1 1 0 0 0 0 0
+"649" "Decile 4-7" "All Subjects" "Photography" "Other/Unspecified Ethnicity" "Female" 4 3 0 1 0 1 0
+"650" "Decile 4-7" "All Subjects" "Physical Education" "NZ Maori" "Male" 12 6 0 6 5 1 0
+"651" "Decile 4-7" "All Subjects" "Physical Education" "NZ Maori" "Female" 16 9 0 7 7 0 0
+"652" "Decile 4-7" "All Subjects" "Physical Education" "NZ European" "Male" 72 21 1 50 43 7 0
+"653" "Decile 4-7" "All Subjects" "Physical Education" "NZ European" "Female" 96 29 3 64 42 22 0
+"654" "Decile 4-7" "All Subjects" "Physical Education" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"655" "Decile 4-7" "All Subjects" "Physical Education" "Pasifika Peoples" "Male" 4 2 0 2 1 0 1
+"656" "Decile 4-7" "All Subjects" "Physical Education" "Pasifika Peoples" "Female" 6 0 0 6 4 2 0
+"657" "Decile 4-7" "All Subjects" "Physical Education" "Asian" "Male" 5 1 0 4 4 0 0
+"658" "Decile 4-7" "All Subjects" "Physical Education" "Asian" "Female" 5 1 0 4 4 0 0
+"659" "Decile 4-7" "All Subjects" "Physical Education" "Other/Unspecified Ethnicity" "Male" 1 1 0 0 0 0 0
+"660" "Decile 4-7" "All Subjects" "Physical Education" "Other/Unspecified Ethnicity" "Female" 3 2 0 1 1 0 0
+"661" "Decile 4-7" "All Subjects" "Physics" "NZ Maori" "Male" 17 4 0 13 13 0 0
+"662" "Decile 4-7" "All Subjects" "Physics" "NZ Maori" "Female" 5 3 0 2 2 0 0
+"663" "Decile 4-7" "All Subjects" "Physics" "NZ European" "Male" 227 35 1 191 159 29 3
+"664" "Decile 4-7" "All Subjects" "Physics" "NZ European" "Female" 68 15 1 52 46 6 0
+"665" "Decile 4-7" "All Subjects" "Physics" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"666" "Decile 4-7" "All Subjects" "Physics" "Pasifika Peoples" "Male" 4 1 0 3 2 1 0
+"667" "Decile 4-7" "All Subjects" "Physics" "Pasifika Peoples" "Female" 1 1 0 0 0 0 0
+"668" "Decile 4-7" "All Subjects" "Physics" "Asian" "Male" 78 23 0 55 44 10 1
+"669" "Decile 4-7" "All Subjects" "Physics" "Asian" "Female" 31 6 0 25 19 6 0
+"670" "Decile 4-7" "All Subjects" "Physics" "Other/Unspecified Ethnicity" "Male" 5 1 0 4 4 0 0
+"671" "Decile 4-7" "All Subjects" "Physics" "Other/Unspecified Ethnicity" "Female" 1 1 0 0 0 0 0
+"672" "Decile 4-7" "All Subjects" "Printmaking" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"673" "Decile 4-7" "All Subjects" "Printmaking" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"674" "Decile 4-7" "All Subjects" "Printmaking" "NZ European" "Male" 0 0 0 0 0 0 0
+"675" "Decile 4-7" "All Subjects" "Printmaking" "NZ European" "Female" 11 6 0 5 3 2 0
+"676" "Decile 4-7" "All Subjects" "Printmaking" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"677" "Decile 4-7" "All Subjects" "Printmaking" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"678" "Decile 4-7" "All Subjects" "Printmaking" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"679" "Decile 4-7" "All Subjects" "Printmaking" "Asian" "Male" 1 0 0 1 1 0 0
+"680" "Decile 4-7" "All Subjects" "Printmaking" "Asian" "Female" 0 0 0 0 0 0 0
+"681" "Decile 4-7" "All Subjects" "Printmaking" "Other/Unspecified Ethnicity" "Male" 1 1 0 0 0 0 0
+"682" "Decile 4-7" "All Subjects" "Printmaking" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"683" "Decile 4-7" "All Subjects" "Samoan" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"684" "Decile 4-7" "All Subjects" "Samoan" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"685" "Decile 4-7" "All Subjects" "Samoan" "NZ European" "Male" 0 0 0 0 0 0 0
+"686" "Decile 4-7" "All Subjects" "Samoan" "NZ European" "Female" 0 0 0 0 0 0 0
+"687" "Decile 4-7" "All Subjects" "Samoan" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"688" "Decile 4-7" "All Subjects" "Samoan" "Pasifika Peoples" "Male" 6 0 0 6 6 0 0
+"689" "Decile 4-7" "All Subjects" "Samoan" "Pasifika Peoples" "Female" 11 1 0 10 8 2 0
+"690" "Decile 4-7" "All Subjects" "Samoan" "Asian" "Male" 0 0 0 0 0 0 0
+"691" "Decile 4-7" "All Subjects" "Samoan" "Asian" "Female" 0 0 0 0 0 0 0
+"692" "Decile 4-7" "All Subjects" "Samoan" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"693" "Decile 4-7" "All Subjects" "Samoan" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"694" "Decile 4-7" "All Subjects" "Science" "NZ Maori" "Male" 2 0 0 2 2 0 0
+"695" "Decile 4-7" "All Subjects" "Science" "NZ Maori" "Female" 2 1 0 1 1 0 0
+"696" "Decile 4-7" "All Subjects" "Science" "NZ European" "Male" 32 3 0 29 24 5 0
+"697" "Decile 4-7" "All Subjects" "Science" "NZ European" "Female" 33 9 0 24 21 3 0
+"698" "Decile 4-7" "All Subjects" "Science" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"699" "Decile 4-7" "All Subjects" "Science" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"700" "Decile 4-7" "All Subjects" "Science" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"701" "Decile 4-7" "All Subjects" "Science" "Asian" "Male" 5 0 0 5 5 0 0
+"702" "Decile 4-7" "All Subjects" "Science" "Asian" "Female" 4 2 0 2 2 0 0
+"703" "Decile 4-7" "All Subjects" "Science" "Other/Unspecified Ethnicity" "Male" 2 0 0 2 2 0 0
+"704" "Decile 4-7" "All Subjects" "Science" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"705" "Decile 4-7" "All Subjects" "Sculpture" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"706" "Decile 4-7" "All Subjects" "Sculpture" "NZ Maori" "Female" 1 0 0 1 1 0 0
+"707" "Decile 4-7" "All Subjects" "Sculpture" "NZ European" "Male" 2 1 0 1 0 1 0
+"708" "Decile 4-7" "All Subjects" "Sculpture" "NZ European" "Female" 8 2 0 6 4 2 0
+"709" "Decile 4-7" "All Subjects" "Sculpture" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"710" "Decile 4-7" "All Subjects" "Sculpture" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"711" "Decile 4-7" "All Subjects" "Sculpture" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"712" "Decile 4-7" "All Subjects" "Sculpture" "Asian" "Male" 1 0 0 1 1 0 0
+"713" "Decile 4-7" "All Subjects" "Sculpture" "Asian" "Female" 1 1 0 0 0 0 0
+"714" "Decile 4-7" "All Subjects" "Sculpture" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"715" "Decile 4-7" "All Subjects" "Sculpture" "Other/Unspecified Ethnicity" "Female" 1 0 0 1 0 1 0
+"716" "Decile 4-7" "All Subjects" "Spanish" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"717" "Decile 4-7" "All Subjects" "Spanish" "NZ Maori" "Female" 1 0 0 1 1 0 0
+"718" "Decile 4-7" "All Subjects" "Spanish" "NZ European" "Male" 5 2 0 3 3 0 0
+"719" "Decile 4-7" "All Subjects" "Spanish" "NZ European" "Female" 9 0 0 9 8 1 0
+"720" "Decile 4-7" "All Subjects" "Spanish" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"721" "Decile 4-7" "All Subjects" "Spanish" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"722" "Decile 4-7" "All Subjects" "Spanish" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"723" "Decile 4-7" "All Subjects" "Spanish" "Asian" "Male" 0 0 0 0 0 0 0
+"724" "Decile 4-7" "All Subjects" "Spanish" "Asian" "Female" 2 0 0 2 1 1 0
+"725" "Decile 4-7" "All Subjects" "Spanish" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"726" "Decile 4-7" "All Subjects" "Spanish" "Other/Unspecified Ethnicity" "Female" 3 0 0 3 3 0 0
+"727" "Decile 4-7" "All Subjects" "Statistics and Modelling" "NZ Maori" "Male" 23 5 0 18 14 4 0
+"728" "Decile 4-7" "All Subjects" "Statistics and Modelling" "NZ Maori" "Female" 10 4 0 6 6 0 0
+"729" "Decile 4-7" "All Subjects" "Statistics and Modelling" "NZ European" "Male" 203 29 0 174 116 50 8
+"730" "Decile 4-7" "All Subjects" "Statistics and Modelling" "NZ European" "Female" 129 41 0 88 67 20 1
+"731" "Decile 4-7" "All Subjects" "Statistics and Modelling" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"732" "Decile 4-7" "All Subjects" "Statistics and Modelling" "Pasifika Peoples" "Male" 3 2 0 1 1 0 0
+"733" "Decile 4-7" "All Subjects" "Statistics and Modelling" "Pasifika Peoples" "Female" 4 2 0 2 2 0 0
+"734" "Decile 4-7" "All Subjects" "Statistics and Modelling" "Asian" "Male" 83 18 0 65 44 18 3
+"735" "Decile 4-7" "All Subjects" "Statistics and Modelling" "Asian" "Female" 67 15 1 51 42 9 0
+"736" "Decile 4-7" "All Subjects" "Statistics and Modelling" "Other/Unspecified Ethnicity" "Male" 7 1 0 6 4 2 0
+"737" "Decile 4-7" "All Subjects" "Statistics and Modelling" "Other/Unspecified Ethnicity" "Female" 6 3 0 3 3 0 0
+"738" "Decile 4-7" "All Subjects" "Te Reo Maori" "NZ Maori" "Male" 24 1 2 21 20 1 0
+"739" "Decile 4-7" "All Subjects" "Te Reo Maori" "NZ Maori" "Female" 27 10 0 17 17 0 0
+"740" "Decile 4-7" "All Subjects" "Te Reo Maori" "NZ European" "Male" 0 0 0 0 0 0 0
+"741" "Decile 4-7" "All Subjects" "Te Reo Maori" "NZ European" "Female" 1 0 0 1 1 0 0
+"742" "Decile 4-7" "All Subjects" "Te Reo Maori" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"743" "Decile 4-7" "All Subjects" "Te Reo Maori" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"744" "Decile 4-7" "All Subjects" "Te Reo Maori" "Pasifika Peoples" "Female" 3 0 0 3 3 0 0
+"745" "Decile 4-7" "All Subjects" "Te Reo Maori" "Asian" "Male" 0 0 0 0 0 0 0
+"746" "Decile 4-7" "All Subjects" "Te Reo Maori" "Asian" "Female" 0 0 0 0 0 0 0
+"747" "Decile 4-7" "All Subjects" "Te Reo Maori" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"748" "Decile 4-7" "All Subjects" "Te Reo Maori" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"749" "Decile 4-7" "All Subjects" "Te Reo Rangatira" "NZ Maori" "Male" 2 0 0 2 0 1 1
+"750" "Decile 4-7" "All Subjects" "Te Reo Rangatira" "NZ Maori" "Female" 1 0 0 1 1 0 0
+"751" "Decile 4-7" "All Subjects" "Te Reo Rangatira" "NZ European" "Male" 0 0 0 0 0 0 0
+"752" "Decile 4-7" "All Subjects" "Te Reo Rangatira" "NZ European" "Female" 0 0 0 0 0 0 0
+"753" "Decile 4-7" "All Subjects" "Te Reo Rangatira" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"754" "Decile 4-7" "All Subjects" "Te Reo Rangatira" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"755" "Decile 4-7" "All Subjects" "Te Reo Rangatira" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"756" "Decile 4-7" "All Subjects" "Te Reo Rangatira" "Asian" "Male" 0 0 0 0 0 0 0
+"757" "Decile 4-7" "All Subjects" "Te Reo Rangatira" "Asian" "Female" 0 0 0 0 0 0 0
+"758" "Decile 4-7" "All Subjects" "Te Reo Rangatira" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"759" "Decile 4-7" "All Subjects" "Te Reo Rangatira" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"760" "Decile 4-7" "All Subjects" "Technology" "NZ Maori" "Male" 2 1 0 1 0 0 1
+"761" "Decile 4-7" "All Subjects" "Technology" "NZ Maori" "Female" 5 0 0 5 5 0 0
+"762" "Decile 4-7" "All Subjects" "Technology" "NZ European" "Male" 26 11 0 15 14 1 0
+"763" "Decile 4-7" "All Subjects" "Technology" "NZ European" "Female" 34 15 0 19 15 4 0
+"764" "Decile 4-7" "All Subjects" "Technology" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"765" "Decile 4-7" "All Subjects" "Technology" "Pasifika Peoples" "Male" 2 1 0 1 1 0 0
+"766" "Decile 4-7" "All Subjects" "Technology" "Pasifika Peoples" "Female" 2 1 0 1 1 0 0
+"767" "Decile 4-7" "All Subjects" "Technology" "Asian" "Male" 16 10 0 6 4 2 0
+"768" "Decile 4-7" "All Subjects" "Technology" "Asian" "Female" 9 5 0 4 3 1 0
+"769" "Decile 4-7" "All Subjects" "Technology" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"770" "Decile 4-7" "All Subjects" "Technology" "Other/Unspecified Ethnicity" "Female" 2 1 0 1 1 0 0
+"771" "Decile 8-10" "All Subjects" "Accounting" "NZ Maori" "Male" 2 2 0 0 0 0 0
+"772" "Decile 8-10" "All Subjects" "Accounting" "NZ Maori" "Female" 3 2 0 1 1 0 0
+"773" "Decile 8-10" "All Subjects" "Accounting" "NZ European" "Male" 132 47 0 85 67 18 0
+"774" "Decile 8-10" "All Subjects" "Accounting" "NZ European" "Female" 71 22 0 49 35 10 4
+"775" "Decile 8-10" "All Subjects" "Accounting" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"776" "Decile 8-10" "All Subjects" "Accounting" "Pasifika Peoples" "Male" 3 1 0 2 2 0 0
+"777" "Decile 8-10" "All Subjects" "Accounting" "Pasifika Peoples" "Female" 3 1 0 2 2 0 0
+"778" "Decile 8-10" "All Subjects" "Accounting" "Asian" "Male" 75 23 0 52 40 11 1
+"779" "Decile 8-10" "All Subjects" "Accounting" "Asian" "Female" 51 13 1 37 30 5 2
+"780" "Decile 8-10" "All Subjects" "Accounting" "Other/Unspecified Ethnicity" "Male" 3 0 0 3 1 2 0
+"781" "Decile 8-10" "All Subjects" "Accounting" "Other/Unspecified Ethnicity" "Female" 3 2 0 1 1 0 0
+"782" "Decile 8-10" "All Subjects" "Agricultural & Horticultural Science" "NZ Maori" "Male" 2 0 1 1 0 0 1
+"783" "Decile 8-10" "All Subjects" "Agricultural & Horticultural Science" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"784" "Decile 8-10" "All Subjects" "Agricultural & Horticultural Science" "NZ European" "Male" 18 3 1 14 10 4 0
+"785" "Decile 8-10" "All Subjects" "Agricultural & Horticultural Science" "NZ European" "Female" 6 3 0 3 2 1 0
+"786" "Decile 8-10" "All Subjects" "Agricultural & Horticultural Science" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"787" "Decile 8-10" "All Subjects" "Agricultural & Horticultural Science" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"788" "Decile 8-10" "All Subjects" "Agricultural & Horticultural Science" "Pasifika Peoples" "Female" 1 0 0 1 1 0 0
+"789" "Decile 8-10" "All Subjects" "Agricultural & Horticultural Science" "Asian" "Male" 1 0 0 1 0 1 0
+"790" "Decile 8-10" "All Subjects" "Agricultural & Horticultural Science" "Asian" "Female" 1 0 0 1 1 0 0
+"791" "Decile 8-10" "All Subjects" "Agricultural & Horticultural Science" "Other/Unspecified Ethnicity" "Male" 1 1 0 0 0 0 0
+"792" "Decile 8-10" "All Subjects" "Agricultural & Horticultural Science" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"793" "Decile 8-10" "All Subjects" "Art History" "NZ Maori" "Male" 2 1 0 1 0 1 0
+"794" "Decile 8-10" "All Subjects" "Art History" "NZ Maori" "Female" 18 7 0 11 8 3 0
+"795" "Decile 8-10" "All Subjects" "Art History" "NZ European" "Male" 41 9 0 32 23 7 2
+"796" "Decile 8-10" "All Subjects" "Art History" "NZ European" "Female" 135 36 0 99 77 21 1
+"797" "Decile 8-10" "All Subjects" "Art History" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"798" "Decile 8-10" "All Subjects" "Art History" "Pasifika Peoples" "Male" 1 0 0 1 1 0 0
+"799" "Decile 8-10" "All Subjects" "Art History" "Pasifika Peoples" "Female" 2 0 0 2 1 1 0
+"800" "Decile 8-10" "All Subjects" "Art History" "Asian" "Male" 9 2 0 7 6 1 0
+"801" "Decile 8-10" "All Subjects" "Art History" "Asian" "Female" 23 3 0 20 13 5 2
+"802" "Decile 8-10" "All Subjects" "Art History" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"803" "Decile 8-10" "All Subjects" "Art History" "Other/Unspecified Ethnicity" "Female" 5 0 0 5 5 0 0
+"804" "Decile 8-10" "All Subjects" "Biology" "NZ Maori" "Male" 9 5 0 4 3 1 0
+"805" "Decile 8-10" "All Subjects" "Biology" "NZ Maori" "Female" 12 2 0 10 8 2 0
+"806" "Decile 8-10" "All Subjects" "Biology" "NZ European" "Male" 221 46 3 172 130 35 7
+"807" "Decile 8-10" "All Subjects" "Biology" "NZ European" "Female" 337 70 2 265 200 54 11
+"808" "Decile 8-10" "All Subjects" "Biology" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"809" "Decile 8-10" "All Subjects" "Biology" "Pasifika Peoples" "Male" 2 1 0 1 1 0 0
+"810" "Decile 8-10" "All Subjects" "Biology" "Pasifika Peoples" "Female" 5 2 0 3 3 0 0
+"811" "Decile 8-10" "All Subjects" "Biology" "Asian" "Male" 156 29 0 127 102 20 5
+"812" "Decile 8-10" "All Subjects" "Biology" "Asian" "Female" 188 51 1 136 97 34 5
+"813" "Decile 8-10" "All Subjects" "Biology" "Other/Unspecified Ethnicity" "Male" 13 2 0 11 11 0 0
+"814" "Decile 8-10" "All Subjects" "Biology" "Other/Unspecified Ethnicity" "Female" 13 5 0 8 7 1 0
+"815" "Decile 8-10" "All Subjects" "Chemistry" "NZ Maori" "Male" 11 3 0 8 8 0 0
+"816" "Decile 8-10" "All Subjects" "Chemistry" "NZ Maori" "Female" 11 3 0 8 8 0 0
+"817" "Decile 8-10" "All Subjects" "Chemistry" "NZ European" "Male" 289 49 0 240 187 45 8
+"818" "Decile 8-10" "All Subjects" "Chemistry" "NZ European" "Female" 211 51 0 160 133 26 1
+"819" "Decile 8-10" "All Subjects" "Chemistry" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"820" "Decile 8-10" "All Subjects" "Chemistry" "Pasifika Peoples" "Male" 2 1 0 1 0 1 0
+"821" "Decile 8-10" "All Subjects" "Chemistry" "Pasifika Peoples" "Female" 2 0 0 2 2 0 0
+"822" "Decile 8-10" "All Subjects" "Chemistry" "Asian" "Male" 273 40 0 233 171 56 6
+"823" "Decile 8-10" "All Subjects" "Chemistry" "Asian" "Female" 161 37 0 124 102 18 4
+"824" "Decile 8-10" "All Subjects" "Chemistry" "Other/Unspecified Ethnicity" "Male" 26 2 0 24 20 3 1
+"825" "Decile 8-10" "All Subjects" "Chemistry" "Other/Unspecified Ethnicity" "Female" 8 3 0 5 4 1 0
+"826" "Decile 8-10" "All Subjects" "Chinese" "NZ Maori" "Male" 2 2 0 0 0 0 0
+"827" "Decile 8-10" "All Subjects" "Chinese" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"828" "Decile 8-10" "All Subjects" "Chinese" "NZ European" "Male" 1 0 0 1 1 0 0
+"829" "Decile 8-10" "All Subjects" "Chinese" "NZ European" "Female" 3 0 0 3 3 0 0
+"830" "Decile 8-10" "All Subjects" "Chinese" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"831" "Decile 8-10" "All Subjects" "Chinese" "Pasifika Peoples" "Male" 1 0 0 1 1 0 0
+"832" "Decile 8-10" "All Subjects" "Chinese" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"833" "Decile 8-10" "All Subjects" "Chinese" "Asian" "Male" 18 4 0 14 13 0 1
+"834" "Decile 8-10" "All Subjects" "Chinese" "Asian" "Female" 44 4 0 40 36 4 0
+"835" "Decile 8-10" "All Subjects" "Chinese" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"836" "Decile 8-10" "All Subjects" "Chinese" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"837" "Decile 8-10" "All Subjects" "Classical Studies" "NZ Maori" "Male" 6 1 0 5 3 2 0
+"838" "Decile 8-10" "All Subjects" "Classical Studies" "NZ Maori" "Female" 13 5 0 8 6 2 0
+"839" "Decile 8-10" "All Subjects" "Classical Studies" "NZ European" "Male" 159 32 1 126 92 32 2
+"840" "Decile 8-10" "All Subjects" "Classical Studies" "NZ European" "Female" 218 52 3 163 101 55 7
+"841" "Decile 8-10" "All Subjects" "Classical Studies" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"842" "Decile 8-10" "All Subjects" "Classical Studies" "Pasifika Peoples" "Male" 1 0 0 1 1 0 0
+"843" "Decile 8-10" "All Subjects" "Classical Studies" "Pasifika Peoples" "Female" 3 1 0 2 2 0 0
+"844" "Decile 8-10" "All Subjects" "Classical Studies" "Asian" "Male" 25 7 0 18 12 5 1
+"845" "Decile 8-10" "All Subjects" "Classical Studies" "Asian" "Female" 35 9 0 26 21 4 1
+"846" "Decile 8-10" "All Subjects" "Classical Studies" "Other/Unspecified Ethnicity" "Male" 6 1 0 5 2 2 1
+"847" "Decile 8-10" "All Subjects" "Classical Studies" "Other/Unspecified Ethnicity" "Female" 5 1 0 4 4 0 0
+"848" "Decile 8-10" "All Subjects" "Dance" "NZ Maori" "Male" 1 1 0 0 0 0 0
+"849" "Decile 8-10" "All Subjects" "Dance" "NZ Maori" "Female" 5 4 0 1 1 0 0
+"850" "Decile 8-10" "All Subjects" "Dance" "NZ European" "Male" 2 1 0 1 1 0 0
+"851" "Decile 8-10" "All Subjects" "Dance" "NZ European" "Female" 47 19 0 28 22 5 1
+"852" "Decile 8-10" "All Subjects" "Dance" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"853" "Decile 8-10" "All Subjects" "Dance" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"854" "Decile 8-10" "All Subjects" "Dance" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"855" "Decile 8-10" "All Subjects" "Dance" "Asian" "Male" 1 0 0 1 1 0 0
+"856" "Decile 8-10" "All Subjects" "Dance" "Asian" "Female" 4 1 0 3 3 0 0
+"857" "Decile 8-10" "All Subjects" "Dance" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"858" "Decile 8-10" "All Subjects" "Dance" "Other/Unspecified Ethnicity" "Female" 1 1 0 0 0 0 0
+"859" "Decile 8-10" "All Subjects" "Design and Visual Communication" "NZ Maori" "Male" 10 5 0 5 5 0 0
+"860" "Decile 8-10" "All Subjects" "Design and Visual Communication" "NZ Maori" "Female" 15 9 0 6 6 0 0
+"861" "Decile 8-10" "All Subjects" "Design and Visual Communication" "NZ European" "Male" 123 73 0 50 38 8 4
+"862" "Decile 8-10" "All Subjects" "Design and Visual Communication" "NZ European" "Female" 190 84 0 106 66 37 3
+"863" "Decile 8-10" "All Subjects" "Design and Visual Communication" "NZ European" "Unknown" 1 0 0 1 0 1 0
+"864" "Decile 8-10" "All Subjects" "Design and Visual Communication" "Pasifika Peoples" "Male" 4 2 0 2 2 0 0
+"865" "Decile 8-10" "All Subjects" "Design and Visual Communication" "Pasifika Peoples" "Female" 6 4 0 2 1 1 0
+"866" "Decile 8-10" "All Subjects" "Design and Visual Communication" "Asian" "Male" 26 17 0 9 6 3 0
+"867" "Decile 8-10" "All Subjects" "Design and Visual Communication" "Asian" "Female" 56 29 0 27 17 8 2
+"868" "Decile 8-10" "All Subjects" "Design and Visual Communication" "Other/Unspecified Ethnicity" "Male" 3 2 0 1 1 0 0
+"869" "Decile 8-10" "All Subjects" "Design and Visual Communication" "Other/Unspecified Ethnicity" "Female" 3 2 0 1 1 0 0
+"870" "Decile 8-10" "All Subjects" "Drama" "NZ Maori" "Male" 6 4 0 2 1 1 0
+"871" "Decile 8-10" "All Subjects" "Drama" "NZ Maori" "Female" 10 6 0 4 4 0 0
+"872" "Decile 8-10" "All Subjects" "Drama" "NZ European" "Male" 76 28 0 48 27 18 3
+"873" "Decile 8-10" "All Subjects" "Drama" "NZ European" "Female" 131 61 0 70 55 15 0
+"874" "Decile 8-10" "All Subjects" "Drama" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"875" "Decile 8-10" "All Subjects" "Drama" "Pasifika Peoples" "Male" 3 2 0 1 1 0 0
+"876" "Decile 8-10" "All Subjects" "Drama" "Pasifika Peoples" "Female" 2 1 0 1 1 0 0
+"877" "Decile 8-10" "All Subjects" "Drama" "Asian" "Male" 4 0 0 4 2 1 1
+"878" "Decile 8-10" "All Subjects" "Drama" "Asian" "Female" 5 3 0 2 1 0 1
+"879" "Decile 8-10" "All Subjects" "Drama" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"880" "Decile 8-10" "All Subjects" "Drama" "Other/Unspecified Ethnicity" "Female" 1 0 0 1 0 0 1
+"881" "Decile 8-10" "All Subjects" "Economics" "NZ Maori" "Male" 9 4 0 5 4 1 0
+"882" "Decile 8-10" "All Subjects" "Economics" "NZ Maori" "Female" 3 0 0 3 3 0 0
+"883" "Decile 8-10" "All Subjects" "Economics" "NZ European" "Male" 209 43 2 164 123 37 4
+"884" "Decile 8-10" "All Subjects" "Economics" "NZ European" "Female" 118 26 3 89 70 18 1
+"885" "Decile 8-10" "All Subjects" "Economics" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"886" "Decile 8-10" "All Subjects" "Economics" "Pasifika Peoples" "Male" 1 0 0 1 1 0 0
+"887" "Decile 8-10" "All Subjects" "Economics" "Pasifika Peoples" "Female" 3 0 0 3 2 1 0
+"888" "Decile 8-10" "All Subjects" "Economics" "Asian" "Male" 112 18 0 94 78 14 2
+"889" "Decile 8-10" "All Subjects" "Economics" "Asian" "Female" 57 11 0 46 32 13 1
+"890" "Decile 8-10" "All Subjects" "Economics" "Other/Unspecified Ethnicity" "Male" 12 1 0 11 9 1 1
+"891" "Decile 8-10" "All Subjects" "Economics" "Other/Unspecified Ethnicity" "Female" 3 1 0 2 1 1 0
+"892" "Decile 8-10" "All Subjects" "English" "NZ Maori" "Male" 20 2 0 18 14 3 1
+"893" "Decile 8-10" "All Subjects" "English" "NZ Maori" "Female" 33 12 0 21 19 2 0
+"894" "Decile 8-10" "All Subjects" "English" "NZ European" "Male" 379 81 1 297 189 92 16
+"895" "Decile 8-10" "All Subjects" "English" "NZ European" "Female" 486 118 0 368 253 104 11
+"896" "Decile 8-10" "All Subjects" "English" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"897" "Decile 8-10" "All Subjects" "English" "Pasifika Peoples" "Male" 6 1 0 5 4 1 0
+"898" "Decile 8-10" "All Subjects" "English" "Pasifika Peoples" "Female" 10 3 0 7 5 2 0
+"899" "Decile 8-10" "All Subjects" "English" "Asian" "Male" 108 22 0 86 54 29 3
+"900" "Decile 8-10" "All Subjects" "English" "Asian" "Female" 159 23 0 136 83 46 7
+"901" "Decile 8-10" "All Subjects" "English" "Other/Unspecified Ethnicity" "Male" 19 6 0 13 9 3 1
+"902" "Decile 8-10" "All Subjects" "English" "Other/Unspecified Ethnicity" "Female" 17 7 0 10 7 3 0
+"903" "Decile 8-10" "All Subjects" "French" "NZ Maori" "Male" 1 1 0 0 0 0 0
+"904" "Decile 8-10" "All Subjects" "French" "NZ Maori" "Female" 5 0 0 5 5 0 0
+"905" "Decile 8-10" "All Subjects" "French" "NZ European" "Male" 43 4 0 39 33 4 2
+"906" "Decile 8-10" "All Subjects" "French" "NZ European" "Female" 88 16 0 72 63 9 0
+"907" "Decile 8-10" "All Subjects" "French" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"908" "Decile 8-10" "All Subjects" "French" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"909" "Decile 8-10" "All Subjects" "French" "Pasifika Peoples" "Female" 2 0 0 2 2 0 0
+"910" "Decile 8-10" "All Subjects" "French" "Asian" "Male" 4 1 0 3 1 2 0
+"911" "Decile 8-10" "All Subjects" "French" "Asian" "Female" 20 2 0 18 16 2 0
+"912" "Decile 8-10" "All Subjects" "French" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"913" "Decile 8-10" "All Subjects" "French" "Other/Unspecified Ethnicity" "Female" 3 0 0 3 3 0 0
+"914" "Decile 8-10" "All Subjects" "Geography" "NZ Maori" "Male" 12 3 0 9 6 3 0
+"915" "Decile 8-10" "All Subjects" "Geography" "NZ Maori" "Female" 17 3 0 14 12 2 0
+"916" "Decile 8-10" "All Subjects" "Geography" "NZ European" "Male" 276 76 0 200 149 46 5
+"917" "Decile 8-10" "All Subjects" "Geography" "NZ European" "Female" 269 60 0 209 148 55 6
+"918" "Decile 8-10" "All Subjects" "Geography" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"919" "Decile 8-10" "All Subjects" "Geography" "Pasifika Peoples" "Male" 5 1 0 4 3 1 0
+"920" "Decile 8-10" "All Subjects" "Geography" "Pasifika Peoples" "Female" 3 1 0 2 2 0 0
+"921" "Decile 8-10" "All Subjects" "Geography" "Asian" "Male" 48 8 0 40 27 9 4
+"922" "Decile 8-10" "All Subjects" "Geography" "Asian" "Female" 39 3 0 36 20 14 2
+"923" "Decile 8-10" "All Subjects" "Geography" "Other/Unspecified Ethnicity" "Male" 8 2 0 6 6 0 0
+"924" "Decile 8-10" "All Subjects" "Geography" "Other/Unspecified Ethnicity" "Female" 2 0 0 2 2 0 0
+"925" "Decile 8-10" "All Subjects" "German" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"926" "Decile 8-10" "All Subjects" "German" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"927" "Decile 8-10" "All Subjects" "German" "NZ European" "Male" 22 4 0 18 15 2 1
+"928" "Decile 8-10" "All Subjects" "German" "NZ European" "Female" 28 3 0 25 22 3 0
+"929" "Decile 8-10" "All Subjects" "German" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"930" "Decile 8-10" "All Subjects" "German" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"931" "Decile 8-10" "All Subjects" "German" "Pasifika Peoples" "Female" 2 0 0 2 2 0 0
+"932" "Decile 8-10" "All Subjects" "German" "Asian" "Male" 0 0 0 0 0 0 0
+"933" "Decile 8-10" "All Subjects" "German" "Asian" "Female" 2 0 0 2 2 0 0
+"934" "Decile 8-10" "All Subjects" "German" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"935" "Decile 8-10" "All Subjects" "German" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"936" "Decile 8-10" "All Subjects" "Graphics" "NZ Maori" "Male" 4 0 0 4 2 2 0
+"937" "Decile 8-10" "All Subjects" "Graphics" "NZ Maori" "Female" 3 0 0 3 3 0 0
+"938" "Decile 8-10" "All Subjects" "Graphics" "NZ European" "Male" 81 0 7 74 65 8 1
+"939" "Decile 8-10" "All Subjects" "Graphics" "NZ European" "Female" 59 0 4 55 45 10 0
+"940" "Decile 8-10" "All Subjects" "Graphics" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"941" "Decile 8-10" "All Subjects" "Graphics" "Pasifika Peoples" "Male" 4 0 0 4 4 0 0
+"942" "Decile 8-10" "All Subjects" "Graphics" "Pasifika Peoples" "Female" 2 0 0 2 2 0 0
+"943" "Decile 8-10" "All Subjects" "Graphics" "Asian" "Male" 26 0 1 25 17 8 0
+"944" "Decile 8-10" "All Subjects" "Graphics" "Asian" "Female" 25 0 3 22 15 5 2
+"945" "Decile 8-10" "All Subjects" "Graphics" "Other/Unspecified Ethnicity" "Male" 2 0 0 2 2 0 0
+"946" "Decile 8-10" "All Subjects" "Graphics" "Other/Unspecified Ethnicity" "Female" 2 0 0 2 2 0 0
+"947" "Decile 8-10" "All Subjects" "History" "NZ Maori" "Male" 12 2 0 10 10 0 0
+"948" "Decile 8-10" "All Subjects" "History" "NZ Maori" "Female" 13 4 1 8 5 3 0
+"949" "Decile 8-10" "All Subjects" "History" "NZ European" "Male" 192 37 10 145 111 26 8
+"950" "Decile 8-10" "All Subjects" "History" "NZ European" "Female" 275 63 9 203 139 58 6
+"951" "Decile 8-10" "All Subjects" "History" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"952" "Decile 8-10" "All Subjects" "History" "Pasifika Peoples" "Male" 4 0 1 3 2 1 0
+"953" "Decile 8-10" "All Subjects" "History" "Pasifika Peoples" "Female" 4 1 0 3 3 0 0
+"954" "Decile 8-10" "All Subjects" "History" "Asian" "Male" 20 5 0 15 12 3 0
+"955" "Decile 8-10" "All Subjects" "History" "Asian" "Female" 57 7 1 49 39 9 1
+"956" "Decile 8-10" "All Subjects" "History" "Other/Unspecified Ethnicity" "Male" 2 2 0 0 0 0 0
+"957" "Decile 8-10" "All Subjects" "History" "Other/Unspecified Ethnicity" "Female" 6 3 0 3 2 1 0
+"958" "Decile 8-10" "All Subjects" "Japanese" "NZ Maori" "Male" 1 0 0 1 1 0 0
+"959" "Decile 8-10" "All Subjects" "Japanese" "NZ Maori" "Female" 3 2 0 1 1 0 0
+"960" "Decile 8-10" "All Subjects" "Japanese" "NZ European" "Male" 12 3 1 8 8 0 0
+"961" "Decile 8-10" "All Subjects" "Japanese" "NZ European" "Female" 9 1 0 8 8 0 0
+"962" "Decile 8-10" "All Subjects" "Japanese" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"963" "Decile 8-10" "All Subjects" "Japanese" "Pasifika Peoples" "Male" 1 1 0 0 0 0 0
+"964" "Decile 8-10" "All Subjects" "Japanese" "Pasifika Peoples" "Female" 1 0 0 1 1 0 0
+"965" "Decile 8-10" "All Subjects" "Japanese" "Asian" "Male" 30 8 0 22 16 6 0
+"966" "Decile 8-10" "All Subjects" "Japanese" "Asian" "Female" 53 6 0 47 39 6 2
+"967" "Decile 8-10" "All Subjects" "Japanese" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"968" "Decile 8-10" "All Subjects" "Japanese" "Other/Unspecified Ethnicity" "Female" 1 1 0 0 0 0 0
+"969" "Decile 8-10" "All Subjects" "Latin" "NZ Maori" "Male" 1 0 0 1 1 0 0
+"970" "Decile 8-10" "All Subjects" "Latin" "NZ Maori" "Female" 1 0 0 1 1 0 0
+"971" "Decile 8-10" "All Subjects" "Latin" "NZ European" "Male" 13 2 0 11 8 2 1
+"972" "Decile 8-10" "All Subjects" "Latin" "NZ European" "Female" 10 1 0 9 8 1 0
+"973" "Decile 8-10" "All Subjects" "Latin" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"974" "Decile 8-10" "All Subjects" "Latin" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"975" "Decile 8-10" "All Subjects" "Latin" "Pasifika Peoples" "Female" 1 0 0 1 1 0 0
+"976" "Decile 8-10" "All Subjects" "Latin" "Asian" "Male" 2 0 0 2 2 0 0
+"977" "Decile 8-10" "All Subjects" "Latin" "Asian" "Female" 0 0 0 0 0 0 0
+"978" "Decile 8-10" "All Subjects" "Latin" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"979" "Decile 8-10" "All Subjects" "Latin" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"980" "Decile 8-10" "All Subjects" "Mathematics with Calculus" "NZ Maori" "Male" 7 0 0 7 6 1 0
+"981" "Decile 8-10" "All Subjects" "Mathematics with Calculus" "NZ Maori" "Female" 2 1 0 1 1 0 0
+"982" "Decile 8-10" "All Subjects" "Mathematics with Calculus" "NZ European" "Male" 316 52 0 264 210 48 6
+"983" "Decile 8-10" "All Subjects" "Mathematics with Calculus" "NZ European" "Female" 95 16 0 79 71 6 2
+"984" "Decile 8-10" "All Subjects" "Mathematics with Calculus" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"985" "Decile 8-10" "All Subjects" "Mathematics with Calculus" "Pasifika Peoples" "Male" 1 0 0 1 1 0 0
+"986" "Decile 8-10" "All Subjects" "Mathematics with Calculus" "Pasifika Peoples" "Female" 1 0 0 1 1 0 0
+"987" "Decile 8-10" "All Subjects" "Mathematics with Calculus" "Asian" "Male" 328 51 1 276 209 57 10
+"988" "Decile 8-10" "All Subjects" "Mathematics with Calculus" "Asian" "Female" 171 26 0 145 121 21 3
+"989" "Decile 8-10" "All Subjects" "Mathematics with Calculus" "Other/Unspecified Ethnicity" "Male" 22 6 0 16 15 1 0
+"990" "Decile 8-10" "All Subjects" "Mathematics with Calculus" "Other/Unspecified Ethnicity" "Female" 4 2 0 2 2 0 0
+"991" "Decile 8-10" "All Subjects" "Media Studies" "NZ Maori" "Male" 8 4 0 4 3 1 0
+"992" "Decile 8-10" "All Subjects" "Media Studies" "NZ Maori" "Female" 8 6 0 2 1 1 0
+"993" "Decile 8-10" "All Subjects" "Media Studies" "NZ European" "Male" 125 40 4 81 53 25 3
+"994" "Decile 8-10" "All Subjects" "Media Studies" "NZ European" "Female" 171 68 0 103 68 31 4
+"995" "Decile 8-10" "All Subjects" "Media Studies" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"996" "Decile 8-10" "All Subjects" "Media Studies" "Pasifika Peoples" "Male" 1 0 0 1 1 0 0
+"997" "Decile 8-10" "All Subjects" "Media Studies" "Pasifika Peoples" "Female" 3 1 0 2 2 0 0
+"998" "Decile 8-10" "All Subjects" "Media Studies" "Asian" "Male" 12 1 0 11 8 2 1
+"999" "Decile 8-10" "All Subjects" "Media Studies" "Asian" "Female" 19 4 0 15 9 6 0
+"1000" "Decile 8-10" "All Subjects" "Media Studies" "Other/Unspecified Ethnicity" "Male" 2 1 0 1 0 1 0
+"1001" "Decile 8-10" "All Subjects" "Media Studies" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"1002" "Decile 8-10" "All Subjects" "Music Studies" "NZ Maori" "Male" 2 0 0 2 1 1 0
+"1003" "Decile 8-10" "All Subjects" "Music Studies" "NZ Maori" "Female" 2 1 0 1 1 0 0
+"1004" "Decile 8-10" "All Subjects" "Music Studies" "NZ European" "Male" 31 5 0 26 17 9 0
+"1005" "Decile 8-10" "All Subjects" "Music Studies" "NZ European" "Female" 32 12 0 20 14 5 1
+"1006" "Decile 8-10" "All Subjects" "Music Studies" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"1007" "Decile 8-10" "All Subjects" "Music Studies" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"1008" "Decile 8-10" "All Subjects" "Music Studies" "Pasifika Peoples" "Female" 2 1 0 1 1 0 0
+"1009" "Decile 8-10" "All Subjects" "Music Studies" "Asian" "Male" 14 2 0 12 8 4 0
+"1010" "Decile 8-10" "All Subjects" "Music Studies" "Asian" "Female" 13 4 0 9 5 3 1
+"1011" "Decile 8-10" "All Subjects" "Music Studies" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"1012" "Decile 8-10" "All Subjects" "Music Studies" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"1013" "Decile 8-10" "All Subjects" "Painting" "NZ Maori" "Male" 5 4 0 1 1 0 0
+"1014" "Decile 8-10" "All Subjects" "Painting" "NZ Maori" "Female" 16 7 0 9 7 2 0
+"1015" "Decile 8-10" "All Subjects" "Painting" "NZ European" "Male" 68 34 0 34 27 5 2
+"1016" "Decile 8-10" "All Subjects" "Painting" "NZ European" "Female" 217 97 0 120 86 29 5
+"1017" "Decile 8-10" "All Subjects" "Painting" "NZ European" "Unknown" 1 0 0 1 0 1 0
+"1018" "Decile 8-10" "All Subjects" "Painting" "Pasifika Peoples" "Male" 4 3 0 1 1 0 0
+"1019" "Decile 8-10" "All Subjects" "Painting" "Pasifika Peoples" "Female" 2 0 0 2 1 1 0
+"1020" "Decile 8-10" "All Subjects" "Painting" "Asian" "Male" 9 6 0 3 1 2 0
+"1021" "Decile 8-10" "All Subjects" "Painting" "Asian" "Female" 51 15 0 36 21 12 3
+"1022" "Decile 8-10" "All Subjects" "Painting" "Other/Unspecified Ethnicity" "Male" 1 1 0 0 0 0 0
+"1023" "Decile 8-10" "All Subjects" "Painting" "Other/Unspecified Ethnicity" "Female" 8 4 0 4 3 1 0
+"1024" "Decile 8-10" "All Subjects" "Photography" "NZ Maori" "Male" 5 3 0 2 1 1 0
+"1025" "Decile 8-10" "All Subjects" "Photography" "NZ Maori" "Female" 21 10 0 11 6 4 1
+"1026" "Decile 8-10" "All Subjects" "Photography" "NZ European" "Male" 64 29 0 35 25 7 3
+"1027" "Decile 8-10" "All Subjects" "Photography" "NZ European" "Female" 246 104 0 142 100 37 5
+"1028" "Decile 8-10" "All Subjects" "Photography" "NZ European" "Unknown" 1 1 0 0 0 0 0
+"1029" "Decile 8-10" "All Subjects" "Photography" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"1030" "Decile 8-10" "All Subjects" "Photography" "Pasifika Peoples" "Female" 5 1 0 4 1 3 0
+"1031" "Decile 8-10" "All Subjects" "Photography" "Asian" "Male" 6 4 0 2 2 0 0
+"1032" "Decile 8-10" "All Subjects" "Photography" "Asian" "Female" 32 15 0 17 11 6 0
+"1033" "Decile 8-10" "All Subjects" "Photography" "Other/Unspecified Ethnicity" "Male" 1 1 0 0 0 0 0
+"1034" "Decile 8-10" "All Subjects" "Photography" "Other/Unspecified Ethnicity" "Female" 8 6 0 2 1 1 0
+"1035" "Decile 8-10" "All Subjects" "Physical Education" "NZ Maori" "Male" 10 7 0 3 2 1 0
+"1036" "Decile 8-10" "All Subjects" "Physical Education" "NZ Maori" "Female" 8 3 1 4 3 1 0
+"1037" "Decile 8-10" "All Subjects" "Physical Education" "NZ European" "Male" 146 58 1 87 71 15 1
+"1038" "Decile 8-10" "All Subjects" "Physical Education" "NZ European" "Female" 172 61 1 110 82 26 2
+"1039" "Decile 8-10" "All Subjects" "Physical Education" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"1040" "Decile 8-10" "All Subjects" "Physical Education" "Pasifika Peoples" "Male" 6 3 1 2 2 0 0
+"1041" "Decile 8-10" "All Subjects" "Physical Education" "Pasifika Peoples" "Female" 4 1 0 3 3 0 0
+"1042" "Decile 8-10" "All Subjects" "Physical Education" "Asian" "Male" 12 3 0 9 7 2 0
+"1043" "Decile 8-10" "All Subjects" "Physical Education" "Asian" "Female" 4 3 0 1 1 0 0
+"1044" "Decile 8-10" "All Subjects" "Physical Education" "Other/Unspecified Ethnicity" "Male" 12 5 0 7 6 1 0
+"1045" "Decile 8-10" "All Subjects" "Physical Education" "Other/Unspecified Ethnicity" "Female" 6 2 0 4 4 0 0
+"1046" "Decile 8-10" "All Subjects" "Physics" "NZ Maori" "Male" 11 2 0 9 7 2 0
+"1047" "Decile 8-10" "All Subjects" "Physics" "NZ Maori" "Female" 6 2 0 4 4 0 0
+"1048" "Decile 8-10" "All Subjects" "Physics" "NZ European" "Male" 380 61 1 318 248 60 10
+"1049" "Decile 8-10" "All Subjects" "Physics" "NZ European" "Female" 116 26 0 90 79 9 2
+"1050" "Decile 8-10" "All Subjects" "Physics" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"1051" "Decile 8-10" "All Subjects" "Physics" "Pasifika Peoples" "Male" 3 0 0 3 3 0 0
+"1052" "Decile 8-10" "All Subjects" "Physics" "Pasifika Peoples" "Female" 1 0 0 1 1 0 0
+"1053" "Decile 8-10" "All Subjects" "Physics" "Asian" "Male" 218 31 1 186 140 41 5
+"1054" "Decile 8-10" "All Subjects" "Physics" "Asian" "Female" 79 17 0 62 47 13 2
+"1055" "Decile 8-10" "All Subjects" "Physics" "Other/Unspecified Ethnicity" "Male" 17 4 0 13 9 3 1
+"1056" "Decile 8-10" "All Subjects" "Physics" "Other/Unspecified Ethnicity" "Female" 4 0 0 4 4 0 0
+"1057" "Decile 8-10" "All Subjects" "Printmaking" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"1058" "Decile 8-10" "All Subjects" "Printmaking" "NZ Maori" "Female" 4 1 0 3 3 0 0
+"1059" "Decile 8-10" "All Subjects" "Printmaking" "NZ European" "Male" 8 6 0 2 2 0 0
+"1060" "Decile 8-10" "All Subjects" "Printmaking" "NZ European" "Female" 25 9 0 16 10 5 1
+"1061" "Decile 8-10" "All Subjects" "Printmaking" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"1062" "Decile 8-10" "All Subjects" "Printmaking" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"1063" "Decile 8-10" "All Subjects" "Printmaking" "Pasifika Peoples" "Female" 2 2 0 0 0 0 0
+"1064" "Decile 8-10" "All Subjects" "Printmaking" "Asian" "Male" 0 0 0 0 0 0 0
+"1065" "Decile 8-10" "All Subjects" "Printmaking" "Asian" "Female" 7 2 0 5 3 1 1
+"1066" "Decile 8-10" "All Subjects" "Printmaking" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"1067" "Decile 8-10" "All Subjects" "Printmaking" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"1068" "Decile 8-10" "All Subjects" "Samoan" "NZ Maori" "Male" 0 0 0 0 0 0 0
+"1069" "Decile 8-10" "All Subjects" "Samoan" "NZ Maori" "Female" 0 0 0 0 0 0 0
+"1070" "Decile 8-10" "All Subjects" "Samoan" "NZ European" "Male" 0 0 0 0 0 0 0
+"1071" "Decile 8-10" "All Subjects" "Samoan" "NZ European" "Female" 0 0 0 0 0 0 0
+"1072" "Decile 8-10" "All Subjects" "Samoan" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"1073" "Decile 8-10" "All Subjects" "Samoan" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"1074" "Decile 8-10" "All Subjects" "Samoan" "Pasifika Peoples" "Female" 1 0 0 1 1 0 0
+"1075" "Decile 8-10" "All Subjects" "Samoan" "Asian" "Male" 0 0 0 0 0 0 0
+"1076" "Decile 8-10" "All Subjects" "Samoan" "Asian" "Female" 0 0 0 0 0 0 0
+"1077" "Decile 8-10" "All Subjects" "Samoan" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"1078" "Decile 8-10" "All Subjects" "Samoan" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"1079" "Decile 8-10" "All Subjects" "Science" "NZ Maori" "Male" 1 0 0 1 1 0 0
+"1080" "Decile 8-10" "All Subjects" "Science" "NZ Maori" "Female" 2 0 0 2 2 0 0
+"1081" "Decile 8-10" "All Subjects" "Science" "NZ European" "Male" 43 8 0 35 31 3 1
+"1082" "Decile 8-10" "All Subjects" "Science" "NZ European" "Female" 37 7 1 29 26 2 1
+"1083" "Decile 8-10" "All Subjects" "Science" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"1084" "Decile 8-10" "All Subjects" "Science" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"1085" "Decile 8-10" "All Subjects" "Science" "Pasifika Peoples" "Female" 2 2 0 0 0 0 0
+"1086" "Decile 8-10" "All Subjects" "Science" "Asian" "Male" 56 8 1 47 38 9 0
+"1087" "Decile 8-10" "All Subjects" "Science" "Asian" "Female" 32 3 0 29 26 1 2
+"1088" "Decile 8-10" "All Subjects" "Science" "Other/Unspecified Ethnicity" "Male" 6 2 0 4 3 1 0
+"1089" "Decile 8-10" "All Subjects" "Science" "Other/Unspecified Ethnicity" "Female" 2 1 0 1 1 0 0
+"1090" "Decile 8-10" "All Subjects" "Sculpture" "NZ Maori" "Male" 1 1 0 0 0 0 0
+"1091" "Decile 8-10" "All Subjects" "Sculpture" "NZ Maori" "Female" 3 2 0 1 0 0 1
+"1092" "Decile 8-10" "All Subjects" "Sculpture" "NZ European" "Male" 3 2 0 1 0 1 0
+"1093" "Decile 8-10" "All Subjects" "Sculpture" "NZ European" "Female" 13 8 0 5 4 1 0
+"1094" "Decile 8-10" "All Subjects" "Sculpture" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"1095" "Decile 8-10" "All Subjects" "Sculpture" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"1096" "Decile 8-10" "All Subjects" "Sculpture" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"1097" "Decile 8-10" "All Subjects" "Sculpture" "Asian" "Male" 1 1 0 0 0 0 0
+"1098" "Decile 8-10" "All Subjects" "Sculpture" "Asian" "Female" 2 1 0 1 1 0 0
+"1099" "Decile 8-10" "All Subjects" "Sculpture" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"1100" "Decile 8-10" "All Subjects" "Sculpture" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"1101" "Decile 8-10" "All Subjects" "Spanish" "NZ Maori" "Male" 1 0 0 1 0 1 0
+"1102" "Decile 8-10" "All Subjects" "Spanish" "NZ Maori" "Female" 1 0 0 1 1 0 0
+"1103" "Decile 8-10" "All Subjects" "Spanish" "NZ European" "Male" 25 7 0 18 15 3 0
+"1104" "Decile 8-10" "All Subjects" "Spanish" "NZ European" "Female" 27 3 0 24 22 1 1
+"1105" "Decile 8-10" "All Subjects" "Spanish" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"1106" "Decile 8-10" "All Subjects" "Spanish" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"1107" "Decile 8-10" "All Subjects" "Spanish" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"1108" "Decile 8-10" "All Subjects" "Spanish" "Asian" "Male" 6 2 0 4 2 2 0
+"1109" "Decile 8-10" "All Subjects" "Spanish" "Asian" "Female" 8 1 0 7 6 1 0
+"1110" "Decile 8-10" "All Subjects" "Spanish" "Other/Unspecified Ethnicity" "Male" 1 0 0 1 1 0 0
+"1111" "Decile 8-10" "All Subjects" "Spanish" "Other/Unspecified Ethnicity" "Female" 5 1 0 4 3 1 0
+"1112" "Decile 8-10" "All Subjects" "Statistics and Modelling" "NZ Maori" "Male" 14 3 0 11 9 2 0
+"1113" "Decile 8-10" "All Subjects" "Statistics and Modelling" "NZ Maori" "Female" 8 2 0 6 5 1 0
+"1114" "Decile 8-10" "All Subjects" "Statistics and Modelling" "NZ European" "Male" 419 75 1 343 214 115 14
+"1115" "Decile 8-10" "All Subjects" "Statistics and Modelling" "NZ European" "Female" 213 50 0 163 103 54 6
+"1116" "Decile 8-10" "All Subjects" "Statistics and Modelling" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"1117" "Decile 8-10" "All Subjects" "Statistics and Modelling" "Pasifika Peoples" "Male" 4 0 0 4 4 0 0
+"1118" "Decile 8-10" "All Subjects" "Statistics and Modelling" "Pasifika Peoples" "Female" 1 0 0 1 1 0 0
+"1119" "Decile 8-10" "All Subjects" "Statistics and Modelling" "Asian" "Male" 325 46 0 279 173 89 17
+"1120" "Decile 8-10" "All Subjects" "Statistics and Modelling" "Asian" "Female" 149 24 0 125 83 37 5
+"1121" "Decile 8-10" "All Subjects" "Statistics and Modelling" "Other/Unspecified Ethnicity" "Male" 23 4 0 19 15 4 0
+"1122" "Decile 8-10" "All Subjects" "Statistics and Modelling" "Other/Unspecified Ethnicity" "Female" 7 3 0 4 4 0 0
+"1123" "Decile 8-10" "All Subjects" "Te Reo Maori" "NZ Maori" "Male" 10 1 0 9 9 0 0
+"1124" "Decile 8-10" "All Subjects" "Te Reo Maori" "NZ Maori" "Female" 10 1 0 9 8 1 0
+"1125" "Decile 8-10" "All Subjects" "Te Reo Maori" "NZ European" "Male" 0 0 0 0 0 0 0
+"1126" "Decile 8-10" "All Subjects" "Te Reo Maori" "NZ European" "Female" 2 0 0 2 2 0 0
+"1127" "Decile 8-10" "All Subjects" "Te Reo Maori" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"1128" "Decile 8-10" "All Subjects" "Te Reo Maori" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"1129" "Decile 8-10" "All Subjects" "Te Reo Maori" "Pasifika Peoples" "Female" 1 1 0 0 0 0 0
+"1130" "Decile 8-10" "All Subjects" "Te Reo Maori" "Asian" "Male" 0 0 0 0 0 0 0
+"1131" "Decile 8-10" "All Subjects" "Te Reo Maori" "Asian" "Female" 0 0 0 0 0 0 0
+"1132" "Decile 8-10" "All Subjects" "Te Reo Maori" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"1133" "Decile 8-10" "All Subjects" "Te Reo Maori" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"1134" "Decile 8-10" "All Subjects" "Te Reo Rangatira" "NZ Maori" "Male" 3 0 0 3 3 0 0
+"1135" "Decile 8-10" "All Subjects" "Te Reo Rangatira" "NZ Maori" "Female" 2 1 0 1 1 0 0
+"1136" "Decile 8-10" "All Subjects" "Te Reo Rangatira" "NZ European" "Male" 0 0 0 0 0 0 0
+"1137" "Decile 8-10" "All Subjects" "Te Reo Rangatira" "NZ European" "Female" 0 0 0 0 0 0 0
+"1138" "Decile 8-10" "All Subjects" "Te Reo Rangatira" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"1139" "Decile 8-10" "All Subjects" "Te Reo Rangatira" "Pasifika Peoples" "Male" 0 0 0 0 0 0 0
+"1140" "Decile 8-10" "All Subjects" "Te Reo Rangatira" "Pasifika Peoples" "Female" 0 0 0 0 0 0 0
+"1141" "Decile 8-10" "All Subjects" "Te Reo Rangatira" "Asian" "Male" 0 0 0 0 0 0 0
+"1142" "Decile 8-10" "All Subjects" "Te Reo Rangatira" "Asian" "Female" 0 0 0 0 0 0 0
+"1143" "Decile 8-10" "All Subjects" "Te Reo Rangatira" "Other/Unspecified Ethnicity" "Male" 0 0 0 0 0 0 0
+"1144" "Decile 8-10" "All Subjects" "Te Reo Rangatira" "Other/Unspecified Ethnicity" "Female" 0 0 0 0 0 0 0
+"1145" "Decile 8-10" "All Subjects" "Technology" "NZ Maori" "Male" 2 2 0 0 0 0 0
+"1146" "Decile 8-10" "All Subjects" "Technology" "NZ Maori" "Female" 7 5 0 2 2 0 0
+"1147" "Decile 8-10" "All Subjects" "Technology" "NZ European" "Male" 72 43 0 29 22 5 2
+"1148" "Decile 8-10" "All Subjects" "Technology" "NZ European" "Female" 100 51 0 49 32 16 1
+"1149" "Decile 8-10" "All Subjects" "Technology" "NZ European" "Unknown" 0 0 0 0 0 0 0
+"1150" "Decile 8-10" "All Subjects" "Technology" "Pasifika Peoples" "Male" 2 2 0 0 0 0 0
+"1151" "Decile 8-10" "All Subjects" "Technology" "Pasifika Peoples" "Female" 2 1 0 1 1 0 0
+"1152" "Decile 8-10" "All Subjects" "Technology" "Asian" "Male" 14 9 0 5 3 1 1
+"1153" "Decile 8-10" "All Subjects" "Technology" "Asian" "Female" 24 10 0 14 10 4 0
+"1154" "Decile 8-10" "All Subjects" "Technology" "Other/Unspecified Ethnicity" "Male" 4 3 0 1 1 0 0
+"1155" "Decile 8-10" "All Subjects" "Technology" "Other/Unspecified Ethnicity" "Female" 2 0 0 2 1 1 0

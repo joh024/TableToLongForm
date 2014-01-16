@@ -1,0 +1,31 @@
+"UNKNOWN" "UNKNOWN" "UNKNOWN" "UNKNOWN" "# of Results" "# Not Achieved" "# Achieved" "# Merit" "# Excellence"
+"1" "National" "Level 1" "NZ Maori" "Male" 847 260 327 193 67
+"2" "National" "Level 1" "NZ Maori" "Female" 786 285 282 157 62
+"3" "National" "Level 1" "NZ European" "Male" 5508 976 1935 1673 924
+"4" "National" "Level 1" "NZ European" "Female" 3896 634 1146 1200 916
+"5" "National" "Level 1" "Pasifika Peoples" "Male" 538 244 168 96 30
+"6" "National" "Level 1" "Pasifika Peoples" "Female" 952 450 326 131 45
+"7" "National" "Level 1" "Asian" "Male" 2265 471 685 667 442
+"8" "National" "Level 1" "Asian" "Female" 2484 422 674 758 630
+"9" "National" "Level 1" "Other/Unspecified Ethnicity" "Male" 206 53 80 50 23
+"10" "National" "Level 1" "Other/Unspecified Ethnicity" "Female" 210 64 60 53 33
+"11" "National" "Level 2" "NZ Maori" "Male" 454 181 177 72 24
+"12" "National" "Level 2" "NZ Maori" "Female" 447 209 146 66 26
+"13" "National" "Level 2" "NZ European" "Male" 4247 991 1532 1101 623
+"14" "National" "Level 2" "NZ European" "Female" 3395 728 1228 922 517
+"15" "National" "Level 2" "Pasifika Peoples" "Male" 328 157 126 41 4
+"16" "National" "Level 2" "Pasifika Peoples" "Female" 583 298 200 71 14
+"17" "National" "Level 2" "Asian" "Male" 1834 484 633 460 257
+"18" "National" "Level 2" "Asian" "Female" 1962 489 620 539 314
+"19" "National" "Level 2" "Other/Unspecified Ethnicity" "Male" 137 38 44 40 15
+"20" "National" "Level 2" "Other/Unspecified Ethnicity" "Female" 153 42 56 43 12
+"21" "National" "Level 3" "NZ Maori" "Male" 265 117 92 36 20
+"22" "National" "Level 3" "NZ Maori" "Female" 239 123 70 37 9
+"23" "National" "Level 3" "NZ European" "Male" 3009 849 1081 738 341
+"24" "National" "Level 3" "NZ European" "Female" 2192 525 765 622 280
+"25" "National" "Level 3" "Pasifika Peoples" "Male" 201 105 61 27 8
+"26" "National" "Level 3" "Pasifika Peoples" "Female" 329 181 115 22 11
+"27" "National" "Level 3" "Asian" "Male" 1508 443 477 354 234
+"28" "National" "Level 3" "Asian" "Female" 1447 403 461 397 186
+"29" "National" "Level 3" "Other/Unspecified Ethnicity" "Male" 100 30 36 24 10
+"30" "National" "Level 3" "Other/Unspecified Ethnicity" "Female" 83 26 25 20 12

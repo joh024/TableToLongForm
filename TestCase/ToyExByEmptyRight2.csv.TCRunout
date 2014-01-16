@@ -1,0 +1,122 @@
+###TCR CIMCB rowData 
+[1] 2 7
+###TCR CIMCB colData 
+[1] 3 6
+###TCR CRAC rowslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5 6 7
+
+###TCR CRAC colslist 
+$label
+[1] 1 2
+
+$data
+[1] 3 4 5 6
+
+###TCR CMER res 
+$`Row Parent1`
+$`Row Parent1`$rows
+[1] 2 3
+
+$`Row Parent1`$cols
+[1] 1 2
+
+
+$`Row Parent2`
+$`Row Parent2`$rows
+[1] 5 6
+
+$`Row Parent2`$cols
+[1] 1 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 2 3
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+Row Child1 Row Child2 
+         2          3 
+###TCR IOOC plist 
+$rows
+[1] 5 6
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+Row Child1 Row Child2 
+         5          6 
+###TCR RRL rowplist 
+$`Row Parent1`
++ Row Child1 (2, 2)
++ Row Child2 (3, 2)
+
+$`Row Parent2`
++ Row Child1 (5, 2)
++ Row Child2 (6, 2)
+
+###TCR RRL rowvecs 
+     [,1]          [,2]        
+[1,] "Row Parent1" "Row Child1"
+[2,] "Row Parent1" "Row Child2"
+[3,] "Row Parent2" "Row Child1"
+[4,] "Row Parent2" "Row Child2"
+###TCR MCPBefore matColLabel 
+     V3         V4         V5         V6        
+[1,] "Column 1" "Column 2" "Column 3" "Column 4"
+###TCR ACP cursub 
+        V3         V4         V5         V6 
+"Column 1" "Column 2" "Column 3" "Column 4" 
+###TCR ACP currow[curcols] 
+        V3         V4         V5         V6 
+"Column 1" "Column 2" "Column 3" "Column 4" 
+###TCR MCPAfter matColLabel 
+     V3         V4         V5         V6        
+[1,] "Column 1" "Column 2" "Column 3" "Column 4"
+###TCR MCLBefore matColLabel 
+     V3         V4         V5         V6        
+[1,] "Column 1" "Column 2" "Column 3" "Column 4"
+###TCR MCLAfter matColLabel 
+     V3         V4         V5         V6        
+[1,] "Column 1" "Column 2" "Column 3" "Column 4"
+###TCR IOOC plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+###TCR IOOC res 
+Column 1 Column 2 Column 3 Column 4 
+       1        2        3        4 
+###TCR RCC plist 
+Column 1 Column 2 Column 3 Column 4 
+       1        2        3        4 
+###TCR RCC matData 
+     V3   V4   V5   V6  
+[1,] "11" "21" "31" "41"
+[2,] "12" "22" "32" "42"
+[3,] "14" "24" "34" "44"
+[4,] "15" "25" "35" "45"
+###TCR RCC datbit 
+     V3   V4   V5   V6  
+[1,] "11" "21" "31" "41"
+[2,] "12" "22" "32" "42"
+[3,] "14" "24" "34" "44"
+[4,] "15" "25" "35" "45"
+###TCR RCL colplist 
+Column 1 Column 2 Column 3 Column 4 
+       1        2        3        4 
+###TCR RCL res 
+      UNKNOWN    UNKNOWN Column 1 Column 2 Column 3 Column 4
+1 Row Parent1 Row Child1       11       21       31       41
+2 Row Parent1 Row Child2       12       22       32       42
+3 Row Parent2 Row Child1       14       24       34       44
+4 Row Parent2 Row Child2       15       25       35       45

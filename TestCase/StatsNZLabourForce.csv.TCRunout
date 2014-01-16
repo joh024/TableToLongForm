@@ -1,0 +1,2469 @@
+###TCR CIMCB rowData 
+[1]  5 26
+###TCR CIMCB colData 
+[1]   2 241
+###TCR CRAC rowslist 
+$label
+[1] 1 2 3 4
+
+$data
+ [1]  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+
+###TCR CRAC colslist 
+$label
+[1] 1
+
+$data
+  [1]   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19
+ [19]  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37
+ [37]  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55
+ [55]  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73
+ [73]  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91
+ [91]  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107 108 109
+[109] 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[127] 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145
+[145] 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163
+[163] 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181
+[181] 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199
+[199] 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217
+[217] 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235
+[235] 236 237 238 239 240 241
+
+###TCR IOOC plist 
+$rows
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22
+
+$cols
+[1] 1
+
+###TCR IOOC res 
+2007Q4 2008Q1 2008Q2 2008Q3 2008Q4 2009Q1 
+     1      2      3      4      5      6 
+###TCR RRL rowplist 
+2007Q4 2008Q1 2008Q2 2008Q3 2008Q4 2009Q1 
+     1      2      3      4      5      6 
+###TCR RRL rowvecs 
+     [,1]    
+[1,] "2007Q4"
+[2,] "2008Q1"
+[3,] "2008Q2"
+[4,] "2008Q3"
+[5,] "2008Q4"
+[6,] "2009Q1"
+###TCR MCPBefore matColLabel 
+     V2                                 V3                                  
+[1,] NA                                 NA                                  
+[2,] "Male"                             NA                                  
+[3,] "European Only"                    NA                                  
+[4,] "Persons Employed in Labour Force" "Persons Unemployed in Labour Force"
+     V4                    V5                      
+[1,] NA                    NA                      
+[2,] NA                    NA                      
+[3,] NA                    NA                      
+[4,] "Not in Labour Force" "Working Age Population"
+     V6                                V7                 
+[1,] NA                                NA                 
+[2,] NA                                NA                 
+[3,] NA                                NA                 
+[4,] "Labour Force Participation Rate" "Unemployment Rate"
+###TCR ACP cursub 
+    V2     V3     V4     V5     V6     V7 
+"Male"     NA     NA     NA     NA     NA 
+###TCR ACP currow[curcols] 
+    V2     V3     V4     V5     V6     V7 
+"Male"     NA     NA     NA     NA     NA 
+###TCR ACP cursub 
+     V82      V83      V84      V85      V86      V87 
+"Female"       NA       NA       NA       NA       NA 
+###TCR ACP currow[curcols] 
+     V82      V83      V84      V85      V86      V87 
+"Female"       NA       NA       NA       NA       NA 
+###TCR ACP cursub 
+              V162               V163               V164               V165 
+"Total Both Sexes"                 NA                 NA                 NA 
+              V166               V167 
+                NA                 NA 
+###TCR ACP currow[curcols] 
+              V162               V163               V164               V165 
+"Total Both Sexes"                 NA                 NA                 NA 
+              V166               V167 
+                NA                 NA 
+###TCR ACP cursub 
+             V2              V3              V4              V5              V6 
+"European Only"              NA              NA              NA              NA 
+             V7 
+             NA 
+###TCR ACP currow[curcols] 
+             V2              V3              V4              V5              V6 
+"European Only"              NA              NA              NA              NA 
+             V7 
+             NA 
+###TCR ACP cursub 
+         V10          V11          V12          V13          V14          V15 
+"Maori Only"           NA           NA           NA           NA           NA 
+###TCR ACP currow[curcols] 
+         V10          V11          V12          V13          V14          V15 
+"Maori Only"           NA           NA           NA           NA           NA 
+###TCR ACP cursub 
+                   V18                    V19                    V20 
+"Pacific Peoples Only"                     NA                     NA 
+                   V21                    V22                    V23 
+                    NA                     NA                     NA 
+###TCR ACP currow[curcols] 
+                   V18                    V19                    V20 
+"Pacific Peoples Only"                     NA                     NA 
+                   V21                    V22                    V23 
+                    NA                     NA                     NA 
+###TCR ACP cursub 
+         V26          V27          V28          V29          V30          V31 
+"Asian Only"           NA           NA           NA           NA           NA 
+###TCR ACP currow[curcols] 
+         V26          V27          V28          V29          V30          V31 
+"Asian Only"           NA           NA           NA           NA           NA 
+###TCR ACP cursub 
+         V34          V35          V36          V37          V38          V39 
+"MELAA Only"           NA           NA           NA           NA           NA 
+###TCR ACP currow[curcols] 
+         V34          V35          V36          V37          V38          V39 
+"MELAA Only"           NA           NA           NA           NA           NA 
+###TCR ACP cursub 
+                   V42                    V43                    V44 
+"Other Ethnicity Only"                     NA                     NA 
+                   V45                    V46                    V47 
+                    NA                     NA                     NA 
+###TCR ACP currow[curcols] 
+                   V42                    V43                    V44 
+"Other Ethnicity Only"                     NA                     NA 
+                   V45                    V46                    V47 
+                    NA                     NA                     NA 
+###TCR ACP cursub 
+             V50              V51              V52              V53 
+"European/Maori"               NA               NA               NA 
+             V54              V55 
+              NA               NA 
+###TCR ACP currow[curcols] 
+             V50              V51              V52              V53 
+"European/Maori"               NA               NA               NA 
+             V54              V55 
+              NA               NA 
+###TCR ACP cursub 
+                                        V58 
+"Two or More Groups Not Elsewhere Included" 
+                                        V59 
+                                         NA 
+                                        V60 
+                                         NA 
+                                        V61 
+                                         NA 
+                                        V62 
+                                         NA 
+                                        V63 
+                                         NA 
+###TCR ACP currow[curcols] 
+                                        V58 
+"Two or More Groups Not Elsewhere Included" 
+                                        V59 
+                                         NA 
+                                        V60 
+                                         NA 
+                                        V61 
+                                         NA 
+                                        V62 
+                                         NA 
+                                        V63 
+                                         NA 
+###TCR ACP cursub 
+                  V66                   V67                   V68 
+"Residual Categories"                    NA                    NA 
+                  V69                   V70                   V71 
+                   NA                    NA                    NA 
+###TCR ACP currow[curcols] 
+                  V66                   V67                   V68 
+"Residual Categories"                    NA                    NA 
+                  V69                   V70                   V71 
+                   NA                    NA                    NA 
+###TCR ACP cursub 
+                      V74                       V75                       V76 
+"Total All Ethnic Groups"                        NA                        NA 
+                      V77                       V78                       V79 
+                       NA                        NA                        NA 
+###TCR ACP currow[curcols] 
+                      V74                       V75                       V76 
+"Total All Ethnic Groups"                        NA                        NA 
+                      V77                       V78                       V79 
+                       NA                        NA                        NA 
+###TCR ACP cursub 
+            V82             V83             V84             V85             V86 
+"European Only"              NA              NA              NA              NA 
+            V87 
+             NA 
+###TCR ACP currow[curcols] 
+            V82             V83             V84             V85             V86 
+"European Only"              NA              NA              NA              NA 
+            V87 
+             NA 
+###TCR ACP cursub 
+         V90          V91          V92          V93          V94          V95 
+"Maori Only"           NA           NA           NA           NA           NA 
+###TCR ACP currow[curcols] 
+         V90          V91          V92          V93          V94          V95 
+"Maori Only"           NA           NA           NA           NA           NA 
+###TCR ACP cursub 
+                   V98                    V99                   V100 
+"Pacific Peoples Only"                     NA                     NA 
+                  V101                   V102                   V103 
+                    NA                     NA                     NA 
+###TCR ACP currow[curcols] 
+                   V98                    V99                   V100 
+"Pacific Peoples Only"                     NA                     NA 
+                  V101                   V102                   V103 
+                    NA                     NA                     NA 
+###TCR ACP cursub 
+        V106         V107         V108         V109         V110         V111 
+"Asian Only"           NA           NA           NA           NA           NA 
+###TCR ACP currow[curcols] 
+        V106         V107         V108         V109         V110         V111 
+"Asian Only"           NA           NA           NA           NA           NA 
+###TCR ACP cursub 
+        V114         V115         V116         V117         V118         V119 
+"MELAA Only"           NA           NA           NA           NA           NA 
+###TCR ACP currow[curcols] 
+        V114         V115         V116         V117         V118         V119 
+"MELAA Only"           NA           NA           NA           NA           NA 
+###TCR ACP cursub 
+                  V122                   V123                   V124 
+"Other Ethnicity Only"                     NA                     NA 
+                  V125                   V126                   V127 
+                    NA                     NA                     NA 
+###TCR ACP currow[curcols] 
+                  V122                   V123                   V124 
+"Other Ethnicity Only"                     NA                     NA 
+                  V125                   V126                   V127 
+                    NA                     NA                     NA 
+###TCR ACP cursub 
+            V130             V131             V132             V133 
+"European/Maori"               NA               NA               NA 
+            V134             V135 
+              NA               NA 
+###TCR ACP currow[curcols] 
+            V130             V131             V132             V133 
+"European/Maori"               NA               NA               NA 
+            V134             V135 
+              NA               NA 
+###TCR ACP cursub 
+                                       V138 
+"Two or More Groups Not Elsewhere Included" 
+                                       V139 
+                                         NA 
+                                       V140 
+                                         NA 
+                                       V141 
+                                         NA 
+                                       V142 
+                                         NA 
+                                       V143 
+                                         NA 
+###TCR ACP currow[curcols] 
+                                       V138 
+"Two or More Groups Not Elsewhere Included" 
+                                       V139 
+                                         NA 
+                                       V140 
+                                         NA 
+                                       V141 
+                                         NA 
+                                       V142 
+                                         NA 
+                                       V143 
+                                         NA 
+###TCR ACP cursub 
+                 V146                  V147                  V148 
+"Residual Categories"                    NA                    NA 
+                 V149                  V150                  V151 
+                   NA                    NA                    NA 
+###TCR ACP currow[curcols] 
+                 V146                  V147                  V148 
+"Residual Categories"                    NA                    NA 
+                 V149                  V150                  V151 
+                   NA                    NA                    NA 
+###TCR ACP cursub 
+                     V154                      V155                      V156 
+"Total All Ethnic Groups"                        NA                        NA 
+                     V157                      V158                      V159 
+                       NA                        NA                        NA 
+###TCR ACP currow[curcols] 
+                     V154                      V155                      V156 
+"Total All Ethnic Groups"                        NA                        NA 
+                     V157                      V158                      V159 
+                       NA                        NA                        NA 
+###TCR ACP cursub 
+           V162            V163            V164            V165            V166 
+"European Only"              NA              NA              NA              NA 
+           V167 
+             NA 
+###TCR ACP currow[curcols] 
+           V162            V163            V164            V165            V166 
+"European Only"              NA              NA              NA              NA 
+           V167 
+             NA 
+###TCR ACP cursub 
+        V170         V171         V172         V173         V174         V175 
+"Maori Only"           NA           NA           NA           NA           NA 
+###TCR ACP currow[curcols] 
+        V170         V171         V172         V173         V174         V175 
+"Maori Only"           NA           NA           NA           NA           NA 
+###TCR ACP cursub 
+                  V178                   V179                   V180 
+"Pacific Peoples Only"                     NA                     NA 
+                  V181                   V182                   V183 
+                    NA                     NA                     NA 
+###TCR ACP currow[curcols] 
+                  V178                   V179                   V180 
+"Pacific Peoples Only"                     NA                     NA 
+                  V181                   V182                   V183 
+                    NA                     NA                     NA 
+###TCR ACP cursub 
+        V186         V187         V188         V189         V190         V191 
+"Asian Only"           NA           NA           NA           NA           NA 
+###TCR ACP currow[curcols] 
+        V186         V187         V188         V189         V190         V191 
+"Asian Only"           NA           NA           NA           NA           NA 
+###TCR ACP cursub 
+        V194         V195         V196         V197         V198         V199 
+"MELAA Only"           NA           NA           NA           NA           NA 
+###TCR ACP currow[curcols] 
+        V194         V195         V196         V197         V198         V199 
+"MELAA Only"           NA           NA           NA           NA           NA 
+###TCR ACP cursub 
+                  V202                   V203                   V204 
+"Other Ethnicity Only"                     NA                     NA 
+                  V205                   V206                   V207 
+                    NA                     NA                     NA 
+###TCR ACP currow[curcols] 
+                  V202                   V203                   V204 
+"Other Ethnicity Only"                     NA                     NA 
+                  V205                   V206                   V207 
+                    NA                     NA                     NA 
+###TCR ACP cursub 
+            V210             V211             V212             V213 
+"European/Maori"               NA               NA               NA 
+            V214             V215 
+              NA               NA 
+###TCR ACP currow[curcols] 
+            V210             V211             V212             V213 
+"European/Maori"               NA               NA               NA 
+            V214             V215 
+              NA               NA 
+###TCR ACP cursub 
+                                       V218 
+"Two or More Groups Not Elsewhere Included" 
+                                       V219 
+                                         NA 
+                                       V220 
+                                         NA 
+                                       V221 
+                                         NA 
+                                       V222 
+                                         NA 
+                                       V223 
+                                         NA 
+###TCR ACP currow[curcols] 
+                                       V218 
+"Two or More Groups Not Elsewhere Included" 
+                                       V219 
+                                         NA 
+                                       V220 
+                                         NA 
+                                       V221 
+                                         NA 
+                                       V222 
+                                         NA 
+                                       V223 
+                                         NA 
+###TCR ACP cursub 
+                 V226                  V227                  V228 
+"Residual Categories"                    NA                    NA 
+                 V229                  V230                  V231 
+                   NA                    NA                    NA 
+###TCR ACP currow[curcols] 
+                 V226                  V227                  V228 
+"Residual Categories"                    NA                    NA 
+                 V229                  V230                  V231 
+                   NA                    NA                    NA 
+###TCR ACP cursub 
+                     V234                      V235                      V236 
+"Total All Ethnic Groups"                        NA                        NA 
+                     V237                      V238                      V239 
+                       NA                        NA                        NA 
+###TCR ACP currow[curcols] 
+                     V234                      V235                      V236 
+"Total All Ethnic Groups"                        NA                        NA 
+                     V237                      V238                      V239 
+                       NA                        NA                        NA 
+###TCR ACP cursub 
+                                  V2                                   V3 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                  V4                                   V5 
+               "Not in Labour Force"             "Working Age Population" 
+                                  V6                                   V7 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                  V2                                   V3 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                  V4                                   V5 
+               "Not in Labour Force"             "Working Age Population" 
+                                  V6                                   V7 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                 V10                                  V11 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V12                                  V13 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V14                                  V15 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                 V10                                  V11 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V12                                  V13 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V14                                  V15 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                 V18                                  V19 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V20                                  V21 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V22                                  V23 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                 V18                                  V19 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V20                                  V21 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V22                                  V23 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                 V26                                  V27 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V28                                  V29 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V30                                  V31 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                 V26                                  V27 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V28                                  V29 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V30                                  V31 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                 V34                                  V35 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V36                                  V37 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V38                                  V39 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                 V34                                  V35 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V36                                  V37 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V38                                  V39 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                 V42                                  V43 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V44                                  V45 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V46                                  V47 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                 V42                                  V43 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V44                                  V45 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V46                                  V47 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                 V50                                  V51 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V52                                  V53 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V54                                  V55 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                 V50                                  V51 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V52                                  V53 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V54                                  V55 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                 V58                                  V59 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V60                                  V61 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V62                                  V63 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                 V58                                  V59 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V60                                  V61 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V62                                  V63 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                 V66                                  V67 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V68                                  V69 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V70                                  V71 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                 V66                                  V67 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V68                                  V69 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V70                                  V71 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                 V74                                  V75 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V76                                  V77 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V78                                  V79 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                 V74                                  V75 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V76                                  V77 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V78                                  V79 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                 V82                                  V83 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V84                                  V85 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V86                                  V87 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                 V82                                  V83 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V84                                  V85 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V86                                  V87 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                 V90                                  V91 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V92                                  V93 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V94                                  V95 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                 V90                                  V91 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                 V92                                  V93 
+               "Not in Labour Force"             "Working Age Population" 
+                                 V94                                  V95 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                 V98                                  V99 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V100                                 V101 
+               "Not in Labour Force"             "Working Age Population" 
+                                V102                                 V103 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                 V98                                  V99 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V100                                 V101 
+               "Not in Labour Force"             "Working Age Population" 
+                                V102                                 V103 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V106                                 V107 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V108                                 V109 
+               "Not in Labour Force"             "Working Age Population" 
+                                V110                                 V111 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V106                                 V107 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V108                                 V109 
+               "Not in Labour Force"             "Working Age Population" 
+                                V110                                 V111 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V114                                 V115 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V116                                 V117 
+               "Not in Labour Force"             "Working Age Population" 
+                                V118                                 V119 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V114                                 V115 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V116                                 V117 
+               "Not in Labour Force"             "Working Age Population" 
+                                V118                                 V119 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V122                                 V123 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V124                                 V125 
+               "Not in Labour Force"             "Working Age Population" 
+                                V126                                 V127 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V122                                 V123 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V124                                 V125 
+               "Not in Labour Force"             "Working Age Population" 
+                                V126                                 V127 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V130                                 V131 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V132                                 V133 
+               "Not in Labour Force"             "Working Age Population" 
+                                V134                                 V135 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V130                                 V131 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V132                                 V133 
+               "Not in Labour Force"             "Working Age Population" 
+                                V134                                 V135 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V138                                 V139 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V140                                 V141 
+               "Not in Labour Force"             "Working Age Population" 
+                                V142                                 V143 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V138                                 V139 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V140                                 V141 
+               "Not in Labour Force"             "Working Age Population" 
+                                V142                                 V143 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V146                                 V147 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V148                                 V149 
+               "Not in Labour Force"             "Working Age Population" 
+                                V150                                 V151 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V146                                 V147 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V148                                 V149 
+               "Not in Labour Force"             "Working Age Population" 
+                                V150                                 V151 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V154                                 V155 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V156                                 V157 
+               "Not in Labour Force"             "Working Age Population" 
+                                V158                                 V159 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V154                                 V155 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V156                                 V157 
+               "Not in Labour Force"             "Working Age Population" 
+                                V158                                 V159 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V162                                 V163 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V164                                 V165 
+               "Not in Labour Force"             "Working Age Population" 
+                                V166                                 V167 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V162                                 V163 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V164                                 V165 
+               "Not in Labour Force"             "Working Age Population" 
+                                V166                                 V167 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V170                                 V171 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V172                                 V173 
+               "Not in Labour Force"             "Working Age Population" 
+                                V174                                 V175 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V170                                 V171 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V172                                 V173 
+               "Not in Labour Force"             "Working Age Population" 
+                                V174                                 V175 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V178                                 V179 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V180                                 V181 
+               "Not in Labour Force"             "Working Age Population" 
+                                V182                                 V183 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V178                                 V179 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V180                                 V181 
+               "Not in Labour Force"             "Working Age Population" 
+                                V182                                 V183 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V186                                 V187 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V188                                 V189 
+               "Not in Labour Force"             "Working Age Population" 
+                                V190                                 V191 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V186                                 V187 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V188                                 V189 
+               "Not in Labour Force"             "Working Age Population" 
+                                V190                                 V191 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V194                                 V195 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V196                                 V197 
+               "Not in Labour Force"             "Working Age Population" 
+                                V198                                 V199 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V194                                 V195 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V196                                 V197 
+               "Not in Labour Force"             "Working Age Population" 
+                                V198                                 V199 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V202                                 V203 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V204                                 V205 
+               "Not in Labour Force"             "Working Age Population" 
+                                V206                                 V207 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V202                                 V203 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V204                                 V205 
+               "Not in Labour Force"             "Working Age Population" 
+                                V206                                 V207 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V210                                 V211 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V212                                 V213 
+               "Not in Labour Force"             "Working Age Population" 
+                                V214                                 V215 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V210                                 V211 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V212                                 V213 
+               "Not in Labour Force"             "Working Age Population" 
+                                V214                                 V215 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V218                                 V219 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V220                                 V221 
+               "Not in Labour Force"             "Working Age Population" 
+                                V222                                 V223 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V218                                 V219 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V220                                 V221 
+               "Not in Labour Force"             "Working Age Population" 
+                                V222                                 V223 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V226                                 V227 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V228                                 V229 
+               "Not in Labour Force"             "Working Age Population" 
+                                V230                                 V231 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V226                                 V227 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V228                                 V229 
+               "Not in Labour Force"             "Working Age Population" 
+                                V230                                 V231 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP cursub 
+                                V234                                 V235 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V236                                 V237 
+               "Not in Labour Force"             "Working Age Population" 
+                                V238                                 V239 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR ACP currow[curcols] 
+                                V234                                 V235 
+  "Persons Employed in Labour Force" "Persons Unemployed in Labour Force" 
+                                V236                                 V237 
+               "Not in Labour Force"             "Working Age Population" 
+                                V238                                 V239 
+   "Labour Force Participation Rate"                  "Unemployment Rate" 
+###TCR MCPAfter matColLabel 
+     V2                                 V3                                  
+[1,] NA                                 NA                                  
+[2,] "Male"                             NA                                  
+[3,] "European Only"                    NA                                  
+[4,] "Persons Employed in Labour Force" "Persons Unemployed in Labour Force"
+     V4                    V5                      
+[1,] NA                    NA                      
+[2,] NA                    NA                      
+[3,] NA                    NA                      
+[4,] "Not in Labour Force" "Working Age Population"
+     V6                                V7                 
+[1,] NA                                NA                 
+[2,] NA                                NA                 
+[3,] NA                                NA                 
+[4,] "Labour Force Participation Rate" "Unemployment Rate"
+###TCR MCLBefore matColLabel 
+     V2                                 V3                                  
+[1,] NA                                 NA                                  
+[2,] "Male"                             NA                                  
+[3,] "European Only"                    NA                                  
+[4,] "Persons Employed in Labour Force" "Persons Unemployed in Labour Force"
+     V4                    V5                      
+[1,] NA                    NA                      
+[2,] NA                    NA                      
+[3,] NA                    NA                      
+[4,] "Not in Labour Force" "Working Age Population"
+     V6                                V7                 
+[1,] NA                                NA                 
+[2,] NA                                NA                 
+[3,] NA                                NA                 
+[4,] "Labour Force Participation Rate" "Unemployment Rate"
+###TCR MCLAfter matColLabel 
+     V2                                 V3                                  
+[1,] NA                                 NA                                  
+[2,] "Male"                             NA                                  
+[3,] "European Only"                    NA                                  
+[4,] "Persons Employed in Labour Force" "Persons Unemployed in Labour Force"
+     V4                    V5                      
+[1,] NA                    NA                      
+[2,] NA                    NA                      
+[3,] NA                    NA                      
+[4,] "Not in Labour Force" "Working Age Population"
+     V6                                V7                 
+[1,] NA                                NA                 
+[2,] NA                                NA                 
+[3,] NA                                NA                 
+[4,] "Labour Force Participation Rate" "Unemployment Rate"
+###TCR PBEB res 
+$Male
+$Male$rows
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+[26] 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50
+[51] 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75
+[76] 76 77 78 79 80
+
+$Male$cols
+[1] 3 4
+
+
+$Female
+$Female$rows
+ [1]  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99
+[20] 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118
+[39] 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137
+[58] 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156
+[77] 157 158 159 160
+
+$Female$cols
+[1] 3 4
+
+
+$`Total Both Sexes`
+$`Total Both Sexes`$rows
+ [1] 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+[20] 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198
+[39] 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217
+[58] 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236
+[77] 237 238 239 240
+
+$`Total Both Sexes`$cols
+[1] 3 4
+
+
+###TCR PBEB res 
+$`European Only`
+$`European Only`$rows
+[1] 1 2 3 4 5 6 7 8
+
+$`European Only`$cols
+[1] 4
+
+
+$`Maori Only`
+$`Maori Only`$rows
+[1]  9 10 11 12 13 14 15 16
+
+$`Maori Only`$cols
+[1] 4
+
+
+$`Pacific Peoples Only`
+$`Pacific Peoples Only`$rows
+[1] 17 18 19 20 21 22 23 24
+
+$`Pacific Peoples Only`$cols
+[1] 4
+
+
+$`Asian Only`
+$`Asian Only`$rows
+[1] 25 26 27 28 29 30 31 32
+
+$`Asian Only`$cols
+[1] 4
+
+
+$`MELAA Only`
+$`MELAA Only`$rows
+[1] 33 34 35 36 37 38 39 40
+
+$`MELAA Only`$cols
+[1] 4
+
+
+$`Other Ethnicity Only`
+$`Other Ethnicity Only`$rows
+[1] 41 42 43 44 45 46 47 48
+
+$`Other Ethnicity Only`$cols
+[1] 4
+
+
+###TCR IOOC plist 
+$rows
+[1] 1 2 3 4 5 6 7 8
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                 1                                  2 
+               Not in Labour Force             Working Age Population 
+                                 3                                  4 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                 5                                  6 
+###TCR IOOC plist 
+$rows
+[1]  9 10 11 12 13 14 15 16
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                 9                                 10 
+               Not in Labour Force             Working Age Population 
+                                11                                 12 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                13                                 14 
+###TCR IOOC plist 
+$rows
+[1] 17 18 19 20 21 22 23 24
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                17                                 18 
+               Not in Labour Force             Working Age Population 
+                                19                                 20 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                21                                 22 
+###TCR IOOC plist 
+$rows
+[1] 25 26 27 28 29 30 31 32
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                25                                 26 
+               Not in Labour Force             Working Age Population 
+                                27                                 28 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                29                                 30 
+###TCR IOOC plist 
+$rows
+[1] 33 34 35 36 37 38 39 40
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                33                                 34 
+               Not in Labour Force             Working Age Population 
+                                35                                 36 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                37                                 38 
+###TCR IOOC plist 
+$rows
+[1] 41 42 43 44 45 46 47 48
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                41                                 42 
+               Not in Labour Force             Working Age Population 
+                                43                                 44 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                45                                 46 
+###TCR IOOC plist 
+$rows
+[1] 49 50 51 52 53 54 55 56
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                49                                 50 
+               Not in Labour Force             Working Age Population 
+                                51                                 52 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                53                                 54 
+###TCR IOOC plist 
+$rows
+[1] 57 58 59 60 61 62 63 64
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                57                                 58 
+               Not in Labour Force             Working Age Population 
+                                59                                 60 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                61                                 62 
+###TCR IOOC plist 
+$rows
+[1] 65 66 67 68 69 70 71 72
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                65                                 66 
+               Not in Labour Force             Working Age Population 
+                                67                                 68 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                69                                 70 
+###TCR IOOC plist 
+$rows
+[1] 73 74 75 76 77 78 79 80
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                73                                 74 
+               Not in Labour Force             Working Age Population 
+                                75                                 76 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                77                                 78 
+###TCR PBEB res 
+$`European Only`
+$`European Only`$rows
+[1] 81 82 83 84 85 86 87 88
+
+$`European Only`$cols
+[1] 4
+
+
+$`Maori Only`
+$`Maori Only`$rows
+[1] 89 90 91 92 93 94 95 96
+
+$`Maori Only`$cols
+[1] 4
+
+
+$`Pacific Peoples Only`
+$`Pacific Peoples Only`$rows
+[1]  97  98  99 100 101 102 103 104
+
+$`Pacific Peoples Only`$cols
+[1] 4
+
+
+$`Asian Only`
+$`Asian Only`$rows
+[1] 105 106 107 108 109 110 111 112
+
+$`Asian Only`$cols
+[1] 4
+
+
+$`MELAA Only`
+$`MELAA Only`$rows
+[1] 113 114 115 116 117 118 119 120
+
+$`MELAA Only`$cols
+[1] 4
+
+
+$`Other Ethnicity Only`
+$`Other Ethnicity Only`$rows
+[1] 121 122 123 124 125 126 127 128
+
+$`Other Ethnicity Only`$cols
+[1] 4
+
+
+###TCR IOOC plist 
+$rows
+[1] 81 82 83 84 85 86 87 88
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                81                                 82 
+               Not in Labour Force             Working Age Population 
+                                83                                 84 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                85                                 86 
+###TCR IOOC plist 
+$rows
+[1] 89 90 91 92 93 94 95 96
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                89                                 90 
+               Not in Labour Force             Working Age Population 
+                                91                                 92 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                93                                 94 
+###TCR IOOC plist 
+$rows
+[1]  97  98  99 100 101 102 103 104
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                97                                 98 
+               Not in Labour Force             Working Age Population 
+                                99                                100 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               101                                102 
+###TCR IOOC plist 
+$rows
+[1] 105 106 107 108 109 110 111 112
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               105                                106 
+               Not in Labour Force             Working Age Population 
+                               107                                108 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               109                                110 
+###TCR IOOC plist 
+$rows
+[1] 113 114 115 116 117 118 119 120
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               113                                114 
+               Not in Labour Force             Working Age Population 
+                               115                                116 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               117                                118 
+###TCR IOOC plist 
+$rows
+[1] 121 122 123 124 125 126 127 128
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               121                                122 
+               Not in Labour Force             Working Age Population 
+                               123                                124 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               125                                126 
+###TCR IOOC plist 
+$rows
+[1] 129 130 131 132 133 134 135 136
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               129                                130 
+               Not in Labour Force             Working Age Population 
+                               131                                132 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               133                                134 
+###TCR IOOC plist 
+$rows
+[1] 137 138 139 140 141 142 143 144
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               137                                138 
+               Not in Labour Force             Working Age Population 
+                               139                                140 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               141                                142 
+###TCR IOOC plist 
+$rows
+[1] 145 146 147 148 149 150 151 152
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               145                                146 
+               Not in Labour Force             Working Age Population 
+                               147                                148 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               149                                150 
+###TCR IOOC plist 
+$rows
+[1] 153 154 155 156 157 158 159 160
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               153                                154 
+               Not in Labour Force             Working Age Population 
+                               155                                156 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               157                                158 
+###TCR PBEB res 
+$`European Only`
+$`European Only`$rows
+[1] 161 162 163 164 165 166 167 168
+
+$`European Only`$cols
+[1] 4
+
+
+$`Maori Only`
+$`Maori Only`$rows
+[1] 169 170 171 172 173 174 175 176
+
+$`Maori Only`$cols
+[1] 4
+
+
+$`Pacific Peoples Only`
+$`Pacific Peoples Only`$rows
+[1] 177 178 179 180 181 182 183 184
+
+$`Pacific Peoples Only`$cols
+[1] 4
+
+
+$`Asian Only`
+$`Asian Only`$rows
+[1] 185 186 187 188 189 190 191 192
+
+$`Asian Only`$cols
+[1] 4
+
+
+$`MELAA Only`
+$`MELAA Only`$rows
+[1] 193 194 195 196 197 198 199 200
+
+$`MELAA Only`$cols
+[1] 4
+
+
+$`Other Ethnicity Only`
+$`Other Ethnicity Only`$rows
+[1] 201 202 203 204 205 206 207 208
+
+$`Other Ethnicity Only`$cols
+[1] 4
+
+
+###TCR IOOC plist 
+$rows
+[1] 161 162 163 164 165 166 167 168
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               161                                162 
+               Not in Labour Force             Working Age Population 
+                               163                                164 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               165                                166 
+###TCR IOOC plist 
+$rows
+[1] 169 170 171 172 173 174 175 176
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               169                                170 
+               Not in Labour Force             Working Age Population 
+                               171                                172 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               173                                174 
+###TCR IOOC plist 
+$rows
+[1] 177 178 179 180 181 182 183 184
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               177                                178 
+               Not in Labour Force             Working Age Population 
+                               179                                180 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               181                                182 
+###TCR IOOC plist 
+$rows
+[1] 185 186 187 188 189 190 191 192
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               185                                186 
+               Not in Labour Force             Working Age Population 
+                               187                                188 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               189                                190 
+###TCR IOOC plist 
+$rows
+[1] 193 194 195 196 197 198 199 200
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               193                                194 
+               Not in Labour Force             Working Age Population 
+                               195                                196 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               197                                198 
+###TCR IOOC plist 
+$rows
+[1] 201 202 203 204 205 206 207 208
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               201                                202 
+               Not in Labour Force             Working Age Population 
+                               203                                204 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               205                                206 
+###TCR IOOC plist 
+$rows
+[1] 209 210 211 212 213 214 215 216
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               209                                210 
+               Not in Labour Force             Working Age Population 
+                               211                                212 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               213                                214 
+###TCR IOOC plist 
+$rows
+[1] 217 218 219 220 221 222 223 224
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               217                                218 
+               Not in Labour Force             Working Age Population 
+                               219                                220 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               221                                222 
+###TCR IOOC plist 
+$rows
+[1] 225 226 227 228 229 230 231 232
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               225                                226 
+               Not in Labour Force             Working Age Population 
+                               227                                228 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               229                                230 
+###TCR IOOC plist 
+$rows
+[1] 233 234 235 236 237 238 239 240
+
+$cols
+[1] 4
+
+###TCR IOOC res 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               233                                234 
+               Not in Labour Force             Working Age Population 
+                               235                                236 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               237                                238 
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                 1                                  2 
+               Not in Labour Force             Working Age Population 
+                                 3                                  4 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                 5                                  6 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                 9                                 10 
+               Not in Labour Force             Working Age Population 
+                                11                                 12 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                13                                 14 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V10    V11   V12    V13     V14    V15   
+[1,] "71.1" "6.1" "28.1" "105.3" "73.4" "7.9" 
+[2,] "69.1" "7.5" "31.4" "107.9" "71.0" "9.7" 
+[3,] "67.2" "5.7" "27.4" "100.2" "72.7" "7.8" 
+[4,] "71.7" "8.7" "30.7" "111.1" "72.3" "10.8"
+[5,] "76.1" "8.5" "28.5" "113.1" "74.8" "10.0"
+[6,] "75.4" "8.4" "35.7" "119.5" "70.1" "10.1"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                17                                 18 
+               Not in Labour Force             Working Age Population 
+                                19                                 20 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                21                                 22 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V18    V19   V20    V21    V22    V23   
+[1,] "42.8" "1.5" "18.9" "63.2" "70.1" "3.5" 
+[2,] "41.1" "3.4" "18.1" "62.6" "71.1" "7.6" 
+[3,] "42.2" "2.4" "18.0" "62.5" "71.2" "5.3" 
+[4,] "45.2" "3.3" "19.4" "67.9" "71.5" "6.9" 
+[5,] "47.7" "3.3" "17.5" "68.4" "74.5" "6.4" 
+[6,] "41.9" "7.3" "18.4" "67.6" "72.8" "14.8"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                25                                 26 
+               Not in Labour Force             Working Age Population 
+                                27                                 28 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                29                                 30 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V26     V27   V28    V29     V30    V31  
+[1,] "95.9"  "5.2" "32.2" "133.2" "75.9" "5.1"
+[2,] "90.9"  "3.8" "36.4" "131.2" "72.2" "4.1"
+[3,] "98.3"  "4.2" "44.5" "146.9" "69.7" "4.1"
+[4,] "101.3" "3.8" "41.0" "146.0" "71.9" "3.6"
+[5,] "106.4" "6.2" "33.9" "146.6" "76.9" "5.5"
+[6,] "99.7"  "6.6" "40.1" "146.4" "72.6" "6.2"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                33                                 34 
+               Not in Labour Force             Working Age Population 
+                                35                                 36 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                37                                 38 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V34   V35   V36   V37    V38    V39   
+[1,] "9.8" NA    "3.5" "14.2" "75.0" NA    
+[2,] "9.3" NA    "4.9" "14.7" "66.4" NA    
+[3,] "9.6" "2.0" "3.3" "14.9" "77.7" "17.2"
+[4,] "8.1" NA    "6.7" "15.5" "57.1" NA    
+[5,] "8.4" NA    "4.7" "13.7" "66.0" NA    
+[6,] "8.1" NA    "5.0" "14.1" "64.7" NA    
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                41                                 42 
+               Not in Labour Force             Working Age Population 
+                                43                                 44 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                45                                 46 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V42    V43 V44   V45    V46    V47
+[1,] "5.9"  NA  "1.1" "7.2"  "84.1" NA 
+[2,] "6.8"  NA  "1.9" "9.2"  "79.8" NA 
+[3,] "11.2" NA  "2.9" "14.6" "80.0" NA 
+[4,] "10.5" NA  "4.1" "14.7" "71.9" NA 
+[5,] "13.5" NA  "4.1" "18.1" "77.1" NA 
+[6,] "16.6" NA  "5.4" "22.3" "75.6" NA 
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                49                                 50 
+               Not in Labour Force             Working Age Population 
+                                51                                 52 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                53                                 54 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V50    V51   V52    V53    V54    V55   
+[1,] "60.1" "4.7" "13.9" "78.8" "82.4" "7.3" 
+[2,] "56.9" "4.4" "19.6" "80.9" "75.8" "7.2" 
+[3,] "64.3" "5.2" "18.9" "88.4" "78.6" "7.5" 
+[4,] "57.2" "4.6" "18.2" "80.0" "77.3" "7.5" 
+[5,] "57.9" "4.0" "17.2" "79.2" "78.2" "6.4" 
+[6,] "49.2" "6.3" "17.0" "72.4" "76.6" "11.3"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                57                                 58 
+               Not in Labour Force             Working Age Population 
+                                59                                 60 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                61                                 62 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V58    V59   V60   V61    V62    V63   
+[1,] "28.2" "1.2" "7.1" "36.5" "80.5" "4.0" 
+[2,] "17.0" "1.6" "5.4" "24.0" "77.6" "8.7" 
+[3,] "17.2" NA    "5.5" "23.5" "76.7" "4.8" 
+[4,] "18.1" NA    "5.0" "23.7" "79.0" "3.1" 
+[5,] "17.6" "1.2" "4.5" "23.3" "80.7" "6.5" 
+[6,] "16.3" "2.4" "5.8" "24.5" "76.2" "12.6"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                65                                 66 
+               Not in Labour Force             Working Age Population 
+                                67                                 68 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                69                                 70 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V66   V67 V68   V69   V70    V71
+[1,] "7.3" NA  "1.7" "9.3" "81.8" NA 
+[2,] "4.1" NA  "2.6" "6.9" "62.4" NA 
+[3,] "2.7" NA  "3.0" "5.7" "46.8" NA 
+[4,] "2.9" NA  NA    "3.3" "88.8" NA 
+[5,] "1.6" NA  NA    "2.2" "81.6" NA 
+[6,] "2.2" NA  NA    "3.1" "88.9" NA 
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                73                                 74 
+               Not in Labour Force             Working Age Population 
+                                75                                 76 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                77                                 78 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V74      V75    V76     V77      V78    V79  
+[1,] "1176.9" "40.1" "386.6" "1603.6" "75.9" "3.3"
+[2,] "1158.3" "47.4" "403.7" "1609.4" "74.9" "3.9"
+[3,] "1162.7" "46.6" "404.2" "1613.5" "74.9" "3.9"
+[4,] "1154.7" "51.5" "411.4" "1617.6" "74.6" "4.3"
+[5,] "1184.1" "53.8" "385.5" "1623.4" "76.3" "4.3"
+[6,] "1154.4" "68.2" "407.1" "1629.7" "75.0" "5.6"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                81                                 82 
+               Not in Labour Force             Working Age Population 
+                                83                                 84 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                85                                 86 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V82     V83    V84     V85      V86    V87  
+[1,] "763.3" "16.6" "441.6" "1221.6" "63.8" "2.1"
+[2,] "737.5" "24.5" "456.5" "1218.5" "62.5" "3.2"
+[3,] "744.6" "19.8" "442.5" "1206.9" "63.3" "2.6"
+[4,] "746.3" "21.5" "439.2" "1207.0" "63.6" "2.8"
+[5,] "754.8" "23.6" "437.1" "1215.4" "64.0" "3.0"
+[6,] "735.5" "29.6" "441.3" "1206.5" "63.4" "3.9"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                89                                 90 
+               Not in Labour Force             Working Age Population 
+                                91                                 92 
+   Labour Force Participation Rate                  Unemployment Rate 
+                                93                                 94 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V90    V91   V92    V93     V94    V95   
+[1,] "62.7" "6.5" "49.2" "118.4" "58.4" "9.4" 
+[2,] "60.5" "7.3" "54.9" "122.8" "55.3" "10.8"
+[3,] "59.0" "5.4" "47.1" "111.5" "57.8" "8.4" 
+[4,] "62.0" "5.6" "50.5" "118.0" "57.2" "8.2" 
+[5,] "65.7" "6.9" "46.8" "119.3" "60.8" "9.5" 
+[6,] "65.4" "8.4" "51.9" "125.6" "58.7" "11.4"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                                97                                 98 
+               Not in Labour Force             Working Age Population 
+                                99                                100 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               101                                102 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V98    V99   V100   V101   V102   V103  
+[1,] "36.9" "2.8" "31.4" "71.2" "55.9" "7.1" 
+[2,] "33.4" "3.7" "33.3" "70.4" "52.7" "10.0"
+[3,] "34.9" "3.2" "31.7" "69.8" "54.6" "8.3" 
+[4,] "39.0" "3.6" "33.9" "76.5" "55.7" "8.5" 
+[5,] "37.7" "4.0" "32.0" "73.7" "56.6" "9.5" 
+[6,] "35.1" "4.9" "37.9" "77.8" "51.3" "12.2"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               105                                106 
+               Not in Labour Force             Working Age Population 
+                               107                                108 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               109                                110 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V106   V107  V108   V109    V110   V111 
+[1,] "76.2" "4.7" "64.1" "145.0" "55.8" "5.8"
+[2,] "79.0" "6.6" "70.7" "156.3" "54.8" "7.7"
+[3,] "87.6" "5.9" "69.5" "163.0" "57.4" "6.3"
+[4,] "86.4" "5.4" "68.4" "160.3" "57.3" "5.9"
+[5,] "89.9" "6.9" "66.5" "163.3" "59.3" "7.2"
+[6,] "93.6" "7.3" "69.2" "170.1" "59.3" "7.2"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               113                                114 
+               Not in Labour Force             Working Age Population 
+                               115                                116 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               117                                118 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V114  V115  V116  V117   V118   V119  
+[1,] "4.3" NA    "8.2" "13.2" "37.9" NA    
+[2,] "5.0" "1.2" "7.4" "13.6" "45.4" "19.0"
+[3,] "6.6" "1.0" "8.9" "16.5" "45.8" "13.4"
+[4,] "6.8" NA    "9.5" "17.2" "44.7" NA    
+[5,] "4.2" NA    "6.4" "11.5" "43.9" NA    
+[6,] "4.3" NA    "7.0" "12.0" "41.9" NA    
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               121                                122 
+               Not in Labour Force             Working Age Population 
+                               123                                124 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               125                                126 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V122   V123  V124  V125   V126   V127  
+[1,] "5.7"  NA    "1.9" "7.6"  "74.6" NA    
+[2,] "6.6"  NA    "4.2" "10.9" "61.4" NA    
+[3,] "8.8"  "1.1" "6.6" "16.6" "60.0" "11.4"
+[4,] "11.4" NA    "6.9" "19.0" "63.7" NA    
+[5,] "12.6" NA    "7.6" "20.9" "63.5" NA    
+[6,] "14.6" NA    "7.6" "22.7" "66.5" NA    
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               129                                130 
+               Not in Labour Force             Working Age Population 
+                               131                                132 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               133                                134 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V130   V131  V132   V133   V134   V135  
+[1,] "54.1" "2.4" "28.2" "84.7" "66.7" "4.2" 
+[2,] "55.3" "4.2" "27.2" "86.7" "68.7" "7.1" 
+[3,] "59.8" "3.8" "34.3" "97.8" "65.0" "5.9" 
+[4,] "57.2" "3.5" "31.5" "92.2" "65.9" "5.7" 
+[5,] "60.3" "4.9" "25.6" "90.8" "71.7" "7.5" 
+[6,] "51.6" "6.9" "26.2" "84.7" "69.0" "11.8"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               137                                138 
+               Not in Labour Force             Working Age Population 
+                               139                                140 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               141                                142 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V138   V139  V140   V141   V142   V143  
+[1,] "21.5" "1.8" "13.0" "36.3" "64.1" "7.7" 
+[2,] "15.6" NA    "9.2"  "25.3" "63.8" NA    
+[3,] "17.5" NA    "10.4" "28.6" "63.6" NA    
+[4,] "16.4" "1.1" "8.8"  "26.4" "66.5" "6.5" 
+[5,] "16.4" "1.1" "10.1" "27.6" "63.3" "6.4" 
+[6,] "17.7" "2.2" "10.1" "30.0" "66.4" "11.1"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               145                                146 
+               Not in Labour Force             Working Age Population 
+                               147                                148 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               149                                150 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V146  V147 V148  V149   V150   V151
+[1,] "5.8" NA   "4.0" "10.1" "60.0" NA  
+[2,] "5.6" NA   "2.7" "8.6"  "69.0" NA  
+[3,] "2.8" NA   "3.3" "6.1"  "45.9" NA  
+[4,] "3.3" NA   NA    "3.9"  "86.4" NA  
+[5,] "2.3" NA   NA    "3.1"  "75.7" NA  
+[6,] NA    NA   NA    "1.7"  "63.3" NA  
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               153                                154 
+               Not in Labour Force             Working Age Population 
+                               155                                156 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               157                                158 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V154     V155   V156    V157     V158   V159 
+[1,] "1030.6" "35.7" "641.7" "1708.0" "62.4" "3.3"
+[2,] "998.6"  "48.6" "666.1" "1713.3" "61.1" "4.6"
+[3,] "1021.6" "40.8" "654.4" "1716.8" "61.9" "3.8"
+[4,] "1028.9" "42.4" "649.2" "1720.5" "62.3" "4.0"
+[5,] "1043.9" "49.0" "633.0" "1725.8" "63.3" "4.5"
+[6,] "1018.6" "60.6" "651.8" "1731.1" "62.3" "5.6"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               161                                162 
+               Not in Labour Force             Working Age Population 
+                               163                                164 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               165                                166 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V162     V163   V164    V165     V166   V167 
+[1,] "1619.1" "36.6" "721.7" "2377.4" "69.6" "2.2"
+[2,] "1600.5" "49.9" "740.0" "2390.5" "69.0" "3.0"
+[3,] "1594.7" "45.7" "723.2" "2363.6" "69.4" "2.8"
+[4,] "1585.9" "51.3" "725.1" "2362.3" "69.3" "3.1"
+[5,] "1609.6" "53.1" "711.7" "2374.3" "70.0" "3.2"
+[6,] "1580.5" "65.0" "720.8" "2366.2" "69.5" "3.9"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               169                                170 
+               Not in Labour Force             Working Age Population 
+                               171                                172 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               173                                174 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V170    V171   V172   V173    V174   V175  
+[1,] "133.8" "12.6" "77.3" "223.7" "65.5" "8.6" 
+[2,] "129.7" "14.8" "86.3" "230.8" "62.6" "10.2"
+[3,] "126.2" "11.1" "74.5" "211.8" "64.8" "8.1" 
+[4,] "133.7" "14.2" "81.2" "229.1" "64.6" "9.6" 
+[5,] "141.7" "15.3" "75.4" "232.4" "67.6" "9.8" 
+[6,] "140.8" "16.8" "87.6" "245.2" "64.3" "10.7"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               177                                178 
+               Not in Labour Force             Working Age Population 
+                               179                                180 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               181                                182 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V178   V179   V180   V181    V182   V183  
+[1,] "79.7" "4.4"  "50.3" "134.4" "62.6" "5.2" 
+[2,] "74.5" "7.1"  "51.4" "133.0" "61.3" "8.7" 
+[3,] "77.1" "5.5"  "49.7" "132.3" "62.4" "6.7" 
+[4,] "84.2" "7.0"  "53.2" "144.5" "63.2" "7.7" 
+[5,] "85.4" "7.2"  "49.5" "142.1" "65.2" "7.8" 
+[6,] "77.0" "12.2" "56.3" "145.4" "61.3" "13.6"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               185                                186 
+               Not in Labour Force             Working Age Population 
+                               187                                188 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               189                                190 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V186    V187   V188    V189    V190   V191 
+[1,] "172.1" "9.9"  "96.3"  "278.3" "65.4" "5.4"
+[2,] "169.9" "10.5" "107.1" "287.5" "62.8" "5.8"
+[3,] "186.0" "10.1" "113.9" "310.0" "63.2" "5.1"
+[4,] "187.7" "9.2"  "109.5" "306.3" "64.3" "4.7"
+[5,] "196.3" "13.2" "100.4" "309.9" "67.6" "6.3"
+[6,] "193.3" "13.9" "109.3" "316.5" "65.5" "6.7"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               193                                194 
+               Not in Labour Force             Working Age Population 
+                               195                                196 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               197                                198 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V194   V195  V196   V197   V198   V199  
+[1,] "14.1" "1.5" "11.7" "27.3" "57.1" "9.6" 
+[2,] "14.3" "1.7" "12.4" "28.3" "56.3" "10.4"
+[3,] "16.1" "3.0" "12.3" "31.4" "61.0" "15.7"
+[4,] "14.9" "1.6" "16.2" "32.8" "50.6" "9.9" 
+[5,] "12.6" "1.5" "11.1" "25.2" "55.9" "10.7"
+[6,] "12.4" "1.7" "12.0" "26.1" "54.2" "12.0"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               201                                202 
+               Not in Labour Force             Working Age Population 
+                               203                                204 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               205                                206 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V202   V203  V204   V205   V206   V207 
+[1,] "11.6" NA    "3.1"  "14.8" "79.2" NA   
+[2,] "13.4" NA    "6.1"  "20.1" "69.8" NA   
+[3,] "20.0" "1.6" "9.6"  "31.2" "69.3" "7.2"
+[4,] "21.9" NA    "11.0" "33.7" "67.3" NA   
+[5,] "26.1" "1.1" "11.8" "39.0" "69.8" "4.1"
+[6,] "31.2" NA    "13.0" "44.9" "71.0" NA   
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               209                                210 
+               Not in Labour Force             Working Age Population 
+                               211                                212 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               213                                214 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V210    V211   V212   V213    V214   V215  
+[1,] "114.3" "7.1"  "42.1" "163.5" "74.3" "5.9" 
+[2,] "112.2" "8.7"  "46.8" "167.6" "72.1" "7.2" 
+[3,] "124.0" "8.9"  "53.2" "186.2" "71.4" "6.7" 
+[4,] "114.4" "8.1"  "49.6" "172.2" "71.2" "6.6" 
+[5,] "118.2" "8.8"  "42.9" "169.9" "74.8" "7.0" 
+[6,] "100.7" "13.2" "43.2" "157.1" "72.5" "11.6"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               217                                218 
+               Not in Labour Force             Working Age Population 
+                               219                                220 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               221                                222 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V218   V219  V220   V221   V222   V223  
+[1,] "49.7" "3.0" "20.1" "72.8" "72.3" "5.6" 
+[2,] "32.6" "2.2" "14.5" "49.3" "70.5" "6.2" 
+[3,] "34.7" "1.6" "15.9" "52.1" "69.5" "4.3" 
+[4,] "34.6" "1.7" "13.8" "50.1" "72.4" "4.7" 
+[5,] "34.0" "2.3" "14.6" "50.9" "71.3" "6.5" 
+[6,] "34.0" "4.6" "15.9" "54.5" "70.8" "11.8"
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               225                                226 
+               Not in Labour Force             Working Age Population 
+                               227                                228 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               229                                230 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V226   V227 V228  V229   V230   V231
+[1,] "13.1" NA   "5.7" "19.5" "70.5" NA  
+[2,] "9.7"  NA   "5.3" "15.6" "66.1" NA  
+[3,] "5.5"  NA   "6.3" "11.8" "46.3" NA  
+[4,] "6.3"  NA   NA    "7.2"  "87.5" NA  
+[5,] "4.0"  NA   "1.2" "5.3"  "78.1" NA  
+[6,] "3.0"  NA   NA    "4.8"  "79.9" NA  
+###TCR RCC plist 
+  Persons Employed in Labour Force Persons Unemployed in Labour Force 
+                               233                                234 
+               Not in Labour Force             Working Age Population 
+                               235                                236 
+   Labour Force Participation Rate                  Unemployment Rate 
+                               237                                238 
+###TCR RCC matData 
+     V2      V3     V4      V5       V6     V7   
+[1,] "855.8" "20.0" "280.0" "1155.8" "75.8" "2.3"
+[2,] "863.0" "25.4" "283.5" "1171.9" "75.8" "2.9"
+[3,] "850.1" "26.0" "280.7" "1156.8" "75.7" "3.0"
+[4,] "839.6" "29.8" "285.9" "1155.3" "75.2" "3.4"
+[5,] "854.8" "29.5" "274.7" "1158.9" "76.3" "3.3"
+[6,] "845.0" "35.4" "279.4" "1159.8" "75.9" "4.0"
+###TCR RCC datbit 
+     V234     V235    V236     V237     V238   V239 
+[1,] "2207.5" "75.8"  "1028.3" "3311.6" "68.9" "3.3"
+[2,] "2156.9" "96.0"  "1069.8" "3322.7" "67.8" "4.3"
+[3,] "2184.3" "87.5"  "1058.6" "3330.3" "68.2" "3.9"
+[4,] "2183.6" "93.9"  "1060.6" "3338.1" "68.2" "4.1"
+[5,] "2227.9" "102.8" "1018.5" "3349.2" "69.6" "4.4"
+[6,] "2173.0" "128.8" "1058.9" "3360.8" "68.5" "5.6"
+###TCR RCL colplist 
+$Male
++ European Only (1, 3)
+- + Persons Employed in Labour Force (1, 4)
+- + Persons Unemployed in Labour Force (2, 4)
+- + Not in Labour Force (3, 4)
+- + Working Age Population (4, 4)
+- + Labour Force Participation Rate (5, 4)
+- + Unemployment Rate (6, 4)
+- + Employment Rate (7, 4)
+- + Total Labour Force (8, 4)
++ Maori Only (9, 3)
+- + Persons Employed in Labour Force (9, 4)
+- + Persons Unemployed in Labour Force (10, 4)
+- + Not in Labour Force (11, 4)
+- + Working Age Population (12, 4)
+- + Labour Force Participation Rate (13, 4)
+- + Unemployment Rate (14, 4)
+- + Employment Rate (15, 4)
+- + Total Labour Force (16, 4)
++ Pacific Peoples Only (17, 3)
+- + Persons Employed in Labour Force (17, 4)
+- + Persons Unemployed in Labour Force (18, 4)
+- + Not in Labour Force (19, 4)
+- + Working Age Population (20, 4)
+- + Labour Force Participation Rate (21, 4)
+- + Unemployment Rate (22, 4)
+- + Employment Rate (23, 4)
+- + Total Labour Force (24, 4)
++ Asian Only (25, 3)
+- + Persons Employed in Labour Force (25, 4)
+- + Persons Unemployed in Labour Force (26, 4)
+- + Not in Labour Force (27, 4)
+- + Working Age Population (28, 4)
+- + Labour Force Participation Rate (29, 4)
+- + Unemployment Rate (30, 4)
+- + Employment Rate (31, 4)
+- + Total Labour Force (32, 4)
++ MELAA Only (33, 3)
+- + Persons Employed in Labour Force (33, 4)
+- + Persons Unemployed in Labour Force (34, 4)
+- + Not in Labour Force (35, 4)
+- + Working Age Population (36, 4)
+- + Labour Force Participation Rate (37, 4)
+- + Unemployment Rate (38, 4)
+- + Employment Rate (39, 4)
+- + Total Labour Force (40, 4)
++ Other Ethnicity Only (41, 3)
+- + Persons Employed in Labour Force (41, 4)
+- + Persons Unemployed in Labour Force (42, 4)
+- + Not in Labour Force (43, 4)
+- + Working Age Population (44, 4)
+- + Labour Force Participation Rate (45, 4)
+- + Unemployment Rate (46, 4)
+- + Employment Rate (47, 4)
+- + Total Labour Force (48, 4)
++ European/Maori (49, 3)
+- + Persons Employed in Labour Force (49, 4)
+- + Persons Unemployed in Labour Force (50, 4)
+- + Not in Labour Force (51, 4)
+- + Working Age Population (52, 4)
+- + Labour Force Participation Rate (53, 4)
+- + Unemployment Rate (54, 4)
+- + Employment Rate (55, 4)
+- + Total Labour Force (56, 4)
++ Two or More Groups Not Elsewhere Included (57, 3)
+- + Persons Employed in Labour Force (57, 4)
+- + Persons Unemployed in Labour Force (58, 4)
+- + Not in Labour Force (59, 4)
+- + Working Age Population (60, 4)
+- + Labour Force Participation Rate (61, 4)
+- + Unemployment Rate (62, 4)
+- + Employment Rate (63, 4)
+- + Total Labour Force (64, 4)
++ Residual Categories (65, 3)
+- + Persons Employed in Labour Force (65, 4)
+- + Persons Unemployed in Labour Force (66, 4)
+- + Not in Labour Force (67, 4)
+- + Working Age Population (68, 4)
+- + Labour Force Participation Rate (69, 4)
+- + Unemployment Rate (70, 4)
+- + Employment Rate (71, 4)
+- + Total Labour Force (72, 4)
++ Total All Ethnic Groups (73, 3)
+- + Persons Employed in Labour Force (73, 4)
+- + Persons Unemployed in Labour Force (74, 4)
+- + Not in Labour Force (75, 4)
+- + Working Age Population (76, 4)
+- + Labour Force Participation Rate (77, 4)
+- + Unemployment Rate (78, 4)
+- + Employment Rate (79, 4)
+- + Total Labour Force (80, 4)
+
+$Female
++ European Only (81, 3)
+- + Persons Employed in Labour Force (81, 4)
+- + Persons Unemployed in Labour Force (82, 4)
+- + Not in Labour Force (83, 4)
+- + Working Age Population (84, 4)
+- + Labour Force Participation Rate (85, 4)
+- + Unemployment Rate (86, 4)
+- + Employment Rate (87, 4)
+- + Total Labour Force (88, 4)
++ Maori Only (89, 3)
+- + Persons Employed in Labour Force (89, 4)
+- + Persons Unemployed in Labour Force (90, 4)
+- + Not in Labour Force (91, 4)
+- + Working Age Population (92, 4)
+- + Labour Force Participation Rate (93, 4)
+- + Unemployment Rate (94, 4)
+- + Employment Rate (95, 4)
+- + Total Labour Force (96, 4)
++ Pacific Peoples Only (97, 3)
+- + Persons Employed in Labour Force (97, 4)
+- + Persons Unemployed in Labour Force (98, 4)
+- + Not in Labour Force (99, 4)
+- + Working Age Population (100, 4)
+- + Labour Force Participation Rate (101, 4)
+- + Unemployment Rate (102, 4)
+- + Employment Rate (103, 4)
+- + Total Labour Force (104, 4)
++ Asian Only (105, 3)
+- + Persons Employed in Labour Force (105, 4)
+- + Persons Unemployed in Labour Force (106, 4)
+- + Not in Labour Force (107, 4)
+- + Working Age Population (108, 4)
+- + Labour Force Participation Rate (109, 4)
+- + Unemployment Rate (110, 4)
+- + Employment Rate (111, 4)
+- + Total Labour Force (112, 4)
++ MELAA Only (113, 3)
+- + Persons Employed in Labour Force (113, 4)
+- + Persons Unemployed in Labour Force (114, 4)
+- + Not in Labour Force (115, 4)
+- + Working Age Population (116, 4)
+- + Labour Force Participation Rate (117, 4)
+- + Unemployment Rate (118, 4)
+- + Employment Rate (119, 4)
+- + Total Labour Force (120, 4)
++ Other Ethnicity Only (121, 3)
+- + Persons Employed in Labour Force (121, 4)
+- + Persons Unemployed in Labour Force (122, 4)
+- + Not in Labour Force (123, 4)
+- + Working Age Population (124, 4)
+- + Labour Force Participation Rate (125, 4)
+- + Unemployment Rate (126, 4)
+- + Employment Rate (127, 4)
+- + Total Labour Force (128, 4)
++ European/Maori (129, 3)
+- + Persons Employed in Labour Force (129, 4)
+- + Persons Unemployed in Labour Force (130, 4)
+- + Not in Labour Force (131, 4)
+- + Working Age Population (132, 4)
+- + Labour Force Participation Rate (133, 4)
+- + Unemployment Rate (134, 4)
+- + Employment Rate (135, 4)
+- + Total Labour Force (136, 4)
++ Two or More Groups Not Elsewhere Included (137, 3)
+- + Persons Employed in Labour Force (137, 4)
+- + Persons Unemployed in Labour Force (138, 4)
+- + Not in Labour Force (139, 4)
+- + Working Age Population (140, 4)
+- + Labour Force Participation Rate (141, 4)
+- + Unemployment Rate (142, 4)
+- + Employment Rate (143, 4)
+- + Total Labour Force (144, 4)
++ Residual Categories (145, 3)
+- + Persons Employed in Labour Force (145, 4)
+- + Persons Unemployed in Labour Force (146, 4)
+- + Not in Labour Force (147, 4)
+- + Working Age Population (148, 4)
+- + Labour Force Participation Rate (149, 4)
+- + Unemployment Rate (150, 4)
+- + Employment Rate (151, 4)
+- + Total Labour Force (152, 4)
++ Total All Ethnic Groups (153, 3)
+- + Persons Employed in Labour Force (153, 4)
+- + Persons Unemployed in Labour Force (154, 4)
+- + Not in Labour Force (155, 4)
+- + Working Age Population (156, 4)
+- + Labour Force Participation Rate (157, 4)
+- + Unemployment Rate (158, 4)
+- + Employment Rate (159, 4)
+- + Total Labour Force (160, 4)
+
+$`Total Both Sexes`
++ European Only (161, 3)
+- + Persons Employed in Labour Force (161, 4)
+- + Persons Unemployed in Labour Force (162, 4)
+- + Not in Labour Force (163, 4)
+- + Working Age Population (164, 4)
+- + Labour Force Participation Rate (165, 4)
+- + Unemployment Rate (166, 4)
+- + Employment Rate (167, 4)
+- + Total Labour Force (168, 4)
++ Maori Only (169, 3)
+- + Persons Employed in Labour Force (169, 4)
+- + Persons Unemployed in Labour Force (170, 4)
+- + Not in Labour Force (171, 4)
+- + Working Age Population (172, 4)
+- + Labour Force Participation Rate (173, 4)
+- + Unemployment Rate (174, 4)
+- + Employment Rate (175, 4)
+- + Total Labour Force (176, 4)
++ Pacific Peoples Only (177, 3)
+- + Persons Employed in Labour Force (177, 4)
+- + Persons Unemployed in Labour Force (178, 4)
+- + Not in Labour Force (179, 4)
+- + Working Age Population (180, 4)
+- + Labour Force Participation Rate (181, 4)
+- + Unemployment Rate (182, 4)
+- + Employment Rate (183, 4)
+- + Total Labour Force (184, 4)
++ Asian Only (185, 3)
+- + Persons Employed in Labour Force (185, 4)
+- + Persons Unemployed in Labour Force (186, 4)
+- + Not in Labour Force (187, 4)
+- + Working Age Population (188, 4)
+- + Labour Force Participation Rate (189, 4)
+- + Unemployment Rate (190, 4)
+- + Employment Rate (191, 4)
+- + Total Labour Force (192, 4)
++ MELAA Only (193, 3)
+- + Persons Employed in Labour Force (193, 4)
+- + Persons Unemployed in Labour Force (194, 4)
+- + Not in Labour Force (195, 4)
+- + Working Age Population (196, 4)
+- + Labour Force Participation Rate (197, 4)
+- + Unemployment Rate (198, 4)
+- + Employment Rate (199, 4)
+- + Total Labour Force (200, 4)
++ Other Ethnicity Only (201, 3)
+- + Persons Employed in Labour Force (201, 4)
+- + Persons Unemployed in Labour Force (202, 4)
+- + Not in Labour Force (203, 4)
+- + Working Age Population (204, 4)
+- + Labour Force Participation Rate (205, 4)
+- + Unemployment Rate (206, 4)
+- + Employment Rate (207, 4)
+- + Total Labour Force (208, 4)
++ European/Maori (209, 3)
+- + Persons Employed in Labour Force (209, 4)
+- + Persons Unemployed in Labour Force (210, 4)
+- + Not in Labour Force (211, 4)
+- + Working Age Population (212, 4)
+- + Labour Force Participation Rate (213, 4)
+- + Unemployment Rate (214, 4)
+- + Employment Rate (215, 4)
+- + Total Labour Force (216, 4)
++ Two or More Groups Not Elsewhere Included (217, 3)
+- + Persons Employed in Labour Force (217, 4)
+- + Persons Unemployed in Labour Force (218, 4)
+- + Not in Labour Force (219, 4)
+- + Working Age Population (220, 4)
+- + Labour Force Participation Rate (221, 4)
+- + Unemployment Rate (222, 4)
+- + Employment Rate (223, 4)
+- + Total Labour Force (224, 4)
++ Residual Categories (225, 3)
+- + Persons Employed in Labour Force (225, 4)
+- + Persons Unemployed in Labour Force (226, 4)
+- + Not in Labour Force (227, 4)
+- + Working Age Population (228, 4)
+- + Labour Force Participation Rate (229, 4)
+- + Unemployment Rate (230, 4)
+- + Employment Rate (231, 4)
+- + Total Labour Force (232, 4)
++ Total All Ethnic Groups (233, 3)
+- + Persons Employed in Labour Force (233, 4)
+- + Persons Unemployed in Labour Force (234, 4)
+- + Not in Labour Force (235, 4)
+- + Working Age Population (236, 4)
+- + Labour Force Participation Rate (237, 4)
+- + Unemployment Rate (238, 4)
+- + Employment Rate (239, 4)
+- + Total Labour Force (240, 4)
+
+###TCR RCL res 
+  UNKNOWN       UNKNOWN UNKNOWN Persons Employed in Labour Force
+1    Male European Only  2007Q4                            855.8
+2    Male European Only  2008Q1                            863.0
+3    Male European Only  2008Q2                            850.1
+4    Male European Only  2008Q3                            839.6
+5    Male European Only  2008Q4                            854.8
+6    Male European Only  2009Q1                            845.0
+  Persons Unemployed in Labour Force Not in Labour Force Working Age Population
+1                               20.0               280.0                 1155.8
+2                               25.4               283.5                 1171.9
+3                               26.0               280.7                 1156.8
+4                               29.8               285.9                 1155.3
+5                               29.5               274.7                 1158.9
+6                               35.4               279.4                 1159.8
+  Labour Force Participation Rate Unemployment Rate Employment Rate
+1                            75.8               2.3            74.0
+2                            75.8               2.9            73.6
+3                            75.7               3.0            73.5
+4                            75.2               3.4            72.7
+5                            76.3               3.3            73.8
+6                            75.9               4.0            72.9
+  Total Labour Force
+1              875.8
+2              888.5
+3              876.1
+4              869.4
+5              884.2
+6              880.4

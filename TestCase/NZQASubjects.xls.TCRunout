@@ -1,0 +1,474 @@
+###TCR CIMCB rowData 
+[1]  6 55
+###TCR CIMCB colData 
+[1]  5 13
+###TCR CRAC rowslist 
+$label
+[1] 1 3 4
+
+$data
+ [1]  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 23 24 25 26 27 28 29 30 31
+[26] 32 33 34 35 36 37 38 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
+
+###TCR CRAC colslist 
+$label
+[1] 1 2 3
+
+$data
+[1]  5  7  9 11 13
+
+###TCR CMER res 
+$`Level 1`
+$`Level 1`$rows
+ [1]  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16
+
+$`Level 1`$cols
+[1] 1 2 3
+
+
+$`Level 2`
+$`Level 2`$rows
+ [1] 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32
+
+$`Level 2`$cols
+[1] 1 2 3
+
+
+$`Level 3`
+$`Level 3`$rows
+ [1] 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
+
+$`Level 3`$cols
+[1] 1 2 3
+
+
+###TCR CMER res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 3 4
+
+$`NZ Maori`$cols
+[1] 2 3
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 6 7
+
+$`NZ European`$cols
+[1] 2 3
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1]  9 10
+
+$`Pasifika Peoples`$cols
+[1] 2 3
+
+
+$Asian
+$Asian$rows
+[1] 12 13
+
+$Asian$cols
+[1] 2 3
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 15 16
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2 3
+
+
+###TCR IOOC plist 
+$rows
+[1] 3 4
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+     3      4 
+###TCR IOOC plist 
+$rows
+[1] 6 7
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+     6      7 
+###TCR IOOC plist 
+$rows
+[1]  9 10
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+     9     10 
+###TCR IOOC plist 
+$rows
+[1] 12 13
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+    12     13 
+###TCR IOOC plist 
+$rows
+[1] 15 16
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+    15     16 
+###TCR CMER res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 19 20
+
+$`NZ Maori`$cols
+[1] 2 3
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 22 23
+
+$`NZ European`$cols
+[1] 2 3
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 25 26
+
+$`Pasifika Peoples`$cols
+[1] 2 3
+
+
+$Asian
+$Asian$rows
+[1] 28 29
+
+$Asian$cols
+[1] 2 3
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 31 32
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2 3
+
+
+###TCR IOOC plist 
+$rows
+[1] 19 20
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+    19     20 
+###TCR IOOC plist 
+$rows
+[1] 22 23
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+    22     23 
+###TCR IOOC plist 
+$rows
+[1] 25 26
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+    25     26 
+###TCR IOOC plist 
+$rows
+[1] 28 29
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+    28     29 
+###TCR IOOC plist 
+$rows
+[1] 31 32
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+    31     32 
+###TCR CMER res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 35 36
+
+$`NZ Maori`$cols
+[1] 2 3
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 38 39
+
+$`NZ European`$cols
+[1] 2 3
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 41 42
+
+$`Pasifika Peoples`$cols
+[1] 2 3
+
+
+$Asian
+$Asian$rows
+[1] 44 45
+
+$Asian$cols
+[1] 2 3
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 47 48
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2 3
+
+
+###TCR IOOC plist 
+$rows
+[1] 35 36
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+    35     36 
+###TCR IOOC plist 
+$rows
+[1] 38 39
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+    38     39 
+###TCR IOOC plist 
+$rows
+[1] 41 42
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+    41     42 
+###TCR IOOC plist 
+$rows
+[1] 44 45
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+    44     45 
+###TCR IOOC plist 
+$rows
+[1] 47 48
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  Male Female 
+    47     48 
+###TCR RRL rowplist 
+$`Level 1`
++ NZ Maori (2, 2)
+- + Male (3, 3)
+- + Female (4, 3)
++ NZ European (5, 2)
+- + Male (6, 3)
+- + Female (7, 3)
++ Pasifika Peoples (8, 2)
+- + Male (9, 3)
+- + Female (10, 3)
++ Asian (11, 2)
+- + Male (12, 3)
+- + Female (13, 3)
++ Other/Unspecified Ethnicity (14, 2)
+- + Male (15, 3)
+- + Female (16, 3)
+
+$`Level 2`
++ NZ Maori (18, 2)
+- + Male (19, 3)
+- + Female (20, 3)
++ NZ European (21, 2)
+- + Male (22, 3)
+- + Female (23, 3)
++ Pasifika Peoples (24, 2)
+- + Male (25, 3)
+- + Female (26, 3)
++ Asian (27, 2)
+- + Male (28, 3)
+- + Female (29, 3)
++ Other/Unspecified Ethnicity (30, 2)
+- + Male (31, 3)
+- + Female (32, 3)
+
+$`Level 3`
++ NZ Maori (34, 2)
+- + Male (35, 3)
+- + Female (36, 3)
++ NZ European (37, 2)
+- + Male (38, 3)
+- + Female (39, 3)
++ Pasifika Peoples (40, 2)
+- + Male (41, 3)
+- + Female (42, 3)
++ Asian (43, 2)
+- + Male (44, 3)
+- + Female (45, 3)
++ Other/Unspecified Ethnicity (46, 2)
+- + Male (47, 3)
+- + Female (48, 3)
+
+###TCR RRL rowvecs 
+     [,1]      [,2]               [,3]    
+[1,] "Level 1" "NZ Maori"         "Male"  
+[2,] "Level 1" "NZ Maori"         "Female"
+[3,] "Level 1" "NZ European"      "Male"  
+[4,] "Level 1" "NZ European"      "Female"
+[5,] "Level 1" "Pasifika Peoples" "Male"  
+[6,] "Level 1" "Pasifika Peoples" "Female"
+###TCR MCPBefore matColLabel 
+     V5             V7               V9           V11       V13           
+[1,] NA             NA               NA           NA        NA            
+[2,] "National"     NA               NA           NA        NA            
+[3,] "# of Results" "# Not Achieved" "# Achieved" "# Merit" "# Excellence"
+###TCR ACP cursub 
+        V5         V7         V9        V11        V13 
+"National"         NA         NA         NA         NA 
+###TCR ACP currow[curcols] 
+        V5         V7         V9        V11        V13 
+"National"         NA         NA         NA         NA 
+###TCR ACP cursub 
+              V5               V7               V9              V11 
+  "# of Results" "# Not Achieved"     "# Achieved"        "# Merit" 
+             V13 
+  "# Excellence" 
+###TCR ACP currow[curcols] 
+              V5               V7               V9              V11 
+  "# of Results" "# Not Achieved"     "# Achieved"        "# Merit" 
+             V13 
+  "# Excellence" 
+###TCR MCPAfter matColLabel 
+     V5             V7               V9           V11       V13           
+[1,] NA             NA               NA           NA        NA            
+[2,] "National"     NA               NA           NA        NA            
+[3,] "# of Results" "# Not Achieved" "# Achieved" "# Merit" "# Excellence"
+###TCR MCLBefore matColLabel 
+     V5             V7               V9           V11       V13           
+[1,] NA             NA               NA           NA        NA            
+[2,] "National"     NA               NA           NA        NA            
+[3,] "# of Results" "# Not Achieved" "# Achieved" "# Merit" "# Excellence"
+###TCR MCLAfter matColLabel 
+     V5             V7               V9           V11       V13           
+[1,] NA             NA               NA           NA        NA            
+[2,] "National"     NA               NA           NA        NA            
+[3,] "# of Results" "# Not Achieved" "# Achieved" "# Merit" "# Excellence"
+###TCR PBEB res 
+$National
+$National$rows
+[1] 1 2 3 4 5
+
+$National$cols
+[1] 3
+
+
+###TCR IOOC plist 
+$rows
+[1] 1 2 3 4 5
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  # of Results # Not Achieved     # Achieved        # Merit   # Excellence 
+             1              2              3              4              5 
+###TCR RCC plist 
+  # of Results # Not Achieved     # Achieved        # Merit   # Excellence 
+             1              2              3              4              5 
+###TCR RCC matData 
+     V5       V7      V9       V11      V13    
+[1,] "847.0"  "260.0" "327.0"  "193.0"  "67.0" 
+[2,] "786.0"  "285.0" "282.0"  "157.0"  "62.0" 
+[3,] "5508.0" "976.0" "1935.0" "1673.0" "924.0"
+[4,] "3896.0" "634.0" "1146.0" "1200.0" "916.0"
+[5,] "538.0"  "244.0" "168.0"  "96.0"   "30.0" 
+[6,] "952.0"  "450.0" "326.0"  "131.0"  "45.0" 
+###TCR RCC datbit 
+     V5       V7      V9       V11      V13    
+[1,] "847.0"  "260.0" "327.0"  "193.0"  "67.0" 
+[2,] "786.0"  "285.0" "282.0"  "157.0"  "62.0" 
+[3,] "5508.0" "976.0" "1935.0" "1673.0" "924.0"
+[4,] "3896.0" "634.0" "1146.0" "1200.0" "916.0"
+[5,] "538.0"  "244.0" "168.0"  "96.0"   "30.0" 
+[6,] "952.0"  "450.0" "326.0"  "131.0"  "45.0" 
+###TCR RCL colplist 
+$National
++ # of Results (1, 3)
++ # Not Achieved (2, 3)
++ # Achieved (3, 3)
++ # Merit (4, 3)
++ # Excellence (5, 3)
+
+###TCR RCL res 
+   UNKNOWN UNKNOWN          UNKNOWN UNKNOWN # of Results # Not Achieved
+1 National Level 1         NZ Maori    Male          847            260
+2 National Level 1         NZ Maori  Female          786            285
+3 National Level 1      NZ European    Male         5508            976
+4 National Level 1      NZ European  Female         3896            634
+5 National Level 1 Pasifika Peoples    Male          538            244
+6 National Level 1 Pasifika Peoples  Female          952            450
+  # Achieved # Merit # Excellence
+1        327     193           67
+2        282     157           62
+3       1935    1673          924
+4       1146    1200          916
+5        168      96           30
+6        326     131           45

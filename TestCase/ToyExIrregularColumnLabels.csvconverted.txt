@@ -1,0 +1,9 @@
+"UNKNOWN" "UNKNOWN" "Col Child1" "Col Child2" "Col Child3" "Col Child4"
+"1" "Col Parent1" "Row 1" 10 20 30 NA
+"2" "Col Parent1" "Row 2" 11 21 31 NA
+"3" "Col Parent1" "Row 3" 12 22 32 NA
+"4" "Col Parent1" "Row 4" 13 23 33 NA
+"5" "Col Parent2" "Row 1" 50 60 NA 80
+"6" "Col Parent2" "Row 2" 51 61 NA 81
+"7" "Col Parent2" "Row 3" 52 62 NA 82
+"8" "Col Parent2" "Row 4" 53 63 NA 83

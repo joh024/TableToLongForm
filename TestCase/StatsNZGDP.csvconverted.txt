@@ -1,0 +1,352 @@
+"UNKNOWN" "UNKNOWN" "UNKNOWN" "Private" "Central Government Sector" "Local Government Sector" "All Sectors"
+"1" "Gross Domestic Product - product measure" "Market" "1972" 5200 568 155 5923
+"2" "Gross Domestic Product - product measure" "Market" "1973" 5993 649 169 6811
+"3" "Gross Domestic Product - product measure" "Market" "1974" 7013 723 183 7919
+"4" "Gross Domestic Product - product measure" "Market" "1975" 7636 750 202 8588
+"5" "Gross Domestic Product - product measure" "Market" "1976" 8526 840 231 9597
+"6" "Gross Domestic Product - product measure" "Market" "1977" 10450 1179 295 11924
+"7" "Gross Domestic Product - product measure" "Market" "1978" 11469 1398 362 13230
+"8" "Gross Domestic Product - product measure" "Market" "1979" 12729 1685 394 14808
+"9" "Gross Domestic Product - product measure" "Market" "1980" 14707 2050 501 17258
+"10" "Gross Domestic Product - product measure" "Market" "1981" 16947 2358 559 19864
+"11" "Gross Domestic Product - product measure" "Market" "1982" 20751 2770 655 24175
+"12" "Gross Domestic Product - product measure" "Market" "1983" 23525 3184 759 27468
+"13" "Gross Domestic Product - product measure" "Market" "1984" 26577 3644 800 31021
+"14" "Gross Domestic Product - product measure" "Market" "1985" 30530 3924 850 35304
+"15" "Gross Domestic Product - product measure" "Market" "1986" 35104 4741 1008 40853
+"16" "Gross Domestic Product - product measure" "Market" "1987" 40167 6189 1160 47515
+"17" "Gross Domestic Product - product measure" "Market" "1988" 43613 6957 1192 51762
+"18" "Gross Domestic Product - product measure" "Market" "1989" 47816 7052 1364 56231
+"19" "Gross Domestic Product - product measure" "Market" "1990" 51170 6267 1364 58800
+"20" "Gross Domestic Product - product measure" "Market" "1991" 53613 4970 1412 59995
+"21" "Gross Domestic Product - product measure" "Market" "1992" 54492 3917 1366 59775
+"22" "Gross Domestic Product - product measure" "Market" "1993" 56696 3626 1431 61754
+"23" "Gross Domestic Product - product measure" "Market" "1994" 62428 3360 1452 67240
+"24" "Gross Domestic Product - product measure" "Market" "1995" 67495 3210 1617 72322
+"25" "Gross Domestic Product - product measure" "Market" "1996" 72237 3090 1745 77072
+"26" "Gross Domestic Product - product measure" "Market" "1997" 75844 3058 1849 80750
+"27" "Gross Domestic Product - product measure" "Market" "1998" 78712 3129 1890 83732
+"28" "Gross Domestic Product - product measure" "Market" "1999" 80382 2803 1809 84994
+"29" "Gross Domestic Product - product measure" "Market" "2000" 86163 2568 1716 90447
+"30" "Gross Domestic Product - product measure" "Market" "2001" 91811 2396 1692 95898
+"31" "Gross Domestic Product - product measure" "Market" "2002" 98851 2870 1837 103558
+"32" "Gross Domestic Product - product measure" "Market" "2003" 102691 3691 2016 108398
+"33" "Gross Domestic Product - product measure" "Market" "2004" 109298 4138 2331 115767
+"34" "Gross Domestic Product - product measure" "Market" "2005" 116966 4295 2268 123528
+"35" "Gross Domestic Product - product measure" "Market" "2006" 122292 4859 2685 129835
+"36" "Gross Domestic Product - product measure" "Market" "2007" 127531 4857 2735 135123
+"37" "Gross Domestic Product - product measure" "Market" "2008" 138127 5554 2962 146644
+"38" "Gross Domestic Product - product measure" "Market" "2009" 137240 5783 3195 146219
+"39" "Gross Domestic Product - product measure" "Market" "2010" 139525 6090 3252 148866
+"40" "Gross Domestic Product - product measure" "Non-Market" "1972" 58 660 100 818
+"41" "Gross Domestic Product - product measure" "Non-Market" "1973" 68 738 118 924
+"42" "Gross Domestic Product - product measure" "Non-Market" "1974" 78 880 136 1093
+"43" "Gross Domestic Product - product measure" "Non-Market" "1975" 90 1049 164 1303
+"44" "Gross Domestic Product - product measure" "Non-Market" "1976" 108 1264 202 1574
+"45" "Gross Domestic Product - product measure" "Non-Market" "1977" 130 1431 213 1774
+"46" "Gross Domestic Product - product measure" "Non-Market" "1978" 150 1713 247 2111
+"47" "Gross Domestic Product - product measure" "Non-Market" "1979" 180 2105 306 2591
+"48" "Gross Domestic Product - product measure" "Non-Market" "1980" 216 2434 368 3018
+"49" "Gross Domestic Product - product measure" "Non-Market" "1981" 261 3042 439 3742
+"50" "Gross Domestic Product - product measure" "Non-Market" "1982" 316 3619 542 4477
+"51" "Gross Domestic Product - product measure" "Non-Market" "1983" 332 3975 606 4913
+"52" "Gross Domestic Product - product measure" "Non-Market" "1984" 327 4081 653 5061
+"53" "Gross Domestic Product - product measure" "Non-Market" "1985" 361 4270 720 5351
+"54" "Gross Domestic Product - product measure" "Non-Market" "1986" 418 5012 815 6245
+"55" "Gross Domestic Product - product measure" "Non-Market" "1987" 501 6235 896 7631
+"56" "Gross Domestic Product - product measure" "Non-Market" "1988" 582 6885 961 8427
+"57" "Gross Domestic Product - product measure" "Non-Market" "1989" 663 7410 1076 9149
+"58" "Gross Domestic Product - product measure" "Non-Market" "1990" 722 7710 1153 9585
+"59" "Gross Domestic Product - product measure" "Non-Market" "1991" 801 7912 1228 9941
+"60" "Gross Domestic Product - product measure" "Non-Market" "1992" 895 7960 1189 10045
+"61" "Gross Domestic Product - product measure" "Non-Market" "1993" 961 8115 1138 10214
+"62" "Gross Domestic Product - product measure" "Non-Market" "1994" 1024 8277 1176 10477
+"63" "Gross Domestic Product - product measure" "Non-Market" "1995" 1117 8366 1204 10687
+"64" "Gross Domestic Product - product measure" "Non-Market" "1996" 1221 8710 1249 11180
+"65" "Gross Domestic Product - product measure" "Non-Market" "1997" 1419 9138 1249 11806
+"66" "Gross Domestic Product - product measure" "Non-Market" "1998" 1633 9489 1277 12399
+"67" "Gross Domestic Product - product measure" "Non-Market" "1999" 1958 9945 1298 13201
+"68" "Gross Domestic Product - product measure" "Non-Market" "2000" 2076 10303 1322 13701
+"69" "Gross Domestic Product - product measure" "Non-Market" "2001" 2206 10705 1364 14275
+"70" "Gross Domestic Product - product measure" "Non-Market" "2002" 2312 11230 1441 14984
+"71" "Gross Domestic Product - product measure" "Non-Market" "2003" 2455 11929 1532 15916
+"72" "Gross Domestic Product - product measure" "Non-Market" "2004" 2683 12753 1645 17081
+"73" "Gross Domestic Product - product measure" "Non-Market" "2005" 2937 13812 1769 18518
+"74" "Gross Domestic Product - product measure" "Non-Market" "2006" 3013 15058 1899 19971
+"75" "Gross Domestic Product - product measure" "Non-Market" "2007" 3131 16257 2105 21493
+"76" "Gross Domestic Product - product measure" "Non-Market" "2008" 3317 17569 2298 23184
+"77" "Gross Domestic Product - product measure" "Non-Market" "2009" 3742 19067 2470 25279
+"78" "Gross Domestic Product - product measure" "Non-Market" "2010" 3942 20007 2605 26553
+"79" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1972" 5258 1227 255 6740
+"80" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1973" 6062 1387 287 7735
+"81" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1974" 7091 1604 318 9013
+"82" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1975" 7727 1798 366 9891
+"83" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1976" 8634 2104 433 11171
+"84" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1977" 10580 2611 508 13698
+"85" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1978" 11620 3111 610 15341
+"86" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1979" 12909 3789 700 17398
+"87" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1980" 14923 4484 869 20275
+"88" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1981" 17207 5401 998 23606
+"89" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1982" 21067 6388 1197 28652
+"90" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1983" 23858 7158 1365 32381
+"91" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1984" 26903 7725 1453 36081
+"92" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1985" 30891 8194 1570 40655
+"93" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1986" 35522 9752 1823 47098
+"94" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1987" 40667 12423 2055 55146
+"95" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1988" 44195 13842 2153 60190
+"96" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1989" 48479 14461 2440 65380
+"97" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1990" 51892 13977 2517 68385
+"98" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1991" 54415 12882 2640 69936
+"99" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1992" 55387 11877 2556 69819
+"100" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1993" 57657 11741 2570 71968
+"101" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1994" 63452 11637 2628 77717
+"102" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1995" 68612 11576 2822 83009
+"103" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1996" 73458 11800 2994 88252
+"104" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1997" 77262 12196 3098 92557
+"105" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1998" 80345 12618 3167 96130
+"106" "Gross Domestic Product - product measure" "Total Market and Non-Market" "1999" 82340 12748 3107 98195
+"107" "Gross Domestic Product - product measure" "Total Market and Non-Market" "2000" 88239 12872 3037 104148
+"108" "Gross Domestic Product - product measure" "Total Market and Non-Market" "2001" 94016 13101 3056 110173
+"109" "Gross Domestic Product - product measure" "Total Market and Non-Market" "2002" 101163 14101 3278 118542
+"110" "Gross Domestic Product - product measure" "Total Market and Non-Market" "2003" 105146 15619 3548 124314
+"111" "Gross Domestic Product - product measure" "Total Market and Non-Market" "2004" 111981 16891 3976 132848
+"112" "Gross Domestic Product - product measure" "Total Market and Non-Market" "2005" 119902 18107 4037 142046
+"113" "Gross Domestic Product - product measure" "Total Market and Non-Market" "2006" 125305 19917 4584 149806
+"114" "Gross Domestic Product - product measure" "Total Market and Non-Market" "2007" 130662 21114 4840 156616
+"115" "Gross Domestic Product - product measure" "Total Market and Non-Market" "2008" 141444 23124 5260 169828
+"116" "Gross Domestic Product - product measure" "Total Market and Non-Market" "2009" 140982 24850 5666 171498
+"117" "Gross Domestic Product - product measure" "Total Market and Non-Market" "2010" 143466 26097 5856 175419
+"118" "Output" "Market" "1972" 10994 1005 357 12355
+"119" "Output" "Market" "1973" 13021 1111 391 14523
+"120" "Output" "Market" "1974" 15370 1232 429 17031
+"121" "Output" "Market" "1975" 17264 1453 492 19210
+"122" "Output" "Market" "1976" 20239 1784 574 22597
+"123" "Output" "Market" "1977" 25121 2239 733 28092
+"124" "Output" "Market" "1978" 27289 2682 934 30905
+"125" "Output" "Market" "1979" 30204 3098 1049 34351
+"126" "Output" "Market" "1980" 35993 3595 1336 40924
+"127" "Output" "Market" "1981" 41317 4292 1527 47137
+"128" "Output" "Market" "1982" 50842 5089 1762 57693
+"129" "Output" "Market" "1983" 56991 6173 2062 65226
+"130" "Output" "Market" "1984" 63299 6806 2224 72329
+"131" "Output" "Market" "1985" 74771 7575 2411 84757
+"132" "Output" "Market" "1986" 85070 9692 2852 97613
+"133" "Output" "Market" "1987" 95520 11871 3264 110655
+"134" "Output" "Market" "1988" 103316 13037 3516 119870
+"135" "Output" "Market" "1989" 110681 12373 3743 126797
+"136" "Output" "Market" "1990" 118888 10483 3777 133148
+"137" "Output" "Market" "1991" 121553 8176 3934 133663
+"138" "Output" "Market" "1992" 123582 6599 3999 134179
+"139" "Output" "Market" "1993" 131361 6131 4051 141543
+"140" "Output" "Market" "1994" 144402 5440 4148 153990
+"141" "Output" "Market" "1995" 154843 5715 4461 165019
+"142" "Output" "Market" "1996" 163951 5556 4541 174048
+"143" "Output" "Market" "1997" 171920 5253 4578 181752
+"144" "Output" "Market" "1998" 176597 5244 5042 186883
+"145" "Output" "Market" "1999" 179887 5100 4614 189601
+"146" "Output" "Market" "2000" 196002 5184 3178 204364
+"147" "Output" "Market" "2001" 214882 5926 3135 223943
+"148" "Output" "Market" "2002" 226944 8818 3303 239065
+"149" "Output" "Market" "2003" 233290 11331 3601 248222
+"150" "Output" "Market" "2004" 244296 11350 4094 259740
+"151" "Output" "Market" "2005" 262979 12456 4045 279481
+"152" "Output" "Market" "2006" 276966 14883 4872 296721
+"153" "Output" "Market" "2007" 288850 14688 5390 308928
+"154" "Output" "Market" "2008" 314611 17651 5595 337857
+"155" "Output" "Market" "2009" 315902 17443 5887 339232
+"156" "Output" "Market" "2010" 312759 16858 6167 335783
+"157" "Output" "Non-Market" "1972" 113 884 179 1176
+"158" "Output" "Non-Market" "1973" 129 987 223 1339
+"159" "Output" "Non-Market" "1974" 145 1147 262 1554
+"160" "Output" "Non-Market" "1975" 170 1384 328 1882
+"161" "Output" "Non-Market" "1976" 196 1673 392 2261
+"162" "Output" "Non-Market" "1977" 245 1918 415 2578
+"163" "Output" "Non-Market" "1978" 309 2312 503 3124
+"164" "Output" "Non-Market" "1979" 359 2837 598 3794
+"165" "Output" "Non-Market" "1980" 426 3232 701 4358
+"166" "Output" "Non-Market" "1981" 504 3990 859 5353
+"167" "Output" "Non-Market" "1982" 604 4779 1016 6399
+"168" "Output" "Non-Market" "1983" 662 5320 1169 7150
+"169" "Output" "Non-Market" "1984" 671 5593 1318 7582
+"170" "Output" "Non-Market" "1985" 736 6071 1461 8269
+"171" "Output" "Non-Market" "1986" 887 7052 1668 9607
+"172" "Output" "Non-Market" "1987" 1087 8952 1867 11906
+"173" "Output" "Non-Market" "1988" 1235 9921 2036 13192
+"174" "Output" "Non-Market" "1989" 1368 10508 2261 14137
+"175" "Output" "Non-Market" "1990" 1486 11182 2413 15081
+"176" "Output" "Non-Market" "1991" 1641 11932 2648 16221
+"177" "Output" "Non-Market" "1992" 1808 11891 2668 16368
+"178" "Output" "Non-Market" "1993" 1882 12385 2651 16919
+"179" "Output" "Non-Market" "1994" 2067 12515 2665 17247
+"180" "Output" "Non-Market" "1995" 2217 12445 2689 17351
+"181" "Output" "Non-Market" "1996" 2426 13154 2723 18303
+"182" "Output" "Non-Market" "1997" 2808 13743 2668 19219
+"183" "Output" "Non-Market" "1998" 3180 14903 2720 20802
+"184" "Output" "Non-Market" "1999" 3643 15305 2641 21590
+"185" "Output" "Non-Market" "2000" 3814 16959 2748 23521
+"186" "Output" "Non-Market" "2001" 4052 16759 2852 23663
+"187" "Output" "Non-Market" "2002" 4327 17859 2960 25146
+"188" "Output" "Non-Market" "2003" 4683 18628 3126 26437
+"189" "Output" "Non-Market" "2004" 5097 20170 3347 28613
+"190" "Output" "Non-Market" "2005" 5430 21542 3676 30647
+"191" "Output" "Non-Market" "2006" 5609 23096 3983 32689
+"192" "Output" "Non-Market" "2007" 5638 24889 4313 34840
+"193" "Output" "Non-Market" "2008" 6062 26652 4729 37443
+"194" "Output" "Non-Market" "2009" 6795 28882 5036 40714
+"195" "Output" "Non-Market" "2010" 7059 29852 5141 42052
+"196" "Output" "Total Market and Non-Market" "1972" 11107 1889 535 13531
+"197" "Output" "Total Market and Non-Market" "1973" 13149 2098 614 15862
+"198" "Output" "Total Market and Non-Market" "1974" 15515 2379 691 18586
+"199" "Output" "Total Market and Non-Market" "1975" 17434 2837 820 21092
+"200" "Output" "Total Market and Non-Market" "1976" 20435 3457 966 24859
+"201" "Output" "Total Market and Non-Market" "1977" 25366 4157 1147 30670
+"202" "Output" "Total Market and Non-Market" "1978" 27597 4994 1437 34029
+"203" "Output" "Total Market and Non-Market" "1979" 30563 5935 1647 38145
+"204" "Output" "Total Market and Non-Market" "1980" 36418 6827 2037 45283
+"205" "Output" "Total Market and Non-Market" "1981" 41821 8282 2386 52490
+"206" "Output" "Total Market and Non-Market" "1982" 51447 9867 2778 64092
+"207" "Output" "Total Market and Non-Market" "1983" 57654 11493 3230 72377
+"208" "Output" "Total Market and Non-Market" "1984" 63970 12399 3542 79912
+"209" "Output" "Total Market and Non-Market" "1985" 75507 13647 3872 93026
+"210" "Output" "Total Market and Non-Market" "1986" 85956 16744 4520 107221
+"211" "Output" "Total Market and Non-Market" "1987" 96607 20823 5130 122560
+"212" "Output" "Total Market and Non-Market" "1988" 104551 22958 5552 133061
+"213" "Output" "Total Market and Non-Market" "1989" 112050 22881 6004 140934
+"214" "Output" "Total Market and Non-Market" "1990" 120374 21665 6190 148229
+"215" "Output" "Total Market and Non-Market" "1991" 123194 20108 6583 149884
+"216" "Output" "Total Market and Non-Market" "1992" 125390 18490 6667 150547
+"217" "Output" "Total Market and Non-Market" "1993" 133244 18517 6702 158462
+"218" "Output" "Total Market and Non-Market" "1994" 146469 17955 6813 171237
+"219" "Output" "Total Market and Non-Market" "1995" 157060 18160 7149 182369
+"220" "Output" "Total Market and Non-Market" "1996" 166377 18710 7264 192351
+"221" "Output" "Total Market and Non-Market" "1997" 174728 18996 7247 200971
+"222" "Output" "Total Market and Non-Market" "1998" 179777 20147 7762 207685
+"223" "Output" "Total Market and Non-Market" "1999" 183530 20406 7255 211190
+"224" "Output" "Total Market and Non-Market" "2000" 199816 22143 5926 227885
+"225" "Output" "Total Market and Non-Market" "2001" 218935 22684 5986 247605
+"226" "Output" "Total Market and Non-Market" "2002" 231271 26678 6262 264211
+"227" "Output" "Total Market and Non-Market" "2003" 237973 29958 6728 274659
+"228" "Output" "Total Market and Non-Market" "2004" 249393 31520 7441 288353
+"229" "Output" "Total Market and Non-Market" "2005" 268409 33998 7721 310128
+"230" "Output" "Total Market and Non-Market" "2006" 282575 37979 8855 329410
+"231" "Output" "Total Market and Non-Market" "2007" 294489 39576 9703 343768
+"232" "Output" "Total Market and Non-Market" "2008" 320673 44303 10324 375300
+"233" "Output" "Total Market and Non-Market" "2009" 322698 46325 10923 379946
+"234" "Output" "Total Market and Non-Market" "2010" 319818 46711 11307 377835
+"235" "Intermediate Consumption" "Market" "1972" 5793 437 202 6432
+"236" "Intermediate Consumption" "Market" "1973" 7027 463 222 7712
+"237" "Intermediate Consumption" "Market" "1974" 8357 508 247 9112
+"238" "Intermediate Consumption" "Market" "1975" 9628 704 290 10622
+"239" "Intermediate Consumption" "Market" "1976" 11713 944 343 13000
+"240" "Intermediate Consumption" "Market" "1977" 14671 1060 437 16168
+"241" "Intermediate Consumption" "Market" "1978" 15820 1285 571 17675
+"242" "Intermediate Consumption" "Market" "1979" 17476 1413 654 19543
+"243" "Intermediate Consumption" "Market" "1980" 21286 1545 835 23667
+"244" "Intermediate Consumption" "Market" "1981" 24370 1934 969 27273
+"245" "Intermediate Consumption" "Market" "1982" 30092 2319 1108 33518
+"246" "Intermediate Consumption" "Market" "1983" 33466 2989 1303 37758
+"247" "Intermediate Consumption" "Market" "1984" 36722 3161 1425 41308
+"248" "Intermediate Consumption" "Market" "1985" 44241 3652 1561 49454
+"249" "Intermediate Consumption" "Market" "1986" 49965 4951 1844 56760
+"250" "Intermediate Consumption" "Market" "1987" 55354 5682 2104 63140
+"251" "Intermediate Consumption" "Market" "1988" 59703 6080 2324 68107
+"252" "Intermediate Consumption" "Market" "1989" 62866 5321 2379 70566
+"253" "Intermediate Consumption" "Market" "1990" 67718 4216 2413 74347
+"254" "Intermediate Consumption" "Market" "1991" 67940 3206 2522 73668
+"255" "Intermediate Consumption" "Market" "1992" 69090 2682 2633 74405
+"256" "Intermediate Consumption" "Market" "1993" 74665 2505 2619 79789
+"257" "Intermediate Consumption" "Market" "1994" 81975 2079 2696 86750
+"258" "Intermediate Consumption" "Market" "1995" 87348 2505 2843 92696
+"259" "Intermediate Consumption" "Market" "1996" 91714 2466 2796 96976
+"260" "Intermediate Consumption" "Market" "1997" 96076 2196 2729 101001
+"261" "Intermediate Consumption" "Market" "1998" 97885 2115 3152 103152
+"262" "Intermediate Consumption" "Market" "1999" 99505 2297 2804 104606
+"263" "Intermediate Consumption" "Market" "2000" 109839 2615 1463 113917
+"264" "Intermediate Consumption" "Market" "2001" 123072 3530 1443 128044
+"265" "Intermediate Consumption" "Market" "2002" 128093 5948 1466 135507
+"266" "Intermediate Consumption" "Market" "2003" 130599 7640 1585 139824
+"267" "Intermediate Consumption" "Market" "2004" 134998 7212 1763 143973
+"268" "Intermediate Consumption" "Market" "2005" 146014 8162 1777 155953
+"269" "Intermediate Consumption" "Market" "2006" 154674 10024 2187 166886
+"270" "Intermediate Consumption" "Market" "2007" 161320 9830 2655 173805
+"271" "Intermediate Consumption" "Market" "2008" 176484 12097 2633 191213
+"272" "Intermediate Consumption" "Market" "2009" 178662 11660 2691 193013
+"273" "Intermediate Consumption" "Market" "2010" 173234 10768 2915 186917
+"274" "Intermediate Consumption" "Non-Market" "1972" 56 224 78 359
+"275" "Intermediate Consumption" "Non-Market" "1973" 60 249 106 415
+"276" "Intermediate Consumption" "Non-Market" "1974" 67 267 127 461
+"277" "Intermediate Consumption" "Non-Market" "1975" 80 335 164 579
+"278" "Intermediate Consumption" "Non-Market" "1976" 88 409 190 687
+"279" "Intermediate Consumption" "Non-Market" "1977" 116 487 202 804
+"280" "Intermediate Consumption" "Non-Market" "1978" 158 599 256 1012
+"281" "Intermediate Consumption" "Non-Market" "1979" 179 732 292 1204
+"282" "Intermediate Consumption" "Non-Market" "1980" 210 798 333 1341
+"283" "Intermediate Consumption" "Non-Market" "1981" 244 947 420 1611
+"284" "Intermediate Consumption" "Non-Market" "1982" 289 1160 474 1922
+"285" "Intermediate Consumption" "Non-Market" "1983" 330 1345 563 2237
+"286" "Intermediate Consumption" "Non-Market" "1984" 344 1513 665 2522
+"287" "Intermediate Consumption" "Non-Market" "1985" 375 1801 741 2917
+"288" "Intermediate Consumption" "Non-Market" "1986" 469 2040 853 3363
+"289" "Intermediate Consumption" "Non-Market" "1987" 586 2718 971 4275
+"290" "Intermediate Consumption" "Non-Market" "1988" 653 3036 1075 4764
+"291" "Intermediate Consumption" "Non-Market" "1989" 705 3098 1185 4988
+"292" "Intermediate Consumption" "Non-Market" "1990" 765 3472 1260 5497
+"293" "Intermediate Consumption" "Non-Market" "1991" 839 4020 1421 6280
+"294" "Intermediate Consumption" "Non-Market" "1992" 913 3931 1479 6323
+"295" "Intermediate Consumption" "Non-Market" "1993" 921 4271 1513 6705
+"296" "Intermediate Consumption" "Non-Market" "1994" 1043 4238 1489 6770
+"297" "Intermediate Consumption" "Non-Market" "1995" 1100 4079 1484 6664
+"298" "Intermediate Consumption" "Non-Market" "1996" 1205 4444 1474 7123
+"299" "Intermediate Consumption" "Non-Market" "1997" 1389 4604 1419 7413
+"300" "Intermediate Consumption" "Non-Market" "1998" 1547 5414 1443 8403
+"301" "Intermediate Consumption" "Non-Market" "1999" 1685 5360 1344 8389
+"302" "Intermediate Consumption" "Non-Market" "2000" 1737 6656 1426 9819
+"303" "Intermediate Consumption" "Non-Market" "2001" 1847 6053 1488 9388
+"304" "Intermediate Consumption" "Non-Market" "2002" 2015 6629 1518 10162
+"305" "Intermediate Consumption" "Non-Market" "2003" 2228 6699 1594 10521
+"306" "Intermediate Consumption" "Non-Market" "2004" 2414 7417 1701 11532
+"307" "Intermediate Consumption" "Non-Market" "2005" 2493 7730 1907 12130
+"308" "Intermediate Consumption" "Non-Market" "2006" 2596 8038 2084 12718
+"309" "Intermediate Consumption" "Non-Market" "2007" 2507 8632 2209 13347
+"310" "Intermediate Consumption" "Non-Market" "2008" 2745 9082 2431 14259
+"311" "Intermediate Consumption" "Non-Market" "2009" 3053 9815 2566 15434
+"312" "Intermediate Consumption" "Non-Market" "2010" 3118 9846 2536 15499
+"313" "Intermediate Consumption" "Total Market and Non-Market" "1972" 5849 662 280 6791
+"314" "Intermediate Consumption" "Total Market and Non-Market" "1973" 7088 712 327 8126
+"315" "Intermediate Consumption" "Total Market and Non-Market" "1974" 8424 775 373 9573
+"316" "Intermediate Consumption" "Total Market and Non-Market" "1975" 9708 1039 454 11201
+"317" "Intermediate Consumption" "Total Market and Non-Market" "1976" 11801 1353 533 13687
+"318" "Intermediate Consumption" "Total Market and Non-Market" "1977" 14786 1547 639 16972
+"319" "Intermediate Consumption" "Total Market and Non-Market" "1978" 15978 1883 827 18688
+"320" "Intermediate Consumption" "Total Market and Non-Market" "1979" 17655 2146 947 20747
+"321" "Intermediate Consumption" "Total Market and Non-Market" "1980" 21496 2343 1168 25007
+"322" "Intermediate Consumption" "Total Market and Non-Market" "1981" 24614 2881 1389 28884
+"323" "Intermediate Consumption" "Total Market and Non-Market" "1982" 30380 3479 1581 35440
+"324" "Intermediate Consumption" "Total Market and Non-Market" "1983" 33796 4334 1866 39996
+"325" "Intermediate Consumption" "Total Market and Non-Market" "1984" 37066 4674 2089 43830
+"326" "Intermediate Consumption" "Total Market and Non-Market" "1985" 44616 5453 2302 52371
+"327" "Intermediate Consumption" "Total Market and Non-Market" "1986" 50434 6992 2697 60122
+"328" "Intermediate Consumption" "Total Market and Non-Market" "1987" 55940 8400 3075 67415
+"329" "Intermediate Consumption" "Total Market and Non-Market" "1988" 60356 9116 3399 72872
+"330" "Intermediate Consumption" "Total Market and Non-Market" "1989" 63571 8420 3564 75554
+"331" "Intermediate Consumption" "Total Market and Non-Market" "1990" 68483 7688 3673 79844
+"332" "Intermediate Consumption" "Total Market and Non-Market" "1991" 68779 7226 3942 79948
+"333" "Intermediate Consumption" "Total Market and Non-Market" "1992" 70003 6613 4111 80728
+"334" "Intermediate Consumption" "Total Market and Non-Market" "1993" 75586 6776 4132 86494
+"335" "Intermediate Consumption" "Total Market and Non-Market" "1994" 83017 6318 4185 93520
+"336" "Intermediate Consumption" "Total Market and Non-Market" "1995" 88448 6584 4328 99360
+"337" "Intermediate Consumption" "Total Market and Non-Market" "1996" 92919 6910 4270 104099
+"338" "Intermediate Consumption" "Total Market and Non-Market" "1997" 97466 6800 4149 108414
+"339" "Intermediate Consumption" "Total Market and Non-Market" "1998" 99432 7529 4595 111555
+"340" "Intermediate Consumption" "Total Market and Non-Market" "1999" 101190 7657 4148 112995
+"341" "Intermediate Consumption" "Total Market and Non-Market" "2000" 111577 9271 2889 123737
+"342" "Intermediate Consumption" "Total Market and Non-Market" "2001" 124918 9583 2931 137432
+"343" "Intermediate Consumption" "Total Market and Non-Market" "2002" 130108 12577 2984 145669
+"344" "Intermediate Consumption" "Total Market and Non-Market" "2003" 132827 14339 3179 150345
+"345" "Intermediate Consumption" "Total Market and Non-Market" "2004" 137412 14628 3465 155505
+"346" "Intermediate Consumption" "Total Market and Non-Market" "2005" 148507 15891 3684 168082
+"347" "Intermediate Consumption" "Total Market and Non-Market" "2006" 157270 18062 4271 179604
+"348" "Intermediate Consumption" "Total Market and Non-Market" "2007" 163826 18462 4863 187152
+"349" "Intermediate Consumption" "Total Market and Non-Market" "2008" 179229 21179 5064 205472
+"350" "Intermediate Consumption" "Total Market and Non-Market" "2009" 181715 21475 5258 208448
+"351" "Intermediate Consumption" "Total Market and Non-Market" "2010" 176352 20614 5451 202416

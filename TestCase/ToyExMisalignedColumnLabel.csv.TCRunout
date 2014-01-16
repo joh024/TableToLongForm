@@ -1,0 +1,177 @@
+###TCR CIMCB rowData 
+[1] 3 6
+###TCR CIMCB colData 
+[1] 2 9
+###TCR CRAC rowslist 
+$label
+[1] 1 2
+
+$data
+[1] 3 4 5 6
+
+###TCR CRAC colslist 
+$label
+[1] 1
+
+$data
+[1] 2 3 4 5 6 7 8 9
+
+###TCR IOOC plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 1
+
+###TCR IOOC res 
+Row 1 Row 2 Row 3 Row 4 
+    1     2     3     4 
+###TCR RRL rowplist 
+Row 1 Row 2 Row 3 Row 4 
+    1     2     3     4 
+###TCR RRL rowvecs 
+     [,1]   
+[1,] "Row 1"
+[2,] "Row 2"
+[3,] "Row 3"
+[4,] "Row 4"
+###TCR MCPBefore matColLabel 
+     V2           V3            V4           V5           V6          
+[1,] NA           "Col Parent1" NA           NA           NA          
+[2,] "Col Child1" "Col Child2"  "Col Child3" "Col Child4" "Col Child1"
+     V7           
+[1,] "Col Parent2"
+[2,] "Col Child2" 
+###TCR ACP cursub 
+           V2            V3            V4            V5 
+           NA "Col Parent1"            NA            NA 
+###TCR ACP currow[curcols] 
+           V2            V3            V4            V5 
+"Col Parent1"            NA            NA            NA 
+###TCR ACP cursub 
+           V6            V7            V8            V9 
+           NA "Col Parent2"            NA            NA 
+###TCR ACP currow[curcols] 
+           V6            V7            V8            V9 
+"Col Parent2"            NA            NA            NA 
+###TCR ACP cursub 
+          V2           V3           V4           V5 
+"Col Child1" "Col Child2" "Col Child3" "Col Child4" 
+###TCR ACP currow[curcols] 
+          V2           V3           V4           V5 
+"Col Child1" "Col Child2" "Col Child3" "Col Child4" 
+###TCR ACP cursub 
+          V6           V7           V8           V9 
+"Col Child1" "Col Child2" "Col Child3" "Col Child4" 
+###TCR ACP currow[curcols] 
+          V6           V7           V8           V9 
+"Col Child1" "Col Child2" "Col Child3" "Col Child4" 
+###TCR MCPAfter matColLabel 
+     V2            V3           V4           V5           V6           
+[1,] "Col Parent1" NA           NA           NA           "Col Parent2"
+[2,] "Col Child1"  "Col Child2" "Col Child3" "Col Child4" "Col Child1" 
+     V7          
+[1,] NA          
+[2,] "Col Child2"
+###TCR MCLBefore matColLabel 
+     V2            V3           V4           V5           V6           
+[1,] "Col Parent1" NA           NA           NA           "Col Parent2"
+[2,] "Col Child1"  "Col Child2" "Col Child3" "Col Child4" "Col Child1" 
+     V7          
+[1,] NA          
+[2,] "Col Child2"
+###TCR MCLAfter matColLabel 
+     V2            V3           V4           V5           V6           
+[1,] "Col Parent1" NA           NA           NA           "Col Parent2"
+[2,] "Col Child1"  "Col Child2" "Col Child3" "Col Child4" "Col Child1" 
+     V7          
+[1,] NA          
+[2,] "Col Child2"
+###TCR PBEB res 
+$`Col Parent1`
+$`Col Parent1`$rows
+[1] 1 2 3 4
+
+$`Col Parent1`$cols
+[1] 2
+
+
+$`Col Parent2`
+$`Col Parent2`$rows
+[1] 5 6 7 8
+
+$`Col Parent2`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 1 2 3 4
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+Col Child1 Col Child2 Col Child3 Col Child4 
+         1          2          3          4 
+###TCR IOOC plist 
+$rows
+[1] 5 6 7 8
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+Col Child1 Col Child2 Col Child3 Col Child4 
+         5          6          7          8 
+###TCR RCC plist 
+Col Child1 Col Child2 Col Child3 Col Child4 
+         1          2          3          4 
+###TCR RCC matData 
+     V2   V3   V4   V5   V6   V7  
+[1,] "10" "20" "30" "40" "50" "60"
+[2,] "11" "21" "31" "41" "51" "61"
+[3,] "12" "22" "32" "42" "52" "62"
+[4,] "13" "23" "33" "43" "53" "63"
+###TCR RCC datbit 
+     V2   V3   V4   V5  
+[1,] "10" "20" "30" "40"
+[2,] "11" "21" "31" "41"
+[3,] "12" "22" "32" "42"
+[4,] "13" "23" "33" "43"
+###TCR RCC plist 
+Col Child1 Col Child2 Col Child3 Col Child4 
+         5          6          7          8 
+###TCR RCC matData 
+     V2   V3   V4   V5   V6   V7  
+[1,] "10" "20" "30" "40" "50" "60"
+[2,] "11" "21" "31" "41" "51" "61"
+[3,] "12" "22" "32" "42" "52" "62"
+[4,] "13" "23" "33" "43" "53" "63"
+###TCR RCC datbit 
+     V6   V7   V8   V9  
+[1,] "50" "60" "70" "80"
+[2,] "51" "61" "71" "81"
+[3,] "52" "62" "72" "82"
+[4,] "53" "63" "73" "83"
+###TCR RCL colplist 
+$`Col Parent1`
++ Col Child1 (1, 2)
++ Col Child2 (2, 2)
++ Col Child3 (3, 2)
++ Col Child4 (4, 2)
+
+$`Col Parent2`
++ Col Child1 (5, 2)
++ Col Child2 (6, 2)
++ Col Child3 (7, 2)
++ Col Child4 (8, 2)
+
+###TCR RCL res 
+      UNKNOWN UNKNOWN Col Child1 Col Child2 Col Child3 Col Child4
+1 Col Parent1   Row 1         10         20         30         40
+2 Col Parent1   Row 2         11         21         31         41
+3 Col Parent1   Row 3         12         22         32         42
+4 Col Parent1   Row 4         13         23         33         43
+5 Col Parent2   Row 1         50         60         70         80
+6 Col Parent2   Row 2         51         61         71         81

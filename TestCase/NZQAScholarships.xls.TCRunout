@@ -1,0 +1,4177 @@
+###TCR CIMCB rowData 
+[1]   7 462
+###TCR CIMCB colData 
+[1]  3 28
+###TCR CRAC rowslist 
+$label
+[1] 1 3 4 5
+
+$data
+  [1]   7   9  10  11  12  13  14  15  16  17  18  19  20  22  23  24  25  26
+ [19]  27  28  29  30  31  32  33  35  36  37  38  39  40  41  42  43  44  45
+ [37]  46  48  49  50  51  52  53  54  55  56  57  58  59  61  62  63  64  65
+ [55]  66  67  68  69  70  71  72  74  75  76  77  78  79  80  81  82  83  84
+ [73]  85  87  88  89  90  91  92  93  94  95  96  97  98 100 101 102 103 104
+ [91] 105 106 107 108 109 110 111 113 114 115 116 117 118 119 120 121 122 123
+[109] 124 126 127 128 129 130 131 132 133 134 135 136 137 139 140 141 142 143
+[127] 144 145 146 147 148 149 150 152 153 154 155 156 157 158 159 160 161 162
+[145] 163 165 166 167 168 169 170 171 172 173 174 175 176 178 179 180 181 182
+[163] 183 184 185 186 187 188 189 191 192 193 194 195 196 197 198 199 200 201
+[181] 202 204 205 206 207 208 209 210 211 212 213 214 215 217 218 219 220 221
+[199] 222 223 224 225 226 227 228 230 231 232 233 234 235 236 237 238 239 240
+[217] 241 243 244 245 246 247 248 249 250 251 252 253 254 256 257 258 259 260
+[235] 261 262 263 264 265 266 267 269 270 271 272 273 274 275 276 277 278 279
+[253] 280 282 283 284 285 286 287 288 289 290 291 292 293 295 296 297 298 299
+[271] 300 301 302 303 304 305 306 308 309 310 311 312 313 314 315 316 317 318
+[289] 319 321 322 323 324 325 326 327 328 329 330 331 332 334 335 336 337 338
+[307] 339 340 341 342 343 344 345 347 348 349 350 351 352 353 354 355 356 357
+[325] 358 360 361 362 363 364 365 366 367 368 369 370 371 373 374 375 376 377
+[343] 378 379 380 381 382 383 384 386 387 388 389 390 391 392 393 394 395 396
+[361] 397 399 400 401 402 403 404 405 406 407 408 409 410 412 413 414 415 416
+[379] 417 418 419 420 421 422 423 425 426 427 428 429 430 431 432 433 434 435
+[397] 436 438 439 440 441 442 443 444 445 446 447 448 449 451 452 453 454 455
+[415] 456 457 458 459 460 461 462
+
+###TCR CRAC colslist 
+$label
+[1] 1 2
+
+$data
+ [1]  3  4  5  7  8  9 10 12 13 14 16 17 18 19 21 22 23 25 26 27 28
+
+###TCR CMER res 
+$`All Subjects`
+$`All Subjects`$rows
+  [1]   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19
+ [19]  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37
+ [37]  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55
+ [55]  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73
+ [73]  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91
+ [91]  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107 108 109
+[109] 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127
+[127] 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145
+[145] 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163
+[163] 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181
+[181] 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199
+[199] 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217
+[217] 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235
+[235] 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253
+[253] 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271
+[271] 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289
+[289] 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307
+[307] 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322 323 324 325
+[325] 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343
+[343] 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361
+[361] 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379
+[379] 380 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396 397
+[397] 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415
+[415] 416 417 418 419 420 421
+
+$`All Subjects`$cols
+[1] 1 2
+
+
+###TCR CMER res 
+$Accounting
+$Accounting$rows
+ [1]  3  4  5  6  7  8  9 10 11 12 13
+
+$Accounting$cols
+[1] 1 2
+
+
+$`Agricultural & Horticultural Science`
+$`Agricultural & Horticultural Science`$rows
+ [1] 15 16 17 18 19 20 21 22 23 24 25
+
+$`Agricultural & Horticultural Science`$cols
+[1] 1 2
+
+
+$`Art History`
+$`Art History`$rows
+ [1] 27 28 29 30 31 32 33 34 35 36 37
+
+$`Art History`$cols
+[1] 1 2
+
+
+$Biology
+$Biology$rows
+ [1] 39 40 41 42 43 44 45 46 47 48 49
+
+$Biology$cols
+[1] 1 2
+
+
+$Chemistry
+$Chemistry$rows
+ [1] 51 52 53 54 55 56 57 58 59 60 61
+
+$Chemistry$cols
+[1] 1 2
+
+
+$Chinese
+$Chinese$rows
+ [1] 63 64 65 66 67 68 69 70 71 72 73
+
+$Chinese$cols
+[1] 1 2
+
+
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 3 4
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 5 6 7
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 8 9
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 10 11
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 12 13
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 3 4
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+     3      4 
+###TCR IOOC plist 
+$rows
+[1] 5 6 7
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+      5       6       7 
+###TCR IOOC plist 
+$rows
+[1] 8 9
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+     8      9 
+###TCR IOOC plist 
+$rows
+[1] 10 11
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    10     11 
+###TCR IOOC plist 
+$rows
+[1] 12 13
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    12     13 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 15 16
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 17 18 19
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 20 21
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 22 23
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 24 25
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 15 16
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    15     16 
+###TCR IOOC plist 
+$rows
+[1] 17 18 19
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+     17      18      19 
+###TCR IOOC plist 
+$rows
+[1] 20 21
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    20     21 
+###TCR IOOC plist 
+$rows
+[1] 22 23
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    22     23 
+###TCR IOOC plist 
+$rows
+[1] 24 25
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    24     25 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 27 28
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 29 30 31
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 32 33
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 34 35
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 36 37
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 27 28
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    27     28 
+###TCR IOOC plist 
+$rows
+[1] 29 30 31
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+     29      30      31 
+###TCR IOOC plist 
+$rows
+[1] 32 33
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    32     33 
+###TCR IOOC plist 
+$rows
+[1] 34 35
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    34     35 
+###TCR IOOC plist 
+$rows
+[1] 36 37
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    36     37 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 39 40
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 41 42 43
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 44 45
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 46 47
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 48 49
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 39 40
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    39     40 
+###TCR IOOC plist 
+$rows
+[1] 41 42 43
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+     41      42      43 
+###TCR IOOC plist 
+$rows
+[1] 44 45
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    44     45 
+###TCR IOOC plist 
+$rows
+[1] 46 47
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    46     47 
+###TCR IOOC plist 
+$rows
+[1] 48 49
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    48     49 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 51 52
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 53 54 55
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 56 57
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 58 59
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 60 61
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 51 52
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    51     52 
+###TCR IOOC plist 
+$rows
+[1] 53 54 55
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+     53      54      55 
+###TCR IOOC plist 
+$rows
+[1] 56 57
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    56     57 
+###TCR IOOC plist 
+$rows
+[1] 58 59
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    58     59 
+###TCR IOOC plist 
+$rows
+[1] 60 61
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    60     61 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 63 64
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 65 66 67
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 68 69
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 70 71
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 72 73
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 63 64
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    63     64 
+###TCR IOOC plist 
+$rows
+[1] 65 66 67
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+     65      66      67 
+###TCR IOOC plist 
+$rows
+[1] 68 69
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    68     69 
+###TCR IOOC plist 
+$rows
+[1] 70 71
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    70     71 
+###TCR IOOC plist 
+$rows
+[1] 72 73
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    72     73 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 75 76
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 77 78 79
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 80 81
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 82 83
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 84 85
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 75 76
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    75     76 
+###TCR IOOC plist 
+$rows
+[1] 77 78 79
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+     77      78      79 
+###TCR IOOC plist 
+$rows
+[1] 80 81
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    80     81 
+###TCR IOOC plist 
+$rows
+[1] 82 83
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    82     83 
+###TCR IOOC plist 
+$rows
+[1] 84 85
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    84     85 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 87 88
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 89 90 91
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 92 93
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 94 95
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 96 97
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 87 88
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    87     88 
+###TCR IOOC plist 
+$rows
+[1] 89 90 91
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+     89      90      91 
+###TCR IOOC plist 
+$rows
+[1] 92 93
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    92     93 
+###TCR IOOC plist 
+$rows
+[1] 94 95
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    94     95 
+###TCR IOOC plist 
+$rows
+[1] 96 97
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    96     97 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1]  99 100
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 101 102 103
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 104 105
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 106 107
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 108 109
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1]  99 100
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+    99    100 
+###TCR IOOC plist 
+$rows
+[1] 101 102 103
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    101     102     103 
+###TCR IOOC plist 
+$rows
+[1] 104 105
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   104    105 
+###TCR IOOC plist 
+$rows
+[1] 106 107
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   106    107 
+###TCR IOOC plist 
+$rows
+[1] 108 109
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   108    109 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 111 112
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 113 114 115
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 116 117
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 118 119
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 120 121
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 111 112
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   111    112 
+###TCR IOOC plist 
+$rows
+[1] 113 114 115
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    113     114     115 
+###TCR IOOC plist 
+$rows
+[1] 116 117
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   116    117 
+###TCR IOOC plist 
+$rows
+[1] 118 119
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   118    119 
+###TCR IOOC plist 
+$rows
+[1] 120 121
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   120    121 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 123 124
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 125 126 127
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 128 129
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 130 131
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 132 133
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 123 124
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   123    124 
+###TCR IOOC plist 
+$rows
+[1] 125 126 127
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    125     126     127 
+###TCR IOOC plist 
+$rows
+[1] 128 129
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   128    129 
+###TCR IOOC plist 
+$rows
+[1] 130 131
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   130    131 
+###TCR IOOC plist 
+$rows
+[1] 132 133
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   132    133 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 135 136
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 137 138 139
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 140 141
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 142 143
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 144 145
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 135 136
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   135    136 
+###TCR IOOC plist 
+$rows
+[1] 137 138 139
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    137     138     139 
+###TCR IOOC plist 
+$rows
+[1] 140 141
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   140    141 
+###TCR IOOC plist 
+$rows
+[1] 142 143
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   142    143 
+###TCR IOOC plist 
+$rows
+[1] 144 145
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   144    145 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 147 148
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 149 150 151
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 152 153
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 154 155
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 156 157
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 147 148
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   147    148 
+###TCR IOOC plist 
+$rows
+[1] 149 150 151
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    149     150     151 
+###TCR IOOC plist 
+$rows
+[1] 152 153
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   152    153 
+###TCR IOOC plist 
+$rows
+[1] 154 155
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   154    155 
+###TCR IOOC plist 
+$rows
+[1] 156 157
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   156    157 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 159 160
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 161 162 163
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 164 165
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 166 167
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 168 169
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 159 160
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   159    160 
+###TCR IOOC plist 
+$rows
+[1] 161 162 163
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    161     162     163 
+###TCR IOOC plist 
+$rows
+[1] 164 165
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   164    165 
+###TCR IOOC plist 
+$rows
+[1] 166 167
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   166    167 
+###TCR IOOC plist 
+$rows
+[1] 168 169
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   168    169 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 171 172
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 173 174 175
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 176 177
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 178 179
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 180 181
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 171 172
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   171    172 
+###TCR IOOC plist 
+$rows
+[1] 173 174 175
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    173     174     175 
+###TCR IOOC plist 
+$rows
+[1] 176 177
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   176    177 
+###TCR IOOC plist 
+$rows
+[1] 178 179
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   178    179 
+###TCR IOOC plist 
+$rows
+[1] 180 181
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   180    181 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 183 184
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 185 186 187
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 188 189
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 190 191
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 192 193
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 183 184
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   183    184 
+###TCR IOOC plist 
+$rows
+[1] 185 186 187
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    185     186     187 
+###TCR IOOC plist 
+$rows
+[1] 188 189
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   188    189 
+###TCR IOOC plist 
+$rows
+[1] 190 191
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   190    191 
+###TCR IOOC plist 
+$rows
+[1] 192 193
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   192    193 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 195 196
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 197 198 199
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 200 201
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 202 203
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 204 205
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 195 196
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   195    196 
+###TCR IOOC plist 
+$rows
+[1] 197 198 199
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    197     198     199 
+###TCR IOOC plist 
+$rows
+[1] 200 201
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   200    201 
+###TCR IOOC plist 
+$rows
+[1] 202 203
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   202    203 
+###TCR IOOC plist 
+$rows
+[1] 204 205
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   204    205 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 207 208
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 209 210 211
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 212 213
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 214 215
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 216 217
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 207 208
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   207    208 
+###TCR IOOC plist 
+$rows
+[1] 209 210 211
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    209     210     211 
+###TCR IOOC plist 
+$rows
+[1] 212 213
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   212    213 
+###TCR IOOC plist 
+$rows
+[1] 214 215
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   214    215 
+###TCR IOOC plist 
+$rows
+[1] 216 217
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   216    217 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 219 220
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 221 222 223
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 224 225
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 226 227
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 228 229
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 219 220
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   219    220 
+###TCR IOOC plist 
+$rows
+[1] 221 222 223
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    221     222     223 
+###TCR IOOC plist 
+$rows
+[1] 224 225
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   224    225 
+###TCR IOOC plist 
+$rows
+[1] 226 227
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   226    227 
+###TCR IOOC plist 
+$rows
+[1] 228 229
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   228    229 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 231 232
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 233 234 235
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 236 237
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 238 239
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 240 241
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 231 232
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   231    232 
+###TCR IOOC plist 
+$rows
+[1] 233 234 235
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    233     234     235 
+###TCR IOOC plist 
+$rows
+[1] 236 237
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   236    237 
+###TCR IOOC plist 
+$rows
+[1] 238 239
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   238    239 
+###TCR IOOC plist 
+$rows
+[1] 240 241
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   240    241 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 243 244
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 245 246 247
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 248 249
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 250 251
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 252 253
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 243 244
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   243    244 
+###TCR IOOC plist 
+$rows
+[1] 245 246 247
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    245     246     247 
+###TCR IOOC plist 
+$rows
+[1] 248 249
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   248    249 
+###TCR IOOC plist 
+$rows
+[1] 250 251
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   250    251 
+###TCR IOOC plist 
+$rows
+[1] 252 253
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   252    253 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 255 256
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 257 258 259
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 260 261
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 262 263
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 264 265
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 255 256
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   255    256 
+###TCR IOOC plist 
+$rows
+[1] 257 258 259
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    257     258     259 
+###TCR IOOC plist 
+$rows
+[1] 260 261
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   260    261 
+###TCR IOOC plist 
+$rows
+[1] 262 263
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   262    263 
+###TCR IOOC plist 
+$rows
+[1] 264 265
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   264    265 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 267 268
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 269 270 271
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 272 273
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 274 275
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 276 277
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 267 268
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   267    268 
+###TCR IOOC plist 
+$rows
+[1] 269 270 271
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    269     270     271 
+###TCR IOOC plist 
+$rows
+[1] 272 273
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   272    273 
+###TCR IOOC plist 
+$rows
+[1] 274 275
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   274    275 
+###TCR IOOC plist 
+$rows
+[1] 276 277
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   276    277 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 279 280
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 281 282 283
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 284 285
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 286 287
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 288 289
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 279 280
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   279    280 
+###TCR IOOC plist 
+$rows
+[1] 281 282 283
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    281     282     283 
+###TCR IOOC plist 
+$rows
+[1] 284 285
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   284    285 
+###TCR IOOC plist 
+$rows
+[1] 286 287
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   286    287 
+###TCR IOOC plist 
+$rows
+[1] 288 289
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   288    289 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 291 292
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 293 294 295
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 296 297
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 298 299
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 300 301
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 291 292
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   291    292 
+###TCR IOOC plist 
+$rows
+[1] 293 294 295
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    293     294     295 
+###TCR IOOC plist 
+$rows
+[1] 296 297
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   296    297 
+###TCR IOOC plist 
+$rows
+[1] 298 299
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   298    299 
+###TCR IOOC plist 
+$rows
+[1] 300 301
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   300    301 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 303 304
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 305 306 307
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 308 309
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 310 311
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 312 313
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 303 304
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   303    304 
+###TCR IOOC plist 
+$rows
+[1] 305 306 307
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    305     306     307 
+###TCR IOOC plist 
+$rows
+[1] 308 309
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   308    309 
+###TCR IOOC plist 
+$rows
+[1] 310 311
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   310    311 
+###TCR IOOC plist 
+$rows
+[1] 312 313
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   312    313 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 315 316
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 317 318 319
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 320 321
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 322 323
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 324 325
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 315 316
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   315    316 
+###TCR IOOC plist 
+$rows
+[1] 317 318 319
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    317     318     319 
+###TCR IOOC plist 
+$rows
+[1] 320 321
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   320    321 
+###TCR IOOC plist 
+$rows
+[1] 322 323
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   322    323 
+###TCR IOOC plist 
+$rows
+[1] 324 325
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   324    325 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 327 328
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 329 330 331
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 332 333
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 334 335
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 336 337
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 327 328
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   327    328 
+###TCR IOOC plist 
+$rows
+[1] 329 330 331
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    329     330     331 
+###TCR IOOC plist 
+$rows
+[1] 332 333
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   332    333 
+###TCR IOOC plist 
+$rows
+[1] 334 335
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   334    335 
+###TCR IOOC plist 
+$rows
+[1] 336 337
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   336    337 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 339 340
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 341 342 343
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 344 345
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 346 347
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 348 349
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 339 340
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   339    340 
+###TCR IOOC plist 
+$rows
+[1] 341 342 343
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    341     342     343 
+###TCR IOOC plist 
+$rows
+[1] 344 345
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   344    345 
+###TCR IOOC plist 
+$rows
+[1] 346 347
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   346    347 
+###TCR IOOC plist 
+$rows
+[1] 348 349
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   348    349 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 351 352
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 353 354 355
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 356 357
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 358 359
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 360 361
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 351 352
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   351    352 
+###TCR IOOC plist 
+$rows
+[1] 353 354 355
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    353     354     355 
+###TCR IOOC plist 
+$rows
+[1] 356 357
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   356    357 
+###TCR IOOC plist 
+$rows
+[1] 358 359
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   358    359 
+###TCR IOOC plist 
+$rows
+[1] 360 361
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   360    361 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 363 364
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 365 366 367
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 368 369
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 370 371
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 372 373
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 363 364
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   363    364 
+###TCR IOOC plist 
+$rows
+[1] 365 366 367
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    365     366     367 
+###TCR IOOC plist 
+$rows
+[1] 368 369
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   368    369 
+###TCR IOOC plist 
+$rows
+[1] 370 371
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   370    371 
+###TCR IOOC plist 
+$rows
+[1] 372 373
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   372    373 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 375 376
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 377 378 379
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 380 381
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 382 383
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 384 385
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 375 376
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   375    376 
+###TCR IOOC plist 
+$rows
+[1] 377 378 379
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    377     378     379 
+###TCR IOOC plist 
+$rows
+[1] 380 381
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   380    381 
+###TCR IOOC plist 
+$rows
+[1] 382 383
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   382    383 
+###TCR IOOC plist 
+$rows
+[1] 384 385
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   384    385 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 387 388
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 389 390 391
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 392 393
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 394 395
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 396 397
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 387 388
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   387    388 
+###TCR IOOC plist 
+$rows
+[1] 389 390 391
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    389     390     391 
+###TCR IOOC plist 
+$rows
+[1] 392 393
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   392    393 
+###TCR IOOC plist 
+$rows
+[1] 394 395
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   394    395 
+###TCR IOOC plist 
+$rows
+[1] 396 397
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   396    397 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 399 400
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 401 402 403
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 404 405
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 406 407
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 408 409
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 399 400
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   399    400 
+###TCR IOOC plist 
+$rows
+[1] 401 402 403
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    401     402     403 
+###TCR IOOC plist 
+$rows
+[1] 404 405
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   404    405 
+###TCR IOOC plist 
+$rows
+[1] 406 407
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   406    407 
+###TCR IOOC plist 
+$rows
+[1] 408 409
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   408    409 
+###TCR PBEB res 
+$`NZ Maori`
+$`NZ Maori`$rows
+[1] 411 412
+
+$`NZ Maori`$cols
+[1] 2
+
+
+$`NZ European`
+$`NZ European`$rows
+[1] 413 414 415
+
+$`NZ European`$cols
+[1] 2
+
+
+$`Pasifika Peoples`
+$`Pasifika Peoples`$rows
+[1] 416 417
+
+$`Pasifika Peoples`$cols
+[1] 2
+
+
+$Asian
+$Asian$rows
+[1] 418 419
+
+$Asian$cols
+[1] 2
+
+
+$`Other/Unspecified Ethnicity`
+$`Other/Unspecified Ethnicity`$rows
+[1] 420 421
+
+$`Other/Unspecified Ethnicity`$cols
+[1] 2
+
+
+###TCR IOOC plist 
+$rows
+[1] 411 412
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   411    412 
+###TCR IOOC plist 
+$rows
+[1] 413 414 415
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+   Male  Female Unknown 
+    413     414     415 
+###TCR IOOC plist 
+$rows
+[1] 416 417
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   416    417 
+###TCR IOOC plist 
+$rows
+[1] 418 419
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   418    419 
+###TCR IOOC plist 
+$rows
+[1] 420 421
+
+$cols
+[1] 2
+
+###TCR IOOC res 
+  Male Female 
+   420    421 
+###TCR RRL rowplist 
+$`All Subjects`
++ Accounting (2, 1)
+- + NZ Maori (3, 1)
+- - + Male (3, 2)
+- - + Female (4, 2)
+- + NZ European (5, 1)
+- - + Male (5, 2)
+- - + Female (6, 2)
+- - + Unknown (7, 2)
+- + Pasifika Peoples (8, 1)
+- - + Male (8, 2)
+- - + Female (9, 2)
+- + Asian (10, 1)
+- - + Male (10, 2)
+- - + Female (11, 2)
+- + Other/Unspecified Ethnicity (12, 1)
+- - + Male (12, 2)
+- - + Female (13, 2)
++ Agricultural & Horticultural Science (14, 1)
+- + NZ Maori (15, 1)
+- - + Male (15, 2)
+- - + Female (16, 2)
+- + NZ European (17, 1)
+- - + Male (17, 2)
+- - + Female (18, 2)
+- - + Unknown (19, 2)
+- + Pasifika Peoples (20, 1)
+- - + Male (20, 2)
+- - + Female (21, 2)
+- + Asian (22, 1)
+- - + Male (22, 2)
+- - + Female (23, 2)
+- + Other/Unspecified Ethnicity (24, 1)
+- - + Male (24, 2)
+- - + Female (25, 2)
++ Art History (26, 1)
+- + NZ Maori (27, 1)
+- - + Male (27, 2)
+- - + Female (28, 2)
+- + NZ European (29, 1)
+- - + Male (29, 2)
+- - + Female (30, 2)
+- - + Unknown (31, 2)
+- + Pasifika Peoples (32, 1)
+- - + Male (32, 2)
+- - + Female (33, 2)
+- + Asian (34, 1)
+- - + Male (34, 2)
+- - + Female (35, 2)
+- + Other/Unspecified Ethnicity (36, 1)
+- - + Male (36, 2)
+- - + Female (37, 2)
++ Biology (38, 1)
+- + NZ Maori (39, 1)
+- - + Male (39, 2)
+- - + Female (40, 2)
+- + NZ European (41, 1)
+- - + Male (41, 2)
+- - + Female (42, 2)
+- - + Unknown (43, 2)
+- + Pasifika Peoples (44, 1)
+- - + Male (44, 2)
+- - + Female (45, 2)
+- + Asian (46, 1)
+- - + Male (46, 2)
+- - + Female (47, 2)
+- + Other/Unspecified Ethnicity (48, 1)
+- - + Male (48, 2)
+- - + Female (49, 2)
++ Chemistry (50, 1)
+- + NZ Maori (51, 1)
+- - + Male (51, 2)
+- - + Female (52, 2)
+- + NZ European (53, 1)
+- - + Male (53, 2)
+- - + Female (54, 2)
+- - + Unknown (55, 2)
+- + Pasifika Peoples (56, 1)
+- - + Male (56, 2)
+- - + Female (57, 2)
+- + Asian (58, 1)
+- - + Male (58, 2)
+- - + Female (59, 2)
+- + Other/Unspecified Ethnicity (60, 1)
+- - + Male (60, 2)
+- - + Female (61, 2)
++ Chinese (62, 1)
+- + NZ Maori (63, 1)
+- - + Male (63, 2)
+- - + Female (64, 2)
+- + NZ European (65, 1)
+- - + Male (65, 2)
+- - + Female (66, 2)
+- - + Unknown (67, 2)
+- + Pasifika Peoples (68, 1)
+- - + Male (68, 2)
+- - + Female (69, 2)
+- + Asian (70, 1)
+- - + Male (70, 2)
+- - + Female (71, 2)
+- + Other/Unspecified Ethnicity (72, 1)
+- - + Male (72, 2)
+- - + Female (73, 2)
++ Classical Studies (74, 1)
+- + NZ Maori (75, 1)
+- - + Male (75, 2)
+- - + Female (76, 2)
+- + NZ European (77, 1)
+- - + Male (77, 2)
+- - + Female (78, 2)
+- - + Unknown (79, 2)
+- + Pasifika Peoples (80, 1)
+- - + Male (80, 2)
+- - + Female (81, 2)
+- + Asian (82, 1)
+- - + Male (82, 2)
+- - + Female (83, 2)
+- + Other/Unspecified Ethnicity (84, 1)
+- - + Male (84, 2)
+- - + Female (85, 2)
++ Dance (86, 1)
+- + NZ Maori (87, 1)
+- - + Male (87, 2)
+- - + Female (88, 2)
+- + NZ European (89, 1)
+- - + Male (89, 2)
+- - + Female (90, 2)
+- - + Unknown (91, 2)
+- + Pasifika Peoples (92, 1)
+- - + Male (92, 2)
+- - + Female (93, 2)
+- + Asian (94, 1)
+- - + Male (94, 2)
+- - + Female (95, 2)
+- + Other/Unspecified Ethnicity (96, 1)
+- - + Male (96, 2)
+- - + Female (97, 2)
++ Design and Visual Communication (98, 1)
+- + NZ Maori (99, 1)
+- - + Male (99, 2)
+- - + Female (100, 2)
+- + NZ European (101, 1)
+- - + Male (101, 2)
+- - + Female (102, 2)
+- - + Unknown (103, 2)
+- + Pasifika Peoples (104, 1)
+- - + Male (104, 2)
+- - + Female (105, 2)
+- + Asian (106, 1)
+- - + Male (106, 2)
+- - + Female (107, 2)
+- + Other/Unspecified Ethnicity (108, 1)
+- - + Male (108, 2)
+- - + Female (109, 2)
++ Drama (110, 1)
+- + NZ Maori (111, 1)
+- - + Male (111, 2)
+- - + Female (112, 2)
+- + NZ European (113, 1)
+- - + Male (113, 2)
+- - + Female (114, 2)
+- - + Unknown (115, 2)
+- + Pasifika Peoples (116, 1)
+- - + Male (116, 2)
+- - + Female (117, 2)
+- + Asian (118, 1)
+- - + Male (118, 2)
+- - + Female (119, 2)
+- + Other/Unspecified Ethnicity (120, 1)
+- - + Male (120, 2)
+- - + Female (121, 2)
++ Economics (122, 1)
+- + NZ Maori (123, 1)
+- - + Male (123, 2)
+- - + Female (124, 2)
+- + NZ European (125, 1)
+- - + Male (125, 2)
+- - + Female (126, 2)
+- - + Unknown (127, 2)
+- + Pasifika Peoples (128, 1)
+- - + Male (128, 2)
+- - + Female (129, 2)
+- + Asian (130, 1)
+- - + Male (130, 2)
+- - + Female (131, 2)
+- + Other/Unspecified Ethnicity (132, 1)
+- - + Male (132, 2)
+- - + Female (133, 2)
++ English (134, 1)
+- + NZ Maori (135, 1)
+- - + Male (135, 2)
+- - + Female (136, 2)
+- + NZ European (137, 1)
+- - + Male (137, 2)
+- - + Female (138, 2)
+- - + Unknown (139, 2)
+- + Pasifika Peoples (140, 1)
+- - + Male (140, 2)
+- - + Female (141, 2)
+- + Asian (142, 1)
+- - + Male (142, 2)
+- - + Female (143, 2)
+- + Other/Unspecified Ethnicity (144, 1)
+- - + Male (144, 2)
+- - + Female (145, 2)
++ French (146, 1)
+- + NZ Maori (147, 1)
+- - + Male (147, 2)
+- - + Female (148, 2)
+- + NZ European (149, 1)
+- - + Male (149, 2)
+- - + Female (150, 2)
+- - + Unknown (151, 2)
+- + Pasifika Peoples (152, 1)
+- - + Male (152, 2)
+- - + Female (153, 2)
+- + Asian (154, 1)
+- - + Male (154, 2)
+- - + Female (155, 2)
+- + Other/Unspecified Ethnicity (156, 1)
+- - + Male (156, 2)
+- - + Female (157, 2)
++ Geography (158, 1)
+- + NZ Maori (159, 1)
+- - + Male (159, 2)
+- - + Female (160, 2)
+- + NZ European (161, 1)
+- - + Male (161, 2)
+- - + Female (162, 2)
+- - + Unknown (163, 2)
+- + Pasifika Peoples (164, 1)
+- - + Male (164, 2)
+- - + Female (165, 2)
+- + Asian (166, 1)
+- - + Male (166, 2)
+- - + Female (167, 2)
+- + Other/Unspecified Ethnicity (168, 1)
+- - + Male (168, 2)
+- - + Female (169, 2)
++ German (170, 1)
+- + NZ Maori (171, 1)
+- - + Male (171, 2)
+- - + Female (172, 2)
+- + NZ European (173, 1)
+- - + Male (173, 2)
+- - + Female (174, 2)
+- - + Unknown (175, 2)
+- + Pasifika Peoples (176, 1)
+- - + Male (176, 2)
+- - + Female (177, 2)
+- + Asian (178, 1)
+- - + Male (178, 2)
+- - + Female (179, 2)
+- + Other/Unspecified Ethnicity (180, 1)
+- - + Male (180, 2)
+- - + Female (181, 2)
++ Graphics (182, 1)
+- + NZ Maori (183, 1)
+- - + Male (183, 2)
+- - + Female (184, 2)
+- + NZ European (185, 1)
+- - + Male (185, 2)
+- - + Female (186, 2)
+- - + Unknown (187, 2)
+- + Pasifika Peoples (188, 1)
+- - + Male (188, 2)
+- - + Female (189, 2)
+- + Asian (190, 1)
+- - + Male (190, 2)
+- - + Female (191, 2)
+- + Other/Unspecified Ethnicity (192, 1)
+- - + Male (192, 2)
+- - + Female (193, 2)
++ History (194, 1)
+- + NZ Maori (195, 1)
+- - + Male (195, 2)
+- - + Female (196, 2)
+- + NZ European (197, 1)
+- - + Male (197, 2)
+- - + Female (198, 2)
+- - + Unknown (199, 2)
+- + Pasifika Peoples (200, 1)
+- - + Male (200, 2)
+- - + Female (201, 2)
+- + Asian (202, 1)
+- - + Male (202, 2)
+- - + Female (203, 2)
+- + Other/Unspecified Ethnicity (204, 1)
+- - + Male (204, 2)
+- - + Female (205, 2)
++ Japanese (206, 1)
+- + NZ Maori (207, 1)
+- - + Male (207, 2)
+- - + Female (208, 2)
+- + NZ European (209, 1)
+- - + Male (209, 2)
+- - + Female (210, 2)
+- - + Unknown (211, 2)
+- + Pasifika Peoples (212, 1)
+- - + Male (212, 2)
+- - + Female (213, 2)
+- + Asian (214, 1)
+- - + Male (214, 2)
+- - + Female (215, 2)
+- + Other/Unspecified Ethnicity (216, 1)
+- - + Male (216, 2)
+- - + Female (217, 2)
++ Latin (218, 1)
+- + NZ Maori (219, 1)
+- - + Male (219, 2)
+- - + Female (220, 2)
+- + NZ European (221, 1)
+- - + Male (221, 2)
+- - + Female (222, 2)
+- - + Unknown (223, 2)
+- + Pasifika Peoples (224, 1)
+- - + Male (224, 2)
+- - + Female (225, 2)
+- + Asian (226, 1)
+- - + Male (226, 2)
+- - + Female (227, 2)
+- + Other/Unspecified Ethnicity (228, 1)
+- - + Male (228, 2)
+- - + Female (229, 2)
++ Mathematics with Calculus (230, 1)
+- + NZ Maori (231, 1)
+- - + Male (231, 2)
+- - + Female (232, 2)
+- + NZ European (233, 1)
+- - + Male (233, 2)
+- - + Female (234, 2)
+- - + Unknown (235, 2)
+- + Pasifika Peoples (236, 1)
+- - + Male (236, 2)
+- - + Female (237, 2)
+- + Asian (238, 1)
+- - + Male (238, 2)
+- - + Female (239, 2)
+- + Other/Unspecified Ethnicity (240, 1)
+- - + Male (240, 2)
+- - + Female (241, 2)
++ Media Studies (242, 1)
+- + NZ Maori (243, 1)
+- - + Male (243, 2)
+- - + Female (244, 2)
+- + NZ European (245, 1)
+- - + Male (245, 2)
+- - + Female (246, 2)
+- - + Unknown (247, 2)
+- + Pasifika Peoples (248, 1)
+- - + Male (248, 2)
+- - + Female (249, 2)
+- + Asian (250, 1)
+- - + Male (250, 2)
+- - + Female (251, 2)
+- + Other/Unspecified Ethnicity (252, 1)
+- - + Male (252, 2)
+- - + Female (253, 2)
++ Music Studies (254, 1)
+- + NZ Maori (255, 1)
+- - + Male (255, 2)
+- - + Female (256, 2)
+- + NZ European (257, 1)
+- - + Male (257, 2)
+- - + Female (258, 2)
+- - + Unknown (259, 2)
+- + Pasifika Peoples (260, 1)
+- - + Male (260, 2)
+- - + Female (261, 2)
+- + Asian (262, 1)
+- - + Male (262, 2)
+- - + Female (263, 2)
+- + Other/Unspecified Ethnicity (264, 1)
+- - + Male (264, 2)
+- - + Female (265, 2)
++ Painting (266, 1)
+- + NZ Maori (267, 1)
+- - + Male (267, 2)
+- - + Female (268, 2)
+- + NZ European (269, 1)
+- - + Male (269, 2)
+- - + Female (270, 2)
+- - + Unknown (271, 2)
+- + Pasifika Peoples (272, 1)
+- - + Male (272, 2)
+- - + Female (273, 2)
+- + Asian (274, 1)
+- - + Male (274, 2)
+- - + Female (275, 2)
+- + Other/Unspecified Ethnicity (276, 1)
+- - + Male (276, 2)
+- - + Female (277, 2)
++ Photography (278, 1)
+- + NZ Maori (279, 1)
+- - + Male (279, 2)
+- - + Female (280, 2)
+- + NZ European (281, 1)
+- - + Male (281, 2)
+- - + Female (282, 2)
+- - + Unknown (283, 2)
+- + Pasifika Peoples (284, 1)
+- - + Male (284, 2)
+- - + Female (285, 2)
+- + Asian (286, 1)
+- - + Male (286, 2)
+- - + Female (287, 2)
+- + Other/Unspecified Ethnicity (288, 1)
+- - + Male (288, 2)
+- - + Female (289, 2)
++ Physical Education (290, 1)
+- + NZ Maori (291, 1)
+- - + Male (291, 2)
+- - + Female (292, 2)
+- + NZ European (293, 1)
+- - + Male (293, 2)
+- - + Female (294, 2)
+- - + Unknown (295, 2)
+- + Pasifika Peoples (296, 1)
+- - + Male (296, 2)
+- - + Female (297, 2)
+- + Asian (298, 1)
+- - + Male (298, 2)
+- - + Female (299, 2)
+- + Other/Unspecified Ethnicity (300, 1)
+- - + Male (300, 2)
+- - + Female (301, 2)
++ Physics (302, 1)
+- + NZ Maori (303, 1)
+- - + Male (303, 2)
+- - + Female (304, 2)
+- + NZ European (305, 1)
+- - + Male (305, 2)
+- - + Female (306, 2)
+- - + Unknown (307, 2)
+- + Pasifika Peoples (308, 1)
+- - + Male (308, 2)
+- - + Female (309, 2)
+- + Asian (310, 1)
+- - + Male (310, 2)
+- - + Female (311, 2)
+- + Other/Unspecified Ethnicity (312, 1)
+- - + Male (312, 2)
+- - + Female (313, 2)
++ Printmaking (314, 1)
+- + NZ Maori (315, 1)
+- - + Male (315, 2)
+- - + Female (316, 2)
+- + NZ European (317, 1)
+- - + Male (317, 2)
+- - + Female (318, 2)
+- - + Unknown (319, 2)
+- + Pasifika Peoples (320, 1)
+- - + Male (320, 2)
+- - + Female (321, 2)
+- + Asian (322, 1)
+- - + Male (322, 2)
+- - + Female (323, 2)
+- + Other/Unspecified Ethnicity (324, 1)
+- - + Male (324, 2)
+- - + Female (325, 2)
++ Samoan (326, 1)
+- + NZ Maori (327, 1)
+- - + Male (327, 2)
+- - + Female (328, 2)
+- + NZ European (329, 1)
+- - + Male (329, 2)
+- - + Female (330, 2)
+- - + Unknown (331, 2)
+- + Pasifika Peoples (332, 1)
+- - + Male (332, 2)
+- - + Female (333, 2)
+- + Asian (334, 1)
+- - + Male (334, 2)
+- - + Female (335, 2)
+- + Other/Unspecified Ethnicity (336, 1)
+- - + Male (336, 2)
+- - + Female (337, 2)
++ Science (338, 1)
+- + NZ Maori (339, 1)
+- - + Male (339, 2)
+- - + Female (340, 2)
+- + NZ European (341, 1)
+- - + Male (341, 2)
+- - + Female (342, 2)
+- - + Unknown (343, 2)
+- + Pasifika Peoples (344, 1)
+- - + Male (344, 2)
+- - + Female (345, 2)
+- + Asian (346, 1)
+- - + Male (346, 2)
+- - + Female (347, 2)
+- + Other/Unspecified Ethnicity (348, 1)
+- - + Male (348, 2)
+- - + Female (349, 2)
++ Sculpture (350, 1)
+- + NZ Maori (351, 1)
+- - + Male (351, 2)
+- - + Female (352, 2)
+- + NZ European (353, 1)
+- - + Male (353, 2)
+- - + Female (354, 2)
+- - + Unknown (355, 2)
+- + Pasifika Peoples (356, 1)
+- - + Male (356, 2)
+- - + Female (357, 2)
+- + Asian (358, 1)
+- - + Male (358, 2)
+- - + Female (359, 2)
+- + Other/Unspecified Ethnicity (360, 1)
+- - + Male (360, 2)
+- - + Female (361, 2)
++ Spanish (362, 1)
+- + NZ Maori (363, 1)
+- - + Male (363, 2)
+- - + Female (364, 2)
+- + NZ European (365, 1)
+- - + Male (365, 2)
+- - + Female (366, 2)
+- - + Unknown (367, 2)
+- + Pasifika Peoples (368, 1)
+- - + Male (368, 2)
+- - + Female (369, 2)
+- + Asian (370, 1)
+- - + Male (370, 2)
+- - + Female (371, 2)
+- + Other/Unspecified Ethnicity (372, 1)
+- - + Male (372, 2)
+- - + Female (373, 2)
++ Statistics and Modelling (374, 1)
+- + NZ Maori (375, 1)
+- - + Male (375, 2)
+- - + Female (376, 2)
+- + NZ European (377, 1)
+- - + Male (377, 2)
+- - + Female (378, 2)
+- - + Unknown (379, 2)
+- + Pasifika Peoples (380, 1)
+- - + Male (380, 2)
+- - + Female (381, 2)
+- + Asian (382, 1)
+- - + Male (382, 2)
+- - + Female (383, 2)
+- + Other/Unspecified Ethnicity (384, 1)
+- - + Male (384, 2)
+- - + Female (385, 2)
++ Te Reo Maori (386, 1)
+- + NZ Maori (387, 1)
+- - + Male (387, 2)
+- - + Female (388, 2)
+- + NZ European (389, 1)
+- - + Male (389, 2)
+- - + Female (390, 2)
+- - + Unknown (391, 2)
+- + Pasifika Peoples (392, 1)
+- - + Male (392, 2)
+- - + Female (393, 2)
+- + Asian (394, 1)
+- - + Male (394, 2)
+- - + Female (395, 2)
+- + Other/Unspecified Ethnicity (396, 1)
+- - + Male (396, 2)
+- - + Female (397, 2)
++ Te Reo Rangatira (398, 1)
+- + NZ Maori (399, 1)
+- - + Male (399, 2)
+- - + Female (400, 2)
+- + NZ European (401, 1)
+- - + Male (401, 2)
+- - + Female (402, 2)
+- - + Unknown (403, 2)
+- + Pasifika Peoples (404, 1)
+- - + Male (404, 2)
+- - + Female (405, 2)
+- + Asian (406, 1)
+- - + Male (406, 2)
+- - + Female (407, 2)
+- + Other/Unspecified Ethnicity (408, 1)
+- - + Male (408, 2)
+- - + Female (409, 2)
++ Technology (410, 1)
+- + NZ Maori (411, 1)
+- - + Male (411, 2)
+- - + Female (412, 2)
+- + NZ European (413, 1)
+- - + Male (413, 2)
+- - + Female (414, 2)
+- - + Unknown (415, 2)
+- + Pasifika Peoples (416, 1)
+- - + Male (416, 2)
+- - + Female (417, 2)
+- + Asian (418, 1)
+- - + Male (418, 2)
+- - + Female (419, 2)
+- + Other/Unspecified Ethnicity (420, 1)
+- - + Male (420, 2)
+- - + Female (421, 2)
+
+###TCR RRL rowvecs 
+     [,1]           [,2]         [,3]               [,4]     
+[1,] "All Subjects" "Accounting" "NZ Maori"         "Male"   
+[2,] "All Subjects" "Accounting" "NZ Maori"         "Female" 
+[3,] "All Subjects" "Accounting" "NZ European"      "Male"   
+[4,] "All Subjects" "Accounting" "NZ European"      "Female" 
+[5,] "All Subjects" "Accounting" "NZ European"      "Unknown"
+[6,] "All Subjects" "Accounting" "Pasifika Peoples" "Male"   
+###TCR MCPBefore matColLabel 
+     V3        V4           V5    V7         V8         V9           
+[1,] NA        NA           NA    NA         NA         NA           
+[2,] NA        "Decile 1-3" NA    NA         NA         NA           
+[3,] "# of "   "# "         "# "  "# "       "# Not "   "# "         
+[4,] "Entries" "Absent"     "SNA" "Assessed" "Achieved" "Scholarship"
+###TCR ACP cursub 
+          V3           V4           V5           V7           V8           V9 
+          NA "Decile 1-3"           NA           NA           NA           NA 
+###TCR ACP currow[curcols] 
+          V3           V4           V5           V7           V8           V9 
+"Decile 1-3"           NA           NA           NA           NA           NA 
+###TCR ACP cursub 
+         V12          V13          V14          V16          V17          V18 
+          NA "Decile 4-7"           NA           NA           NA           NA 
+###TCR ACP currow[curcols] 
+         V12          V13          V14          V16          V17          V18 
+"Decile 4-7"           NA           NA           NA           NA           NA 
+###TCR ACP cursub 
+          V21           V22           V23           V25           V26 
+           NA "Decile 8-10"            NA            NA            NA 
+          V27 
+           NA 
+###TCR ACP currow[curcols] 
+          V21           V22           V23           V25           V26 
+"Decile 8-10"            NA            NA            NA            NA 
+          V27 
+           NA 
+###TCR ACP cursub 
+      V3       V4       V5       V7       V8       V9 
+ "# of "     "# "     "# "     "# " "# Not "     "# " 
+###TCR ACP currow[curcols] 
+      V3       V4       V5       V7       V8       V9 
+ "# of "     "# "     "# "     "# " "# Not "     "# " 
+###TCR ACP cursub 
+     V12      V13      V14      V16      V17      V18 
+ "# of "     "# "     "# "     "# " "# Not "     "# " 
+###TCR ACP currow[curcols] 
+     V12      V13      V14      V16      V17      V18 
+ "# of "     "# "     "# "     "# " "# Not "     "# " 
+###TCR ACP cursub 
+     V21      V22      V23      V25      V26      V27 
+ "# of "     "# "     "# "     "# " "# Not "     "# " 
+###TCR ACP currow[curcols] 
+     V21      V22      V23      V25      V26      V27 
+ "# of "     "# "     "# "     "# " "# Not "     "# " 
+###TCR ACP cursub 
+           V3            V4            V5            V7            V8 
+    "Entries"      "Absent"         "SNA"    "Assessed"    "Achieved" 
+           V9 
+"Scholarship" 
+###TCR ACP currow[curcols] 
+           V3            V4            V5            V7            V8 
+    "Entries"      "Absent"         "SNA"    "Assessed"    "Achieved" 
+           V9 
+"Scholarship" 
+###TCR ACP cursub 
+          V12           V13           V14           V16           V17 
+    "Entries"      "Absent"         "SNA"    "Assessed"    "Achieved" 
+          V18 
+"Scholarship" 
+###TCR ACP currow[curcols] 
+          V12           V13           V14           V16           V17 
+    "Entries"      "Absent"         "SNA"    "Assessed"    "Achieved" 
+          V18 
+"Scholarship" 
+###TCR ACP cursub 
+          V21           V22           V23           V25           V26 
+    "Entries"      "Absent"         "SNA"    "Assessed"    "Achieved" 
+          V27 
+"Scholarship" 
+###TCR ACP currow[curcols] 
+          V21           V22           V23           V25           V26 
+    "Entries"      "Absent"         "SNA"    "Assessed"    "Achieved" 
+          V27 
+"Scholarship" 
+###TCR MCPAfter matColLabel 
+     V3           V4       V5    V7         V8         V9           
+[1,] NA           NA       NA    NA         NA         NA           
+[2,] "Decile 1-3" NA       NA    NA         NA         NA           
+[3,] "# of "      "# "     "# "  "# "       "# Not "   "# "         
+[4,] "Entries"    "Absent" "SNA" "Assessed" "Achieved" "Scholarship"
+###TCR MCLBefore matColLabel 
+     V3           V4       V5    V7         V8         V9           
+[1,] NA           NA       NA    NA         NA         NA           
+[2,] "Decile 1-3" NA       NA    NA         NA         NA           
+[3,] "# of "      "# "     "# "  "# "       "# Not "   "# "         
+[4,] "Entries"    "Absent" "SNA" "Assessed" "Achieved" "Scholarship"
+###TCR MCLAfter matColLabel 
+     V3              V4          V5       V7            V8               
+[1,] NA              NA          NA       NA            NA               
+[2,] "Decile 1-3"    NA          NA       NA            NA               
+[3,] "# of  Entries" "#  Absent" "#  SNA" "#  Assessed" "# Not  Achieved"
+     V9              
+[1,] NA              
+[2,] NA              
+[3,] "#  Scholarship"
+###TCR PBEB res 
+$`Decile 1-3`
+$`Decile 1-3`$rows
+[1] 1 2 3 4 5 6 7
+
+$`Decile 1-3`$cols
+[1] 3
+
+
+$`Decile 4-7`
+$`Decile 4-7`$rows
+[1]  8  9 10 11 12 13 14
+
+$`Decile 4-7`$cols
+[1] 3
+
+
+$`Decile 8-10`
+$`Decile 8-10`$rows
+[1] 15 16 17 18 19 20 21
+
+$`Decile 8-10`$cols
+[1] 3
+
+
+###TCR IOOC plist 
+$rows
+[1] 1 2 3 4 5 6 7
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  # of  Entries       #  Absent          #  SNA     #  Assessed # Not  Achieved 
+              1               2               3               4               5 
+ #  Scholarship 
+              6 
+###TCR IOOC plist 
+$rows
+[1]  8  9 10 11 12 13 14
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  # of  Entries       #  Absent          #  SNA     #  Assessed # Not  Achieved 
+              8               9              10              11              12 
+ #  Scholarship 
+             13 
+###TCR IOOC plist 
+$rows
+[1] 15 16 17 18 19 20 21
+
+$cols
+[1] 3
+
+###TCR IOOC res 
+  # of  Entries       #  Absent          #  SNA     #  Assessed # Not  Achieved 
+             15              16              17              18              19 
+ #  Scholarship 
+             20 
+###TCR RCC plist 
+  # of  Entries       #  Absent          #  SNA     #  Assessed # Not  Achieved 
+              1               2               3               4               5 
+ #  Scholarship 
+              6 
+###TCR RCC matData 
+     V3    V4    V5    V7    V8    V9   
+[1,] "2.0" "1.0" "0.0" "1.0" "1.0" "0.0"
+[2,] "0.0" "0.0" "0.0" "0.0" "0.0" "0.0"
+[3,] "2.0" "0.0" "0.0" "2.0" "1.0" "1.0"
+[4,] "3.0" "0.0" "0.0" "3.0" "2.0" "1.0"
+[5,] "0.0" "0.0" "0.0" "0.0" "0.0" "0.0"
+[6,] "2.0" "0.0" "0.0" "2.0" "2.0" "0.0"
+###TCR RCC datbit 
+     V3    V4    V5    V7    V8    V9   
+[1,] "2.0" "1.0" "0.0" "1.0" "1.0" "0.0"
+[2,] "0.0" "0.0" "0.0" "0.0" "0.0" "0.0"
+[3,] "2.0" "0.0" "0.0" "2.0" "1.0" "1.0"
+[4,] "3.0" "0.0" "0.0" "3.0" "2.0" "1.0"
+[5,] "0.0" "0.0" "0.0" "0.0" "0.0" "0.0"
+[6,] "2.0" "0.0" "0.0" "2.0" "2.0" "0.0"
+###TCR RCC plist 
+  # of  Entries       #  Absent          #  SNA     #  Assessed # Not  Achieved 
+              8               9              10              11              12 
+ #  Scholarship 
+             13 
+###TCR RCC matData 
+     V3    V4    V5    V7    V8    V9   
+[1,] "2.0" "1.0" "0.0" "1.0" "1.0" "0.0"
+[2,] "0.0" "0.0" "0.0" "0.0" "0.0" "0.0"
+[3,] "2.0" "0.0" "0.0" "2.0" "1.0" "1.0"
+[4,] "3.0" "0.0" "0.0" "3.0" "2.0" "1.0"
+[5,] "0.0" "0.0" "0.0" "0.0" "0.0" "0.0"
+[6,] "2.0" "0.0" "0.0" "2.0" "2.0" "0.0"
+###TCR RCC datbit 
+     V12    V13    V14   V16    V17    V18  
+[1,] "2.0"  "1.0"  "0.0" "1.0"  "1.0"  "0.0"
+[2,] "7.0"  "2.0"  "0.0" "5.0"  "4.0"  "1.0"
+[3,] "51.0" "13.0" "0.0" "38.0" "30.0" "8.0"
+[4,] "44.0" "12.0" "0.0" "32.0" "27.0" "3.0"
+[5,] "0.0"  "0.0"  "0.0" "0.0"  "0.0"  "0.0"
+[6,] "3.0"  "0.0"  "0.0" "3.0"  "3.0"  "0.0"
+###TCR RCC plist 
+  # of  Entries       #  Absent          #  SNA     #  Assessed # Not  Achieved 
+             15              16              17              18              19 
+ #  Scholarship 
+             20 
+###TCR RCC matData 
+     V3    V4    V5    V7    V8    V9   
+[1,] "2.0" "1.0" "0.0" "1.0" "1.0" "0.0"
+[2,] "0.0" "0.0" "0.0" "0.0" "0.0" "0.0"
+[3,] "2.0" "0.0" "0.0" "2.0" "1.0" "1.0"
+[4,] "3.0" "0.0" "0.0" "3.0" "2.0" "1.0"
+[5,] "0.0" "0.0" "0.0" "0.0" "0.0" "0.0"
+[6,] "2.0" "0.0" "0.0" "2.0" "2.0" "0.0"
+###TCR RCC datbit 
+     V21     V22    V23   V25    V26    V27   
+[1,] "2.0"   "2.0"  "0.0" "0.0"  "0.0"  "0.0" 
+[2,] "3.0"   "2.0"  "0.0" "1.0"  "1.0"  "0.0" 
+[3,] "132.0" "47.0" "0.0" "85.0" "67.0" "18.0"
+[4,] "71.0"  "22.0" "0.0" "49.0" "35.0" "10.0"
+[5,] "0.0"   "0.0"  "0.0" "0.0"  "0.0"  "0.0" 
+[6,] "3.0"   "1.0"  "0.0" "2.0"  "2.0"  "0.0" 
+###TCR RCL colplist 
+$`Decile 1-3`
++ # of  Entries (1, 3)
++ #  Absent (2, 3)
++ #  SNA (3, 3)
++ #  Assessed (4, 3)
++ # Not  Achieved (5, 3)
++ #  Scholarship (6, 3)
++ #  Outstanding (7, 3)
+
+$`Decile 4-7`
++ # of  Entries (8, 3)
++ #  Absent (9, 3)
++ #  SNA (10, 3)
++ #  Assessed (11, 3)
++ # Not  Achieved (12, 3)
++ #  Scholarship (13, 3)
++ #  Outstanding (14, 3)
+
+$`Decile 8-10`
++ # of  Entries (15, 3)
++ #  Absent (16, 3)
++ #  SNA (17, 3)
++ #  Assessed (18, 3)
++ # Not  Achieved (19, 3)
++ #  Scholarship (20, 3)
++ #  Outstanding (21, 3)
+
+###TCR RCL res 
+     UNKNOWN      UNKNOWN    UNKNOWN          UNKNOWN UNKNOWN # of  Entries
+1 Decile 1-3 All Subjects Accounting         NZ Maori    Male             2
+2 Decile 1-3 All Subjects Accounting         NZ Maori  Female             0
+3 Decile 1-3 All Subjects Accounting      NZ European    Male             2
+4 Decile 1-3 All Subjects Accounting      NZ European  Female             3
+5 Decile 1-3 All Subjects Accounting      NZ European Unknown             0
+6 Decile 1-3 All Subjects Accounting Pasifika Peoples    Male             2
+  #  Absent #  SNA #  Assessed # Not  Achieved #  Scholarship #  Outstanding
+1         1      0           1               1              0              0
+2         0      0           0               0              0              0
+3         0      0           2               1              1              0
+4         0      0           3               2              1              0
+5         0      0           0               0              0              0
+6         0      0           2               2              0              0
