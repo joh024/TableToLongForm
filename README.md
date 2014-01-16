@@ -4,8 +4,9 @@ hierarchical Tables intended for a human reader into a LongForm
 Dataframe that is machine readable.
 
 This repository is for developers, most users will probably find the
-[https://www.stat.auckland.ac.nz/~joh024/Research/TableToLongForm/](Home
-Page for TableToLongForm) more informative.
+[Home Page for
+TableToLongForm](https://www.stat.auckland.ac.nz/~joh024/Research/TableToLongForm/)
+more informative.
 
 # How to Make
 The make process is simple (hopefully). You source in MAKE.R in R and
@@ -16,5 +17,5 @@ newly made TableToLongForm matches the output saved previously.
 
 # Misc
 The make process uses
-[https://www.stat.auckland.ac.nz/~ihaka/software/Rnoweb/Rnoweb.html](Rnoweb),
+[Rnoweb](https://www.stat.auckland.ac.nz/~ihaka/software/Rnoweb/Rnoweb.html),
 written by Ross Ihaka.

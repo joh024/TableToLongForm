@@ -1,18 +1,20 @@
-NOTE: The version on github is not the latest version and is not
-currently being updated. The master copy of TableToLongForm resides on
-a local University of Auckland subversion repository.  Work is
-currently underway to make TableToLongForm more modular and
-edit-friendly, after which TableToLongForm will migrate fully to
-github. Until then, you can obtain the latest public releases of the
-Package and Literate Programs from this page:
-https://www.stat.auckland.ac.nz/~joh024/Research/TableToLongForm/
+# Introduction
+TableToLongForm is an R package that automatically converts
+hierarchical Tables intended for a human reader into a LongForm
+Dataframe that is machine readable.
 
-TableToLongForm automatically converts hierarchical Tables intended
-for a human reader into a simple LongForm Dataframe that is machine
-readable. It does this by recognising positional queues present in the
-hierarchical Table (which would normally be interpreted visually by
-the human brain) to decompose, then reconstruct the data into a
-LongForm Dataframe. This repository contains the base Literate Program
-(Rnw) along with the Literate Documents (pdf).
+This repository is for developers, most users will probably find the
+[https://www.stat.auckland.ac.nz/~joh024/Research/TableToLongForm/](Home
+Page for TableToLongForm) more informative.
 
-Queries should be directed to joh024@aucklanduni.ac.nz
+# How to Make
+The make process is simple (hopefully). You source in MAKE.R in R and
+run the make function. This will take the _base.Rnw file and use it to
+create the output .Rnw and _noAppendix.Rnw files. It will also run
+tests at this stage, checking that the output Dataframes from the
+newly made TableToLongForm matches the output saved previously.
+
+# Misc
+The make process uses
+[https://www.stat.auckland.ac.nz/~ihaka/software/Rnoweb/Rnoweb.html](Rnoweb),
+written by Ross Ihaka.
