@@ -61,9 +61,14 @@ reader is then free to delve deeper into the respective \emph{code
 
 \section{Introduction}
 \label{sec:introduction}
-lorem ipsum
-% This doc for code
-% Direct to Tech Report for a less technical introduction
+This Literate Document delves deeply into the source code for
+TableToLongForm. Most users will probably find the Home Page for
+TableToLongForm\footnote{\url{https://www.stat.auckland.ac.nz/~joh024/Research/TableToLongForm/}}
+more informative.
+
+The Literate Program is a constant work-in-progress, and some of the
+sections may have out of date documentation, or be lacking in
+documentation completely.
 
 \newpage
 \section{Code Overview}
@@ -120,6 +125,9 @@ follows:
   the various elements of the \verb|Table|. By default this is
   automatically generated but it can be specified manually where the
   automatic detection fails.
+\item[IdentPrimary, IdentAuxiliary, ParePreRow, ParePreCol] specify
+  the algorithms TableToLongForm should use. Refer to the respective
+  sections for more details.
 \item[fulloutput] if \verb|TRUE|, returns a \verb|list| containing
   additional information primarily useful for diagnostic
   purposes. Otherwise, and by default, the function only returns the
@@ -128,6 +136,9 @@ follows:
   the file diagnostic output will be written to. Can also be
   \verb|TRUE|, in which case the file name will be the name of the
   object specified in \verb|Table|.
+\item[diagnostics.trim] a \verb|logical| indicating whether the
+  diagnostics output should be trimmed. A good idea to keep
+  \verb|TRUE| (default) as trimmed output is generally more useful.
 \end{description}
 
 This function handles some busy-work, such as coercing the
@@ -135,11 +146,12 @@ This function handles some busy-work, such as coercing the
 diagnostics output file. It then calls \verb|ReconsMain| which handles
 the real meat of the conversion.
 
-In the package version of TableToLongForm, this is the only function
-that is exported, the rest are hidden in the package namespace (which
-is still accessible, just not as easily). If sourcing in the raw .R
-file, the majority of the supporting functions are not hidden and can
-be accessed directly from the Global Environment.
+In the package version of TableToLongForm, this, and some back-end
+functions, are the only functions that are exported, the rest are
+hidden in the package namespace (which is still accessible, just not
+as easily). If sourcing in the raw .R file, the majority of the
+supporting functions are not hidden and can be accessed directly from
+the Global Environment.
 <<Front End>>=
 TableToLongForm =
   function(Table, IdentResult = NULL,
@@ -308,6 +320,9 @@ TTLFBaseEnv = new.env()
 @ %def TCRsink TTLFBaseEnv
 
 \paragraph{TTLFalias}
+Used for the new Modular System. Check ``Working with Modules''
+documentation available from the main website.
+
 Should add a check to aliasAdd for existing rows with same alias (and
 same Type, probably ok to allow same alias for different Types).
 <<BETTLFalias>>=
@@ -430,6 +445,9 @@ Example values for \textbf{ToyExComplete.csv} \texttt{(ID: CIMCB)}
 > colData
 [1]  4 11
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 We construct the interim \verb|rowslist| taking every non-empty row
 before the most common start of the numbers block (\verb|rowData[1]|)
@@ -466,6 +484,9 @@ $data
 [1]  4  5  6  7  8  9 10 11
 
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 As the \verb|MostCommonBoundary| algorithm searches for the data
 region, it can be conservative with respect to the rows and columns
@@ -794,6 +815,9 @@ Example values for \textbf{ToyExComplete.csv} \texttt{(ID: MCPBefore)}
 [3,] "Col"    "Col"         "Col"    "Col"    "Col"    "Col"        
 [4,] "Child1" "Child2"      "Child3" "Child4" "Child1" "Child2"     
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 %TCEx MCPAfter matColLabel
 %TCEx MCPBefore matColLabel
 
@@ -806,6 +830,9 @@ Example values for \textbf{ToyExComplete.csv} \texttt{(ID: MCPAfter)}
 [3,] "Col"         "Col"    "Col"    "Col"    "Col"         "Col"   
 [4,] "Child1"      "Child2" "Child3" "Child4" "Child1"      "Child2"
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 \begin{table}[hbt]
   \centering
@@ -866,6 +893,9 @@ Example values for \textbf{ToyExComplete.csv} \texttt{(ID: ACP)}
            V4            V5            V6            V7 
 "Col Parent1"            NA            NA            NA 
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 \subsubsection{Case Multi-row Column Labels}
 It is also quite common for Col Labels that are too wide to be
@@ -911,6 +941,9 @@ Example values for \textbf{ToyExComplete.csv} \texttt{(ID: MCLBefore)}
 [3,] "Col"         "Col"    "Col"    "Col"    "Col"         "Col"   
 [4,] "Child1"      "Child2" "Child3" "Child4" "Child1"      "Child2"
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 %TCEx MCLAfter matColLabel
 %TCEx MCLBefore matColLabel
 
@@ -926,6 +959,9 @@ Example values for \textbf{ToyExComplete.csv} \texttt{(ID: MCLAfter)}
 [2,] NA          
 [3,] "Col Child2"
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 \subsection{Parentage - Front}
 \label{sec:PareFront}
@@ -991,6 +1027,9 @@ $cols
 Row Child-Child1 Row Child-Child2 
                3                4 
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 If the first column is found to be empty, then we will shift to the
 next column (which we know exists because we passed the check for only
@@ -1025,6 +1064,9 @@ Example values for \textbf{ToyExComplete.csv} \texttt{(ID: IOOR)}
 > res
 Never occurs
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 If the first cell is empty, after all previous checks, then this is an
 unrecognised format and we return a warning message.
@@ -1154,6 +1196,9 @@ Example values for \textbf{ToyExComplete.csv} \texttt{(ID: CSER)}
 > res
 Never occurs
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 In the case of multiple empty rights, we first call \verb|diff| to
 compute the gap in rows between the empty rights. If the value of
@@ -1201,6 +1246,9 @@ $`Row Super-Parent`$cols
 
 
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 \subsubsection{Pare By Empty Below}
 We check which cells are empty below (there should be at least 1 based
@@ -1244,6 +1292,9 @@ $`Row Child2`$cols
 
 
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 \section{Reconstruction}
 \label{sec:reconstruction}
@@ -1276,11 +1327,12 @@ ReconsMain =
   }
 @ %def ReconsMain
 
-\begin{description}
-\item[IdentPrimary] -Choose 1- Takes matFull, returns an IdentResult.
-\item[IdentAuxiliary] -Choose any combination (in any order)- Takes
-  matFull and IdentResult, returns adjusted IdentResult.
-\end{description}
+If a custom \verb|IdentResult| is given, we use that. Otherwise
+(\verb|IdentResult == NULL|), we call the Ident algorithms as
+specified by the arguments, \verb|IdentPrimary| and
+\verb|IdentAuxiliary|. Only 1 \verb|IdentPrimary| is accepted, while
+any number of \verb|IdentAuxiliary| algorithms can be specified, which
+will be called in the order they are given.
 
 <<Call Ident Algos>>=
 if(is.null(IdentResult)){
@@ -1295,25 +1347,19 @@ if(is.null(IdentResult)){
 }
 @ %def IdentResult
 
+We create the subsets of \verb|matFull| using \verb|IdentResult|:
 \begin{description}
-\item[ParePreRow] -Choose any combination (in any order)- Takes
-  matData and matRowLabel, and adjusts them as required. Current
-  implementation has none.
-\item[ParePreCol] -Choose any combination (in any order)- Takes
-  matData and matColLabel, and adjusts them as required.
-\item[ParePrimary] -No Choice- Constructs the plist. Handles Empty
-  Right and Empty Below and their reduced subsets (e.g. lowest level
-  child with no remaining parentage).
+\item[matData] Which should contain just the Data.
+\item[matRowLabel] Which should contain just the Row Labels.
 \end{description}
 
-We create a subset of \verb|matFull| that contains just the Row
-Labels. We also remove any columns that are completely empty
-(N.B. this may no longer be necessary, need to do some testing).
+We then call the \verb|ParePreRow| algorithms in the order given
+(assuming there are any), to tidy up \verb|matData| (rarely) and
+\verb|matRowLabel| (primarily), before calling \verb|PareFront| to
+discern the parentage of the Row Labels.
 
-We call \verb|PareFront| on our subset to discern the parentage of the
-Row Labels. We then use this to reconstruct the portion of the
-LongForm Dataframe relating to the Row Labels and assign this to
-\verb|rowvecs|.
+We then use this to reconstruct the portion of the LongForm Dataframe
+relating to the Row Labels and assign this to \verb|rowvecs|.
 <<Reconstruct Row Labels>>=
 matData = with(IdentResult,
   matFull[rows$data, cols$data,drop=FALSE])
@@ -1361,18 +1407,28 @@ $`Row Super-Parent`
  "Row Super-Parent" "Row Parent2" "Row Child1" "Row Child-Child1"
  "Row Super-Parent" "Row Parent2" "Row Child1" "Row Child-Child2"
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
-Due to the various fringe cases that exist with Col Labels, we cannot
-simply call \verb|PareFront| and must instead call \verb|PareCol|.  We
-then create a subset of \verb|matFull| that contains just the Col
-Labels and call \verb|ReconsColLabels| which in truth reconstruct the
+We create a further subset of \verb|matFull| using \verb|IdentResult|:
+\begin{description}
+\item[matColLabel] Which should contain just the Column Labels.
+\end{description}
+
+We then call the \verb|ParePreCol| algorithms in the order given
+(assuming there are any), to tidy up \verb|matData| (rarely) and
+\verb|matColLabel| (primarily), before calling \verb|PareFront| on the
+transpose of \verb|matColLabel| (as the Main Parentage algorithm is
+written to work for Row Labels) to discern the parentage of the Column
+Labels.
+
+We then call \verb|ReconsColLabels| which in truth reconstructs the
 entire LongForm Dataframe by making use of the \verb|rowvecs|
 generated above.
 
-We grab subsets of \verb|matFull| that correspond to the Column Labels
-region and the Data region.
-After handling for all the different cases, we can simply transpose
-our Col Labels and call \verb|PareFront| on it.
+We finally return the full output back to the main
+\verb|TableToLongForm| function.
 <<Reconstruct Col Labels>>=
 matColLabel = with(IdentResult,
   matFull[rows$label, cols$data,drop=FALSE])
@@ -1425,6 +1481,9 @@ $`Col Parent2`
 5         17         27         37         47
 6         18         28         38         48
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 \subsection{Reconstruction - Low Level Functions}
 \label{sec:ReconsLowLevel}
@@ -1444,7 +1503,7 @@ entire LongForm Dataframe.
 (\verb|plist|) recursively, extracting the names and using this to
 construct the columns of the finished LongForm Dataframe corresponding
 to the row labels. The final output is what was shown in the
-\emph{Reconstruct Row Labels} chunk above as \verb|rowvecs[1:4,]|.
+\emph{Reconstruct Row Labels} chunk above as \verb|rowvecs|.
 <<Recons Row Labels>>=
 ReconsRowLabels =
   function(plist)
@@ -1458,9 +1517,18 @@ ReconsRowLabels =
 
 Example values for \textbf{ToyExComplete.csv} \texttt{(ID: RRL)}
 \begin{verbatim}
-> rowvecs[1:4,]
-Never occurs
+> rowvecs
+ [,1]               [,2]          [,3]         [,4]              
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child2"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child2"
+ "Row Super-Parent" "Row Parent2" "Row Child1" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent2" "Row Child1" "Row Child-Child2"
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 \subsubsection{Reconstruction - Column Labels}
 \label{sec:ReconsColLabels}
@@ -1468,7 +1536,7 @@ As with the row labels, \verb|ReconsColLabels| iterates down the
 column parentage list (\verb|plist|) recursively. We also need to
 handle the parents differently from the lowest level child. The final
 output is what was shown in the \emph{Reconstruct Col Labels} chunk
-above as \verb|res[1:4,]|.
+above as \verb|res|.
 <<Recons Column Labels>>=
 ReconsColLabels =
   function(plist, matData, rowvecs){
@@ -1480,9 +1548,25 @@ ReconsColLabels =
 
 Example values for \textbf{ToyExComplete.csv} \texttt{(ID: RCL)}
 \begin{verbatim}
-> res[1:4,]
-Never occurs
+> res
+      UNKNOWN          UNKNOWN     UNKNOWN    UNKNOWN          UNKNOWN
+1 Col Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child1
+2 Col Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child2
+3 Col Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child1
+4 Col Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child2
+5 Col Parent1 Row Super-Parent Row Parent2 Row Child1 Row Child-Child1
+6 Col Parent1 Row Super-Parent Row Parent2 Row Child1 Row Child-Child2
+  Col Child1 Col Child2 Col Child3 Col Child4
+1         12         22         32         42
+2         13         23         33         43
+3         14         24         34         44
+4         15         25         35         45
+5         17         27         37         47
+6         18         28         38         48
 \end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
 
 Any parents are used to construct additional columns of factors (the
 labels of the parents) for the LongForm Dataframe, which is attached

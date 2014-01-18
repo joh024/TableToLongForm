@@ -320,8 +320,10 @@ makeTCROimport =
                   "\\end{verbatim}")
       }
       LinesNew[[i]] =
-        c("", paste0("Example values for \\textbf{ToyExComplete.csv} \\texttt{(ID: ",
-                    curChunkId, ")}"), LinesNew[[i]])
+        c("", paste0(
+          "Example values for \\textbf{ToyExComplete.csv} \\texttt{(ID: ", curChunkId, ")}"),
+          LinesNew[[i]],
+          "\\vspace{-1.5em}", "\\noindent\\rule{0.25\\textwidth}{0.4pt}", "\\vspace{0.5em}")
     }
 
     ## Compute line numbers to keep
