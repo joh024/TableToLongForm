@@ -13,7 +13,8 @@ The make process is simple (hopefully). You source in MAKE.R in R and
 run the make function. This will take the _base.Rnw file and use it to
 create the output .Rnw and _noAppendix.Rnw files. It will also run
 tests at this stage, checking that the output Dataframes from the
-newly made TableToLongForm matches the output saved previously.
+newly made TableToLongForm matches the output saved previously (stored
+in TCconverted.RData).
 
 # Misc
 The make process uses
