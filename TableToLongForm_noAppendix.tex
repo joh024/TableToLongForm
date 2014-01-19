@@ -1,0 +1,1723 @@
+\documentclass[a4paper]{article}
+\addtolength{\oddsidemargin}{-.4in}
+\addtolength{\evensidemargin}{-.4in}
+\addtolength{\textwidth}{.8in}
+\addtolength{\voffset}{-.8in}
+\addtolength{\textheight}{1.2in}
+\usepackage{noweb}
+\noweboptions{english}
+\usepackage{xcolor}
+\usepackage[colorlinks]{hyperref}
+\hypersetup{linkcolor=blue!40!black,
+            citecolor=green!40!black,
+            filecolor=cyan!40!black,
+            urlcolor=magenta!40!black}
+\usepackage{graphicx}
+\usepackage{natbib}
+\begin{document}
+\renewcommand\abstractname{\large Abstract}
+%-----------------------------------------------------------------------
+\title{\textbf{TableToLongForm}\\
+  Literate Program}
+\author{\textit{Jimmy Oh}\\
+  [12pt] Department of Statistics\\
+  University of Auckland}
+\date{}
+\maketitle
+\codemargin=24pt
+\begin{center}
+Corresponds to R Package Version 1.3.1 (pre-release)
+\end{center}
+\begin{abstract}\normalsize
+  TableToLongForm automatically converts hierarchical Tables intended
+  for a human reader into a simple LongForm Dataframe that is machine
+  readable. It does this by recognising positional cues present in the
+  hierarchical Table (which would normally be interpreted visually by
+  the human brain) to decompose, then reconstruct the data into a
+  LongForm Dataframe. This is the Literate Program for TableToLongForm
+  and contains the entirety of the code with accompanying
+  documentation.
+\end{abstract}
+\tableofcontents
+
+\subsection*{On Literate Programs}
+\label{sec:literate.program}
+This software is presented as a \emph{literate program} written in the
+\emph{noweb} format (\citealt{noweb}). It serves as both the
+documentation and container of the literate program. The \verb|noweb|
+file can be used to produce both the \emph{literate document} and the
+executable code.
+
+The literate document is separated into \emph{documentation chunks}
+and named \emph{code chunks}. Each \emph{code chunk} can contain code
+directly, or contain references to other \emph{code chunks} which act
+as placeholders for the contents of the respective \emph{code
+  chunk}. The name of each \emph{code chunk} should serve as a short
+description of the code it contains. Thus each \emph{code chunk}
+provides an overview of its purpose by either directly containing
+code, or by containing the names of other \emph{code chunks}. The
+reader is then free to delve deeper into the respective \emph{code
+  chunks} if desired.
+
+\section{Introduction}
+\label{sec:introduction}
+This Literate Document delves deeply into the source code for
+TableToLongForm. Most users will probably find the Home Page for
+TableToLongForm\footnote{\url{https://www.stat.auckland.ac.nz/~joh024/Research/TableToLongForm/}}
+more informative.
+
+The Literate Program is a constant work-in-progress, and some of the
+sections may have out of date documentation, or be lacking in
+documentation completely.
+
+\newpage
+\section{Code Overview}
+\label{sec:code.overview}
+Unless the Table is horrible beyond mortal imagination, it should have
+some kind of pattern, such that a human will be able to discern the
+structure and hence understand the data it represents. This code
+attempts to algorithmically search for such patterns, discern the
+structure, then reconstruct the data into a LongForm Dataframe.
+
+The task can be seen to consist of three phases:
+\begin{itemize}
+\item Phase One is Identification, which involves identifying the rows
+  and columns where the labels and the data can be found.
+\item Phase Two is Discerning the Parentage, which involves
+  identifying the hierarchical structure of the data, based on the row
+  and column labels.
+\item Phase Three is Reconstruction, where we use what we've found in
+  the first two phases to reconstruct the data into a LongForm
+  Dataframe.
+\end{itemize}
+\nwfilename{TableToLongForm_noAppendix.Rnw}\nwbegincode{1}\sublabel{RNWTab1-Tab1-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Tab1-1}}}\moddef{TableToLongForm.R~{\nwtagstyle{}\subpageref{RNWTab1-Tab1-1}}}\endmoddef\let\nwnotused=\nwoutput{}
+\LA{}document header~{\nwtagstyle{}\subpageref{RNWTab1-doc3-1}}\RA{}
+\LA{}Front End~{\nwtagstyle{}\subpageref{RNWTab1-Fro4-1}}\RA{}
+\LA{}Back End~{\nwtagstyle{}\subpageref{RNWTab1-Bac7-1}}\RA{}
+\LA{}Identification~{\nwtagstyle{}\subpageref{RNWTab1-Ide13-1}}\RA{}
+\LA{}Discern Parentage~{\nwtagstyle{}\subpageref{RNWTab1-Dis30-1}}\RA{}
+\LA{}Reconstruction~{\nwtagstyle{}\subpageref{RNWTab1-Rec51-1}}\RA{}
+\nosublabel{RNWTab1-Tab1-1-u4}\nwnotused{TableToLongForm.R}\nwendcode{}\nwbegindocs{2}\nwdocspar
+
+We place a document header at the top of the extracted code to
+encourage people to read the literate description rather than
+attempting to study the code alone.
+\nwenddocs{}\nwbegincode{3}\sublabel{RNWTab1-doc3-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-doc3-1}}}\moddef{document header~{\nwtagstyle{}\subpageref{RNWTab1-doc3-1}}}\endmoddef
+##----------------------------------------------------------------------
+## The code in this .R file is machine generated from the literate
+##  program, TableToLongForm.Rnw
+## Documentation can be found in the literate description for this
+##  program, TableToLongForm.pdf
+##----------------------------------------------------------------------
+\nwendcode{}\nwbegindocs{4}\nwdocspar
+
+\subsection{Front End}
+\label{sec:front.end}
+The main function \verb|TableToLongForm| is defined here. For most
+users this is the only function they will call. The arguments are as
+follows:
+
+\begin{description}
+\item[Table] the Table to convert, given as a \verb|character matrix|.
+  Also accepts a \verb|data.frame|, which is coerced to a \verb|matrix|
+  with a warning.
+\item[IdentResult] an optional \verb|list| specifying the locations of
+  the various elements of the \verb|Table|. By default this is
+  automatically generated but it can be specified manually where the
+  automatic detection fails.
+\item[IdentPrimary, IdentAuxiliary, ParePreRow, ParePreCol] specify
+  the algorithms TableToLongForm should use. Refer to the respective
+  sections for more details.
+\item[fulloutput] if \verb|TRUE|, returns a \verb|list| containing
+  additional information primarily useful for diagnostic
+  purposes. Otherwise, and by default, the function only returns the
+  converted \verb|data.frame| object.
+\item[diagnostics] a \verb|character vector| specifying the name of
+  the file diagnostic output will be written to. Can also be
+  \verb|TRUE|, in which case the file name will be the name of the
+  object specified in \verb|Table|.
+\item[diagnostics.trim] a \verb|logical| indicating whether the
+  diagnostics output should be trimmed. A good idea to keep
+  \verb|TRUE| (default) as trimmed output is generally more useful.
+\end{description}
+
+This function handles some busy-work, such as coercing the
+\verb|Table| to a \verb|matrix| (with a warning) and setting up the
+diagnostics output file. It then calls \verb|ReconsMain| which handles
+the real meat of the conversion.
+
+In the package version of TableToLongForm, this, and some back-end
+functions, are the only functions that are exported, the rest are
+hidden in the package namespace (which is still accessible, just not
+as easily). If sourcing in the raw .R file, the majority of the
+supporting functions are not hidden and can be accessed directly from
+the Global Environment.
+\nwenddocs{}\nwbegincode{5}\sublabel{RNWTab1-Fro4-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Fro4-1}}}\moddef{Front End~{\nwtagstyle{}\subpageref{RNWTab1-Fro4-1}}}\endmoddef
+TableToLongForm =
+  function(Table, IdentResult = NULL,
+           IdentPrimary = "combound",
+           IdentAuxiliary = "sequence",
+           ParePreRow = NULL,
+           ParePreCol = c("mismatch", "misalign", "multirow"),
+           fulloutput = FALSE,
+           diagnostics = FALSE, diagnostics.trim = TRUE)\{
+    \LA{}Check Table arg~{\nwtagstyle{}\subpageref{RNWTab1-Che5-1}}\RA{}
+    \LA{}Setup diagnostics file~{\nwtagstyle{}\subpageref{RNWTab1-Set6-1}}\RA{}
+    fullout = ReconsMain(matFull = Table, IdentResult,
+      IdentPrimary, IdentAuxiliary, ParePreRow, ParePreCol)
+    if(fulloutput) fullout else fullout$datafr
+  \}
+\nwidentuses{\\{{IdentResult}{IdentResult}}\\{{ReconsMain}{ReconsMain}}}\nwindexuse{IdentResult}{IdentResult}{RNWTab1-Fro4-1}\nwindexuse{ReconsMain}{ReconsMain}{RNWTab1-Fro4-1}\nwendcode{}\nwbegindocs{6}\nwdocspar
+
+\nwenddocs{}\nwbegincode{7}\sublabel{RNWTab1-Che5-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Che5-1}}}\moddef{Check Table arg~{\nwtagstyle{}\subpageref{RNWTab1-Che5-1}}}\endmoddef
+if(is.data.frame(Table))\{
+  warning("Table supplied is a data.frame.\\n",
+          "TableToLongForm is designed for a character matrix.\\n",
+          "The data.frame is being coerced to a matrix but this\\n",
+          "may lead to unexpected results.",
+          immediate. = TRUE)
+  Table = as.matrix(Table)
+\}
+if(!is.matrix(Table))
+  stop("Table argument must be a matrix or a data.frame")
+\nwendcode{}\nwbegindocs{8}\nwdocspar
+
+\nwenddocs{}\nwbegincode{9}\sublabel{RNWTab1-Set6-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Set6-1}}}\moddef{Setup diagnostics file~{\nwtagstyle{}\subpageref{RNWTab1-Set6-1}}}\endmoddef
+if(diagnostics != FALSE)\{
+  if(!is.character(diagnostics))
+    diagnostics = deparse(substitute(Table))
+  assign("TCRunout", file(paste0(diagnostics, ".TCRunout"), "w"),
+         envir = TTLFBaseEnv)
+  assign("TCtrim", diagnostics.trim, envir = TTLFBaseEnv)
+  on.exit(\{
+    with(TTLFBaseEnv, \{
+      close(TCRunout)
+      rm(TCRunout)
+      rm(TCtrim)
+    \})
+  \})
+\}
+\nwidentuses{\\{{TTLFBaseEnv}{TTLFBaseEnv}}}\nwindexuse{TTLFBaseEnv}{TTLFBaseEnv}{RNWTab1-Set6-1}\nwendcode{}\nwbegindocs{10}\nwdocspar
+
+\subsection{Back End}
+\label{sec:back.end}
+Various code, mainly to help produce diagnostic output, can be ignored
+by most users.
+\nwenddocs{}\nwbegincode{11}\sublabel{RNWTab1-Bac7-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Bac7-1}}}\moddef{Back End~{\nwtagstyle{}\subpageref{RNWTab1-Bac7-1}}}\endmoddef
+\LA{}BErbinddf~{\nwtagstyle{}\subpageref{RNWTab1-BEr8-1}}\RA{}
+\LA{}BEprintplist~{\nwtagstyle{}\subpageref{RNWTab1-BEp9-1}}\RA{}
+\LA{}BEattrLoc~{\nwtagstyle{}\subpageref{RNWTab1-BEa10-1}}\RA{}
+\LA{}BETCRsink~{\nwtagstyle{}\subpageref{RNWTab1-BET11-1}}\RA{}
+\LA{}BETTLFalias~{\nwtagstyle{}\subpageref{RNWTab1-BET12-1}}\RA{}
+\nwendcode{}\nwbegindocs{12}\nwdocspar
+
+\paragraph{rbinddf}
+An \verb|rbind| method to handle data.frames with differing column
+names. Does not check if arguments are actually data.frames, so can
+break easily.
+\nwenddocs{}\nwbegincode{13}\sublabel{RNWTab1-BEr8-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-BEr8-1}}}\moddef{BErbinddf~{\nwtagstyle{}\subpageref{RNWTab1-BEr8-1}}}\endmoddef
+rbinddf =
+  function(..., deparse.level = 0)\{
+    bindlist = list(...)
+    nameunion = NULL
+    for(j in 1:length(bindlist))
+      nameunion = union(nameunion, colnames(bindlist[[j]]))
+    for(j in 1:length(bindlist))\{
+      curdf = bindlist[[j]]
+      namediff = setdiff(nameunion, colnames(curdf))
+      matdummy = matrix(NA, nrow = nrow(curdf), ncol = length(namediff),
+        dimnames = list(NULL, namediff))
+      bindlist[[j]] = cbind(curdf, matdummy)
+    \}
+    outdf = do.call(rbind,
+      c(bindlist, list(deparse.level = deparse.level)))
+    for(j in 1:ncol(outdf))
+      if(mode(outdf[,j]) == "character") outdf[,j] = factor(outdf[,j])
+    outdf
+  \}
+\nwindexdefn{rbinddf}{rbinddf}{RNWTab1-BEr8-1}\eatline
+\nwidentdefs{\\{{rbinddf}{rbinddf}}}\nwendcode{}\nwbegindocs{14}\nwdocspar
+
+\paragraph{print.plist}
+A print method for class \verb|plist|, which are nested lists with a
+numeric vector at the lowest level; \verb|print.default| is rather
+inefficient in displaying such nested lists.
+\nwenddocs{}\nwbegincode{15}\sublabel{RNWTab1-BEp9-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-BEp9-1}}}\moddef{BEprintplist~{\nwtagstyle{}\subpageref{RNWTab1-BEp9-1}}}\endmoddef
+print.plist =
+  function(x, ...)\{
+    plistC = function(plist)\{
+      pLoc = attr(plist, "Loc")
+      if(is.list(plist))\{
+        namevec = names(plist)
+        if(!is.null(pLoc))
+          namevec = paste0(names(plist),
+            " (", pLoc[,"rows"], ", ", pLoc[,"cols"], ")")
+        namelist = as.list(namevec)
+        for(i in 1:length(namelist))
+          namelist[[i]] =
+            c(paste("+", namelist[[i]]),
+              paste("-", plistC(plist[[i]])))
+        do.call(c, namelist)
+      \} else\{
+        if(!is.null(names(plist)))\{
+          namevec = names(plist)
+          if(!is.null(pLoc))
+            namevec = paste0(names(plist),
+              " (", plist, ", ", pLoc[,"cols"], ")")
+          paste("+", namevec)
+        \} else paste(plist, collapse = " ")
+      \}
+    \}
+  
+    cat(plistC(x), sep = "\\n")
+  \}
+\nwendcode{}\nwbegindocs{16}\nwdocspar
+
+\paragraph{attrLoc}
+A function for creating a \verb|plist| object and binding location
+information (rows and cols) to it.
+\nwenddocs{}\nwbegincode{17}\sublabel{RNWTab1-BEa10-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-BEa10-1}}}\moddef{BEattrLoc~{\nwtagstyle{}\subpageref{RNWTab1-BEa10-1}}}\endmoddef
+attrLoc =
+  function(plist, rows = NULL, cols = NULL)\{
+    attr(plist, "Loc") = cbind(rows, cols)
+    class(plist) = "plist"
+    plist
+  \}
+\nwindexdefn{attrLoc}{attrLoc}{RNWTab1-BEa10-1}\eatline
+\nwidentdefs{\\{{attrLoc}{attrLoc}}}\nwendcode{}\nwbegindocs{18}\nwdocspar
+
+\paragraph{TCRsink}
+Sinks the output to \verb|TCRunout| for diagnostic output. Requires
+the existence of \verb|TCRunout| which is created by the main function
+\verb|TableToLongForm| when \verb|diagnostics = TRUE|.
+
+Spaces may be introduced by \verb|match.call|, thus any spaces in the
+args of \emph{variables to sink} (that is, the arguments supplied via
+\verb|...|) are removed without warning.
+
+We also create the \verb|TTLFBaseEnv| here, which is currently only
+used to temporarily store \verb|TCRunout|.
+\nwenddocs{}\nwbegincode{19}\sublabel{RNWTab1-BET11-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-BET11-1}}}\moddef{BETCRsink~{\nwtagstyle{}\subpageref{RNWTab1-BET11-1}}}\endmoddef
+TCRsink =
+  function(ID, ...)
+  if(exists("TCRunout", envir = TTLFBaseEnv))\{
+    varlist = list(...)
+    names(varlist) = gsub(" ", "", as.character(match.call()[-(1:2)]))
+    TCtrim = get("TCtrim", envir = TTLFBaseEnv)
+    with(TTLFBaseEnv, sink(TCRunout))
+    for(i in 1:length(varlist))\{
+      cat("###TCR", ID, names(varlist)[i], "\\n")
+      curvar = varlist[[i]]
+      if(TCtrim == TRUE)\{
+        curvar = head(curvar)
+        if(is.matrix(curvar) || is.matrix(curvar))
+          if(ncol(curvar) > 6)
+            curvar = curvar[,1:6]
+      \}
+      print(curvar)
+    \}
+    sink()
+  \}
+TTLFBaseEnv = new.env()
+\nwindexdefn{TCRsink}{TCRsink}{RNWTab1-BET11-1}\nwindexdefn{TTLFBaseEnv}{TTLFBaseEnv}{RNWTab1-BET11-1}\eatline
+\nwidentdefs{\\{{TCRsink}{TCRsink}}\\{{TTLFBaseEnv}{TTLFBaseEnv}}}\nwendcode{}\nwbegindocs{20}\nwdocspar
+
+\paragraph{TTLFalias}
+Used for the new Modular System. Check ``Working with Modules''
+documentation available from the main website.
+
+Should add a check to aliasAdd for existing rows with same alias (and
+same Type, probably ok to allow same alias for different Types).
+\nwenddocs{}\nwbegincode{21}\sublabel{RNWTab1-BET12-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-BET12-1}}}\moddef{BETTLFalias~{\nwtagstyle{}\subpageref{RNWTab1-BET12-1}}}\endmoddef
+with(TTLFBaseEnv, \{aliasmat = NULL\})
+TTLFaliasAdd =
+  function(Type, Fname, Falias, Author = "", Description = "")
+  assign("aliasmat",
+         rbind(get("aliasmat", envir = TTLFBaseEnv),
+               c(Type = Type, Name = Fname, Alias = Falias,
+                 Author = Author, Description = Description)),
+         envir = TTLFBaseEnv)
+
+TTLFaliasGet =
+  function(Type, Falias)\{
+    aliasmat = get("aliasmat", envir = TTLFBaseEnv)
+    matchRow = which(aliasmat[,"Type"] == Type &
+      aliasmat[,"Alias"] == Falias)
+    if(length(matchRow) == 1)
+      aliasmat[matchRow,"Name"]
+    else stop("Invalid algorithm specified for ", Type)
+  \}
+
+TTLFaliasList =
+  function()\{
+    aliasmat = get("aliasmat", envir = TTLFBaseEnv)
+    Types = unique(aliasmat[,"Type"])
+    for(Type in Types)\{
+      cat("==Type: ", Type, "==\\n", sep = "")
+      Algos = aliasmat[aliasmat[,"Type"] == Type,,drop=FALSE]
+      for(i in 1:nrow(Algos))
+        cat("Name: ", Algos[i, "Name"], "\\n",
+            "Alias: ", Algos[i, "Alias"], "\\n",
+            "Author: ", Algos[i, "Author"], "\\n",
+            "Description: ", Algos[i, "Description"], "\\n\\n",
+            sep = "")
+    \}
+  \}
+  
+\nwindexdefn{TTLFaliasAdd}{TTLFaliasAdd}{RNWTab1-BET12-1}\nwindexdefn{TTLFaliasGet}{TTLFaliasGet}{RNWTab1-BET12-1}\eatline
+\nwidentdefs{\\{{TTLFaliasAdd}{TTLFaliasAdd}}\\{{TTLFaliasGet}{TTLFaliasGet}}}\nwidentuses{\\{{TTLFBaseEnv}{TTLFBaseEnv}}}\nwindexuse{TTLFBaseEnv}{TTLFBaseEnv}{RNWTab1-BET12-1}\nwendcode{}\nwbegindocs{22}\nwdocspar
+
+\section{Identification}
+\label{sec:identification}
+The purpose of \textbf{Identification} is to identify where in the
+Table the data is found and where the accompanying labels are, while
+ignoring any extraneous information we do not want. The output is the
+\verb|IdentResult|, a list containing two elements, \verb|rows| and
+\verb|cols|, each of which is a list containing these two elements:
+\begin{description}
+\item[label] - a vector of the rows or columns where the labels are
+  found.
+\item[data] - a vector of the rows or columns where the data are
+  found.
+\end{description}
+
+It is intended for this procedure to involve a number of
+Identification algorithms that are used for a high degree of
+reliability and flexibility, but at this stage there is only a single
+Primary algorithm, supplemented by a single Auxiliary algorithm.
+
+We separate the Identification functions into three groups.
+\begin{description}
+\item[Ident Primary] contain Primary Ident algorithms, of which one is
+  chosen when calling \verb|TableToLongForm|.
+\item[Ident Auxiliary] contain Auxiliary Ident algorithms, of which
+  any combination, in any order, can be chosen when calling
+  \verb|TableToLongForm|. They are called after the Primary algorithm,
+  to refine the \verb|IdentResult|.
+\item[Ident Support] contains supporting functions called by the
+  Primary and Auxiliary functions.
+\end{description}
+
+\nwenddocs{}\nwbegincode{23}\sublabel{RNWTab1-Ide13-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ide13-1}}}\moddef{Identification~{\nwtagstyle{}\subpageref{RNWTab1-Ide13-1}}}\endmoddef
+\LA{}Ident Primary~{\nwtagstyle{}\subpageref{RNWTab1-Ide14-1}}\RA{}
+\LA{}Ident Auxiliary~{\nwtagstyle{}\subpageref{RNWTab1-Ide20-1}}\RA{}
+\LA{}Ident Support~{\nwtagstyle{}\subpageref{RNWTab1-Ide24-1}}\RA{}
+\nwendcode{}\nwbegindocs{24}\nwdocspar
+
+\subsection{Identification - Primary}
+The Primary Ident algorithms should take a single argument,
+\verb|matFull|. They should return an \verb|IdentResult|.
+\label{sec:IdentPrimary}
+\nwenddocs{}\nwbegincode{25}\sublabel{RNWTab1-Ide14-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ide14-1}}}\moddef{Ident Primary~{\nwtagstyle{}\subpageref{RNWTab1-Ide14-1}}}\endmoddef
+\LA{}Ident by Most Common Boundary~{\nwtagstyle{}\subpageref{RNWTab1-Ide15-1}}\RA{}
+\nwendcode{}\nwbegindocs{26}\nwdocspar
+
+\subsubsection{Ident by Most Common Boundary}
+Search for the most common start and end rows and columns (the
+boundary) to find a block (rectangular region) of numbers, which is
+assumed to be our table of data.
+\nwenddocs{}\nwbegincode{27}\sublabel{RNWTab1-Ide15-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ide15-1}}}\moddef{Ident by Most Common Boundary~{\nwtagstyle{}\subpageref{RNWTab1-Ide15-1}}}\endmoddef
+IdentbyMostCommonBoundary =
+  function(matFull)\{
+    \LA{}Get Non empty rows and cols~{\nwtagstyle{}\subpageref{RNWTab1-Get16-1}}\RA{}
+    \LA{}Call Ident MostCommonBoundary~{\nwtagstyle{}\subpageref{RNWTab1-Cal17-1}}\RA{}
+    \LA{}Construct rowslist and colslist~{\nwtagstyle{}\subpageref{RNWTab1-Con18-1}}\RA{}
+    \LA{}Cleanup MostCommonBoundary Results~{\nwtagstyle{}\subpageref{RNWTab1-Cle19-1}}\RA{}
+    list(rows = rowslist, cols = colslist)
+  \}
+TTLFaliasAdd("IdentPrimary", "IdentbyMostCommonBoundary", "combound",
+             "Base Algorithm", "Default IdentPrimary algorithm")
+\nwidentuses{\\{{TTLFaliasAdd}{TTLFaliasAdd}}}\nwindexuse{TTLFaliasAdd}{TTLFaliasAdd}{RNWTab1-Ide15-1}\nwendcode{}\nwbegindocs{28}\nwdocspar
+
+\nwenddocs{}\nwbegincode{29}\sublabel{RNWTab1-Get16-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Get16-1}}}\moddef{Get Non empty rows and cols~{\nwtagstyle{}\subpageref{RNWTab1-Get16-1}}}\endmoddef
+rowNonempty = (1:nrow(matFull))[IdentNonEmpty(matFull, 1)]
+colNonempty = (1:ncol(matFull))[IdentNonEmpty(matFull, 2)]
+\nwidentuses{\\{{IdentNonEmpty}{IdentNonEmpty}}}\nwindexuse{IdentNonEmpty}{IdentNonEmpty}{RNWTab1-Get16-1}\nwendcode{}\nwbegindocs{30}\nwdocspar
+
+\nwenddocs{}\nwbegincode{31}\sublabel{RNWTab1-Cal17-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Cal17-1}}}\moddef{Call Ident MostCommonBoundary~{\nwtagstyle{}\subpageref{RNWTab1-Cal17-1}}}\endmoddef
+rowData = IdentMostCommonBoundary(matFull, 2)
+colData = IdentMostCommonBoundary(matFull, 1)
+TCRsink("CIMCB", rowData, colData)
+\nwidentuses{\\{{IdentMostCommonBoundary}{IdentMostCommonBoundary}}\\{{TCRsink}{TCRsink}}}\nwindexuse{IdentMostCommonBoundary}{IdentMostCommonBoundary}{RNWTab1-Cal17-1}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Cal17-1}\nwendcode{}\nwbegindocs{32}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: CIMCB)}
+\begin{verbatim}
+> rowData
+[1]  5 14
+\end{verbatim}
+\begin{verbatim}
+> colData
+[1]  4 11
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+We construct the interim \verb|rowslist| taking every non-empty row
+before the most common start of the numbers block (\verb|rowData[1]|)
+and assigning these to the \verb|label| region. The numbers block
+(which is bounded by \verb|rowData[1]| and \verb|rowData[2]|) is
+assigned to the \verb|data| region. The interim \verb|colslist| is
+constructed in the same manner.
+\nwenddocs{}\nwbegincode{33}\sublabel{RNWTab1-Con18-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Con18-1}}}\moddef{Construct rowslist and colslist~{\nwtagstyle{}\subpageref{RNWTab1-Con18-1}}}\endmoddef
+rowslist = list(label = rowNonempty[rowNonempty < rowData[1]],
+                data = rowNonempty[(rowNonempty >= rowData[1]) &
+                                   (rowNonempty <= rowData[2])])
+colslist = list(label = colNonempty[colNonempty < colData[1]],
+                data = colNonempty[(colNonempty >= colData[1]) &
+                                   (colNonempty <= colData[2])])
+TCRsink("CRAC", rowslist, colslist)
+\nwidentuses{\\{{TCRsink}{TCRsink}}}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Con18-1}\nwendcode{}\nwbegindocs{34}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: CRAC)}
+\begin{verbatim}
+> rowslist
+$label
+[1] 1 2 3 4
+
+$data
+ [1]  5  6  7  8  9 10 11 12 13 14
+
+\end{verbatim}
+\begin{verbatim}
+> colslist
+$label
+[1] 1 2
+
+$data
+[1]  4  5  6  7  8  9 10 11
+
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+As the \verb|MostCommonBoundary| algorithm searches for the data
+region, it can be conservative with respect to the rows and columns
+assigned to data. Under most circumstances this causes no problems,
+but in certain rare cases of mismatched column labels, there are
+column labels that are outside the data region (that is, the column
+label is not over the data it is the label of, hence mismatched).
+To correct for this, we do the following:
+\begin{enumerate}
+\item If \verb|matRowLabel| isn't all empty
+\item Shift any fully empty columns on the right to \verb|cols$data|
+\end{enumerate}
+\nwenddocs{}\nwbegincode{35}\sublabel{RNWTab1-Cle19-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Cle19-1}}}\moddef{Cleanup MostCommonBoundary Results~{\nwtagstyle{}\subpageref{RNWTab1-Cle19-1}}}\endmoddef
+matRowLabel = matFull[rowslist$data, colslist$label,drop=FALSE]
+if(!all(is.na(matRowLabel)) && ncol(matRowLabel) > 1)\{
+  RowLabelNonempty = IdentNonEmpty(matRowLabel, 2)
+  if(max(RowLabelNonempty) < ncol(matRowLabel))\{
+    toshift = (max(RowLabelNonempty) + 1):ncol(matRowLabel)
+    colslist$data = c(colslist$label[toshift], colslist$data)
+    colslist$label = colslist$label[-toshift]
+  \}
+\}
+\nwidentuses{\\{{IdentNonEmpty}{IdentNonEmpty}}}\nwindexuse{IdentNonEmpty}{IdentNonEmpty}{RNWTab1-Cle19-1}\nwendcode{}\nwbegindocs{36}\nwdocspar
+
+\subsection{Identification - Auxiliary}
+The Auxiliary Ident algorithms should take two arguments,
+\verb|matFull| and \verb|IdentResult|. They should return an
+\verb|IdentResult|.
+\label{sec:IdentAuxiliary}
+\nwenddocs{}\nwbegincode{37}\sublabel{RNWTab1-Ide20-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ide20-1}}}\moddef{Ident Auxiliary~{\nwtagstyle{}\subpageref{RNWTab1-Ide20-1}}}\endmoddef
+\LA{}Ident by Sequence~{\nwtagstyle{}\subpageref{RNWTab1-Ide21-1}}\RA{}
+\nwendcode{}\nwbegindocs{38}\nwdocspar
+
+\subsubsection{Ident by Sequence}
+Search for fully numeric row labels (e.g. Years) that were
+misidentified as data, by checking if the numbers follow some fixed
+sequence. If such a situation is found (result is not \verb|NA|), we
+update \verb|IdentResult|. This is intended to be used in conjunction
+with the \emph{Ident by Most Common Boundary} Primary algorithm, which
+assumes numbers to be data, and not labels.
+
+Currently the algorithm is conservative, only making the check if the
+current \verb|matRowLabel| is empty (\verb|ncol = 0|, or all
+\verb|NA|s), and only accepting a sequence of fixed difference, with
+no gaps or jumps, e.g.
+\begin{itemize}
+\item 1 2 3 4, then a sequence
+\item 1 2 4 5, then not a sequence
+\end{itemize}
+\nwenddocs{}\nwbegincode{39}\sublabel{RNWTab1-Ide21-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ide21-1}}}\moddef{Ident by Sequence~{\nwtagstyle{}\subpageref{RNWTab1-Ide21-1}}}\endmoddef
+IdentbySequence =
+  function(matFull, IdentResult)
+  with(IdentResult, \{
+    matRowLabel = matFull[rows$data, cols$label]
+    \LA{}If empty take next column~{\nwtagstyle{}\subpageref{RNWTab1-Ife22-1}}\RA{}
+    \LA{}Check if sequence~{\nwtagstyle{}\subpageref{RNWTab1-Che23-1}}\RA{}
+  \})
+TTLFaliasAdd("IdentAuxiliary", "IdentbySequence", "sequence",
+             "Base Algorithm", paste("Search for fully numeric row",
+             "labels (e.g. Years) that were misidentified as data"))
+\nwidentuses{\\{{IdentResult}{IdentResult}}\\{{TTLFaliasAdd}{TTLFaliasAdd}}}\nwindexuse{IdentResult}{IdentResult}{RNWTab1-Ide21-1}\nwindexuse{TTLFaliasAdd}{TTLFaliasAdd}{RNWTab1-Ide21-1}\nwendcode{}\nwbegindocs{40}\nwdocspar
+
+\nwenddocs{}\nwbegincode{41}\sublabel{RNWTab1-Ife22-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ife22-1}}}\moddef{If empty take next column~{\nwtagstyle{}\subpageref{RNWTab1-Ife22-1}}}\endmoddef
+if(all(is.na(matRowLabel)))\{
+  cols$label = cols$data[1]
+  cols$data = cols$data[-1]
+  IdentbySequence(matFull, list(rows = rows, cols = cols))
+\}
+\nwendcode{}\nwbegindocs{42}\nwdocspar
+
+Check to see if all diffs are equal, but original values are not. If
+it is, we have a sequence and we return an updated \verb|IdentResult|.
+\nwenddocs{}\nwbegincode{43}\sublabel{RNWTab1-Che23-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Che23-1}}}\moddef{Check if sequence~{\nwtagstyle{}\subpageref{RNWTab1-Che23-1}}}\endmoddef
+else\{
+  matRowLabel = suppressWarnings(as.numeric(matRowLabel))
+  if(length(unique(matRowLabel)) > 1 &&
+     length(unique(diff(matRowLabel))) == 1)
+    list(rows = rows, cols = cols)
+  else IdentResult
+\}
+\nwidentuses{\\{{IdentResult}{IdentResult}}}\nwindexuse{IdentResult}{IdentResult}{RNWTab1-Che23-1}\nwendcode{}\nwbegindocs{44}\nwdocspar
+
+\subsection{Identification - Support}
+\label{sec:IdentSupport}
+Here we discuss the supporting functions called by the Primary and
+Auxiliary functions. Each chunk corresponds to a separate supporting
+function.
+\nwenddocs{}\nwbegincode{45}\sublabel{RNWTab1-Ide24-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ide24-1}}}\moddef{Ident Support~{\nwtagstyle{}\subpageref{RNWTab1-Ide24-1}}}\endmoddef
+\LA{}Ident Non Empty~{\nwtagstyle{}\subpageref{RNWTab1-Ide25-1}}\RA{}
+\LA{}Ident Pattern~{\nwtagstyle{}\subpageref{RNWTab1-Ide26-1}}\RA{}
+\LA{}Ident Most Common Boundary~{\nwtagstyle{}\subpageref{RNWTab1-Ide29-1}}\RA{}
+\nwendcode{}\nwbegindocs{46}\nwdocspar
+
+\subsubsection{IdentNonEmpty}
+Given a matrix (\verb|mat|) and a margin (1 for rows, 2 for
+columns), return a vector giving the indices of non-empty rows or
+columns. Can specify a different empty identifying function (default
+\verb|is.na|). Procedure:
+\begin{enumerate}
+\item Compute \verb|isnonempty|, a logical vector about whether the
+  rows or cols are not empty.
+\item Use \verb|which| on \verb|isnonempty| to get indices.
+\end{enumerate}
+\nwenddocs{}\nwbegincode{47}\sublabel{RNWTab1-Ide25-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ide25-1}}}\moddef{Ident Non Empty~{\nwtagstyle{}\subpageref{RNWTab1-Ide25-1}}}\endmoddef
+IdentNonEmpty =
+  function(mat, margin, emptyident = is.na)\{
+    isnonempty = apply(mat, margin, function(x) !all(emptyident(x)))
+    which(isnonempty)
+  \}
+\nwindexdefn{IdentNonEmpty}{IdentNonEmpty}{RNWTab1-Ide25-1}\eatline
+\nwidentdefs{\\{{IdentNonEmpty}{IdentNonEmpty}}}\nwendcode{}\nwbegindocs{48}\nwdocspar
+
+\subsubsection{IdentPattern}
+Attempt to discern a repeating pattern in \verb|vec|, which can be a
+vector of any type (which is coerced to \verb|character|). The
+returned value is the grouping number for the repeating pattern, or
+the length of \verb|vec| if there is no repeating pattern, e.g.
+\begin{itemize}
+\item \verb|vec| = 1 1 1 1, then return 1
+\item \verb|vec| = 3 4 3 4, then return 2
+\item \verb|vec| = 1 2 3 4, then return 4
+\item \verb|vec| = 1 2 3 1, then return 4
+\end{itemize}
+\verb|IdentPattern| does this fairly efficiently by use of regular
+expressions and \verb|match|.
+\nwenddocs{}\nwbegincode{49}\sublabel{RNWTab1-Ide26-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ide26-1}}}\moddef{Ident Pattern~{\nwtagstyle{}\subpageref{RNWTab1-Ide26-1}}}\endmoddef
+IdentPattern =
+  function(vec)\{
+    \LA{}Look for potential repeat~{\nwtagstyle{}\subpageref{RNWTab1-Loo27-1}}\RA{}
+    \LA{}Check if pattern repeats~{\nwtagstyle{}\subpageref{RNWTab1-Che28-1}}\RA{}
+  \}
+\nwindexdefn{IdentPattern}{IdentPattern}{RNWTab1-Ide26-1}\eatline
+\nwidentdefs{\\{{IdentPattern}{IdentPattern}}}\nwendcode{}\nwbegindocs{50}\nwdocspar
+
+Look for when unique values of \verb|vec| repeat, and see if the
+distance (\verb|diff|) between these are equal (hence the
+\verb|unique| of the \verb|diff| result will be of length 1). If it
+is, we take this as our potential repeating point and move on.
+
+If the value does not repeat at all, \verb|diff| will return a
+\verb|vector| of length 0, which is adjusted to the length of
+\verb|vec|.
+\nwenddocs{}\nwbegincode{51}\sublabel{RNWTab1-Loo27-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Loo27-1}}}\moddef{Look for potential repeat~{\nwtagstyle{}\subpageref{RNWTab1-Loo27-1}}}\endmoddef
+matchvec = match(vec, unique(vec))
+for(i in 1:length(unique(matchvec)))\{
+  repind = unique(diff(which(matchvec == i)))
+  if(length(repind) == 0)
+    repind = length(vec)
+  if(length(repind) == 1)
+    break
+\}
+\nwendcode{}\nwbegindocs{52}\nwdocspar
+
+We combine the first \verb|repind| elements of \verb|vec| and collapse
+this into a single string. A \verb|grep| is then called on the entire
+\verb|vec| that has also been collapsed into a single string, checking
+to see if the entire string can be matched to some repeat of the
+aforementioned collapsed string of the first \verb|repind|
+elements. If it can, we have a repeating pattern and thus return
+\verb|repind|. Otherwise, we return the length of \verb|vec|.
+\nwenddocs{}\nwbegincode{53}\sublabel{RNWTab1-Che28-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Che28-1}}}\moddef{Check if pattern repeats~{\nwtagstyle{}\subpageref{RNWTab1-Che28-1}}}\endmoddef
+curseg = paste0("^(", paste(vec[1:repind], collapse = ""), ")+$")
+if(length(grep(curseg, paste(vec, collapse = ""))) > 0)
+  repind else length(vec)
+\nwendcode{}\nwbegindocs{54}\nwdocspar
+
+\subsubsection{IdentMostCommonBoundary}
+Search for the most common first and last rows/cols to identify a
+block (rectangular region) of numbers. Procedure:
+\begin{enumerate}
+\item Suppose \verb|margin = 2|, then loop through each column and
+  search for cells containing numbers.
+\item Compute the first row with a number for each column
+  (\verb|nstarts|), and do the same for the last row (\verb|nends|).
+\item Return the most common first and last rows.
+\end{enumerate}
+
+\nwenddocs{}\nwbegincode{55}\sublabel{RNWTab1-Ide29-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ide29-1}}}\moddef{Ident Most Common Boundary~{\nwtagstyle{}\subpageref{RNWTab1-Ide29-1}}}\endmoddef
+IdentMostCommonBoundary =
+  function(matFull, margin)\{
+    isnumber = suppressWarnings(apply(matFull, margin,
+      function(x) which(!is.na(as.numeric(x)))))
+    nstarts = table(sapply(isnumber,
+      function(x) if(length(x) > 0) min(x) else NA))
+    nends = table(sapply(isnumber,
+      function(x) if(length(x) > 0) max(x) else NA))
+    as.numeric(names(c(which.max(nstarts), which.max(rev(nends)))))
+  \}
+\nwindexdefn{IdentMostCommonBoundary}{IdentMostCommonBoundary}{RNWTab1-Ide29-1}\eatline
+\nwidentdefs{\\{{IdentMostCommonBoundary}{IdentMostCommonBoundary}}}\nwendcode{}\nwbegindocs{56}\nwdocspar
+
+\section{Discern Parentage}
+\label{sec:parentage}
+The purpose of \textbf{Discern Parentage} is to understand the
+hierarchical structure (the \emph{parentage}) of the row and column
+labels. The output will be the \verb|rowplist| and \verb|colplist|,
+the row and column parentage lists. TO DO explanation of plist.
+
+We separate the Parentage functions into five groups.
+\begin{description}
+\item[Pare Pre Row] contain pre-requisite algorithms that tidy up the
+  Row Labels for correct operation of the Main Parentage
+  algorithm. Any combination of these algorithms, in any order, can be
+  chosen when calling \verb|TableToLongForm|. The current
+  implementation of TableToLongForm has no Pre Row algorithms.
+\item[Pare Pre Col] contain pre-requisite algorithms that tidy up the
+  Column Labels for correct operation of the Main Parentage
+  algorithm. Any combination of these algorithms, in any order, can be
+  chosen when calling \verb|TableToLongForm|.
+\item[Pare Front] is a simple `front-end' function that makes the
+  appropriate first call to \verb|PareMain|.
+\item[Pare Main] contains the Main algorithm that will recursively
+  call itself until the all parentage is discerned.
+\item[Pare Low Level] contains low-level functions called by the Main
+  function.
+\end{description}
+
+\nwenddocs{}\nwbegincode{57}\sublabel{RNWTab1-Dis30-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Dis30-1}}}\moddef{Discern Parentage~{\nwtagstyle{}\subpageref{RNWTab1-Dis30-1}}}\endmoddef
+\LA{}Pare Pre Row~{\nwtagstyle{}\subpageref{RNWTab1-Par31-1}}\RA{}
+\LA{}Pare Pre Col~{\nwtagstyle{}\subpageref{RNWTab1-Par32-1}}\RA{}
+\LA{}Pare Front~{\nwtagstyle{}\subpageref{RNWTab1-Par38-1}}\RA{}
+\LA{}Pare Main~{\nwtagstyle{}\subpageref{RNWTab1-Par39-1}}\RA{}
+\LA{}Pare Low Level~{\nwtagstyle{}\subpageref{RNWTab1-Par45-1}}\RA{}
+\nwendcode{}\nwbegindocs{58}\nwdocspar
+
+\subsection{Parentage - Pre Row}
+Parentage Pre Row algorithms should take two arguments, \verb|matData|
+and \verb|matRowLabel|. They should return a named list containing two
+elements, \verb|matData| and \verb|matRowLabel|.
+
+The current implementation of TableToLongForm has no Pre Row
+algorithms, but has support for external modules that add Pre Row
+algorithms.
+\nwenddocs{}\nwbegincode{59}\sublabel{RNWTab1-Par31-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Par31-1}}}\moddef{Pare Pre Row~{\nwtagstyle{}\subpageref{RNWTab1-Par31-1}}}\endmoddef
+## Empty
+\nwendcode{}\nwbegindocs{60}\nwdocspar
+
+\subsection{Parentage - Pre Col}
+Parentage Pre Col algorithms should take two arguments, \verb|matData|
+and \verb|matColLabel|. They should return a named list containing two
+elements, \verb|matData| and \verb|matColLabel|.
+\nwenddocs{}\nwbegincode{61}\sublabel{RNWTab1-Par32-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Par32-1}}}\moddef{Pare Pre Col~{\nwtagstyle{}\subpageref{RNWTab1-Par32-1}}}\endmoddef
+\LA{}Mismatched Col Labels~{\nwtagstyle{}\subpageref{RNWTab1-Mis33-1}}\RA{}
+\LA{}Misaligned Col Parent~{\nwtagstyle{}\subpageref{RNWTab1-Mis34-1}}\RA{}
+\LA{}Multirow Col Labels~{\nwtagstyle{}\subpageref{RNWTab1-Mul37-1}}\RA{}
+\nwendcode{}\nwbegindocs{62}\nwdocspar
+
+\subsubsection{Case Mismatched Column Labels}
+We check for any mismatched column labels by checking if there are the
+same number of non-empty columns for the two subsets, and that there
+are empty columns in the subsets, which together imply mismatched
+column labels. If that is the case, we update our mat Subsets as
+required.
+\begin{table}[hbt]
+  \hspace{7em}
+  \begin{tabular}{| l | l |}
+    \hline
+    Column Label & \\
+    \hline
+    & 1 \\
+    & 2 \\
+    & 3 \\
+    \hline
+  \end{tabular}
+  \hspace{10em}
+  \begin{tabular}{| p{1.5em} | l |}
+    \hline
+    \multicolumn{2}{| c |}{Column Label} \\
+    \hline
+    & 1 \\
+    & 2 \\
+    & 3 \\
+    \hline
+  \end{tabular}
+  \caption{An example of mismatched column labels. The label is in a
+    different column to the data it belongs to. The algorithm can
+    detect this as mismatched as they have the same number of
+    non-empty columns (1), and have empty columns in each subset (seen
+    easily in the left table as the 2 empty cells). Such cases can
+    occur due to some misguided attempts to visually align the label
+    to the data (e.g. table on the right).}
+\end{table}
+\nwenddocs{}\nwbegincode{63}\sublabel{RNWTab1-Mis33-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Mis33-1}}}\moddef{Mismatched Col Labels~{\nwtagstyle{}\subpageref{RNWTab1-Mis33-1}}}\endmoddef
+ParePreColMismatch =
+  function(matData, matColLabel)\{
+    colsData = IdentNonEmpty(matData, 2)
+    colsLabels = IdentNonEmpty(matColLabel, 2)
+    if(length(colsData) == length(colsLabels))
+      if(ncol(matData) != length(colsData))\{
+        matColLabel = matColLabel[,colsLabels,drop=FALSE]
+        matData = matData[,colsData,drop=FALSE]
+      \}
+    list(matData = matData, matColLabel = matColLabel)
+  \}
+TTLFaliasAdd("ParePreCol", "ParePreColMismatch", "mismatch",
+             "Base Algorithm", paste("Correct for column labels",
+             "not matched correctly over data (label in a",
+             "different column to data)"))
+\nwidentuses{\\{{IdentNonEmpty}{IdentNonEmpty}}\\{{TTLFaliasAdd}{TTLFaliasAdd}}}\nwindexuse{IdentNonEmpty}{IdentNonEmpty}{RNWTab1-Mis33-1}\nwindexuse{TTLFaliasAdd}{TTLFaliasAdd}{RNWTab1-Mis33-1}\nwendcode{}\nwbegindocs{64}\nwdocspar
+
+\subsubsection{Case Misaligned Column Parents}
+We correct for any misaligned column parents by using pattern matching
+to detect parent-groupings, and then realigning the parents.
+\nwenddocs{}\nwbegincode{65}\sublabel{RNWTab1-Mis34-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Mis34-1}}}\moddef{Misaligned Col Parent~{\nwtagstyle{}\subpageref{RNWTab1-Mis34-1}}}\endmoddef
+ParePreColMisaligned =
+  function(matData, matColLabel)\{
+    TCRsink("MCPBefore", matColLabel)
+    for(i in 1:nrow(matColLabel))\{
+      currow = matColLabel[i,]
+      \LA{}Search for Pattern~{\nwtagstyle{}\subpageref{RNWTab1-Sea35-1}}\RA{}
+      \LA{}Align Column Parents~{\nwtagstyle{}\subpageref{RNWTab1-Ali36-1}}\RA{}
+    \}
+    TCRsink("MCPAfter", matColLabel)
+    list(matData = matData, matColLabel = matColLabel)
+  \}
+TTLFaliasAdd("ParePreCol", "ParePreColMisaligned", "misalign",
+             "Base Algorithm", paste("Correct for column labels",
+             "not aligned correctly over data (parents not",
+             "positioned on the far-left, relative to their",
+             "children in the row below)"))
+\nwidentuses{\\{{TCRsink}{TCRsink}}\\{{TTLFaliasAdd}{TTLFaliasAdd}}}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Mis34-1}\nwindexuse{TTLFaliasAdd}{TTLFaliasAdd}{RNWTab1-Mis34-1}\nwendcode{}\nwbegindocs{66}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: MCPBefore)}
+\begin{verbatim}
+> matColLabel
+     V4       V5            V6       V7       V8       V9           
+[1,] NA       NA            NA       NA       NA       NA           
+[2,] NA       "Col Parent1" NA       NA       NA       "Col Parent2"
+[3,] "Col"    "Col"         "Col"    "Col"    "Col"    "Col"        
+[4,] "Child1" "Child2"      "Child3" "Child4" "Child1" "Child2"     
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+%TCEx MCPAfter matColLabel
+%TCEx MCPBefore matColLabel
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: MCPAfter)}
+\begin{verbatim}
+> matColLabel
+     V4            V5       V6       V7       V8            V9      
+[1,] NA            NA       NA       NA       NA            NA      
+[2,] "Col Parent1" NA       NA       NA       "Col Parent2" NA      
+[3,] "Col"         "Col"    "Col"    "Col"    "Col"         "Col"   
+[4,] "Child1"      "Child2" "Child3" "Child4" "Child1"      "Child2"
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+\begin{table}[hbt]
+  \centering
+  \begin{tabular}{| l | l | l | l | l | l |}
+    \hline
+    & Column Parent1 &  & & Column Parent2 & \\
+    \hline
+    Child1 & Child2 & Child3 &
+    Child1 & Child2 & Child3 \\
+    \hline
+  \end{tabular}
+  \caption{An example of misaligned column parents. For our low-level
+    Parentage algorithm to work, we want the Column Parents to be in
+    the left-most cell of their parent-grouping.}
+  \label{tab:Pare.misaligned}
+\end{table}
+The value of \verb|curPattern| will be the following:
+\begin{itemize}
+\item If completely empty (all \verb|NA|), return \verb|NA|.
+\item If any empty, check pattern of emptiness. In the above Table row
+  1, this will find the pattern: NonEmpty-Empty-NonEmpty which occurs
+  twice. Hence return 2.
+\item Else, all cells are non-empty, check pattern of contents. In the
+  above Table row 2, this will find the pattern: Child1-Child2-Child3
+  which occurs twice. Hence return 2.
+\end{itemize}
+\nwenddocs{}\nwbegincode{67}\sublabel{RNWTab1-Sea35-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Sea35-1}}}\moddef{Search for Pattern~{\nwtagstyle{}\subpageref{RNWTab1-Sea35-1}}}\endmoddef
+curPattern =
+  if(all(is.na(currow))) NA
+  else if(any(is.na(currow))) IdentPattern(is.na(currow))
+  else IdentPattern(currow)
+\nwidentuses{\\{{IdentPattern}{IdentPattern}}}\nwindexuse{IdentPattern}{IdentPattern}{RNWTab1-Sea35-1}\nwendcode{}\nwbegindocs{68}\nwdocspar
+
+For each subset of the row (based on pattern), move any empty cells
+(\verb|NA|) to the end, hence aligning the non-empty cell (the parent)
+to the left.
+\nwenddocs{}\nwbegincode{69}\sublabel{RNWTab1-Ali36-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ali36-1}}}\moddef{Align Column Parents~{\nwtagstyle{}\subpageref{RNWTab1-Ali36-1}}}\endmoddef
+if(!is.na(curPattern))\{
+  nParents = length(currow)/curPattern
+  for(j in 1:nParents)\{
+    curcols = 1:curPattern + curPattern * (j - 1)
+    cursub = currow[curcols]
+    currow[curcols] = c(cursub[!is.na(cursub)], cursub[is.na(cursub)])
+    TCRsink("ACP", cursub, currow[curcols])
+  \}
+  matColLabel[i,] = currow
+\}
+\nwidentuses{\\{{TCRsink}{TCRsink}}}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Ali36-1}\nwendcode{}\nwbegindocs{70}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: ACP)}
+\begin{verbatim}
+> cursub
+           V4            V5            V6            V7 
+           NA "Col Parent1"            NA            NA 
+\end{verbatim}
+\begin{verbatim}
+> currow[curcols]
+           V4            V5            V6            V7 
+"Col Parent1"            NA            NA            NA 
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+\subsubsection{Case Multi-row Column Labels}
+It is also quite common for Col Labels that are too wide to be
+physically split over multiple rows to manage the width of the
+labels. For now, we simply assume that any rows that are not full (and
+hence not parents) should all really be a single row of children, and
+collapse these.
+\nwenddocs{}\nwbegincode{71}\sublabel{RNWTab1-Mul37-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Mul37-1}}}\moddef{Multirow Col Labels~{\nwtagstyle{}\subpageref{RNWTab1-Mul37-1}}}\endmoddef
+ParePreColMultirow =
+  function(matData, matColLabel)\{
+    fullrows = apply(matColLabel, 1, function(x) all(!is.na(x)))
+    if(any(diff(fullrows) > 1))
+      warning("full rows followed by not full rows!")
+    if(any(fullrows))\{
+      pastestring = ""
+      pasterows = which(fullrows)
+      for(i in 1:length(pasterows))
+        pastestring[i] = paste0("matColLabel[", pasterows[i],
+                     ",,drop=FALSE]")
+      collapsedlabels =
+        eval(parse(text = paste0("paste(",
+                     paste(pastestring, collapse = ", "), ")")))
+
+      TCRsink("MCLBefore", matColLabel)
+      matColLabel = rbind(matColLabel[!fullrows,,drop=FALSE],
+        collapsedlabels, deparse.level = 0)
+      TCRsink("MCLAfter", matColLabel)
+    \}
+    list(matData = matData, matColLabel = matColLabel)
+  \}
+TTLFaliasAdd("ParePreCol", "ParePreColMultirow", "multirow",
+             "Base Algorithm", paste("Merge long column labels",
+             "that were physically split over multiple rows",
+             "back into a single label"))
+\nwidentuses{\\{{TCRsink}{TCRsink}}\\{{TTLFaliasAdd}{TTLFaliasAdd}}}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Mul37-1}\nwindexuse{TTLFaliasAdd}{TTLFaliasAdd}{RNWTab1-Mul37-1}\nwendcode{}\nwbegindocs{72}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: MCLBefore)}
+\begin{verbatim}
+> matColLabel
+     V4            V5       V6       V7       V8            V9      
+[1,] NA            NA       NA       NA       NA            NA      
+[2,] "Col Parent1" NA       NA       NA       "Col Parent2" NA      
+[3,] "Col"         "Col"    "Col"    "Col"    "Col"         "Col"   
+[4,] "Child1"      "Child2" "Child3" "Child4" "Child1"      "Child2"
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+%TCEx MCLAfter matColLabel
+%TCEx MCLBefore matColLabel
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: MCLAfter)}
+\begin{verbatim}
+> matColLabel
+     V4            V5           V6           V7           V8           
+[1,] NA            NA           NA           NA           NA           
+[2,] "Col Parent1" NA           NA           NA           "Col Parent2"
+[3,] "Col Child1"  "Col Child2" "Col Child3" "Col Child4" "Col Child1" 
+     V9          
+[1,] NA          
+[2,] NA          
+[3,] "Col Child2"
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+\subsection{Parentage - Front}
+\label{sec:PareFront}
+This front end function takes the \verb|matLabel|, which can be the
+\verb|matRowLabel| or the transpose of the \verb|matColLabel|, and
+constructs an initialising \verb|plist|, which is used to make the
+first call to the Main function.
+\nwenddocs{}\nwbegincode{73}\sublabel{RNWTab1-Par38-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Par38-1}}}\moddef{Pare Front~{\nwtagstyle{}\subpageref{RNWTab1-Par38-1}}}\endmoddef
+PareFront =
+  function(matLabel)
+  PareMain(matSub = matLabel, plist =
+           list(rows = 1:nrow(matLabel), cols = 1:ncol(matLabel)))
+\nwindexdefn{PareFront}{PareFront}{RNWTab1-Par38-1}\eatline
+\nwidentdefs{\\{{PareFront}{PareFront}}}\nwidentuses{\\{{PareMain}{PareMain}}}\nwindexuse{PareMain}{PareMain}{RNWTab1-Par38-1}\nwendcode{}\nwbegindocs{74}\nwdocspar
+
+\subsection{Parentage - Main}
+\label{sec:PareMain}
+The purpose of the \verb|PareMain| function is to identify (or
+\emph{Discern}, to better differentiate this stage from the
+\emph{Identification} stage) hierarchical relationships (the
+\emph{Parentage}) in the data.
+
+It first makes various checks for fringe cases, then calls various
+detection algorithms (\verb|Pare Low Levels|) to discern the
+parentage.
+\nwenddocs{}\nwbegincode{75}\sublabel{RNWTab1-Par39-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Par39-1}}}\moddef{Pare Main~{\nwtagstyle{}\subpageref{RNWTab1-Par39-1}}}\endmoddef
+PareMain =
+  function(matSub, plist)\{
+    \LA{}If only one column~{\nwtagstyle{}\subpageref{RNWTab1-Ifo40-1}}\RA{}
+    \LA{}If first column empty~{\nwtagstyle{}\subpageref{RNWTab1-Iff41-1}}\RA{}
+    \LA{}If only one row~{\nwtagstyle{}\subpageref{RNWTab1-Ifo42-1}}\RA{}
+    \LA{}If first cell empty~{\nwtagstyle{}\subpageref{RNWTab1-Iff43-1}}\RA{}
+    \LA{}Otherwise call Pare Low Levels~{\nwtagstyle{}\subpageref{RNWTab1-Oth44-1}}\RA{}
+    class(res) = "plist"
+    res
+  \}
+\nwindexdefn{PareMain}{PareMain}{RNWTab1-Par39-1}\eatline
+\nwidentdefs{\\{{PareMain}{PareMain}}}\nwendcode{}\nwbegindocs{76}\nwdocspar
+
+If only one column is found then this means we are in the right-most
+column (or there was only one column to begin with), and hence the
+currently examined cells cannot be parents. We return the rows of
+these children as a vector, with names that correspond to their
+labels.
+\nwenddocs{}\nwbegincode{77}\sublabel{RNWTab1-Ifo40-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ifo40-1}}}\moddef{If only one column~{\nwtagstyle{}\subpageref{RNWTab1-Ifo40-1}}}\endmoddef
+if(length(plist$cols) == 1)\{
+  res = structure(plist$rows, .Names = matSub[plist$rows, plist$cols])
+  res = attrLoc(res, cols = plist$col)
+  TCRsink("IOOC", plist, res)
+\}
+\nwidentuses{\\{{attrLoc}{attrLoc}}\\{{TCRsink}{TCRsink}}}\nwindexuse{attrLoc}{attrLoc}{RNWTab1-Ifo40-1}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Ifo40-1}\nwendcode{}\nwbegindocs{78}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: IOOC)}
+\begin{verbatim}
+> plist
+$rows
+[1] 3 4
+
+$cols
+[1] 2
+
+\end{verbatim}
+\begin{verbatim}
+> res
+Row Child-Child1 Row Child-Child2 
+               3                4 
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+If the first column is found to be empty, then we will shift to the
+next column (which we know exists because we passed the check for only
+one column).
+\nwenddocs{}\nwbegincode{79}\sublabel{RNWTab1-Iff41-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Iff41-1}}}\moddef{If first column empty~{\nwtagstyle{}\subpageref{RNWTab1-Iff41-1}}}\endmoddef
+else if(all(is.na(matSub[plist$rows, plist$cols[1]])))\{
+  plist$cols = plist$cols[-1]
+  res = PareMain(matSub, plist)
+\}
+\nwidentuses{\\{{PareMain}{PareMain}}}\nwindexuse{PareMain}{PareMain}{RNWTab1-Iff41-1}\nwendcode{}\nwbegindocs{80}\nwdocspar
+
+If only one row is found then our row is a parent to itself (we know
+there are children in the row as we passed the check for only one
+column). We return the row as a numeric vector, nested in a list using
+correct parentage and names of the parentage within the row.
+\nwenddocs{}\nwbegincode{81}\sublabel{RNWTab1-Ifo42-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Ifo42-1}}}\moddef{If only one row~{\nwtagstyle{}\subpageref{RNWTab1-Ifo42-1}}}\endmoddef
+else if(length(plist$rows) == 1)\{
+  res = structure(plist$rows,
+    .Names = matSub[plist$rows, plist$cols[length(plist$cols)]])
+  res = attrLoc(res, cols = plist$cols[length(plist$cols)])
+  for(i in (length(plist$cols) - 1):1)\{
+    res = list(res)
+    names(res) = matSub[plist$rows, plist$cols[i]]
+    res = attrLoc(res, rows = plist$rows, cols = plist$cols[i])
+  \}
+  TCRsink("IOOR", plist, res)
+\}
+\nwidentuses{\\{{attrLoc}{attrLoc}}\\{{TCRsink}{TCRsink}}}\nwindexuse{attrLoc}{attrLoc}{RNWTab1-Ifo42-1}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Ifo42-1}\nwendcode{}\nwbegindocs{82}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: IOOR)}
+\begin{verbatim}
+> res
+Never occurs
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+If the first cell is empty, after all previous checks, then this is an
+unrecognised format and we return a warning message.
+\nwenddocs{}\nwbegincode{83}\sublabel{RNWTab1-Iff43-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Iff43-1}}}\moddef{If first cell empty~{\nwtagstyle{}\subpageref{RNWTab1-Iff43-1}}}\endmoddef
+else if(is.na(matSub[plist$rows[1], plist$cols[1]]))\{
+  warning("cell[1, 1] is empty")
+  print(plist)
+  res = NA
+\}
+\nwendcode{}\nwbegindocs{84}\nwdocspar
+
+If we have passed all the checks, we can then call the Low Level
+\verb|Pare| functions. We first call \verb|ByEmptyRight| to check for
+\emph{empty right} situations. If none are found, it returns
+\verb|NA|, in which case we try \verb|ByEmptyBelow| instead.
+
+We then loop through each element of the returned list and call the
+main function, as per the recursive nature of the function.
+\nwenddocs{}\nwbegincode{85}\sublabel{RNWTab1-Oth44-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Oth44-1}}}\moddef{Otherwise call Pare Low Levels~{\nwtagstyle{}\subpageref{RNWTab1-Oth44-1}}}\endmoddef
+else\{
+  res = PareByEmptyRight(matSub, plist)
+  if(any(is.na(res)))
+    res = PareByEmptyBelow(matSub, plist)
+  for(i in 1:length(res))
+    res[[i]] = PareMain(matSub, res[[i]])
+  res
+\}
+\nwidentuses{\\{{PareByEmptyBelow}{PareByEmptyBelow}}\\{{PareByEmptyRight}{PareByEmptyRight}}\\{{PareMain}{PareMain}}}\nwindexuse{PareByEmptyBelow}{PareByEmptyBelow}{RNWTab1-Oth44-1}\nwindexuse{PareByEmptyRight}{PareByEmptyRight}{RNWTab1-Oth44-1}\nwindexuse{PareMain}{PareMain}{RNWTab1-Oth44-1}\nwendcode{}\nwbegindocs{86}\nwdocspar
+
+\subsection{Parentage - Low Level Functions}
+\label{sec:PareLowLevel}
+The Low Level Parentage functions are called by the Main Parentage
+function. In particular, \verb|ByEmptyRight| is always called
+first. Then \verb|ByEmptyBelow| is called on the results of the above.
+\nwenddocs{}\nwbegincode{87}\sublabel{RNWTab1-Par45-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Par45-1}}}\moddef{Pare Low Level~{\nwtagstyle{}\subpageref{RNWTab1-Par45-1}}}\endmoddef
+\LA{}Pare By Empty Right~{\nwtagstyle{}\subpageref{RNWTab1-Par46-1}}\RA{}
+\LA{}Pare By Empty Below~{\nwtagstyle{}\subpageref{RNWTab1-Par50-1}}\RA{}
+\nwendcode{}\nwbegindocs{88}\nwdocspar
+
+\subsubsection{Pare By Empty Right}
+We check to see if we have an \emph{empty right} situation. If we do
+not, we return \verb|NA|.
+\nwenddocs{}\nwbegincode{89}\sublabel{RNWTab1-Par46-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Par46-1}}}\moddef{Pare By Empty Right~{\nwtagstyle{}\subpageref{RNWTab1-Par46-1}}}\endmoddef
+PareByEmptyRight =
+  function(matSub, plist)
+  with(plist,
+       if(all(is.na(matSub[rows[1], cols[-1]])))\{
+         \LA{}Check for Other Empty Rights~{\nwtagstyle{}\subpageref{RNWTab1-Che47-1}}\RA{}
+         \LA{}Case Single Empty Right~{\nwtagstyle{}\subpageref{RNWTab1-Cas48-1}}\RA{}
+         \LA{}Case Multiple Empty Rights~{\nwtagstyle{}\subpageref{RNWTab1-Cas49-1}}\RA{}
+         res
+       \} else NA)
+\nwindexdefn{PareByEmptyRight}{PareByEmptyRight}{RNWTab1-Par46-1}\eatline
+\nwidentdefs{\\{{PareByEmptyRight}{PareByEmptyRight}}}\nwendcode{}\nwbegindocs{90}\nwdocspar
+
+\begin{table}[!h]
+\begin{minipage}{0.4\linewidth}
+  \begin{tabular}{| r | l | l |}
+    \hline
+     1 & \textbf{\textit{New Zealand}} &        \\
+     2 & \textbf{Auckland}             &        \\
+     3 & Accounting                    & Male   \\
+     4 &                               & Female \\
+     5 & Economics                     & Male   \\
+     6 &                               & Female \\
+     7 & Statistics                    & Male   \\
+     8 &                               & Female \\
+     9 & \textbf{Wellington}           &        \\
+    10 & Economics                     & Male   \\
+    11 &                               & Female \\
+    12 & Statistics                    & Male   \\
+    13 &                               & Female \\
+    14 & \textbf{\textit{Australia}}   &        \\
+    15 & \textbf{Sydney}               &        \\
+    16 & Accounting                    & Male   \\
+    17 &                               & Female \\
+    18 & Economics                     & Male   \\
+    19 &                               & Female \\
+    \hline
+  \end{tabular}
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+  Consider the toy example on the left.
+  
+  In this case we do not have a simple \verb|ByEmptyRight| structure.
+  We have \emph{super-parents} in the form of countries (New Zealand
+  and Australia), and also \emph{parents} in the form of cities
+  (Auckland, Wellington and Sydney). To handle situations such as
+  this, we must \textbf{Check for Other Empty Rights}.
+  
+  If only a \textbf{Single Empty Right} is found, the situation is
+  simple and we simply pass on the children of the single parent for
+  the next iteration of \verb|PareMain|.
+  
+  However, if \textbf{Multiple Empty Rights} are found, we must
+  identify the super-parents, and pass on the \emph{children} of these
+  super-parents (which would, in turn, contain parents and their
+  children) as a list, to be handled in the next iteration of
+  \verb|PareMain|. In this example, we would have a list of length
+  2. The first element of the list would contain the \verb|plist| with
+  \verb|rows| 2 to 13 (corresponding to the children of the New
+  Zealand super-parent). The second element would have \verb|rows| 15
+  to 19.
+\end{minipage}
+\end{table}
+
+\nwenddocs{}\nwbegincode{91}\sublabel{RNWTab1-Che47-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Che47-1}}}\moddef{Check for Other Empty Rights~{\nwtagstyle{}\subpageref{RNWTab1-Che47-1}}}\endmoddef
+emptyrights = apply(matSub[rows, cols[-1],drop=FALSE], 1,
+  function(x) all(is.na(x)))
+rowemptyright = rows[emptyrights]
+\nwendcode{}\nwbegindocs{92}\nwdocspar
+
+In the case of only a single empty right, we know there is only a
+single parent, which is the first line. Thus we take everything except
+the first line (which will be the rows of the children of this parent)
+and pass this through with correct naming.
+\nwenddocs{}\nwbegincode{93}\sublabel{RNWTab1-Cas48-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Cas48-1}}}\moddef{Case Single Empty Right~{\nwtagstyle{}\subpageref{RNWTab1-Cas48-1}}}\endmoddef
+if(length(rowemptyright) == 1)\{
+  res = list(list(rows = rows[-1], cols = cols))
+  names(res) = matSub[rows[1], cols[1]]
+  res = attrLoc(res, rows = rows[1], cols = cols[1])
+  TCRsink("CSER", res)
+\}
+\nwidentuses{\\{{attrLoc}{attrLoc}}\\{{TCRsink}{TCRsink}}}\nwindexuse{attrLoc}{attrLoc}{RNWTab1-Cas48-1}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Cas48-1}\nwendcode{}\nwbegindocs{94}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: CSER)}
+\begin{verbatim}
+> res
+Never occurs
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+In the case of multiple empty rights, we first call \verb|diff| to
+compute the gap in rows between the empty rights. If the value of
+\verb|rowdiff[i]| is 1, this means there is no gap between the
+i\textsuperscript{th} \verb|rowemptyright| and the (i + 1)
+\verb|rowemptyright|. This happens with \emph{super-parents} as
+described in the example above. In this case, we gather these
+super-parents and ignore all other \verb|rowemptyright| (the parents
+inside the super-parents will be handled at the next iteration of
+\verb|PareMain|). Note, we assume there are never any
+super-super-parents (i.e. we can only handle a maximum of 2-levels of
+parentage in the same column).
+
+Whether or not super-parents were identified, we compute the rows for
+the children of each parent (or super-parent) identified by
+\verb|rowemptyright| and pass this through as a list, with correct
+naming.
+\nwenddocs{}\nwbegincode{95}\sublabel{RNWTab1-Cas49-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Cas49-1}}}\moddef{Case Multiple Empty Rights~{\nwtagstyle{}\subpageref{RNWTab1-Cas49-1}}}\endmoddef
+else\{
+  rowdiff = diff(rowemptyright)
+  if(any(rowdiff == 1))
+    rowemptyright = rowemptyright[c(rowdiff == 1, FALSE)]
+  
+  rowstart = pmin(rowemptyright + 1, max(rows))
+  rowend = c(pmax(rowemptyright[-1] - 1, min(rows)), max(rows))
+  
+  res = list()
+  for(i in 1:length(rowstart))
+    res[i] = list(list(rows = rowstart[i]:rowend[i], cols = cols))
+  names(res) = matSub[rowemptyright, cols[1]]
+  res = attrLoc(res, rows = rowemptyright, cols = cols[1])
+  TCRsink("CMER", res)
+\}
+\nwidentuses{\\{{attrLoc}{attrLoc}}\\{{TCRsink}{TCRsink}}}\nwindexuse{attrLoc}{attrLoc}{RNWTab1-Cas49-1}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Cas49-1}\nwendcode{}\nwbegindocs{96}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: CMER)}
+\begin{verbatim}
+> res
+$`Row Super-Parent`
+$`Row Super-Parent`$rows
+[1]  2  3  4  5  6  7  8  9 10
+
+$`Row Super-Parent`$cols
+[1] 1 2
+
+
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+\subsubsection{Pare By Empty Below}
+We check which cells are empty below (there should be at least 1 based
+on previous checks). Based on this, we compute the rows for the
+children of each parent and pass this through as a list, with correct
+naming.
+\nwenddocs{}\nwbegincode{97}\sublabel{RNWTab1-Par50-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Par50-1}}}\moddef{Pare By Empty Below~{\nwtagstyle{}\subpageref{RNWTab1-Par50-1}}}\endmoddef
+PareByEmptyBelow =
+  function(matSub, plist)
+  with(plist, \{
+    emptybelow = is.na(matSub[rows, cols[1]])
+    rowstart = rows[!emptybelow]
+    rowend = c(rowstart[-1] - 1, max(rows))
+    res = list()
+    for(i in 1:length(rowstart))
+      res[i] = list(list(rows = rowstart[i]:rowend[i], cols = cols[-1]))
+    names(res) = matSub[rowstart, cols[1]]
+    res = attrLoc(res, rows = rowstart, cols = cols[1])
+    TCRsink("PBEB", res)
+    res
+  \})
+\nwindexdefn{PareByEmptyBelow}{PareByEmptyBelow}{RNWTab1-Par50-1}\eatline
+\nwidentdefs{\\{{PareByEmptyBelow}{PareByEmptyBelow}}}\nwidentuses{\\{{attrLoc}{attrLoc}}\\{{TCRsink}{TCRsink}}}\nwindexuse{attrLoc}{attrLoc}{RNWTab1-Par50-1}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Par50-1}\nwendcode{}\nwbegindocs{98}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: PBEB)}
+\begin{verbatim}
+> res
+$`Row Child1`
+$`Row Child1`$rows
+[1] 3 4
+
+$`Row Child1`$cols
+[1] 2
+
+
+$`Row Child2`
+$`Row Child2`$rows
+[1] 5 6
+
+$`Row Child2`$cols
+[1] 2
+
+
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+\section{Reconstruction}
+\label{sec:reconstruction}
+We separate the Reconstruction functions into two groups.
+\begin{description}
+\item[Recons Main] contains the main function that is called by the
+  \emph{Front End} function.
+\item[Recons Low Level] contains supporting functions called by the
+  \emph{Recons Main} function.
+\end{description}
+\nwenddocs{}\nwbegincode{99}\sublabel{RNWTab1-Rec51-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Rec51-1}}}\moddef{Reconstruction~{\nwtagstyle{}\subpageref{RNWTab1-Rec51-1}}}\endmoddef
+\LA{}Recons Main~{\nwtagstyle{}\subpageref{RNWTab1-Rec52-1}}\RA{}
+\LA{}Recons Low Level~{\nwtagstyle{}\subpageref{RNWTab1-Rec56-1}}\RA{}
+\nwendcode{}\nwbegindocs{100}\nwdocspar
+
+\subsection{Reconstruction - Main Function}
+\label{sec:ReconsMain}
+The \verb|ReconsMain| function is, in a manner of speaking, the true
+\verb|TableToLongForm| function, as it makes the calls to
+\verb|IdentMain| and \verb|PareFront|, in conjunction with its own
+\verb|Recons Low Level| functions, to carry out the conversion.
+\nwenddocs{}\nwbegincode{101}\sublabel{RNWTab1-Rec52-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Rec52-1}}}\moddef{Recons Main~{\nwtagstyle{}\subpageref{RNWTab1-Rec52-1}}}\endmoddef
+ReconsMain =
+  function(matFull, IdentResult,
+           IdentPrimary, IdentAuxiliary,
+           ParePreRow, ParePreCol)\{
+    \LA{}Call Ident Algos~{\nwtagstyle{}\subpageref{RNWTab1-Cal53-1}}\RA{}
+    \LA{}Reconstruct Row Labels~{\nwtagstyle{}\subpageref{RNWTab1-Rec54-1}}\RA{}
+    \LA{}Reconstruct Col Labels~{\nwtagstyle{}\subpageref{RNWTab1-Rec55-1}}\RA{}
+  \}
+\nwindexdefn{ReconsMain}{ReconsMain}{RNWTab1-Rec52-1}\eatline
+\nwidentdefs{\\{{ReconsMain}{ReconsMain}}}\nwidentuses{\\{{IdentResult}{IdentResult}}}\nwindexuse{IdentResult}{IdentResult}{RNWTab1-Rec52-1}\nwendcode{}\nwbegindocs{102}\nwdocspar
+
+If a custom \verb|IdentResult| is given, we use that. Otherwise
+(\verb|IdentResult == NULL|), we call the Ident algorithms as
+specified by the arguments, \verb|IdentPrimary| and
+\verb|IdentAuxiliary|. Only 1 \verb|IdentPrimary| is accepted, while
+any number of \verb|IdentAuxiliary| algorithms can be specified, which
+will be called in the order they are given.
+
+\nwenddocs{}\nwbegincode{103}\sublabel{RNWTab1-Cal53-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Cal53-1}}}\moddef{Call Ident Algos~{\nwtagstyle{}\subpageref{RNWTab1-Cal53-1}}}\endmoddef
+if(is.null(IdentResult))\{
+  IdentPrimary = TTLFaliasGet("IdentPrimary", IdentPrimary)
+  IdentResult = do.call(IdentPrimary, list(matFull = matFull))
+  if(!is.null(IdentAuxiliary))
+    for(AuxAlgo in IdentAuxiliary)\{
+      AuxAlgo = TTLFaliasGet("IdentAuxiliary", AuxAlgo)
+      IdentResult = do.call(AuxAlgo,
+        list(matFull = matFull, IdentResult = IdentResult))
+    \}
+\}
+\nwindexdefn{IdentResult}{IdentResult}{RNWTab1-Cal53-1}\eatline
+\nwidentdefs{\\{{IdentResult}{IdentResult}}}\nwidentuses{\\{{TTLFaliasGet}{TTLFaliasGet}}}\nwindexuse{TTLFaliasGet}{TTLFaliasGet}{RNWTab1-Cal53-1}\nwendcode{}\nwbegindocs{104}\nwdocspar
+
+We create the subsets of \verb|matFull| using \verb|IdentResult|:
+\begin{description}
+\item[matData] Which should contain just the Data.
+\item[matRowLabel] Which should contain just the Row Labels.
+\end{description}
+
+We then call the \verb|ParePreRow| algorithms in the order given
+(assuming there are any), to tidy up \verb|matData| (rarely) and
+\verb|matRowLabel| (primarily), before calling \verb|PareFront| to
+discern the parentage of the Row Labels.
+
+We then use this to reconstruct the portion of the LongForm Dataframe
+relating to the Row Labels and assign this to \verb|rowvecs|.
+\nwenddocs{}\nwbegincode{105}\sublabel{RNWTab1-Rec54-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Rec54-1}}}\moddef{Reconstruct Row Labels~{\nwtagstyle{}\subpageref{RNWTab1-Rec54-1}}}\endmoddef
+matData = with(IdentResult,
+  matFull[rows$data, cols$data,drop=FALSE])
+matRowLabel = with(IdentResult,
+  matFull[rows$data, cols$label,drop=FALSE])
+if(!is.null(ParePreRow))
+  for(PreAlgo in ParePreRow)\{
+    PreAlgo = TTLFaliasGet("ParePreRow", PreAlgo)
+    PreOut = do.call(PreAlgo,
+      list(matData = matData, matRowLabel = matRowLabel))
+    matData = PreOut$matData
+    matRowLabel = PreOut$matRowLabel
+  \}
+rowplist = PareFront(matRowLabel)
+rowvecs = ReconsRowLabels(rowplist)
+TCRsink("RRL", rowplist, rowvecs)
+\nwindexdefn{rowplist}{rowplist}{RNWTab1-Rec54-1}\nwindexdefn{rowvecs}{rowvecs}{RNWTab1-Rec54-1}\eatline
+\nwidentdefs{\\{{rowplist}{rowplist}}\\{{rowvecs}{rowvecs}}}\nwidentuses{\\{{IdentResult}{IdentResult}}\\{{PareFront}{PareFront}}\\{{ReconsRowLabels}{ReconsRowLabels}}\\{{TCRsink}{TCRsink}}\\{{TTLFaliasGet}{TTLFaliasGet}}}\nwindexuse{IdentResult}{IdentResult}{RNWTab1-Rec54-1}\nwindexuse{PareFront}{PareFront}{RNWTab1-Rec54-1}\nwindexuse{ReconsRowLabels}{ReconsRowLabels}{RNWTab1-Rec54-1}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Rec54-1}\nwindexuse{TTLFaliasGet}{TTLFaliasGet}{RNWTab1-Rec54-1}\nwendcode{}\nwbegindocs{106}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: RRL)}
+\begin{verbatim}
+> rowplist
+$`Row Super-Parent`
++ Row Parent1 (2, 1)
+- + Row Child1 (3, 1)
+- - + Row Child-Child1 (3, 2)
+- - + Row Child-Child2 (4, 2)
+- + Row Child2 (5, 1)
+- - + Row Child-Child1 (5, 2)
+- - + Row Child-Child2 (6, 2)
++ Row Parent2 (7, 1)
+- + Row Child1 (8, 1)
+- - + Row Child-Child1 (8, 2)
+- - + Row Child-Child2 (9, 2)
+- + Row Child2 (10, 1)
+- - + Row Child-Child2 (10, 2)
+
+\end{verbatim}
+\begin{verbatim}
+> rowvecs
+ [,1]               [,2]          [,3]         [,4]              
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child2"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child2"
+ "Row Super-Parent" "Row Parent2" "Row Child1" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent2" "Row Child1" "Row Child-Child2"
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+We create a further subset of \verb|matFull| using \verb|IdentResult|:
+\begin{description}
+\item[matColLabel] Which should contain just the Column Labels.
+\end{description}
+
+We then call the \verb|ParePreCol| algorithms in the order given
+(assuming there are any), to tidy up \verb|matData| (rarely) and
+\verb|matColLabel| (primarily), before calling \verb|PareFront| on the
+transpose of \verb|matColLabel| (as the Main Parentage algorithm is
+written to work for Row Labels) to discern the parentage of the Column
+Labels.
+
+We then call \verb|ReconsColLabels| which in truth reconstructs the
+entire LongForm Dataframe by making use of the \verb|rowvecs|
+generated above.
+
+We finally return the full output back to the main
+\verb|TableToLongForm| function.
+\nwenddocs{}\nwbegincode{107}\sublabel{RNWTab1-Rec55-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Rec55-1}}}\moddef{Reconstruct Col Labels~{\nwtagstyle{}\subpageref{RNWTab1-Rec55-1}}}\endmoddef
+matColLabel = with(IdentResult,
+  matFull[rows$label, cols$data,drop=FALSE])
+if(!is.null(ParePreCol))
+  for(PreAlgo in ParePreCol)\{
+    PreAlgo = TTLFaliasGet("ParePreCol", PreAlgo)
+    PreOut = do.call(PreAlgo,
+      list(matData = matData, matColLabel = matColLabel))
+    matData = PreOut$matData
+    matColLabel = PreOut$matColLabel
+  \}
+colplist = PareFront(t(matColLabel))
+matDataReduced = matData[unlist(rowplist),,drop=FALSE]
+res = ReconsColLabels(colplist, matDataReduced, rowvecs)
+TCRsink("RCL", colplist, res)
+list(datafr = res, oriTable = matFull, IdentResult = IdentResult,
+     rowplist = rowplist, colplist = colplist)
+\nwidentuses{\\{{IdentResult}{IdentResult}}\\{{PareFront}{PareFront}}\\{{ReconsColLabels}{ReconsColLabels}}\\{{rowplist}{rowplist}}\\{{rowvecs}{rowvecs}}\\{{TCRsink}{TCRsink}}\\{{TTLFaliasGet}{TTLFaliasGet}}}\nwindexuse{IdentResult}{IdentResult}{RNWTab1-Rec55-1}\nwindexuse{PareFront}{PareFront}{RNWTab1-Rec55-1}\nwindexuse{ReconsColLabels}{ReconsColLabels}{RNWTab1-Rec55-1}\nwindexuse{rowplist}{rowplist}{RNWTab1-Rec55-1}\nwindexuse{rowvecs}{rowvecs}{RNWTab1-Rec55-1}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Rec55-1}\nwindexuse{TTLFaliasGet}{TTLFaliasGet}{RNWTab1-Rec55-1}\nwendcode{}\nwbegindocs{108}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: RCL)}
+\begin{verbatim}
+> colplist
+$`Col Parent1`
++ Col Child1 (1, 3)
++ Col Child2 (2, 3)
++ Col Child3 (3, 3)
++ Col Child4 (4, 3)
+
+$`Col Parent2`
++ Col Child1 (5, 3)
++ Col Child2 (6, 3)
++ Col Child3 (7, 3)
++ Col Child4 (8, 3)
+
+\end{verbatim}
+\begin{verbatim}
+> res
+      UNKNOWN          UNKNOWN     UNKNOWN    UNKNOWN          UNKNOWN
+1 Col Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child1
+2 Col Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child2
+3 Col Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child1
+4 Col Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child2
+5 Col Parent1 Row Super-Parent Row Parent2 Row Child1 Row Child-Child1
+6 Col Parent1 Row Super-Parent Row Parent2 Row Child1 Row Child-Child2
+  Col Child1 Col Child2 Col Child3 Col Child4
+1         12         22         32         42
+2         13         23         33         43
+3         14         24         34         44
+4         15         25         35         45
+5         17         27         37         47
+6         18         28         38         48
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+\subsection{Reconstruction - Low Level Functions}
+\label{sec:ReconsLowLevel}
+The Low Level Reconstruction functions are called by the Main
+Reconstruction function. In particular, \verb|ReconsRowLabels| is
+always called first and its results are one of the arguments for
+\verb|ReconsColLabels|, which finishes the reconstruction of the
+entire LongForm Dataframe.
+\nwenddocs{}\nwbegincode{109}\sublabel{RNWTab1-Rec56-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Rec56-1}}}\moddef{Recons Low Level~{\nwtagstyle{}\subpageref{RNWTab1-Rec56-1}}}\endmoddef
+\LA{}Recons Row Labels~{\nwtagstyle{}\subpageref{RNWTab1-Rec57-1}}\RA{}
+\LA{}Recons Column Labels~{\nwtagstyle{}\subpageref{RNWTab1-Rec58-1}}\RA{}
+\nwendcode{}\nwbegindocs{110}\nwdocspar
+
+\subsubsection{Reconstruction - Row Labels}
+\label{sec:ReconsRowLabels}
+\verb|ReconsRowLabels| iterates down the row parentage list
+(\verb|plist|) recursively, extracting the names and using this to
+construct the columns of the finished LongForm Dataframe corresponding
+to the row labels. The final output is what was shown in the
+\emph{Reconstruct Row Labels} chunk above as \verb|rowvecs|.
+\nwenddocs{}\nwbegincode{111}\sublabel{RNWTab1-Rec57-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Rec57-1}}}\moddef{Recons Row Labels~{\nwtagstyle{}\subpageref{RNWTab1-Rec57-1}}}\endmoddef
+ReconsRowLabels =
+  function(plist)
+  if(is.list(plist))\{
+    rowvecs = as.list(names(plist))
+    for(i in 1:length(rowvecs))
+      rowvecs[[i]] = cbind(rowvecs[[i]], ReconsRowLabels(plist[[i]]))
+    do.call(rbind, rowvecs)
+  \} else as.matrix(names(plist))
+\nwindexdefn{ReconsRowLabels}{ReconsRowLabels}{RNWTab1-Rec57-1}\eatline
+\nwidentdefs{\\{{ReconsRowLabels}{ReconsRowLabels}}}\nwidentuses{\\{{rowvecs}{rowvecs}}}\nwindexuse{rowvecs}{rowvecs}{RNWTab1-Rec57-1}\nwendcode{}\nwbegindocs{112}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: RRL)}
+\begin{verbatim}
+> rowvecs
+ [,1]               [,2]          [,3]         [,4]              
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child1" "Row Child-Child2"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent1" "Row Child2" "Row Child-Child2"
+ "Row Super-Parent" "Row Parent2" "Row Child1" "Row Child-Child1"
+ "Row Super-Parent" "Row Parent2" "Row Child1" "Row Child-Child2"
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+\subsubsection{Reconstruction - Column Labels}
+\label{sec:ReconsColLabels}
+As with the row labels, \verb|ReconsColLabels| iterates down the
+column parentage list (\verb|plist|) recursively. We also need to
+handle the parents differently from the lowest level child. The final
+output is what was shown in the \emph{Reconstruct Col Labels} chunk
+above as \verb|res|.
+\nwenddocs{}\nwbegincode{113}\sublabel{RNWTab1-Rec58-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Rec58-1}}}\moddef{Recons Column Labels~{\nwtagstyle{}\subpageref{RNWTab1-Rec58-1}}}\endmoddef
+ReconsColLabels =
+  function(plist, matData, rowvecs)\{
+    \LA{}Recons Col Parents~{\nwtagstyle{}\subpageref{RNWTab1-Rec59-1}}\RA{}
+    \LA{}Recons Col Children~{\nwtagstyle{}\subpageref{RNWTab1-Rec60-1}}\RA{}
+    datfr
+  \}
+\nwindexdefn{ReconsColLabels}{ReconsColLabels}{RNWTab1-Rec58-1}\eatline
+\nwidentdefs{\\{{ReconsColLabels}{ReconsColLabels}}}\nwidentuses{\\{{rowvecs}{rowvecs}}}\nwindexuse{rowvecs}{rowvecs}{RNWTab1-Rec58-1}\nwendcode{}\nwbegindocs{114}\nwdocspar
+
+Example values for \textbf{ToyExComplete.csv} \texttt{(ID: RCL)}
+\begin{verbatim}
+> res
+      UNKNOWN          UNKNOWN     UNKNOWN    UNKNOWN          UNKNOWN
+1 Col Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child1
+2 Col Parent1 Row Super-Parent Row Parent1 Row Child1 Row Child-Child2
+3 Col Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child1
+4 Col Parent1 Row Super-Parent Row Parent1 Row Child2 Row Child-Child2
+5 Col Parent1 Row Super-Parent Row Parent2 Row Child1 Row Child-Child1
+6 Col Parent1 Row Super-Parent Row Parent2 Row Child1 Row Child-Child2
+  Col Child1 Col Child2 Col Child3 Col Child4
+1         12         22         32         42
+2         13         23         33         43
+3         14         24         34         44
+4         15         25         35         45
+5         17         27         37         47
+6         18         28         38         48
+\end{verbatim}
+\vspace{-1.5em}
+\noindent\rule{0.25\textwidth}{0.4pt}
+\vspace{0.5em}
+
+Any parents are used to construct additional columns of factors (the
+labels of the parents) for the LongForm Dataframe, which is attached
+to the portion previously constructed in \verb|ReconsRowLabels|.
+\nwenddocs{}\nwbegincode{115}\sublabel{RNWTab1-Rec59-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Rec59-1}}}\moddef{Recons Col Parents~{\nwtagstyle{}\subpageref{RNWTab1-Rec59-1}}}\endmoddef
+if(is.list(plist))\{
+  colvecs = as.list(names(plist))
+  for(i in 1:length(colvecs))\{
+    colvecs[[i]] = cbind(colvecs[[i]],
+             ReconsColLabels(plist[[i]], matData, rowvecs))
+    colnames(colvecs[[i]])[1] = "UNKNOWN"
+  \}
+  datfr = do.call(rbinddf, colvecs)
+\}
+\nwidentuses{\\{{rbinddf}{rbinddf}}\\{{ReconsColLabels}{ReconsColLabels}}\\{{rowvecs}{rowvecs}}}\nwindexuse{rbinddf}{rbinddf}{RNWTab1-Rec59-1}\nwindexuse{ReconsColLabels}{ReconsColLabels}{RNWTab1-Rec59-1}\nwindexuse{rowvecs}{rowvecs}{RNWTab1-Rec59-1}\nwendcode{}\nwbegindocs{116}\nwdocspar
+
+For the lowest level child, we extract the relevant `data bits' from
+the original table and bind it to our Dataframe, using the lowest
+level child as the labels of these columns of data values.
+\nwenddocs{}\nwbegincode{117}\sublabel{RNWTab1-Rec60-1}\nwmargintag{{\nwtagstyle{}\subpageref{RNWTab1-Rec60-1}}}\moddef{Recons Col Children~{\nwtagstyle{}\subpageref{RNWTab1-Rec60-1}}}\endmoddef
+else\{
+  datbit = matData[,plist,drop=FALSE]
+  TCRsink("RCC", plist, matData, datbit)
+  datlist = NULL
+  for(j in 1:ncol(datbit))\{
+    asnumer = suppressWarnings(as.numeric(datbit[,j]))
+    if(all(is.na(datbit[,j])) || !all(is.na(asnumer)))
+      datlist[[j]] = asnumer
+    else
+      datlist[[j]] = datbit[,j]
+  \}
+  datbit = do.call(cbind, datlist)
+  ## Specify row.names to avoid annoying warnings
+  datfr =
+    cbind(as.data.frame(rowvecs, row.names = 1:nrow(rowvecs)), datbit)
+  colnames(datfr) =
+    c(rep("UNKNOWN", length = ncol(rowvecs)), names(plist))
+\}
+\nwidentuses{\\{{rowvecs}{rowvecs}}\\{{TCRsink}{TCRsink}}}\nwindexuse{rowvecs}{rowvecs}{RNWTab1-Rec60-1}\nwindexuse{TCRsink}{TCRsink}{RNWTab1-Rec60-1}\nwendcode{}
+\nwixlogsorted{c}{{Align Column Parents}{RNWTab1-Ali36-1}{\nwixd{RNWTab1-Ali36-1}\nwixu{RNWTab1-Mis34-1}}}%
+\nwixlogsorted{c}{{Back End}{RNWTab1-Bac7-1}{\nwixd{RNWTab1-Bac7-1}\nwixu{RNWTab1-Tab1-1}}}%
+\nwixlogsorted{c}{{BEattrLoc}{RNWTab1-BEa10-1}{\nwixd{RNWTab1-BEa10-1}\nwixu{RNWTab1-Bac7-1}}}%
+\nwixlogsorted{c}{{BEprintplist}{RNWTab1-BEp9-1}{\nwixd{RNWTab1-BEp9-1}\nwixu{RNWTab1-Bac7-1}}}%
+\nwixlogsorted{c}{{BErbinddf}{RNWTab1-BEr8-1}{\nwixd{RNWTab1-BEr8-1}\nwixu{RNWTab1-Bac7-1}}}%
+\nwixlogsorted{c}{{BETCRsink}{RNWTab1-BET11-1}{\nwixd{RNWTab1-BET11-1}\nwixu{RNWTab1-Bac7-1}}}%
+\nwixlogsorted{c}{{BETTLFalias}{RNWTab1-BET12-1}{\nwixd{RNWTab1-BET12-1}\nwixu{RNWTab1-Bac7-1}}}%
+\nwixlogsorted{c}{{Call Ident Algos}{RNWTab1-Cal53-1}{\nwixd{RNWTab1-Cal53-1}\nwixu{RNWTab1-Rec52-1}}}%
+\nwixlogsorted{c}{{Call Ident MostCommonBoundary}{RNWTab1-Cal17-1}{\nwixd{RNWTab1-Cal17-1}\nwixu{RNWTab1-Ide15-1}}}%
+\nwixlogsorted{c}{{Case Multiple Empty Rights}{RNWTab1-Cas49-1}{\nwixd{RNWTab1-Cas49-1}\nwixu{RNWTab1-Par46-1}}}%
+\nwixlogsorted{c}{{Case Single Empty Right}{RNWTab1-Cas48-1}{\nwixd{RNWTab1-Cas48-1}\nwixu{RNWTab1-Par46-1}}}%
+\nwixlogsorted{c}{{Check for Other Empty Rights}{RNWTab1-Che47-1}{\nwixd{RNWTab1-Che47-1}\nwixu{RNWTab1-Par46-1}}}%
+\nwixlogsorted{c}{{Check if pattern repeats}{RNWTab1-Che28-1}{\nwixd{RNWTab1-Che28-1}\nwixu{RNWTab1-Ide26-1}}}%
+\nwixlogsorted{c}{{Check if sequence}{RNWTab1-Che23-1}{\nwixd{RNWTab1-Che23-1}\nwixu{RNWTab1-Ide21-1}}}%
+\nwixlogsorted{c}{{Check Table arg}{RNWTab1-Che5-1}{\nwixd{RNWTab1-Che5-1}\nwixu{RNWTab1-Fro4-1}}}%
+\nwixlogsorted{c}{{Cleanup MostCommonBoundary Results}{RNWTab1-Cle19-1}{\nwixd{RNWTab1-Cle19-1}\nwixu{RNWTab1-Ide15-1}}}%
+\nwixlogsorted{c}{{Construct rowslist and colslist}{RNWTab1-Con18-1}{\nwixd{RNWTab1-Con18-1}\nwixu{RNWTab1-Ide15-1}}}%
+\nwixlogsorted{c}{{Discern Parentage}{RNWTab1-Dis30-1}{\nwixd{RNWTab1-Dis30-1}\nwixu{RNWTab1-Tab1-1}}}%
+\nwixlogsorted{c}{{document header}{RNWTab1-doc3-1}{\nwixd{RNWTab1-doc3-1}\nwixu{RNWTab1-Tab1-1}}}%
+\nwixlogsorted{c}{{Front End}{RNWTab1-Fro4-1}{\nwixd{RNWTab1-Fro4-1}\nwixu{RNWTab1-Tab1-1}}}%
+\nwixlogsorted{c}{{Get Non empty rows and cols}{RNWTab1-Get16-1}{\nwixd{RNWTab1-Get16-1}\nwixu{RNWTab1-Ide15-1}}}%
+\nwixlogsorted{c}{{Ident Auxiliary}{RNWTab1-Ide20-1}{\nwixd{RNWTab1-Ide20-1}\nwixu{RNWTab1-Ide13-1}}}%
+\nwixlogsorted{c}{{Ident by Most Common Boundary}{RNWTab1-Ide15-1}{\nwixd{RNWTab1-Ide15-1}\nwixu{RNWTab1-Ide14-1}}}%
+\nwixlogsorted{c}{{Ident by Sequence}{RNWTab1-Ide21-1}{\nwixd{RNWTab1-Ide21-1}\nwixu{RNWTab1-Ide20-1}}}%
+\nwixlogsorted{c}{{Ident Most Common Boundary}{RNWTab1-Ide29-1}{\nwixd{RNWTab1-Ide29-1}\nwixu{RNWTab1-Ide24-1}}}%
+\nwixlogsorted{c}{{Ident Non Empty}{RNWTab1-Ide25-1}{\nwixd{RNWTab1-Ide25-1}\nwixu{RNWTab1-Ide24-1}}}%
+\nwixlogsorted{c}{{Ident Pattern}{RNWTab1-Ide26-1}{\nwixd{RNWTab1-Ide26-1}\nwixu{RNWTab1-Ide24-1}}}%
+\nwixlogsorted{c}{{Ident Primary}{RNWTab1-Ide14-1}{\nwixd{RNWTab1-Ide14-1}\nwixu{RNWTab1-Ide13-1}}}%
+\nwixlogsorted{c}{{Ident Support}{RNWTab1-Ide24-1}{\nwixd{RNWTab1-Ide24-1}\nwixu{RNWTab1-Ide13-1}}}%
+\nwixlogsorted{c}{{Identification}{RNWTab1-Ide13-1}{\nwixd{RNWTab1-Ide13-1}\nwixu{RNWTab1-Tab1-1}}}%
+\nwixlogsorted{c}{{If empty take next column}{RNWTab1-Ife22-1}{\nwixd{RNWTab1-Ife22-1}\nwixu{RNWTab1-Ide21-1}}}%
+\nwixlogsorted{c}{{If first cell empty}{RNWTab1-Iff43-1}{\nwixd{RNWTab1-Iff43-1}\nwixu{RNWTab1-Par39-1}}}%
+\nwixlogsorted{c}{{If first column empty}{RNWTab1-Iff41-1}{\nwixd{RNWTab1-Iff41-1}\nwixu{RNWTab1-Par39-1}}}%
+\nwixlogsorted{c}{{If only one column}{RNWTab1-Ifo40-1}{\nwixd{RNWTab1-Ifo40-1}\nwixu{RNWTab1-Par39-1}}}%
+\nwixlogsorted{c}{{If only one row}{RNWTab1-Ifo42-1}{\nwixd{RNWTab1-Ifo42-1}\nwixu{RNWTab1-Par39-1}}}%
+\nwixlogsorted{c}{{Look for potential repeat}{RNWTab1-Loo27-1}{\nwixd{RNWTab1-Loo27-1}\nwixu{RNWTab1-Ide26-1}}}%
+\nwixlogsorted{c}{{Misaligned Col Parent}{RNWTab1-Mis34-1}{\nwixd{RNWTab1-Mis34-1}\nwixu{RNWTab1-Par32-1}}}%
+\nwixlogsorted{c}{{Mismatched Col Labels}{RNWTab1-Mis33-1}{\nwixd{RNWTab1-Mis33-1}\nwixu{RNWTab1-Par32-1}}}%
+\nwixlogsorted{c}{{Multirow Col Labels}{RNWTab1-Mul37-1}{\nwixd{RNWTab1-Mul37-1}\nwixu{RNWTab1-Par32-1}}}%
+\nwixlogsorted{c}{{Otherwise call Pare Low Levels}{RNWTab1-Oth44-1}{\nwixd{RNWTab1-Oth44-1}\nwixu{RNWTab1-Par39-1}}}%
+\nwixlogsorted{c}{{Pare By Empty Below}{RNWTab1-Par50-1}{\nwixd{RNWTab1-Par50-1}\nwixu{RNWTab1-Par45-1}}}%
+\nwixlogsorted{c}{{Pare By Empty Right}{RNWTab1-Par46-1}{\nwixd{RNWTab1-Par46-1}\nwixu{RNWTab1-Par45-1}}}%
+\nwixlogsorted{c}{{Pare Front}{RNWTab1-Par38-1}{\nwixd{RNWTab1-Par38-1}\nwixu{RNWTab1-Dis30-1}}}%
+\nwixlogsorted{c}{{Pare Low Level}{RNWTab1-Par45-1}{\nwixd{RNWTab1-Par45-1}\nwixu{RNWTab1-Dis30-1}}}%
+\nwixlogsorted{c}{{Pare Main}{RNWTab1-Par39-1}{\nwixd{RNWTab1-Par39-1}\nwixu{RNWTab1-Dis30-1}}}%
+\nwixlogsorted{c}{{Pare Pre Col}{RNWTab1-Par32-1}{\nwixd{RNWTab1-Par32-1}\nwixu{RNWTab1-Dis30-1}}}%
+\nwixlogsorted{c}{{Pare Pre Row}{RNWTab1-Par31-1}{\nwixd{RNWTab1-Par31-1}\nwixu{RNWTab1-Dis30-1}}}%
+\nwixlogsorted{c}{{Recons Col Children}{RNWTab1-Rec60-1}{\nwixd{RNWTab1-Rec60-1}\nwixu{RNWTab1-Rec58-1}}}%
+\nwixlogsorted{c}{{Recons Col Parents}{RNWTab1-Rec59-1}{\nwixd{RNWTab1-Rec59-1}\nwixu{RNWTab1-Rec58-1}}}%
+\nwixlogsorted{c}{{Recons Column Labels}{RNWTab1-Rec58-1}{\nwixd{RNWTab1-Rec58-1}\nwixu{RNWTab1-Rec56-1}}}%
+\nwixlogsorted{c}{{Recons Low Level}{RNWTab1-Rec56-1}{\nwixd{RNWTab1-Rec56-1}\nwixu{RNWTab1-Rec51-1}}}%
+\nwixlogsorted{c}{{Recons Main}{RNWTab1-Rec52-1}{\nwixd{RNWTab1-Rec52-1}\nwixu{RNWTab1-Rec51-1}}}%
+\nwixlogsorted{c}{{Recons Row Labels}{RNWTab1-Rec57-1}{\nwixd{RNWTab1-Rec57-1}\nwixu{RNWTab1-Rec56-1}}}%
+\nwixlogsorted{c}{{Reconstruct Col Labels}{RNWTab1-Rec55-1}{\nwixd{RNWTab1-Rec55-1}\nwixu{RNWTab1-Rec52-1}}}%
+\nwixlogsorted{c}{{Reconstruct Row Labels}{RNWTab1-Rec54-1}{\nwixd{RNWTab1-Rec54-1}\nwixu{RNWTab1-Rec52-1}}}%
+\nwixlogsorted{c}{{Reconstruction}{RNWTab1-Rec51-1}{\nwixd{RNWTab1-Rec51-1}\nwixu{RNWTab1-Tab1-1}}}%
+\nwixlogsorted{c}{{Search for Pattern}{RNWTab1-Sea35-1}{\nwixd{RNWTab1-Sea35-1}\nwixu{RNWTab1-Mis34-1}}}%
+\nwixlogsorted{c}{{Setup diagnostics file}{RNWTab1-Set6-1}{\nwixd{RNWTab1-Set6-1}\nwixu{RNWTab1-Fro4-1}}}%
+\nwixlogsorted{c}{{TableToLongForm.R}{RNWTab1-Tab1-1}{\nwixd{RNWTab1-Tab1-1}}}%
+\nwixlogsorted{i}{{attrLoc}{attrLoc}}%
+\nwixlogsorted{i}{{IdentMostCommonBoundary}{IdentMostCommonBoundary}}%
+\nwixlogsorted{i}{{IdentNonEmpty}{IdentNonEmpty}}%
+\nwixlogsorted{i}{{IdentPattern}{IdentPattern}}%
+\nwixlogsorted{i}{{IdentResult}{IdentResult}}%
+\nwixlogsorted{i}{{PareByEmptyBelow}{PareByEmptyBelow}}%
+\nwixlogsorted{i}{{PareByEmptyRight}{PareByEmptyRight}}%
+\nwixlogsorted{i}{{PareFront}{PareFront}}%
+\nwixlogsorted{i}{{PareMain}{PareMain}}%
+\nwixlogsorted{i}{{rbinddf}{rbinddf}}%
+\nwixlogsorted{i}{{ReconsColLabels}{ReconsColLabels}}%
+\nwixlogsorted{i}{{ReconsMain}{ReconsMain}}%
+\nwixlogsorted{i}{{ReconsRowLabels}{ReconsRowLabels}}%
+\nwixlogsorted{i}{{rowplist}{rowplist}}%
+\nwixlogsorted{i}{{rowvecs}{rowvecs}}%
+\nwixlogsorted{i}{{TCRsink}{TCRsink}}%
+\nwixlogsorted{i}{{TTLFaliasAdd}{TTLFaliasAdd}}%
+\nwixlogsorted{i}{{TTLFaliasGet}{TTLFaliasGet}}%
+\nwixlogsorted{i}{{TTLFBaseEnv}{TTLFBaseEnv}}%
+\nwbegindocs{118}\nwdocspar
+
+\section{Chunk Index}
+\label{sec:chunk-index}
+\nowebchunks
+
+\section{Identifier Index}
+\label{sec:identifier-index}
+Numbers indicate the chunks in which the function appears.
+Underline indicates the chunk where the function is defined.
+\medskip
+
+\nowebindex
+
+\addcontentsline{toc}{section}{References}
+\nocite{*}
+\bibliographystyle{./elsart-harv} % elsart-harv,plain,unsrt,alpha
+\bibliography{./TableToLongForm_refs}
+
+\end{document}
+\nwenddocs{}
