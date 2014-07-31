@@ -4,16 +4,24 @@
   Convert a Table to a LongForm data.frame
 }
 \description{
-  Run TableToLongForm on the specified matrix \code{Table}.\cr
-  All other arguments are optional and primarily for diagnostic
-  purposes.
+  TableToLongForm automatically converts hierarchical Tables intended
+  for a human reader into a simple LongForm Dataframe that is machine
+  readable.
+  
+  Use this function to run TableToLongForm on the specified matrix
+  \code{Table}. All other arguments are optional.
+
+  Once the conversion is complete, the user is recommended to check the
+  result for correctness and to consider tidying up the variable names.
 }
 \usage{
 TableToLongForm(Table, IdentResult = NULL,
-                IdentPrimary = "combound", IdentAuxiliary = "sequence",
+                IdentPrimary = "combound",
+                IdentAuxiliary = "sequence",
                 ParePreRow = NULL,
                 ParePreCol = c("mismatch", "misalign", "multirow"),
-                fulloutput = FALSE, diagnostics = FALSE)
+                fulloutput = FALSE,
+                diagnostics = FALSE, diagnostics.trim = TRUE)
 }
 \arguments{
   \item{Table}{
@@ -52,6 +60,11 @@ TableToLongForm(Table, IdentResult = NULL,
     a character vector specifying the name of the file diagnostic output
     will be written to. Can also be TRUE, in which case the file name
     will be the name of the object specified in \code{Table}.
+  }
+  \item{diagnostics.trim}{
+    a logical indicating whether the diagnostics output should be
+    trimmed. A good idea to keep TRUE (default) as trimmed output is
+    generally more useful.
   }
 }
 \details{

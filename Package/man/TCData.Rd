@@ -8,6 +8,13 @@
   A list containing a number of example Tables that can be converted to
   LongForm dataframes by TableToLongForm. Each Tables is stored as a
   character matrix.
+
+  These datasets are generally not immediately useful as data, as they
+  must first be converted (e.g. by using TableToLongForm).
+
+  If the user prefers to have these data in their Global Environment
+  rather than nested inside a single list, they can use
+  \code{attach(TCData)}.
 }
 \usage{data(TCData)}
 \format{

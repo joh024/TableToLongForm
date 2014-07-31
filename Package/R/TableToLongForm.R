@@ -6,10 +6,12 @@
 ##----------------------------------------------------------------------
 TableToLongForm =
   function(Table, IdentResult = NULL,
-           IdentPrimary = "combound", IdentAuxiliary = "sequence",
+           IdentPrimary = "combound",
+           IdentAuxiliary = "sequence",
            ParePreRow = NULL,
            ParePreCol = c("mismatch", "misalign", "multirow"),
-           fulloutput = FALSE, diagnostics = FALSE){
+           fulloutput = FALSE,
+           diagnostics = FALSE, diagnostics.trim = TRUE){
     if(is.data.frame(Table)){
       warning("Table supplied is a data.frame.\n",
               "TableToLongForm is designed for a character matrix.\n",
@@ -23,12 +25,14 @@ TableToLongForm =
     if(diagnostics != FALSE){
       if(!is.character(diagnostics))
         diagnostics = deparse(substitute(Table))
-      assign("TCRunout", envir = TTLFBaseEnv,
-             file(paste0(diagnostics, ".TCRunout"), "w"))
+      assign("TCRunout", file(paste0(diagnostics, ".TCRunout"), "w"),
+             envir = TTLFBaseEnv)
+      assign("TCtrim", diagnostics.trim, envir = TTLFBaseEnv)
       on.exit({
         with(TTLFBaseEnv, {
           close(TCRunout)
           rm(TCRunout)
+          rm(TCtrim)
         })
       })
     }
@@ -94,10 +98,18 @@ TCRsink =
   if(exists("TCRunout", envir = TTLFBaseEnv)){
     varlist = list(...)
     names(varlist) = gsub(" ", "", as.character(match.call()[-(1:2)]))
+    TCtrim = get("TCtrim", envir = TTLFBaseEnv)
     with(TTLFBaseEnv, sink(TCRunout))
     for(i in 1:length(varlist)){
       cat("###TCR", ID, names(varlist)[i], "\n")
-      print(varlist[[i]])
+      curvar = varlist[[i]]
+      if(TCtrim == TRUE){
+        curvar = head(curvar)
+        if(is.matrix(curvar) || is.matrix(curvar))
+          if(ncol(curvar) > 6)
+            curvar = curvar[,1:6]
+      }
+      print(curvar)
     }
     sink()
   }
@@ -397,7 +409,7 @@ ReconsMain =
       }
     rowplist = PareFront(matRowLabel)
     rowvecs = ReconsRowLabels(rowplist)
-    TCRsink("RRL", rowplist, rowvecs[1:4,])
+    TCRsink("RRL", rowplist, rowvecs)
     matColLabel = with(IdentResult,
       matFull[rows$label, cols$data,drop=FALSE])
     if(!is.null(ParePreCol))
@@ -411,7 +423,7 @@ ReconsMain =
     colplist = PareFront(t(matColLabel))
     matDataReduced = matData[unlist(rowplist),,drop=FALSE]
     res = ReconsColLabels(colplist, matDataReduced, rowvecs)
-    TCRsink("RCL", colplist, res[1:4,])
+    TCRsink("RCL", colplist, res)
     list(datafr = res, oriTable = matFull, IdentResult = IdentResult,
          rowplist = rowplist, colplist = colplist)
   }

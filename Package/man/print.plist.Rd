@@ -14,7 +14,8 @@
     a plist object.
   }
   \item{...}{
-    potential further arguments (require by generic).
+    potential further arguments (required by generic), unused by this
+    method
   }
 }
 \details{

@@ -26,7 +26,7 @@
 \maketitle
 \codemargin=24pt
 \begin{center}
-Corresponds to R Package Version 1.3.1 (pre-release)
+Corresponds to R Package Version 1.3.1 (release)
 \end{center}
 \begin{abstract}\normalsize
   TableToLongForm automatically converts hierarchical Tables intended
