@@ -1,4 +1,5 @@
+importFrom("utils", "head")
+S3method(print, plist)
 export(TableToLongForm)
-export(print.plist)
 export(TTLFaliasAdd)
 export(TTLFaliasList)
