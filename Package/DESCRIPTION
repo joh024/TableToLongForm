@@ -1,9 +1,9 @@
-Package: TableToLongForm
 Type: Package
-Title: TableToLongForm
+Package: TableToLongForm
+Title: Automatically Convert Hierarchical for-Human Tables to Machine-Readable LongForm Dataframes
 Version: 1.3.2
 Date: 2019-01-07
 Authors@R: person("Jimmy", "Oh", role = c("aut", "cre"), email = "joh024@aucklanduni.ac.nz")
-Description: TableToLongForm automatically converts hierarchical Tables intended for a human reader into a simple LongForm Dataframe that is machine readable.
+Description: A wrapper to a set of algorithms designed to recognise positional cues present in hierarchical for-human Tables (which would normally be interpreted visually by the human brain) to decompose, then reconstruct the data into machine-readable LongForm Dataframes.
 License: GPL-3
 URL: https://www.stat.auckland.ac.nz/~joh024/Research/TableToLongForm/
