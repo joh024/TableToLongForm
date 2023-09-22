@@ -10,13 +10,6 @@
   readable.
 }
 \details{
-\tabular{ll}{
-Package: \tab TableToLongForm\cr
-Type: \tab Package\cr
-Version: \tab 1.3.1\cr
-Date: \tab 2014-08-01\cr
-License: \tab GPL-3\cr
-}
 Call TableToLongForm() on a Table to automatically convert it to a
 LongForm data.frame.
 

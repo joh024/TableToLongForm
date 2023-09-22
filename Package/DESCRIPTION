@@ -6,4 +6,4 @@ Date: 2019-01-07
 Authors@R: person("Jimmy", "Oh", role = c("aut", "cre"), email = "joh024@aucklanduni.ac.nz")
 Description: A wrapper to a set of algorithms designed to recognise positional cues present in hierarchical for-human Tables (which would normally be interpreted visually by the human brain) to decompose, then reconstruct the data into machine-readable LongForm Dataframes.
 License: GPL-3
-URL: https://www.stat.auckland.ac.nz/~joh024/Research/TableToLongForm/
+URL: https://www.stat.auckland.ac.nz/~joh024/Research/TableToLongForm/, https://github.com/joh024/TableToLongForm
